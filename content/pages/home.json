@@ -1,0 +1,26 @@
+{
+    "title": "Home",
+    "meta_description": "Your Half-Built App Deserves a Full Launch. As your Fractional CTO, I'll finish what you started—fast—with AI and automation baked in.",
+    "headline": "Your Half-Built App Deserves a Full Launch.",
+    "subheadline": "As your Fractional CTO, I'll finish what you started—fast—with AI and automation baked in.",
+    "services": [
+        {
+            "icon": "wrench",
+            "title": "Finish Your App",
+            "description": "Turn your unfinished project into a production-ready application.",
+            "features": ["Complete development", "Bug fixes", "Launch support"]
+        },
+        {
+            "icon": "bot",
+            "title": "AI Integration",
+            "description": "Add intelligent automation to supercharge your workflows.",
+            "features": ["Custom AI solutions", "Workflow automation", "Smart features"]
+        },
+        {
+            "icon": "brain",
+            "title": "Fractional CTO",
+            "description": "Strategic technical leadership without the full-time cost.",
+            "features": ["Technical strategy", "Team guidance", "Architecture decisions"]
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+# Development Environment
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*.swo
+*~
+
+# Dependencies
+/vendor/
+/node_modules/
+/bower_components/
+
+# Build outputs
+/dist/
+/build/
+/out/
+*.min.css
+*.min.js
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+error.log
+access.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+config.local.php
+
+# Database
+*.sql
+*.sqlite
+*.db
+
+# Cache and temporary files
+/cache/
+/tmp/
+/temp/
+*.cache
+*.tmp
+
+# Uploaded files (keep directory structure but not files)
+/public/uploads/*
+!/public/uploads/.gitkeep
+/public/assets/uploads/*
+!/public/assets/uploads/.gitkeep
+
+# Backup files
+*.backup
+*.bak
+*.old
+*_backup*
+*_old*
+
+# System files
+desktop.ini
+.directory
+
+# PHP specific
+composer.phar
+/phpunit.xml
+.phpunit.result.cache
+
+# Security - Never commit these
+*.key
+*.pem
+*.crt
+*.p12
+.htpasswd
+secrets.php
+credentials.php
+
+# IDE project files
+*.iml
+.project
+.classpath
+.settings/
+
+# OS generated files
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Project specific (commented out for now, uncomment as needed)
+# /config.php
+# /admin-config.php
+
+# Keep test data out of repo
+/test-data/
+/testing/
+*.test.php
+
+# Documentation build artifacts
+/docs/build/
+/docs/_build/
