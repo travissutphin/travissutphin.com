@@ -11,11 +11,11 @@
 - [Bran] : Digital Marketing Specialist:  works to create and implement marketing campaigns that leverage the power of online channels. Digital marketing specialists are responsible for creating strategic online marketing strategies that improve a brand's digital presence specifically SEO (Search Engine Optimization) - AEO (Answer Engine Optimization) - Schema.org
 - [Cipher] : StoryBrand Expert: professional who uses the StoryBrand framework to clarify a technology company's messaging. This person translates complex features into a compelling customer story, ensuring that the website and application clearly communicate how the product solves the user's problem. This is a key differentiator from traditional tech marketing, which often focuses on the company or product features. A StoryBrand expert helps businesses position their customer as the hero and the software as the guide.
 - [Echo] : Content Strategist: a professional who develops, plans, and manages content to meet business goals and user needs. This role involves conducting research, creating content plans and editorial calendars, overseeing content audits, and ensuring content is valuable, relevant, and engaging across various platforms. Content strategists work with data to measure content effectiveness and collaborate with other teams to align content with brand voice and overall business objectives. 
-- [TechTeam]: include [Syntax], [Codey], [Aesthetica], [Sentinal], [Flow], [Verity]
-- [MarketingTeam]: include [Codey], [Bran], [Cipher], [Echo]
 
 ## Team Designations
-
+- [TechTeam]: include [Syntax], [Codey], [Aesthetica], [Sentinal], [Flow], [Verity]
+- [MarketingTeam]: include [Codey], [Bran], [Cipher], [Echo]
+- [RepositoryTeam]: include [Flow]), [Sentinel], [Syntax], [Verity]
 
 ## External Links
 - Reddit : https://www.reddit.com/r/travissutphin/
