@@ -3,6 +3,9 @@
 require_once '../config.php';
 require_once '../lib/functions.php';
 
+// Enforce HTTPS in production
+enforce_https();
+
 // Get the request URI
 $request_uri = $_SERVER['REQUEST_URI'];
 $request_uri = strtok($request_uri, '?'); // Remove query string
@@ -31,8 +34,7 @@ $routes = [
     'projects' => 'projects.php',
     'team' => 'team.php',
     'contact' => 'contact.php',
-    'blog' => 'blog-list.php',
-    'admin' => '../admin.php'
+    'blog' => 'blog-list.php'
 ];
 
 // Check if route starts with 'blog/' for individual blog posts
@@ -42,11 +44,6 @@ if (strpos($route, 'blog/') === 0) {
     exit;
 }
 
-// Handle admin route specially
-if ($route === 'admin') {
-    require_once '../admin.php';
-    exit;
-}
 
 // Check if route exists
 if (array_key_exists($route, $routes)) {

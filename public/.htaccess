@@ -1,12 +1,8 @@
 RewriteEngine On
 
-# Redirect to HTTPS (uncomment in production)
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Redirect www to non-www (uncomment and adjust as needed)
-# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# Redirect www to non-www only (let Cloudways handle HTTPS)
+RewriteCond %{HTTP_HOST} ^www\.travissutphin\.com$ [NC]
+RewriteRule ^(.*)$ https://travissutphin.com/$1 [L,R=301]
 
 # Prevent direct access to files
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -17,9 +13,17 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 # Security headers
 <IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
+    # Set environment variable for production
+    SetEnvIf Host "travissutphin\.com" PRODUCTION
+
+    # Always set basic security headers
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # HTTPS-specific headers (production only)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=PRODUCTION
 </IfModule>
 
 # Disable directory browsing

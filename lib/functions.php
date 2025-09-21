@@ -2,6 +2,33 @@
 // Helper functions
 
 /**
+ * Enforce HTTPS in production
+ */
+function enforce_https() {
+    // Only enforce in production
+    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+    $is_production = ($host === 'travissutphin.com' || $host === 'www.travissutphin.com');
+
+    if ($is_production && !is_https()) {
+        $redirect_url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        header('Location: ' . $redirect_url, true, 301);
+        exit;
+    }
+}
+
+/**
+ * Check if the current request is over HTTPS
+ */
+function is_https() {
+    return (
+        (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+        $_SERVER['SERVER_PORT'] == 443 ||
+        (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+        (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on')
+    );
+}
+
+/**
  * Render a partial template with data
  */
 function render_partial($name, $data = []) {
