@@ -24,7 +24,7 @@
 
 
 ## Core Principle
-Keep it simple, efficient, robust, and scalable. No overengineering.
+Keep it simple, efficient, robust, best practice and scalable. No overengineering.
 
 ## Tech Stack
 - PHP 8+ (file-based, no database)

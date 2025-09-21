@@ -21,37 +21,39 @@
 </section>
 
 <!-- Problem Agitation (StoryBrand) -->
-<section class="py-16 px-4 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-dark-green mb-6">You're Stuck Because...</h2>
+<section class="stuck-section py-16 px-4">
+    <div class="floating-badge floating-badge-1"></div>
+    <div class="floating-badge floating-badge-2"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+        <h2 class="text-3xl font-bold text-theme-primary mb-6">You're Stuck Because...</h2>
         <div class="grid md:grid-cols-3 gap-6">
-            <div class="p-6">
-                <i data-lucide="clock" class="w-12 h-12 text-red-500 mx-auto mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2">Time Is Running Out</h3>
-                <p class="text-gray-dark">Your competitors launch while your app collects dust</p>
+            <div class="stuck-card">
+                <i data-lucide="clock" class="stuck-icon w-12 h-12 text-red-500 mx-auto mb-4"></i>
+                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Time Is Running Out</h3>
+                <p class="text-theme-secondary">Your competitors launch while your app collects dust</p>
             </div>
-            <div class="p-6">
-                <i data-lucide="users-x" class="w-12 h-12 text-red-500 mx-auto mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2">Your Developer Quit</h3>
-                <p class="text-gray-dark">Left with messy code and no documentation</p>
+            <div class="stuck-card">
+                <i data-lucide="code-2" class="stuck-icon w-12 h-12 text-red-500 mx-auto mb-4"></i>
+                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Your Developer Quit</h3>
+                <p class="text-theme-secondary">Left with messy code and no documentation</p>
             </div>
-            <div class="p-6">
-                <i data-lucide="ban" class="w-12 h-12 text-red-500 mx-auto mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2">Perfectionism Paralysis</h3>
-                <p class="text-gray-dark">Waiting for "perfect" while missing real opportunities</p>
+            <div class="stuck-card">
+                <i data-lucide="ban" class="stuck-icon w-12 h-12 text-red-500 mx-auto mb-4"></i>
+                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Perfectionism Paralysis</h3>
+                <p class="text-theme-secondary">Waiting for "perfect" while missing real opportunities</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Solution - Services Grid with Better Visual Hierarchy -->
-<section class="py-16 px-4 bg-gray-light">
+<section class="unstuck-section py-16 px-4">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-dark-green mb-4">
+            <h2 class="text-3xl font-bold text-theme-primary mb-4">
                 Here's How I'll Get You Unstuck
             </h2>
-            <p class="text-xl text-gray-dark max-w-3xl mx-auto">
+            <p class="text-xl text-theme-secondary max-w-3xl mx-auto">
                 Choose the help you need. Most founders start with "Finish Your App" then add AI capabilities.
             </p>
         </div>
@@ -60,20 +62,6 @@
         <div class="grid md:grid-cols-3 gap-8 mb-12">
             <?php
             $primaryServices = [
-                [
-                    'icon' => 'rocket',
-                    'title' => 'Finish Your App',
-                    'subtitle' => 'Most Popular',
-                    'description' => 'I\'ll complete your stalled project in 30 days or less.',
-                    'features' => [
-                        'Full code audit in 48 hours',
-                        'Complete remaining features',
-                        'Fix all critical bugs',
-                        'Deploy to production'
-                    ],
-                    'cta' => 'Start Free Audit',
-                    'highlight' => true
-                ],
                 [
                     'icon' => 'sparkles',
                     'title' => 'Add AI Powers',
@@ -87,6 +75,20 @@
                     ],
                     'cta' => 'See AI Options',
                     'highlight' => false
+                ],
+                [
+                    'icon' => 'rocket',
+                    'title' => 'Finish Your App',
+                    'subtitle' => 'Most Popular',
+                    'description' => 'I\'ll complete your stalled project in 30 days or less.',
+                    'features' => [
+                        'Full code audit in 48 hours',
+                        'Complete remaining features',
+                        'Fix all critical bugs',
+                        'Deploy to production'
+                    ],
+                    'cta' => 'Start Free Audit',
+                    'highlight' => true
                 ],
                 [
                     'icon' => 'shield',
@@ -105,7 +107,7 @@
             ];
 
             foreach ($primaryServices as $service): ?>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden <?php echo $service['highlight'] ? 'ring-2 ring-primary-green transform scale-105' : ''; ?> card-hover">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden ring-2 ring-primary-green <?php echo $service['highlight'] ? 'transform scale-105' : ''; ?> card-hover">
                     <?php if ($service['highlight']): ?>
                         <div class="bg-gradient-to-r from-primary-green to-primary-blue text-white text-center py-2 text-sm font-semibold">
                             MOST FOUNDERS START HERE
@@ -144,7 +146,7 @@
 
         <!-- Additional Services -->
         <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-dark-green mb-4">Also Available</h3>
+            <h3 class="text-2xl font-bold text-theme-primary mb-4">Also Available</h3>
         </div>
         <div class="grid md:grid-cols-2 gap-6">
             <?php
@@ -177,69 +179,43 @@
 </section>
 
 <!-- Process Section (Guide's Plan) -->
-<section class="py-16 px-4 bg-white">
+<section class="process-section py-16 px-4">
     <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center text-dark-green mb-4">
+        <h2 class="text-3xl font-bold text-center text-theme-primary mb-4">
             My Simple 3-Step Process
         </h2>
-        <p class="text-xl text-center text-gray-dark mb-12 max-w-3xl mx-auto">
+        <p class="text-xl text-center text-theme-secondary mb-12 max-w-3xl mx-auto">
             No lengthy contracts. No surprise costs. Just results.
         </p>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+        <div class="process-timeline grid md:grid-cols-3 gap-8">
+            <div class="process-step text-center">
+                <div class="process-number w-20 h-20 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
                     1
                 </div>
                 <h3 class="text-xl font-semibold mb-3">Free Technical Audit</h3>
-                <p class="text-gray-dark">I review your code and create a detailed roadmap in 48 hours</p>
-                <p class="text-sm text-primary-blue mt-2 font-semibold">Day 0-2</p>
+                <p>I review your code and create a detailed roadmap in 48 hours</p>
+                <span class="process-date">Day 0-2</span>
             </div>
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+            <div class="process-step text-center">
+                <div class="process-number w-20 h-20 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
                     2
                 </div>
                 <h3 class="text-xl font-semibold mb-3">Rapid Development</h3>
-                <p class="text-gray-dark">Using AI tools, I complete features 3x faster than traditional dev</p>
-                <p class="text-sm text-primary-blue mt-2 font-semibold">Day 3-25</p>
+                <p>Using AI tools, I complete features 3x faster than traditional dev</p>
+                <span class="process-date">Day 3-25</span>
             </div>
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+            <div class="process-step text-center">
+                <div class="process-number w-20 h-20 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
                     3
                 </div>
                 <h3 class="text-xl font-semibold mb-3">Launch & Support</h3>
-                <p class="text-gray-dark">Your app goes live with monitoring and 30-day support included</p>
-                <p class="text-sm text-primary-blue mt-2 font-semibold">Day 26-30</p>
+                <p>Your app goes live with monitoring and 30-day support included</p>
+                <span class="process-date">Day 26-30</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Social Proof / Results -->
-<section class="py-16 px-4 bg-gray-light">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-dark-green mb-12">Real Results for Real Founders</h2>
-        <div class="grid md:grid-cols-3 gap-8 mb-12">
-            <div>
-                <div class="text-4xl font-bold text-primary-green mb-2">50+</div>
-                <p class="text-gray-dark">Apps Completed</p>
-            </div>
-            <div>
-                <div class="text-4xl font-bold text-primary-green mb-2">30</div>
-                <p class="text-gray-dark">Average Days to Launch</p>
-            </div>
-            <div>
-                <div class="text-4xl font-bold text-primary-green mb-2">3x</div>
-                <p class="text-gray-dark">Faster with AI Tools</p>
-            </div>
-        </div>
-        <blockquote class="bg-white rounded-lg p-8 shadow-md max-w-2xl mx-auto">
-            <p class="text-lg italic text-gray-dark mb-4">
-                "Travis took our stalled MVP and had it live in 3 weeks. The AI features he added doubled our user engagement."
-            </p>
-            <cite class="text-sm text-primary-blue font-semibold">- Founder, SaaS Startup</cite>
-        </blockquote>
-    </div>
-</section>
 
 <!-- Final CTA (Clear Call to Action) -->
 <section class="py-16 px-4 gradient-green-blue">

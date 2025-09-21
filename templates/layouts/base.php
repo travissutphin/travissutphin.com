@@ -20,6 +20,30 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Theme CSS Variables -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/theme-variables.css">
+
+    <!-- Home Page Section Styles -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/home-sections.css">
+
+    <!-- Services Page Section Styles -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/services-sections.css">
+
+    <!-- Projects Page Section Styles -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/projects-sections.css">
+
+    <!-- Team Page Section Styles -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/team-sections.css">
+
+    <!-- Blog Page Section Styles -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/blog-sections.css">
+
+    <!-- Blog Post Page Section Styles -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/blog-post-sections.css">
+
+    <!-- Contact Page Section Styles -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/contact-sections.css">
+
     <!-- Theme Switcher (Load early to prevent FOUC) -->
     <script src="<?php echo BASE_PATH; ?>/js/theme-switcher.js"></script>
     <script>

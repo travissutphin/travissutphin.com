@@ -27,7 +27,11 @@ function render_page($template, $data = []) {
     if (!isset($title)) {
         $title = SITE_NAME;
     } else {
-        $title = $title . ' - ' . SITE_NAME;
+        // Don't append site name if it's a blog post (they already have complete titles)
+        $is_blog_post_flag = isset($data['is_blog_post']) ? $data['is_blog_post'] : false;
+        if (!$is_blog_post_flag) {
+            $title = $title . ' - ' . SITE_NAME;
+        }
     }
 
     // Set default meta description

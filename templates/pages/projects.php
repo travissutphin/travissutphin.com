@@ -13,11 +13,13 @@
 </section>
 
 <!-- Featured Projects -->
-<section class="py-16 px-4 bg-white">
-    <div class="max-w-7xl mx-auto">
+<section class="featured-projects-section py-16 px-4">
+    <div class="floating-shape floating-shape-1"></div>
+    <div class="floating-shape floating-shape-2"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-dark-green mb-4">Featured Projects</h2>
-            <p class="text-xl text-gray-dark max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Featured Projects</h2>
+            <p class="text-xl max-w-3xl mx-auto">
                 From MVP to market leader. See how we help founders go from idea to income.
             </p>
         </div>
@@ -83,7 +85,7 @@
             ];
 
             foreach ($projects as $project): ?>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover group <?php echo isset($project['highlight']) && $project['highlight'] ? 'ring-2 ring-primary-green' : ''; ?>">
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden group <?php echo isset($project['highlight']) && $project['highlight'] ? 'ring-2 ring-primary-green' : ''; ?>">
                     <?php if (isset($project['highlight']) && $project['highlight']): ?>
                         <div class="bg-gradient-to-r from-primary-green to-primary-blue text-white text-center py-1 text-xs font-semibold">
                             CASE STUDY AVAILABLE
@@ -122,7 +124,7 @@
                         <!-- Tech Stack -->
                         <div class="flex flex-wrap gap-2 mb-4">
                             <?php foreach ($project['tech'] as $tech): ?>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                                <span class="tech-tag px-2 py-1 text-xs rounded">
                                     <?php echo e($tech); ?>
                                 </span>
                             <?php endforeach; ?>
@@ -144,9 +146,9 @@
 </section>
 
 <!-- Client Testimonial -->
-<section class="py-16 px-4 bg-gray-light">
+<section class="testimonial-section py-16 px-4">
     <div class="max-w-4xl mx-auto">
-        <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+        <div class="testimonial-card rounded-lg shadow-lg p-8 md:p-12">
             <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
                     <div class="w-16 h-16 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center">
@@ -154,13 +156,13 @@
                     </div>
                 </div>
                 <div>
-                    <blockquote class="text-lg text-gray-dark mb-4">
+                    <blockquote class="text-lg text-theme-primary mb-4">
                         "Travis and his AI team took our half-finished MVP and turned it into a market-ready product in just 4 weeks.
                         The AI features they added became our main differentiator. We're now at $50K MRR and growing fast."
                     </blockquote>
                     <cite class="text-sm">
-                        <span class="font-semibold text-dark-green">Sarah Mitchell</span>
-                        <span class="text-gray-600"> — Founder, TaskFlow Pro</span>
+                        <span class="font-semibold text-theme-primary">Sarah Mitchell</span>
+                        <span class="text-theme-secondary"> — Founder, TaskFlow Pro</span>
                     </cite>
                 </div>
             </div>
@@ -169,11 +171,11 @@
 </section>
 
 <!-- Current Projects / Coming Soon -->
-<section class="py-16 px-4 bg-white">
-    <div class="max-w-7xl mx-auto">
+<section class="building-section py-16 px-4">
+    <div class="max-w-7xl mx-auto relative z-10">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-dark-green mb-4">Currently Building</h2>
-            <p class="text-xl text-gray-dark max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Currently Building</h2>
+            <p class="text-xl max-w-3xl mx-auto">
                 Exciting projects in development. Reserve your spot for Q1 2025.
             </p>
         </div>
@@ -202,16 +204,16 @@
             ];
 
             foreach ($upcoming as $project): ?>
-                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                    <h3 class="font-bold text-dark-green mb-2"><?php echo e($project['name']); ?></h3>
+                <div class="progress-card">
+                    <h3 class="font-bold mb-2"><?php echo e($project['name']); ?></h3>
                     <p class="text-sm text-primary-blue font-semibold mb-3"><?php echo e($project['category']); ?></p>
                     <div class="mb-2">
                         <div class="flex justify-between text-sm mb-1">
-                            <span class="text-gray-600"><?php echo e($project['status']); ?></span>
-                            <span class="text-gray-dark font-semibold"><?php echo e($project['completion']); ?></span>
+                            <span><?php echo e($project['status']); ?></span>
+                            <span class="font-semibold"><?php echo e($project['completion']); ?></span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-gradient-to-r from-primary-green to-primary-blue h-2 rounded-full"
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill"
                                  style="width: <?php echo e($project['completion']); ?>"></div>
                         </div>
                     </div>
@@ -222,7 +224,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 px-4 gradient-green-blue">
+<section class="projects-cta-section py-16 px-4 gradient-green-blue">
     <div class="max-w-4xl mx-auto text-center text-white">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">
             Ready to See Your Project Here?

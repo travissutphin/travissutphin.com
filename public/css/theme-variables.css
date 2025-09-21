@@ -180,6 +180,25 @@ footer {
   border-top: 1px solid var(--color-border-primary);
 }
 
+/* Logo Theme Switching */
+/* Default/Light mode - show light logo, hide dark logo */
+.logo-light {
+  display: block;
+}
+
+.logo-dark {
+  display: none;
+}
+
+/* Dark mode - show dark logo, hide light logo */
+[data-theme="dark"] .logo-light {
+  display: none !important;
+}
+
+[data-theme="dark"] .logo-dark {
+  display: block !important;
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
   background-color: var(--color-bg-tertiary);

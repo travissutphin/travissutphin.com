@@ -51,10 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<section class="py-16 px-4">
-    <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl font-bold text-center text-dark-green mb-8">Get In Touch</h1>
-        <p class="text-xl text-center text-gray-dark mb-12">
+<section class="contact-section py-16 px-4">
+    <div class="floating-element floating-element-1"></div>
+    <div class="floating-element floating-element-2"></div>
+    <div class="max-w-3xl mx-auto relative z-10">
+        <h1 class="contact-title text-4xl font-bold text-center mb-8">Get In Touch</h1>
+        <p class="contact-subtitle text-xl text-center mb-12">
             Ready to discuss your project? I'd love to hear from you.
         </p>
 
@@ -74,23 +76,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]); ?>
         <?php endif; ?>
 
-        <div class="bg-white rounded-lg shadow-md p-8">
+        <div class="contact-card p-8">
             <?php render_partial('contact-form'); ?>
         </div>
 
-        <div class="mt-12 text-center">
-            <h2 class="text-2xl font-bold text-dark-green mb-6">Other Ways to Connect</h2>
+        <div class="connect-section mt-12 text-center">
+            <h2 class="connect-title text-2xl font-bold mb-6">Other Ways to Connect</h2>
 
             <div class="flex justify-center items-center space-x-2 mb-4">
-                <div class="w-10 h-10 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center">
+                <div class="email-icon-container w-10 h-10 rounded-full flex items-center justify-center">
                     <i data-lucide="mail" class="w-5 h-5 text-white"></i>
                 </div>
-                <a href="mailto:<?php echo SITE_EMAIL; ?>" class="text-primary-blue hover:text-dark-green font-medium">
+                <a href="mailto:<?php echo SITE_EMAIL; ?>" class="connect-email font-medium">
                     <?php echo SITE_EMAIL; ?>
                 </a>
             </div>
 
-            <div class="flex justify-center items-center space-x-2 text-gray-dark">
+            <div class="flex justify-center items-center space-x-2 connect-info">
                 <i data-lucide="clock" class="w-4 h-4 text-primary-green"></i>
                 <span>Response time: Usually within 24 hours</span>
             </div>

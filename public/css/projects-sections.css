@@ -1,0 +1,375 @@
+/* Projects Page Section Enhancements for Visual Hierarchy */
+
+/* ====================================
+   Featured Projects Section
+   - Portfolio showcase with depth
+   ==================================== */
+.featured-projects-section {
+    position: relative;
+    background: linear-gradient(135deg,
+        rgba(91, 181, 91, 0.02) 0%,
+        rgba(41, 98, 255, 0.02) 100%);
+    overflow: hidden;
+}
+
+[data-theme="dark"] .featured-projects-section {
+    background: linear-gradient(135deg,
+        rgba(34, 197, 94, 0.05) 0%,
+        rgba(59, 130, 246, 0.05) 100%);
+}
+
+/* Animated gradient mesh background */
+.featured-projects-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(91, 181, 91, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(41, 98, 255, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(91, 181, 91, 0.02) 0%, transparent 60%);
+    animation: mesh-float 20s ease-in-out infinite;
+}
+
+@keyframes mesh-float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(20px, -20px) scale(1.05); }
+    66% { transform: translate(-20px, 10px) scale(0.95); }
+}
+
+/* Project cards with enhanced styling */
+.project-card {
+    background: var(--color-bg-primary);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+[data-theme="dark"] .project-card {
+    background: var(--color-bg-card);
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .project-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Live status badge glow */
+.live-badge {
+    animation: live-pulse 2s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+}
+
+/* Tech stack tags */
+.tech-tag {
+    background: linear-gradient(135deg,
+        rgba(91, 181, 91, 0.1) 0%,
+        rgba(41, 98, 255, 0.1) 100%);
+    color: var(--color-text-secondary);
+    transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .tech-tag {
+    background: linear-gradient(135deg,
+        rgba(91, 181, 91, 0.2) 0%,
+        rgba(41, 98, 255, 0.2) 100%);
+}
+
+.tech-tag:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg,
+        rgba(91, 181, 91, 0.2) 0%,
+        rgba(41, 98, 255, 0.2) 100%);
+}
+
+/* ====================================
+   Testimonial Section
+   - Trust and credibility
+   ==================================== */
+.testimonial-section {
+    position: relative;
+    background: var(--color-bg-secondary);
+}
+
+[data-theme="dark"] .testimonial-section {
+    background: rgba(17, 24, 39, 0.95);
+}
+
+.testimonial-card {
+    background: var(--color-bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .testimonial-card {
+    background: var(--color-bg-card);
+}
+
+/* Quote decoration */
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 120px;
+    color: var(--color-primary-green);
+    opacity: 0.1;
+    font-family: Georgia, serif;
+}
+
+/* ====================================
+   Currently Building Section
+   - Work in progress showcase
+   ==================================== */
+.building-section {
+    position: relative;
+    background: linear-gradient(180deg,
+        var(--color-bg-primary) 0%,
+        var(--color-bg-secondary) 100%);
+    overflow: hidden;
+}
+
+[data-theme="dark"] .building-section {
+    background: linear-gradient(180deg,
+        rgba(31, 41, 55, 0.95) 0%,
+        rgba(17, 24, 39, 1) 100%);
+}
+
+/* Animated construction lines */
+.building-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--color-primary-blue) 25%,
+        var(--color-primary-green) 50%,
+        var(--color-primary-blue) 75%,
+        transparent 100%);
+    animation: scan-line 8s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes scan-line {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+}
+
+/* In-progress project cards */
+.progress-card {
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .progress-card {
+    background: rgba(31, 41, 55, 0.5);
+    border-color: rgba(75, 85, 99, 0.3);
+}
+
+.progress-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary-green);
+    box-shadow: 0 10px 30px rgba(91, 181, 91, 0.1);
+}
+
+/* Progress bar styling */
+.progress-bar-container {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 8px;
+    position: relative;
+}
+
+[data-theme="dark"] .progress-bar-container {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg,
+        var(--color-primary-green) 0%,
+        var(--color-primary-blue) 100%);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ====================================
+   CTA Section Enhancement
+   ==================================== */
+.projects-cta-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-conic-gradient(
+        from 0deg at 50% 50%,
+        rgba(255, 255, 255, 0.02) 0deg,
+        transparent 10deg,
+        transparent 20deg,
+        rgba(255, 255, 255, 0.02) 30deg
+    );
+    animation: rotate-slow 60s linear infinite;
+}
+
+@keyframes rotate-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ====================================
+   Text and Typography Updates
+   ==================================== */
+.featured-projects-section h2,
+.building-section h2,
+.testimonial-section h2 {
+    color: var(--color-text-primary);
+}
+
+.featured-projects-section p,
+.building-section p,
+.testimonial-section p {
+    color: var(--color-text-secondary);
+}
+
+.project-card h3 {
+    color: var(--color-text-primary);
+}
+
+.project-card p,
+.project-card span {
+    color: var(--color-text-secondary);
+}
+
+.progress-card h3 {
+    color: var(--color-text-primary);
+}
+
+.progress-card p,
+.progress-card span {
+    color: var(--color-text-secondary);
+}
+
+/* ====================================
+   Visual Separators
+   ==================================== */
+.section-gradient-divider {
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--color-primary-green) 25%,
+        var(--color-primary-blue) 50%,
+        var(--color-primary-green) 75%,
+        transparent 100%);
+    margin: 4rem 0;
+    opacity: 0.3;
+}
+
+[data-theme="dark"] .section-gradient-divider {
+    opacity: 0.5;
+}
+
+/* ====================================
+   Responsive & Accessibility
+   ==================================== */
+@media (max-width: 768px) {
+    .featured-projects-section::before,
+    .building-section::before {
+        animation: none;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ====================================
+   Floating Decorative Elements
+   ==================================== */
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+        var(--color-primary-green) 0%,
+        var(--color-primary-blue) 100%);
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.floating-shape-1 {
+    width: 200px;
+    height: 200px;
+    top: 5%;
+    right: 10%;
+    animation: float-slow 25s ease-in-out infinite;
+}
+
+.floating-shape-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 10%;
+    left: 5%;
+    animation: float-reverse 20s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(30px, -40px) rotate(180deg); }
+}
+
+@keyframes float-reverse {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30px, -30px) scale(1.2); }
+}

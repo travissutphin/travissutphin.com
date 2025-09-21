@@ -61,78 +61,78 @@
 </section>
 
 <!-- Problem Section (StoryBrand) -->
-<section class="py-16 px-4 bg-white">
+<section class="problem-section py-16 px-4">
     <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-dark-green mb-6">The Problem You're Facing</h2>
+        <h2 class="text-3xl font-bold text-theme-primary mb-6">The Problem You're Facing</h2>
         <div class="grid md:grid-cols-3 gap-6">
-            <div class="p-6">
-                <i data-lucide="x-circle" class="w-12 h-12 text-red-500 mx-auto mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2">Incomplete Project</h3>
-                <p class="text-gray-dark">Your app is 80% done but that last 20% feels impossible</p>
+            <div class="problem-card p-6">
+                <i data-lucide="x-circle" class="problem-icon w-12 h-12 text-red-500 mx-auto mb-4"></i>
+                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Incomplete Project</h3>
+                <p class="text-theme-secondary">Your app is 80% done but that last 20% feels impossible</p>
             </div>
-            <div class="p-6">
-                <i data-lucide="trending-down" class="w-12 h-12 text-red-500 mx-auto mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2">Lost Revenue</h3>
-                <p class="text-gray-dark">Every day without launch is money left on the table</p>
+            <div class="problem-card p-6">
+                <i data-lucide="trending-down" class="problem-icon w-12 h-12 text-red-500 mx-auto mb-4"></i>
+                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Lost Revenue</h3>
+                <p class="text-theme-secondary">Every day without launch is money left on the table</p>
             </div>
-            <div class="p-6">
-                <i data-lucide="alert-triangle" class="w-12 h-12 text-red-500 mx-auto mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2">Technical Debt</h3>
-                <p class="text-gray-dark">The longer you wait, the harder it becomes to finish</p>
+            <div class="problem-card p-6">
+                <i data-lucide="alert-triangle" class="problem-icon w-12 h-12 text-red-500 mx-auto mb-4"></i>
+                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Technical Debt</h3>
+                <p class="text-theme-secondary">The longer you wait, the harder it becomes to finish</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Process Section -->
-<section class="py-16 px-4 bg-gray-light">
+<section class="path-section py-16 px-4">
     <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center text-dark-green mb-4">
+        <h2 class="text-3xl font-bold text-center text-theme-primary mb-4">
             Your Path to Launch
         </h2>
-        <p class="text-xl text-center text-gray-dark mb-12 max-w-3xl mx-auto">
+        <p class="text-xl text-center text-theme-secondary mb-12 max-w-3xl mx-auto">
             I've helped dozens of founders finish their apps and launch successfully. Here's how we'll get yours across the finish line:
         </p>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg p-8 shadow-md text-center">
-                <div class="w-16 h-16 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+        <div class="path-container grid md:grid-cols-3 gap-8">
+            <div class="path-card rounded-lg p-8 text-center">
+                <div class="path-number w-16 h-16 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                     1
                 </div>
-                <h3 class="text-xl font-semibold mb-3">Free Technical Audit</h3>
-                <p class="text-gray-dark">I'll review your codebase and create a clear roadmap to completion in 48 hours.</p>
+                <h3 class="text-xl font-semibold mb-3 text-theme-primary">Free Technical Audit</h3>
+                <p class="text-theme-secondary">I'll review your codebase and create a clear roadmap to completion in 48 hours.</p>
             </div>
-            <div class="bg-white rounded-lg p-8 shadow-md text-center">
-                <div class="w-16 h-16 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            <div class="path-card rounded-lg p-8 text-center">
+                <div class="path-number w-16 h-16 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                     2
                 </div>
-                <h3 class="text-xl font-semibold mb-3">Rapid Development</h3>
-                <p class="text-gray-dark">Using AI tools and automation, I'll complete features 3x faster than traditional development.</p>
+                <h3 class="text-xl font-semibold mb-3 text-theme-primary">Rapid Development</h3>
+                <p class="text-theme-secondary">Using AI tools and automation, I'll complete features 3x faster than traditional development.</p>
             </div>
-            <div class="bg-white rounded-lg p-8 shadow-md text-center">
-                <div class="w-16 h-16 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            <div class="path-card rounded-lg p-8 text-center">
+                <div class="path-number w-16 h-16 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                     3
                 </div>
-                <h3 class="text-xl font-semibold mb-3">Launch & Scale</h3>
-                <p class="text-gray-dark">Your app goes live with monitoring, support, and a plan for growth.</p>
+                <h3 class="text-xl font-semibold mb-3 text-theme-primary">Launch & Scale</h3>
+                <p class="text-theme-secondary">Your app goes live with monitoring, support, and a plan for growth.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Success Stories Section -->
-<section class="py-16 px-4 bg-white">
+<section class="success-section py-16 px-4">
     <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-dark-green mb-12">What Success Looks Like</h2>
+        <h2 class="text-3xl font-bold text-theme-primary mb-12">What Success Looks Like</h2>
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-gray-light rounded-lg p-6">
-                <i data-lucide="check-circle" class="w-10 h-10 text-primary-green mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2">Finally Launched</h3>
-                <p class="text-gray-dark">Your app is live, generating revenue, and serving customers</p>
+            <div class="success-card rounded-lg p-6">
+                <i data-lucide="check-circle" class="success-icon w-10 h-10 text-primary-green mb-4"></i>
+                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Finally Launched</h3>
+                <p class="text-theme-secondary">Your app is live, generating revenue, and serving customers</p>
             </div>
-            <div class="bg-gray-light rounded-lg p-6">
-                <i data-lucide="trending-up" class="w-10 h-10 text-primary-green mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2">Growing Fast</h3>
-                <p class="text-gray-dark">With AI automation built-in, you can scale without adding complexity</p>
+            <div class="success-card rounded-lg p-6">
+                <i data-lucide="trending-up" class="success-icon w-10 h-10 text-primary-green mb-4"></i>
+                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Growing Fast</h3>
+                <p class="text-theme-secondary">With AI automation built-in, you can scale without adding complexity</p>
             </div>
         </div>
     </div>

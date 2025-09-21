@@ -68,7 +68,7 @@ function calculate_reading_time($content) {
                 <div class="relative">
                     <input type="text"
                            placeholder="What's your next small win?"
-                           class="w-full px-6 py-4 pr-12 rounded-full text-dark-green text-lg"
+                           class="search-input w-full px-6 py-4 pr-12 rounded-full text-lg"
                            onclick="alert('Search coming soon! For now, explore by interest below.')">
                     <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
                         <i data-lucide="search" class="w-6 h-6 text-gray-400"></i>
@@ -93,15 +93,15 @@ function calculate_reading_time($content) {
 </section>
 
 <!-- Category Filter Bar -->
-<section class="py-8 px-4 bg-white border-b">
+<section class="blog-filter-section py-8 px-4">
     <div class="max-w-7xl mx-auto">
-        <p class="text-center text-sm text-gray-dark mb-4">Explore by interest:</p>
+        <p class="text-center text-sm text-theme-secondary mb-4">Explore by interest:</p>
         <div class="flex flex-wrap justify-center gap-3">
             <a href="<?php echo BASE_PATH; ?>/blog"
                class="px-5 py-2 rounded-full text-sm font-semibold transition-all
                       <?php echo !$selected_tag
-                          ? 'bg-gradient-to-r from-primary-green to-primary-blue text-white shadow-md'
-                          : 'bg-gray-100 text-gray-dark hover:bg-gray-200'; ?>">
+                          ? 'filter-tag-active'
+                          : 'filter-tag'; ?>">
                 All Topics <?php echo !$selected_tag ? '(' . $total_posts . ')' : ''; ?>
             </a>
             <?php foreach ($all_tags as $tag):
@@ -112,8 +112,8 @@ function calculate_reading_time($content) {
                 <a href="<?php echo BASE_PATH; ?>/blog?tag=<?php echo urlencode($tag); ?>"
                    class="px-5 py-2 rounded-full text-sm font-semibold transition-all
                           <?php echo $selected_tag === $tag
-                              ? 'bg-gradient-to-r from-primary-green to-primary-blue text-white shadow-md'
-                              : 'bg-gray-100 text-gray-dark hover:bg-gray-200'; ?>">
+                              ? 'filter-tag-active'
+                              : 'filter-tag'; ?>">
                     <?php echo e($tag); ?> (<?php echo $tag_count; ?>)
                 </a>
             <?php endforeach; ?>
@@ -122,12 +122,12 @@ function calculate_reading_time($content) {
 </section>
 
 <!-- Main Blog Content -->
-<section class="py-16 px-4 bg-gray-light">
+<section class="blog-content-section py-16 px-4">
     <div class="max-w-7xl mx-auto">
         <?php if (empty($posts)): ?>
             <div class="text-center py-12">
                 <i data-lucide="inbox" class="w-16 h-16 text-gray-400 mx-auto mb-4"></i>
-                <p class="text-gray-dark text-lg">
+                <p class="text-theme-secondary text-lg">
                     <?php echo $selected_tag ? 'No posts found with tag "' . e($selected_tag) . '".' : 'No blog posts yet. Check back soon!'; ?>
                 </p>
             </div>
@@ -138,15 +138,15 @@ function calculate_reading_time($content) {
                     <?php if ($featured_post && !$selected_tag && $page == 1): ?>
                         <!-- Featured Post Card -->
                         <div class="mb-12 animate-on-scroll">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform card-hover">
+                            <div class="featured-post-card">
                                 <!-- Featured Badge -->
-                                <div class="bg-gradient-to-r from-primary-green to-primary-blue text-white text-center py-2 text-sm font-semibold">
+                                <div class="featured-badge text-white text-center py-2 text-sm font-semibold">
                                     ♥ READER FAVORITE
                                 </div>
 
                                 <div class="p-8">
                                     <!-- Thumbnail Placeholder -->
-                                    <div class="bg-gradient-to-br from-primary-green to-primary-blue h-64 rounded-lg mb-6 flex items-center justify-center">
+                                    <div class="blog-thumbnail bg-gradient-to-br from-primary-green to-primary-blue h-64 rounded-lg mb-6 flex items-center justify-center">
                                         <i data-lucide="file-text" class="w-20 h-20 text-white opacity-50"></i>
                                     </div>
 
@@ -171,12 +171,12 @@ function calculate_reading_time($content) {
                                     </div>
 
                                     <!-- Title & Excerpt -->
-                                    <h2 class="text-2xl font-bold text-dark-green mb-3 hover:text-primary-blue transition-colors">
+                                    <h2 class="blog-title text-2xl font-bold mb-3 hover:text-primary-blue transition-colors">
                                         <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($featured_post['slug']); ?>">
                                             <?php echo e($featured_post['title'] ?? 'Untitled'); ?>
                                         </a>
                                     </h2>
-                                    <p class="text-gray-dark mb-6 line-clamp-3">
+                                    <p class="blog-excerpt mb-6 line-clamp-3">
                                         <?php echo e($featured_post['excerpt'] ?? ''); ?>
                                     </p>
 
@@ -187,8 +187,8 @@ function calculate_reading_time($content) {
                                                 <span class="text-white font-semibold">TS</span>
                                             </div>
                                             <div>
-                                                <p class="text-sm font-semibold text-dark-green">Travis Sutphin</p>
-                                                <p class="text-xs text-gray-dark">Fractional CTO</p>
+                                                <p class="text-sm font-semibold text-theme-primary">Travis Sutphin</p>
+                                                <p class="text-xs text-theme-secondary">Fractional CTO</p>
                                             </div>
                                         </div>
                                         <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($featured_post['slug']); ?>"
@@ -204,10 +204,10 @@ function calculate_reading_time($content) {
                     <!-- Regular Blog Posts Grid -->
                     <div class="grid md:grid-cols-2 gap-8">
                         <?php foreach ($regular_posts as $post): ?>
-                            <div class="animate-on-scroll">
-                                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow card-hover h-full flex flex-col">
+                            <div class="animate-on-scroll blog-fade-in">
+                                <div class="blog-post-card h-full flex flex-col">
                                     <!-- Thumbnail -->
-                                    <div class="bg-gradient-to-br from-gray-200 to-gray-300 h-48 flex items-center justify-center">
+                                    <div class="blog-thumbnail h-48 flex items-center justify-center">
                                         <i data-lucide="file-text" class="w-12 h-12 text-gray-400"></i>
                                     </div>
 
@@ -233,14 +233,14 @@ function calculate_reading_time($content) {
                                         </div>
 
                                         <!-- Title -->
-                                        <h3 class="text-lg font-bold text-dark-green mb-2 line-clamp-2 hover:text-primary-blue transition-colors">
+                                        <h3 class="blog-title text-lg font-bold mb-2 line-clamp-2 hover:text-primary-blue transition-colors">
                                             <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($post['slug']); ?>">
                                                 <?php echo e($post['title'] ?? 'Untitled'); ?>
                                             </a>
                                         </h3>
 
                                         <!-- Excerpt -->
-                                        <p class="text-sm text-gray-dark mb-4 line-clamp-3 flex-grow">
+                                        <p class="blog-excerpt text-sm mb-4 line-clamp-3 flex-grow">
                                             <?php echo e($post['excerpt'] ?? ''); ?>
                                         </p>
 
@@ -249,7 +249,7 @@ function calculate_reading_time($content) {
                                             <div class="w-8 h-8 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center">
                                                 <span class="text-white text-xs font-semibold">TS</span>
                                             </div>
-                                            <span class="text-xs text-gray-dark">Travis Sutphin</span>
+                                            <span class="text-xs text-theme-secondary">Travis Sutphin</span>
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +262,7 @@ function calculate_reading_time($content) {
                         <div class="mt-12 flex justify-center items-center space-x-2">
                             <?php if ($page > 1): ?>
                                 <a href="<?php echo BASE_PATH; ?>/blog?page=<?php echo $page - 1; ?>"
-                                   class="px-4 py-2 bg-white text-gray-dark rounded-lg hover:bg-gray-100 transition-colors shadow">
+                                   class="pagination-btn px-4 py-2 rounded-lg shadow">
                                     ← Previous
                                 </a>
                             <?php endif; ?>
@@ -272,8 +272,8 @@ function calculate_reading_time($content) {
                                     <a href="<?php echo BASE_PATH; ?>/blog?page=<?php echo $i; ?>"
                                        class="w-10 h-10 flex items-center justify-center rounded-lg transition-all
                                               <?php echo $i === $page
-                                                  ? 'bg-gradient-to-r from-primary-green to-primary-blue text-white'
-                                                  : 'bg-white text-gray-dark hover:bg-gray-100'; ?>">
+                                                  ? 'pagination-active'
+                                                  : 'pagination-btn'; ?>">
                                         <?php echo $i; ?>
                                     </a>
                                 <?php endfor; ?>
@@ -281,7 +281,7 @@ function calculate_reading_time($content) {
 
                             <?php if ($page < $total_pages): ?>
                                 <a href="<?php echo BASE_PATH; ?>/blog?page=<?php echo $page + 1; ?>"
-                                   class="px-4 py-2 bg-white text-gray-dark rounded-lg hover:bg-gray-100 transition-colors shadow">
+                                   class="pagination-btn px-4 py-2 rounded-lg shadow">
                                     Next →
                                 </a>
                             <?php endif; ?>
@@ -293,7 +293,7 @@ function calculate_reading_time($content) {
                 <aside class="hidden lg:block lg:w-1/4">
                     <div class="sticky top-8 space-y-8">
                         <!-- Community CTA -->
-                        <div class="bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-lg p-6">
+                        <div class="sidebar-cta text-white rounded-lg p-6">
                             <h3 class="text-xl font-bold mb-3">Need a Second Opinion?</h3>
                             <p class="text-sm mb-4 opacity-95">
                                 Sometimes a fresh perspective is all you need to move forward.
@@ -305,13 +305,13 @@ function calculate_reading_time($content) {
                         </div>
 
                         <!-- Popular Posts -->
-                        <div class="bg-white rounded-lg p-6 shadow-md">
-                            <h3 class="text-lg font-bold text-dark-green mb-4">Popular Posts</h3>
+                        <div class="sidebar-widget p-6">
+                            <h3 class="sidebar-title text-lg font-bold mb-4">Popular Posts</h3>
                             <ul class="space-y-3">
                                 <?php foreach (array_slice($all_posts, 0, 3) as $popular): ?>
                                     <li>
                                         <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($popular['slug']); ?>"
-                                           class="text-sm text-gray-dark hover:text-primary-blue transition-colors">
+                                           class="sidebar-link text-sm">
                                             <?php echo e($popular['title'] ?? 'Untitled'); ?>
                                         </a>
                                     </li>
@@ -320,12 +320,12 @@ function calculate_reading_time($content) {
                         </div>
 
                         <!-- Category Cloud -->
-                        <div class="bg-white rounded-lg p-6 shadow-md">
-                            <h3 class="text-lg font-bold text-dark-green mb-4">Categories</h3>
+                        <div class="sidebar-widget p-6">
+                            <h3 class="sidebar-title text-lg font-bold mb-4">Categories</h3>
                             <div class="flex flex-wrap gap-2">
                                 <?php foreach ($all_tags as $tag): ?>
                                     <a href="<?php echo BASE_PATH; ?>/blog?tag=<?php echo urlencode($tag); ?>"
-                                       class="px-3 py-1 bg-gray-100 text-gray-dark text-xs rounded-full hover:bg-gray-200 transition-colors">
+                                       class="filter-tag px-3 py-1 text-xs rounded-full">
                                         <?php echo e($tag); ?>
                                     </a>
                                 <?php endforeach; ?>
@@ -346,10 +346,10 @@ function calculate_reading_time($content) {
             Every Thursday: One actionable insight to move your project forward. That's it.
         </p>
         <div class="max-w-md mx-auto">
-            <div class="bg-white/10 backdrop-blur rounded-lg p-8">
+            <div class="newsletter-backdrop rounded-lg p-8">
                 <input type="email"
                        placeholder="Your best email..."
-                       class="w-full px-4 py-3 rounded-lg text-dark-green mb-4"
+                       class="search-input w-full px-4 py-3 rounded-lg mb-4"
                        onclick="alert('Newsletter launching soon! We\'ll notify you when it\'s ready.')">
                 <button class="w-full bg-white text-dark-green py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                     Save My Spot →

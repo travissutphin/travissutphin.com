@@ -2,41 +2,44 @@
     <input type="hidden" name="csrf_token" value="<?php echo e(get_csrf_token()); ?>">
 
     <div>
-        <label for="name" class="block text-sm font-medium text-gray-dark mb-2">
-            Name <span class="text-red-500">*</span>
+        <label for="name" class="contact-label block text-sm mb-2">
+            Name <span class="required-indicator">*</span>
         </label>
         <input type="text"
                id="name"
                name="name"
                required
-               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-green focus:border-transparent">
+               placeholder="Your full name"
+               class="contact-input w-full">
     </div>
 
     <div>
-        <label for="email" class="block text-sm font-medium text-gray-dark mb-2">
-            Email <span class="text-red-500">*</span>
+        <label for="email" class="contact-label block text-sm mb-2">
+            Email <span class="required-indicator">*</span>
         </label>
         <input type="email"
                id="email"
                name="email"
                required
-               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-green focus:border-transparent">
+               placeholder="your@email.com"
+               class="contact-input w-full">
     </div>
 
     <div>
-        <label for="message" class="block text-sm font-medium text-gray-dark mb-2">
-            Message <span class="text-red-500">*</span>
+        <label for="message" class="contact-label block text-sm mb-2">
+            Message <span class="required-indicator">*</span>
         </label>
         <textarea id="message"
                   name="message"
                   rows="5"
                   required
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-green focus:border-transparent"></textarea>
+                  placeholder="Tell me about your project..."
+                  class="contact-textarea w-full"></textarea>
     </div>
 
     <div>
         <button type="submit"
-                class="w-full bg-primary-green text-white font-semibold py-3 px-6 rounded-lg hover:bg-dark-green transition-colors">
+                class="contact-submit w-full">
             Send Message
         </button>
     </div>

@@ -1,0 +1,508 @@
+/* Blog Page Section Enhancements with Dark Mode Support */
+
+/* ====================================
+   Category Filter Bar
+   - Interactive filter navigation
+   ==================================== */
+.blog-filter-section {
+    background: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .blog-filter-section {
+    background: var(--color-bg-primary);
+    border-bottom-color: rgba(75, 85, 99, 0.3);
+}
+
+/* Subtle animated accent line */
+.blog-filter-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--color-primary-green) 25%,
+        var(--color-primary-blue) 50%,
+        var(--color-primary-green) 75%,
+        transparent 100%);
+    animation: slide-accent 15s linear infinite;
+}
+
+@keyframes slide-accent {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(200%); }
+}
+
+.filter-tag {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .filter-tag {
+    background: rgba(75, 85, 99, 0.3);
+}
+
+.filter-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .filter-tag:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.filter-tag-active {
+    background: linear-gradient(135deg,
+        var(--color-primary-green) 0%,
+        var(--color-primary-blue) 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(91, 181, 91, 0.3);
+}
+
+/* ====================================
+   Main Blog Content Area
+   - Blog posts grid with depth
+   ==================================== */
+.blog-content-section {
+    background: var(--color-bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .blog-content-section {
+    background: rgba(17, 24, 39, 0.95);
+}
+
+/* Subtle background pattern */
+.blog-content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(91, 181, 91, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(61, 96, 143, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(141, 172, 225, 0.01) 0%, transparent 70%);
+    animation: float-pattern 40s ease-in-out infinite;
+    pointer-events: none;
+}
+
+[data-theme="dark"] .blog-content-section::before {
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(43, 226, 86, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(141, 172, 225, 0.03) 0%, transparent 70%);
+}
+
+@keyframes float-pattern {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-20px, 20px); }
+    66% { transform: translate(20px, -20px); }
+}
+
+/* Featured post card */
+.featured-post-card {
+    background: var(--color-bg-primary);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+[data-theme="dark"] .featured-post-card {
+    background: var(--color-bg-card);
+}
+
+/* Gradient border effect for featured card */
+.featured-post-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(135deg,
+        var(--color-primary-green) 0%,
+        var(--color-primary-blue) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.featured-post-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .featured-post-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Featured badge glow */
+.featured-badge {
+    background: linear-gradient(135deg,
+        var(--color-primary-green) 0%,
+        var(--color-primary-blue) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%);
+    animation: shimmer-badge 3s infinite;
+}
+
+@keyframes shimmer-badge {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(300%); }
+}
+
+/* Regular blog post cards */
+.blog-post-card {
+    background: var(--color-bg-primary);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+[data-theme="dark"] .blog-post-card {
+    background: var(--color-bg-card);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient border effect for blog cards */
+.blog-post-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(135deg,
+        var(--color-primary-green) 0%,
+        var(--color-primary-blue) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .blog-post-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Post thumbnail animation */
+.blog-thumbnail {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg,
+        rgba(156, 163, 175, 0.3) 0%,
+        rgba(209, 213, 219, 0.3) 100%);
+}
+
+[data-theme="dark"] .blog-thumbnail {
+    background: linear-gradient(135deg,
+        rgba(75, 85, 99, 0.5) 0%,
+        rgba(55, 65, 81, 0.5) 100%);
+}
+
+.blog-thumbnail::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+        transparent 0%,
+        rgba(91, 181, 91, 0.1) 50%,
+        rgba(61, 96, 143, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blog-post-card:hover .blog-thumbnail::after {
+    opacity: 1;
+}
+
+/* Text colors for blog content */
+.blog-title {
+    color: var(--color-text-primary);
+}
+
+.blog-excerpt {
+    color: var(--color-text-secondary);
+}
+
+.blog-meta {
+    color: var(--color-text-secondary);
+}
+
+.blog-category {
+    background: rgba(141, 172, 225, 0.15);
+    color: var(--color-primary-blue);
+}
+
+[data-theme="dark"] .blog-category {
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--color-primary-green);
+}
+
+/* ====================================
+   Sidebar Widgets
+   - Enhanced sidebar components
+   ==================================== */
+.sidebar-widget {
+    background: var(--color-bg-primary);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+[data-theme="dark"] .sidebar-widget {
+    background: var(--color-bg-card);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient border effect for sidebar widgets */
+.sidebar-widget::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(135deg,
+        var(--color-primary-green) 0%,
+        var(--color-primary-blue) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.sidebar-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .sidebar-widget:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-title {
+    color: var(--color-text-primary);
+}
+
+.sidebar-text {
+    color: var(--color-text-secondary);
+}
+
+.sidebar-link {
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease;
+}
+
+.sidebar-link:hover {
+    color: var(--color-primary-blue);
+}
+
+[data-theme="dark"] .sidebar-link:hover {
+    color: var(--color-primary-green);
+}
+
+/* CTA widget gradient */
+.sidebar-cta {
+    background: linear-gradient(135deg,
+        var(--color-primary-green) 0%,
+        var(--color-primary-blue) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%);
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.3; }
+}
+
+/* ====================================
+   Newsletter Section
+   - Enhanced subscription area
+   ==================================== */
+.newsletter-backdrop {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter-backdrop::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%);
+    animation: sweep 8s linear infinite;
+}
+
+@keyframes sweep {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ====================================
+   Pagination Styling
+   ==================================== */
+.pagination-btn {
+    background: var(--color-bg-primary);
+    color: var(--color-text-secondary);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .pagination-btn {
+    background: var(--color-bg-card);
+}
+
+.pagination-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .pagination-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pagination-active {
+    background: linear-gradient(135deg,
+        var(--color-primary-green) 0%,
+        var(--color-primary-blue) 100%);
+    color: white;
+}
+
+/* ====================================
+   Search Input Styling
+   ==================================== */
+.search-input {
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: var(--color-primary-green);
+    box-shadow: 0 0 0 3px rgba(91, 181, 91, 0.1);
+    outline: none;
+}
+
+[data-theme="dark"] .search-input:focus {
+    box-shadow: 0 0 0 3px rgba(43, 226, 86, 0.2);
+}
+
+/* ====================================
+   Mobile Bottom CTA
+   ==================================== */
+.mobile-cta {
+    background: var(--color-bg-primary);
+    border-top: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .mobile-cta {
+    background: var(--color-bg-card);
+    border-top-color: rgba(75, 85, 99, 0.3);
+}
+
+/* ====================================
+   Responsive Design
+   ==================================== */
+@media (max-width: 768px) {
+    .blog-content-section::before {
+        animation: none;
+    }
+
+    .blog-post-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .featured-post-card:hover {
+        transform: translateY(-4px) scale(1);
+    }
+}
+
+/* ====================================
+   Accessibility
+   ==================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ====================================
+   Entry Animations
+   ==================================== */
+.blog-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog-fade-in:nth-child(1) { animation-delay: 0.1s; }
+.blog-fade-in:nth-child(2) { animation-delay: 0.2s; }
+.blog-fade-in:nth-child(3) { animation-delay: 0.3s; }
+.blog-fade-in:nth-child(4) { animation-delay: 0.4s; }

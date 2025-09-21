@@ -24,8 +24,8 @@ $related_posts = array_slice($related_posts, 0, 3);
 ?>
 
 <!-- Reading Progress Bar -->
-<div id="reading-progress" class="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
-    <div id="progress-bar" class="h-full bg-gradient-to-r from-primary-green to-primary-blue transition-all duration-300" style="width: 0%"></div>
+<div id="reading-progress" class="reading-progress-bar">
+    <div id="progress-bar" class="progress-bar-fill" style="width: 0%"></div>
 </div>
 
 <!-- Hero Section with Gradient -->
@@ -55,7 +55,7 @@ $related_posts = array_slice($related_posts, 0, 3);
                 </div>
                 <div>
                     <p class="font-semibold">Travis Sutphin</p>
-                    <p class="text-xs opacity-80">Fractional CTO</p>
+                    <p class="text-xs opacity-80">AI-Tech-Solutions</p>
                 </div>
             </div>
             <span class="text-white/60">•</span>
@@ -85,10 +85,10 @@ $related_posts = array_slice($related_posts, 0, 3);
 </section>
 
 <!-- Engagement Bar -->
-<section class="bg-white border-b sticky top-0 z-40 shadow-sm">
-    <div class="max-w-4xl mx-auto px-4 py-3">
+<section class="engagement-bar shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 py-3 sm:py-3 py-2">
         <div class="flex items-center justify-between">
-            <a href="<?php echo BASE_PATH; ?>/blog" class="flex items-center gap-2 text-gray-dark hover:text-primary-green transition-colors">
+            <a href="<?php echo BASE_PATH; ?>/blog" class="back-link flex items-center gap-2">
                 <i data-lucide="arrow-left" class="w-4 h-4"></i>
                 <span class="hidden sm:inline">Back to Blog</span>
                 <span class="sm:hidden">Back</span>
@@ -96,17 +96,17 @@ $related_posts = array_slice($related_posts, 0, 3);
 
             <div class="flex items-center gap-3">
                 <!-- Share Buttons (Placeholder) -->
-                <button onclick="alert('Sharing coming soon!')" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Share on Twitter">
-                    <i data-lucide="twitter" class="w-5 h-5 text-gray-600"></i>
+                <button onclick="alert('Sharing coming soon!')" class="share-button p-2 rounded-lg" title="Share on Twitter">
+                    <i data-lucide="twitter" class="w-5 h-5"></i>
                 </button>
-                <button onclick="alert('Sharing coming soon!')" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Share on LinkedIn">
-                    <i data-lucide="linkedin" class="w-5 h-5 text-gray-600"></i>
+                <button onclick="alert('Sharing coming soon!')" class="share-button p-2 rounded-lg" title="Share on LinkedIn">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
                 </button>
-                <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Copy link">
-                    <i data-lucide="link" class="w-5 h-5 text-gray-600"></i>
+                <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" class="share-button p-2 rounded-lg" title="Copy link">
+                    <i data-lucide="link" class="w-5 h-5"></i>
                 </button>
                 <span class="text-gray-400">|</span>
-                <button onclick="alert('Comments coming soon!')" class="flex items-center gap-2 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+                <button onclick="alert('Comments coming soon!')" class="share-button flex items-center gap-2 px-3 py-1 rounded-lg">
                     <i data-lucide="message-circle" class="w-4 h-4"></i>
                     <span class="hidden sm:inline">Join Discussion</span>
                     <span class="sm:hidden">💬</span>
@@ -117,12 +117,12 @@ $related_posts = array_slice($related_posts, 0, 3);
 </section>
 
 <!-- Main Content Area -->
-<article class="py-12 px-4">
+<article class="article-section py-12 px-4">
     <div class="max-w-7xl mx-auto">
         <div class="lg:flex lg:gap-8">
             <!-- Content Column -->
             <div class="lg:w-3/4">
-                <div class="bg-white rounded-lg shadow-sm p-8 md:p-12">
+                <div class="article-content p-8 md:p-12">
                     <!-- Article Content -->
                     <div class="blog-content">
                         <?php
@@ -137,14 +137,14 @@ $related_posts = array_slice($related_posts, 0, 3);
                     </div>
 
                     <!-- Author Bio Card -->
-                    <div class="mt-12 p-6 bg-gray-50 rounded-lg border border-gray-200">
+                    <div class="author-bio mt-12 p-6">
                         <div class="flex items-start gap-4">
                             <div class="w-16 h-16 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center flex-shrink-0">
                                 <span class="text-white text-xl font-bold">TS</span>
                             </div>
                             <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-dark-green mb-1">Written by Travis Sutphin</h3>
-                                <p class="text-sm text-gray-600 mb-3">
+                                <h3 class="author-name text-lg font-bold mb-1">Written by Travis Sutphin</h3>
+                                <p class="author-description text-sm mb-3">
                                     Fractional CTO helping founders ship their products.
                                     I turn half-built apps into launched businesses.
                                 </p>
@@ -157,10 +157,10 @@ $related_posts = array_slice($related_posts, 0, 3);
                     </div>
 
                     <!-- Comments Placeholder -->
-                    <div class="mt-12 p-8 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300 text-center">
+                    <div class="comments-placeholder mt-12 p-8 text-center">
                         <i data-lucide="message-square" class="w-12 h-12 text-gray-400 mx-auto mb-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-700 mb-2">Comments Coming Soon!</h3>
-                        <p class="text-gray-600 text-sm">
+                        <h3 class="text-lg font-semibold text-theme-primary mb-2">Comments Coming Soon!</h3>
+                        <p class="text-theme-secondary text-sm">
                             We're building a space for builders to share insights.
                             <br>For now, reach out directly with your thoughts!
                         </p>
@@ -176,19 +176,19 @@ $related_posts = array_slice($related_posts, 0, 3);
             <aside class="hidden lg:block lg:w-1/4">
                 <div class="sticky top-20 space-y-6">
                     <!-- Table of Contents -->
-                    <div class="bg-white rounded-lg shadow-sm p-6">
-                        <h3 class="text-lg font-bold text-dark-green mb-4 flex items-center gap-2">
+                    <div class="toc-widget p-6">
+                        <h3 class="toc-title text-lg font-bold mb-4 flex items-center gap-2">
                             <i data-lucide="list" class="w-5 h-5"></i>
                             In This Article
                         </h3>
                         <nav id="table-of-contents" class="space-y-2 text-sm">
                             <!-- TOC will be generated by JavaScript -->
-                            <div class="text-gray-500">Loading contents...</div>
+                            <div class="text-theme-secondary">Loading contents...</div>
                         </nav>
                     </div>
 
                     <!-- Quick Win Tip -->
-                    <div class="bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-lg p-6">
+                    <div class="tip-widget text-white rounded-lg p-6">
                         <h3 class="text-lg font-bold mb-3">💡 Quick Win</h3>
                         <p class="text-sm opacity-95 mb-4">
                             Start with the smallest feature that delivers value. Ship it. Get feedback. Iterate.
@@ -199,14 +199,14 @@ $related_posts = array_slice($related_posts, 0, 3);
                     </div>
 
                     <!-- Newsletter Card -->
-                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
-                        <h3 class="text-lg font-bold text-dark-green mb-3">Get Weekly Insights</h3>
-                        <p class="text-sm text-gray-600 mb-4">
+                    <div class="newsletter-widget p-6">
+                        <h3 class="newsletter-title text-lg font-bold mb-3">Get Weekly Insights</h3>
+                        <p class="newsletter-text text-sm mb-4">
                             One actionable tip every Thursday to move your project forward.
                         </p>
                         <input type="email"
                                placeholder="Your email..."
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm mb-3"
+                               class="newsletter-input w-full px-3 py-2 rounded-lg text-sm mb-3"
                                onclick="alert('Newsletter launching soon!')">
                         <button class="w-full bg-dark-green text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary-green transition-colors">
                             Save My Spot
@@ -220,14 +220,14 @@ $related_posts = array_slice($related_posts, 0, 3);
 
 <!-- Related Posts Section -->
 <?php if (!empty($related_posts)): ?>
-<section class="py-12 px-4 bg-gray-50">
+<section class="related-section py-12 px-4">
     <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-dark-green text-center mb-8">Keep the Momentum Going</h2>
+        <h2 class="related-title text-3xl font-bold text-center mb-8">Keep the Momentum Going</h2>
         <div class="grid md:grid-cols-3 gap-6">
             <?php foreach ($related_posts as $related): ?>
-                <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <article class="related-card">
                     <!-- Thumbnail Placeholder -->
-                    <div class="bg-gradient-to-br from-gray-200 to-gray-300 h-40 rounded-t-lg flex items-center justify-center">
+                    <div class="related-thumbnail h-40 rounded-t-lg flex items-center justify-center">
                         <i data-lucide="file-text" class="w-12 h-12 text-gray-400"></i>
                     </div>
 
@@ -238,18 +238,18 @@ $related_posts = array_slice($related_posts, 0, 3);
                             </span>
                         <?php endif; ?>
 
-                        <h3 class="text-lg font-bold text-dark-green mb-2 line-clamp-2">
+                        <h3 class="related-card-title text-lg font-bold mb-2 line-clamp-2">
                             <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($related['slug']); ?>"
                                class="hover:text-primary-blue transition-colors">
                                 <?php echo e($related['title'] ?? 'Untitled'); ?>
                             </a>
                         </h3>
 
-                        <p class="text-sm text-gray-600 line-clamp-3 mb-4">
+                        <p class="related-card-excerpt text-sm line-clamp-3 mb-4">
                             <?php echo e($related['excerpt'] ?? ''); ?>
                         </p>
 
-                        <div class="flex items-center justify-between text-xs text-gray-500">
+                        <div class="related-meta flex items-center justify-between text-xs">
                             <span><?php echo date('M d, Y', strtotime($related['date'] ?? 'now')); ?></span>
                             <span><?php
                                 $related_reading_time = isset($related['readingTime'])
@@ -274,10 +274,10 @@ $related_posts = array_slice($related_posts, 0, 3);
             Get one actionable tip every week to help you ship faster.
         </p>
         <div class="max-w-md mx-auto">
-            <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+            <div class="newsletter-backdrop rounded-lg p-6">
                 <input type="email"
                        placeholder="Your best email..."
-                       class="w-full px-4 py-3 rounded-lg text-dark-green mb-4"
+                       class="newsletter-input w-full px-4 py-3 rounded-lg mb-4"
                        onclick="alert('Newsletter launching soon! We\'ll notify you when it\'s ready.')">
                 <button class="w-full bg-white text-dark-green py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                     Join 2,000+ Builders →
@@ -291,13 +291,13 @@ $related_posts = array_slice($related_posts, 0, 3);
 </section>
 
 <!-- Community CTA -->
-<section class="py-12 px-4 bg-white">
+<section class="community-cta-section py-12 px-4">
     <div class="max-w-4xl mx-auto">
-        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-8 text-center border border-gray-200">
-            <h3 class="text-2xl font-bold text-dark-green mb-4">
+        <div class="community-cta-card rounded-lg p-8 text-center">
+            <h3 class="community-title text-2xl font-bold mb-4">
                 Got Questions? I've Got Answers
             </h3>
-            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p class="community-text mb-6 max-w-2xl mx-auto">
                 Whether you're stuck on a technical decision or need a fresh perspective on your project,
                 I'm here to help. No sales pitch—just builder to builder.
             </p>
@@ -311,7 +311,7 @@ $related_posts = array_slice($related_posts, 0, 3);
 
 <!-- Scroll to Top Button -->
 <button id="scroll-to-top"
-        class="fixed bottom-20 right-6 w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full shadow-lg opacity-0 pointer-events-none transition-all hover:shadow-xl z-40">
+        class="scroll-to-top fixed bottom-20 right-6 w-12 h-12 text-white rounded-full opacity-0 pointer-events-none transition-all z-40 flex items-center justify-center">
     <i data-lucide="arrow-up" class="w-6 h-6"></i>
 </button>
 
@@ -344,89 +344,7 @@ $related_posts = array_slice($related_posts, 0, 3);
 
 <!-- Custom Styles for Blog Content -->
 <style>
-.blog-content {
-    color: #4a5568;
-    line-height: 1.75;
-}
-.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5, .blog-content h6 {
-    color: #1a3d2e;
-    font-weight: bold;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-.blog-content h1 { font-size: 2.25rem; }
-.blog-content h2 { font-size: 1.875rem; margin-top: 2rem; }
-.blog-content h3 { font-size: 1.5rem; margin-top: 1.5rem; }
-.blog-content p {
-    margin-bottom: 1.5rem;
-}
-.blog-content a {
-    color: #2962ff;
-    text-decoration: none;
-}
-.blog-content a:hover {
-    text-decoration: underline;
-}
-.blog-content strong {
-    color: #1a3d2e;
-    font-weight: bold;
-}
-.blog-content blockquote {
-    border-left: 4px solid #5bb55b;
-    padding-left: 1.5rem;
-    font-style: italic;
-    color: #718096;
-    margin: 1.5rem 0;
-}
-.blog-content code {
-    background-color: #f7fafc;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    color: #2962ff;
-    font-size: 0.875em;
-}
-.blog-content pre {
-    background-color: #1a202c;
-    color: #f7fafc;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-}
-.blog-content pre code {
-    background-color: transparent;
-    padding: 0;
-    color: inherit;
-}
-.blog-content ul, .blog-content ol {
-    padding-left: 1.5rem;
-    margin: 1.5rem 0;
-}
-.blog-content li {
-    margin-bottom: 0.5rem;
-}
-.blog-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-}
-.blog-content th {
-    background-color: #f7fafc;
-    font-weight: bold;
-    color: #1a3d2e;
-    padding: 0.75rem;
-    text-align: left;
-    border-bottom: 2px solid #e2e8f0;
-}
-.blog-content td {
-    padding: 0.75rem;
-    border-bottom: 1px solid #e2e8f0;
-}
-.blog-content hr {
-    margin: 2rem 0;
-    border: none;
-    border-top: 1px solid #e2e8f0;
-}
+/* Blog content styles are now in blog-post-sections.css */
 </style>
 
 <!-- Enhanced JavaScript for Interactions -->
@@ -479,14 +397,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (heading.tagName === 'H2') {
                 if (currentH2) tocHTML += '</ul></li>';
                 tocHTML += `<li>
-                    <a href="#${id}" class="block py-1 text-gray-600 hover:text-primary-green transition-colors toc-link">
+                    <a href="#${id}" class="block py-1 toc-link">
                         ${heading.textContent}
                     </a>`;
                 currentH2 = heading;
                 tocHTML += '<ul class="ml-4 mt-1 space-y-1">';
             } else if (heading.tagName === 'H3') {
                 tocHTML += `<li>
-                    <a href="#${id}" class="block py-0.5 text-sm text-gray-500 hover:text-primary-green transition-colors toc-link">
+                    <a href="#${id}" class="block py-0.5 text-sm toc-link">
                         ${heading.textContent}
                     </a>
                 </li>`;

@@ -4,9 +4,14 @@
             <!-- Logo -->
             <div class="flex-shrink-0">
                 <a href="<?php echo BASE_PATH; ?>/" class="inline-block">
-                    <img src="<?php echo BASE_PATH; ?>/travissutphincom-avatar-green.png"
+                    <!-- Logo for Light Mode -->
+                    <img src="<?php echo BASE_PATH; ?>/assets/images/travissutphinLogo-forLight-400x103.png"
                          alt="Travis Sutphin"
-                         class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover">
+                         class="logo-light h-12 md:h-16 w-auto object-contain">
+                    <!-- Logo for Dark Mode -->
+                    <img src="<?php echo BASE_PATH; ?>/assets/images/travissutphinLogo-forDark-400x103.png"
+                         alt="Travis Sutphin"
+                         class="logo-dark h-12 md:h-16 w-auto object-contain">
                 </a>
             </div>
 

@@ -13,8 +13,11 @@
 </section>
 
 <!-- Team Members Grid -->
-<section class="py-16 px-4 bg-white">
-    <div class="max-w-7xl mx-auto">
+<section class="team-grid-section py-16 px-4">
+    <div class="floating-orb floating-orb-1"></div>
+    <div class="floating-orb floating-orb-2"></div>
+    <div class="floating-orb floating-orb-3"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <?php
             $team_members = [
@@ -69,23 +72,23 @@
             ];
 
             foreach ($team_members as $member): ?>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover group">
+                <div class="team-card group">
                     <!-- Photo -->
-                    <div class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
+                    <div class="team-photo-container aspect-square">
                         <img src="<?php echo e($member['photo']); ?>"
                              alt="<?php echo e($member['name']); ?>"
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
 
                     <!-- Info -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark-green mb-1">
+                    <div class="team-info">
+                        <h3 class="team-name text-xl">
                             <?php echo e($member['name']); ?>
                         </h3>
-                        <p class="text-primary-blue font-semibold text-sm mb-3">
+                        <p class="team-role">
                             <?php echo e($member['role']); ?>
                         </p>
-                        <p class="text-gray-dark text-sm">
+                        <p class="team-description">
                             <?php echo e($member['description']); ?>
                         </p>
                     </div>
@@ -96,12 +99,12 @@
 </section>
 
 <!-- Work With Us CTA -->
-<section class="py-16 px-4 bg-gray-light">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-dark-green mb-4">
+<section class="team-cta-section py-16 px-4">
+    <div class="team-cta-content max-w-4xl mx-auto text-center">
+        <h2 class="team-cta-title">
             Ready to Work With Our Team?
         </h2>
-        <p class="text-xl text-gray-dark mb-8">
+        <p class="team-cta-text">
             Let's discuss how we can help bring your project to life.
         </p>
         <a href="<?php echo BASE_PATH; ?>/contact"

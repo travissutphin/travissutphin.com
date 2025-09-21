@@ -1,0 +1,350 @@
+/* Services Page Section Enhancements for Visual Hierarchy */
+
+/* ====================================
+   1. "You're Stuck Because..." Section
+   - Problem identification with urgency
+   ==================================== */
+.stuck-section {
+    position: relative;
+    background: linear-gradient(135deg,
+        rgba(220, 38, 38, 0.02) 0%,
+        rgba(249, 115, 22, 0.02) 100%);
+    overflow: hidden;
+}
+
+/* Dark mode: Deep warning tones */
+[data-theme="dark"] .stuck-section {
+    background: linear-gradient(135deg,
+        rgba(153, 27, 27, 0.1) 0%,
+        rgba(124, 45, 18, 0.1) 100%);
+}
+
+/* Animated background pattern */
+.stuck-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(239, 68, 68, 0.03) 40px,
+        rgba(239, 68, 68, 0.03) 80px
+    );
+    animation: diagonal-slide 20s linear infinite;
+}
+
+@keyframes diagonal-slide {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.stuck-card {
+    background: var(--color-bg-primary);
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+[data-theme="dark"] .stuck-card {
+    background: var(--color-bg-card);
+}
+
+.stuck-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 16px;
+    background: linear-gradient(135deg,
+        rgba(239, 68, 68, 0.2) 0%,
+        rgba(249, 115, 22, 0.2) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stuck-card:hover::before {
+    opacity: 1;
+}
+
+.stuck-card:hover {
+    transform: translateY(-4px) rotate(-1deg);
+}
+
+.stuck-icon {
+    filter: drop-shadow(0 4px 6px rgba(239, 68, 68, 0.2));
+    animation: warning-pulse 3s ease-in-out infinite;
+}
+
+@keyframes warning-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* ====================================
+   2. "Here's How I'll Get You Unstuck" Section
+   - Solution showcase with premium feel
+   ==================================== */
+.unstuck-section {
+    position: relative;
+    background: linear-gradient(180deg,
+        var(--color-bg-secondary) 0%,
+        var(--color-bg-primary) 100%);
+}
+
+[data-theme="dark"] .unstuck-section {
+    background: linear-gradient(180deg,
+        rgba(17, 24, 39, 1) 0%,
+        rgba(31, 41, 55, 0.95) 100%);
+}
+
+/* Premium mesh gradient overlay */
+.unstuck-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(91, 181, 91, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(41, 98, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(91, 181, 91, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Keep service cards unchanged except text colors */
+.unstuck-section .card-hover h3 {
+    color: var(--color-text-primary);
+}
+
+.unstuck-section .card-hover p {
+    color: var(--color-text-secondary);
+}
+
+.unstuck-section .card-hover span {
+    color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .unstuck-section .card-hover {
+    background: var(--color-bg-card);
+}
+
+[data-theme="dark"] .unstuck-section .card-hover h3 {
+    color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .unstuck-section .card-hover p {
+    color: var(--color-text-secondary);
+}
+
+/* ====================================
+   3. "My Simple 3-Step Process" Section
+   - Timeline with visual flow
+   ==================================== */
+.process-section {
+    position: relative;
+    background: linear-gradient(135deg,
+        rgba(41, 98, 255, 0.02) 0%,
+        rgba(91, 181, 91, 0.02) 100%);
+    overflow: hidden;
+}
+
+[data-theme="dark"] .process-section {
+    background: linear-gradient(135deg,
+        rgba(30, 64, 175, 0.05) 0%,
+        rgba(34, 197, 94, 0.05) 100%);
+}
+
+/* Animated timeline connector */
+.process-timeline {
+    position: relative;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--color-primary-blue) 15%,
+        var(--color-primary-green) 50%,
+        var(--color-primary-blue) 85%,
+        transparent 100%);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+[data-theme="dark"] .process-timeline::before {
+    opacity: 0.5;
+}
+
+/* Process cards with elevation */
+.process-step {
+    position: relative;
+    background: var(--color-bg-primary);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+[data-theme="dark"] .process-step {
+    background: var(--color-bg-card);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.process-step:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .process-step:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Step numbers with glow effect */
+.process-number {
+    position: relative;
+    box-shadow: 0 0 30px rgba(91, 181, 91, 0.4);
+    animation: number-glow 2s ease-in-out infinite;
+}
+
+[data-theme="dark"] .process-number {
+    box-shadow: 0 0 40px rgba(91, 181, 91, 0.6);
+}
+
+@keyframes number-glow {
+    0%, 100% { box-shadow: 0 0 30px rgba(91, 181, 91, 0.4); }
+    50% { box-shadow: 0 0 50px rgba(41, 98, 255, 0.6); }
+}
+
+/* Timeline dates styling */
+.process-date {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: linear-gradient(135deg,
+        rgba(41, 98, 255, 0.1) 0%,
+        rgba(91, 181, 91, 0.1) 100%);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary-blue);
+    margin-top: 0.5rem;
+}
+
+[data-theme="dark"] .process-date {
+    background: linear-gradient(135deg,
+        rgba(41, 98, 255, 0.2) 0%,
+        rgba(91, 181, 91, 0.2) 100%);
+    color: var(--color-primary-green);
+}
+
+/* Text colors for process section */
+.process-step h3 {
+    color: var(--color-text-primary);
+}
+
+.process-step p {
+    color: var(--color-text-secondary);
+}
+
+/* ====================================
+   Visual Separators Between Sections
+   ==================================== */
+.section-wave-divider {
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+}
+
+.section-wave-divider svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.section-wave-divider path {
+    fill: var(--color-bg-secondary);
+}
+
+[data-theme="dark"] .section-wave-divider path {
+    fill: rgba(31, 41, 55, 0.5);
+}
+
+/* ====================================
+   Responsive & Accessibility
+   ==================================== */
+@media (max-width: 768px) {
+    .process-timeline::before {
+        display: none;
+    }
+
+    .stuck-section::before {
+        animation: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stuck-section::before,
+    .stuck-icon,
+    .process-number {
+        animation: none;
+    }
+
+    * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* ====================================
+   Floating Elements for Depth
+   ==================================== */
+.floating-badge {
+    position: absolute;
+    background: linear-gradient(135deg,
+        var(--color-primary-green) 0%,
+        var(--color-primary-blue) 100%);
+    border-radius: 50%;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.floating-badge-1 {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    right: 5%;
+    animation: float-1 15s ease-in-out infinite;
+}
+
+.floating-badge-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 10%;
+    left: 3%;
+    animation: float-2 20s ease-in-out infinite;
+}
+
+@keyframes float-1 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(120deg); }
+    66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+@keyframes float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30px, -30px) scale(1.1); }
+}
