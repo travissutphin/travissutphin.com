@@ -1,0 +1,245 @@
+/* Theme Variables - WCAG AA Compliant Color System */
+
+:root {
+  /* Light Theme Colors */
+  --color-primary-green: #2be256;
+  --color-primary-green-hover: #22c44b;
+  --color-primary-green-light: #7deb99;
+
+  --color-primary-blue: #2962ff;
+  --color-primary-blue-hover: #1e4bda;
+  --color-primary-blue-light: #6c8fff;
+
+  --color-dark-green: #005a00;
+  --color-dark-green-hover: #004500;
+
+  /* Background Colors */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-tertiary: #f1f3f4;
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #f8f9fa;
+
+  /* Text Colors */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-tertiary: #6b7280;
+  --color-text-inverse: #ffffff;
+
+  /* Border Colors */
+  --color-border-primary: #e5e7eb;
+  --color-border-secondary: #d1d5db;
+  --color-border-focus: #2962ff;
+
+  /* Shadow Colors */
+  --color-shadow-sm: rgba(0, 0, 0, 0.05);
+  --color-shadow-md: rgba(0, 0, 0, 0.1);
+  --color-shadow-lg: rgba(0, 0, 0, 0.15);
+
+  /* Status Colors */
+  --color-success: #059669;
+  --color-success-bg: #ecfdf5;
+  --color-error: #dc2626;
+  --color-error-bg: #fef2f2;
+  --color-warning: #d97706;
+  --color-warning-bg: #fffbeb;
+  --color-info: #2563eb;
+  --color-info-bg: #eff6ff;
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+  /* Primary Colors - Adjusted for dark theme */
+  --color-primary-green: #5bb55b;
+  --color-primary-green-hover: #4ca44c;
+  --color-primary-green-light: #6bc56b;
+
+  --color-primary-blue: #4285f4;
+  --color-primary-blue-hover: #3367d6;
+  --color-primary-blue-light: #669df6;
+
+  --color-dark-green: #1a3d2e;
+  --color-dark-green-hover: #145429;
+
+  /* Background Colors */
+  --color-bg-primary: #0f1419;
+  --color-bg-secondary: #1a202c;
+  --color-bg-tertiary: #2d3748;
+  --color-bg-card: #1a202c;
+  --color-bg-card-hover: #2d3748;
+
+  /* Text Colors */
+  --color-text-primary: #f7fafc;
+  --color-text-secondary: #e2e8f0;
+  --color-text-tertiary: #a0aec0;
+  --color-text-inverse: #1a202c;
+
+  /* Border Colors */
+  --color-border-primary: #4a5568;
+  --color-border-secondary: #2d3748;
+  --color-border-focus: #4285f4;
+
+  /* Shadow Colors */
+  --color-shadow-sm: rgba(0, 0, 0, 0.2);
+  --color-shadow-md: rgba(0, 0, 0, 0.3);
+  --color-shadow-lg: rgba(0, 0, 0, 0.4);
+
+  /* Status Colors - Dark theme variants */
+  --color-success: #68d391;
+  --color-success-bg: #1a202c;
+  --color-error: #f56565;
+  --color-error-bg: #1a202c;
+  --color-warning: #ed8936;
+  --color-warning-bg: #1a202c;
+  --color-info: #63b3ed;
+  --color-info-bg: #1a202c;
+}
+
+/* Theme Transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Base Element Styles Using Variables */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+/* Header Styles */
+header {
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border-primary);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-primary);
+  box-shadow: 0 1px 3px var(--color-shadow-sm);
+}
+
+.card:hover {
+  background-color: var(--color-bg-card-hover);
+  box-shadow: 0 4px 6px var(--color-shadow-md);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--color-primary-green);
+  color: var(--color-text-inverse);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-green-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-primary-blue);
+  color: var(--color-text-inverse);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-blue-hover);
+}
+
+/* Input Styles */
+input, textarea, select {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-primary);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+/* Link Styles */
+a {
+  color: var(--color-primary-blue);
+}
+
+a:hover {
+  color: var(--color-primary-blue-hover);
+}
+
+/* Navigation Styles */
+nav a {
+  color: var(--color-text-secondary);
+}
+
+nav a:hover, nav a.active {
+  color: var(--color-text-primary);
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-border-primary);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-primary);
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-bg-card-hover);
+}
+
+.theme-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-border-focus);
+}
+
+/* Dark mode icon styles */
+.theme-toggle .sun-icon {
+  display: none;
+}
+
+.theme-toggle .moon-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: none;
+}
+
+/* Utility Classes for Theme Variables */
+.bg-theme-primary { background-color: var(--color-bg-primary); }
+.bg-theme-secondary { background-color: var(--color-bg-secondary); }
+.bg-theme-tertiary { background-color: var(--color-bg-tertiary); }
+.bg-theme-card { background-color: var(--color-bg-card); }
+
+.text-theme-primary { color: var(--color-text-primary); }
+.text-theme-secondary { color: var(--color-text-secondary); }
+.text-theme-tertiary { color: var(--color-text-tertiary); }
+.text-theme-inverse { color: var(--color-text-inverse); }
+
+.border-theme-primary { border-color: var(--color-border-primary); }
+.border-theme-secondary { border-color: var(--color-border-secondary); }
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.375rem;
+  }
+}

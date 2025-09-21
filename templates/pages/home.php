@@ -26,7 +26,7 @@
 <!-- Services Section -->
 <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center text-dark-green mb-12">
+        <h2 class="text-3xl font-bold text-center text-theme-primary mb-12">
             How I Can Help
         </h2>
         <div class="grid md:grid-cols-3 gap-8">

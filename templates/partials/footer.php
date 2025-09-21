@@ -1,4 +1,4 @@
-<footer class="bg-gray-light border-t border-gray-200">
+<footer class="bg-theme-secondary border-t border-theme-primary">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="text-center">
             <!-- Social Media Icons - Hidden on mobile -->
@@ -18,15 +18,15 @@
             </div>
 
             <div class="hidden md:block mt-4 space-x-4">
-                <a href="<?php echo BASE_PATH; ?>/" class="text-primary-blue hover:text-dark-green transition-colors">Home</a>
-                <a href="<?php echo BASE_PATH; ?>/services" class="text-primary-blue hover:text-dark-green transition-colors">Services</a>
-                <a href="<?php echo BASE_PATH; ?>/projects" class="text-primary-blue hover:text-dark-green transition-colors">Projects</a>
-                <a href="<?php echo BASE_PATH; ?>/team" class="text-primary-blue hover:text-dark-green transition-colors">Team</a>
-                <a href="<?php echo BASE_PATH; ?>/blog" class="text-primary-blue hover:text-dark-green transition-colors">Blog</a>
-                <a href="<?php echo BASE_PATH; ?>/contact" class="text-primary-blue hover:text-dark-green transition-colors">Contact</a>
+                <a href="<?php echo BASE_PATH; ?>/" class="text-theme-secondary hover:text-theme-primary transition-colors">Home</a>
+                <a href="<?php echo BASE_PATH; ?>/services" class="text-theme-secondary hover:text-theme-primary transition-colors">Services</a>
+                <a href="<?php echo BASE_PATH; ?>/projects" class="text-theme-secondary hover:text-theme-primary transition-colors">Projects</a>
+                <a href="<?php echo BASE_PATH; ?>/team" class="text-theme-secondary hover:text-theme-primary transition-colors">Team</a>
+                <a href="<?php echo BASE_PATH; ?>/blog" class="text-theme-secondary hover:text-theme-primary transition-colors">Blog</a>
+                <a href="<?php echo BASE_PATH; ?>/contact" class="text-theme-secondary hover:text-theme-primary transition-colors">Contact</a>
             </div>
 
-            <p class="text-gray-dark mt-4">
+            <p class="text-theme-secondary mt-4">
                 &copy; <?php echo date('Y'); ?> Travis Sutphin. All rights reserved.
             </p>
         </div>

@@ -19,6 +19,9 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Theme Switcher (Load early to prevent FOUC) -->
+    <script src="<?php echo BASE_PATH; ?>/js/theme-switcher.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -37,10 +40,13 @@
         }
     </script>
 
+    <!-- Theme Variables CSS -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/theme-variables.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/style.css">
 </head>
-<body class="min-h-screen flex flex-col bg-white text-dark">
+<body class="min-h-screen flex flex-col bg-theme-primary text-theme-primary">
     <?php render_partial('header'); ?>
 
     <main class="flex-grow">
