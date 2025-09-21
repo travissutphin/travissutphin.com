@@ -1,0 +1,49 @@
+GITHUB REPOSITORY OVERWRITE - READY TO EXECUTE COMMANDS
+========================================================
+
+PREREQUISITES:
+[✓] Backup completed
+[ ] GitHub credentials ready
+[ ] Confirmed repository URL: https://github.com/travissutphin/travissutphin.com.git
+
+EXECUTE IN ORDER:
+-----------------
+
+1. Add GitHub remote:
+git remote add origin https://github.com/travissutphin/travissutphin.com.git
+
+2. Stage all changes:
+git add -A
+
+3. Check what will be committed:
+git status
+
+4. Create comprehensive commit:
+git commit -m "feat: Complete site rebuild with smart deployment system
+
+- Reorganized documentation to /docs structure
+- Environment-aware BASE_PATH configuration
+- Auto-detects local vs production deployment
+- Removed hardcoded paths for flexibility
+- Added PHP built-in server support
+- Cleaned up project structure"
+
+5. Force push to overwrite GitHub:
+git push -f origin master
+
+IF YOU GET AUTHENTICATION ERROR:
+--------------------------------
+Use personal access token:
+git remote set-url origin https://YOUR_GITHUB_USERNAME:YOUR_TOKEN@github.com/travissutphin/travissutphin.com.git
+
+Then retry step 5.
+
+VERIFY SUCCESS:
+--------------
+- Check https://github.com/travissutphin/travissutphin.com
+- Confirm all files present
+- Review commit history
+
+EMERGENCY ROLLBACK:
+------------------
+If something went wrong, restore from your backup folder

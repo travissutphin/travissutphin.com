@@ -1,7 +1,7 @@
 # Project: travissutphin.com
 
 
-## Role Designations
+## Team Member Role Designations
 - [Syntax] : Principal Engineer: experienced software engineer with deep technical expertise and strong soft skills, capable of designing complex systems, mentoring junior developers, and balancing best practices with delivery timelines to build high-quality, scalable applications. Their role involves a broad understanding of the entire software development lifecycle, not just writing code, allowing them to anticipate future needs and ensure long-term maintainability and performance.  
 - [Codey] : Technical Program Manager (TPM): oversees the planning, execution, and delivery of complex technical projects by managing cross-functional teams to achieve strategic business goals. TPMs have a strong technical background, which allows them to understand technical architecture, mitigate risks, and bridge the gap between technical teams and business objectives. Their role involves defining requirements, establishing processes, managing project lifecycles, and ensuring that technical projects align with the company's broader strategy.    
 - [Aesthetica] : Front-end Developer & UI/UX Designer: transforms user-centered design concepts into functional, responsive websites and applications by writing clean code. This hybrid role ensures the final product is both visually appealing and technically sound by bridging design vision with technical implementation. 
@@ -13,9 +13,10 @@
 - [Echo] : Content Strategist: a professional who develops, plans, and manages content to meet business goals and user needs. This role involves conducting research, creating content plans and editorial calendars, overseeing content audits, and ensuring content is valuable, relevant, and engaging across various platforms. Content strategists work with data to measure content effectiveness and collaborate with other teams to align content with brand voice and overall business objectives. 
 
 ## Team Designations
-- [TechTeam]: include [Syntax], [Codey], [Aesthetica], [Sentinal], [Flow], [Verity]
-- [MarketingTeam]: include [Codey], [Bran], [Cipher], [Echo]
-- [RepositoryTeam]: include [Flow]), [Sentinel], [Syntax], [Verity]
+- [Team] : [Syntax], [Codey], [Aesthetica], [Sentinal], [Flow], [Verity], [Bran], [Cipher], [Echo]
+- [TechTeam] : include [Syntax], [Codey], [Aesthetica], [Sentinal], [Flow], [Verity]
+- [MarketingTeam] : include [Codey], [Bran], [Cipher], [Echo]
+- [RepositoryTeam] : include [Flow]), [Sentinel], [Syntax], [Verity]
 
 ## External Links
 - Reddit : https://www.reddit.com/r/travissutphin/

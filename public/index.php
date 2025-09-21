@@ -7,10 +7,11 @@ require_once '../lib/functions.php';
 $request_uri = $_SERVER['REQUEST_URI'];
 $request_uri = strtok($request_uri, '?'); // Remove query string
 
-// Remove the base path (/myPersonalSite/public)
-$base_path = '/myPersonalSite/public';
-if (strpos($request_uri, $base_path) === 0) {
-    $request_uri = substr($request_uri, strlen($base_path));
+// Remove the base path dynamically
+if (defined('BASE_PATH') && !empty(BASE_PATH)) {
+    if (strpos($request_uri, BASE_PATH) === 0) {
+        $request_uri = substr($request_uri, strlen(BASE_PATH));
+    }
 }
 
 $request_uri = rtrim($request_uri, '/'); // Remove trailing slash
