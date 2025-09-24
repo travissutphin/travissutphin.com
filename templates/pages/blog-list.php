@@ -145,9 +145,18 @@ function calculate_reading_time($content) {
                                 </div>
 
                                 <div class="p-8">
-                                    <!-- Thumbnail Placeholder -->
-                                    <div class="blog-thumbnail bg-gradient-to-br from-primary-green to-primary-blue h-64 rounded-lg mb-6 flex items-center justify-center">
-                                        <i data-lucide="file-text" class="w-20 h-20 text-white opacity-50"></i>
+                                    <!-- Blog Image -->
+                                    <div class="blog-thumbnail h-64 md:h-96 rounded-lg mb-6 overflow-hidden shadow-2xl">
+                                        <?php if (!empty($featured_post['image'])): ?>
+                                            <img src="<?php echo BASE_PATH . trim(trim($featured_post['image']), '"'); ?>"
+                                                 alt="<?php echo htmlspecialchars($featured_post['title'] ?? 'Blog post'); ?>"
+                                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                                 loading="lazy">
+                                        <?php else: ?>
+                                            <div class="bg-gradient-to-br from-primary-green to-primary-blue h-full flex items-center justify-center">
+                                                <i data-lucide="file-text" class="w-20 h-20 text-white opacity-50"></i>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
 
                                     <!-- Category & Date -->
@@ -188,7 +197,7 @@ function calculate_reading_time($content) {
                                             </div>
                                             <div>
                                                 <p class="text-sm font-semibold text-theme-primary">Travis Sutphin</p>
-                                                <p class="text-xs text-theme-secondary">Fractional CTO</p>
+                                                <p class="text-xs text-theme-secondary">AI-Tech-Solutions</p>
                                             </div>
                                         </div>
                                         <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($featured_post['slug']); ?>"
@@ -207,8 +216,17 @@ function calculate_reading_time($content) {
                             <div class="animate-on-scroll blog-fade-in">
                                 <div class="blog-post-card h-full flex flex-col">
                                     <!-- Thumbnail -->
-                                    <div class="blog-thumbnail h-48 flex items-center justify-center">
-                                        <i data-lucide="file-text" class="w-12 h-12 text-gray-400"></i>
+                                    <div class="blog-thumbnail h-48 overflow-hidden">
+                                        <?php if (!empty($post['image'])): ?>
+                                            <img src="<?php echo BASE_PATH . trim(trim($post['image']), '"'); ?>"
+                                                 alt="<?php echo htmlspecialchars($post['title'] ?? 'Blog post'); ?>"
+                                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                                 loading="lazy">
+                                        <?php else: ?>
+                                            <div class="bg-gradient-to-br from-gray-100 to-gray-200 h-full flex items-center justify-center">
+                                                <i data-lucide="file-text" class="w-12 h-12 text-gray-400"></i>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
 
                                     <div class="p-6 flex-grow flex flex-col">
@@ -362,10 +380,3 @@ function calculate_reading_time($content) {
     </div>
 </section>
 
-<!-- Bottom CTA (Mobile) -->
-<div class="lg:hidden fixed bottom-16 left-0 right-0 p-4 bg-white shadow-lg border-t z-40">
-    <a href="<?php echo BASE_PATH; ?>/contact"
-       class="block w-full text-center bg-gradient-to-r from-primary-green to-primary-blue text-white py-3 rounded-lg font-semibold">
-        Got Questions? Let's Talk →
-    </a>
-</div>

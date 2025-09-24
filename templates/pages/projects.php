@@ -28,59 +28,86 @@
             <?php
             $projects = [
                 [
-                    'name' => 'TaskFlow Pro',
-                    'category' => 'SaaS Platform',
-                    'description' => 'AI-powered project management tool that reduced team coordination time by 40%.',
-                    'logo' => 'https://via.placeholder.com/400x300/5bb55b/ffffff?text=TaskFlow+Pro',
-                    'link' => 'https://taskflowpro.example.com',
-                    'tech' => ['React', 'Node.js', 'OpenAI', 'PostgreSQL'],
+                    'name' => 'Kickstand - Your New WebSite',
+                    'category' => 'Open Source',
+                    'description' => 'Complete business website with AI deployment automation. Full source code on GitHub. Three options: DIY with the free code, partner with me, or I build it for you.',
+                    'logo' => '/assets/images/travissutphincom-avatar-green.png',
+                    'link' => 'https://github.com/travissutphin/travissutphin.com',
+                    'tech' => ['PHP 8+', 'Tailwind CSS', 'AI Integration', 'GitHub'],
                     'status' => 'live',
                     'highlight' => true
                 ],
                 [
-                    'name' => 'HealthTrack AI',
-                    'category' => 'Healthcare Tech',
-                    'description' => 'Patient monitoring system with predictive analytics. Serving 5,000+ patients daily.',
-                    'logo' => 'https://via.placeholder.com/400x300/2962ff/ffffff?text=HealthTrack',
-                    'link' => 'https://healthtrack.example.com',
-                    'tech' => ['Vue.js', 'Python', 'TensorFlow', 'AWS'],
-                    'status' => 'live'
+                    'name' => 'TechPulseDaily.app',
+                    'category' => 'Open Source',
+                    'description' => 'AI-Powered Tech News Aggregator - No database required',
+                    'logo' => '/assets/images/projects/techpulsedaily-badge.png',
+                    'link' => '',
+                    'tech' => [],
+                    'status' => 'production'
                 ],
                 [
-                    'name' => 'EduConnect',
-                    'category' => 'EdTech',
-                    'description' => 'Online learning platform connecting 10,000+ students with expert tutors worldwide.',
-                    'logo' => 'https://via.placeholder.com/400x300/ff6b6b/ffffff?text=EduConnect',
-                    'link' => 'https://educonnect.example.com',
-                    'tech' => ['Next.js', 'Django', 'WebRTC', 'Redis'],
-                    'status' => 'live'
+                    'name' => 'AI Website Builder',
+                    'category' => 'Open Source',
+                    'description' => '',
+                    'logo' => '',
+                    'link' => '',
+                    'tech' => [],
+                    'status' => 'queue'
                 ],
                 [
-                    'name' => 'RetailBot',
-                    'category' => 'E-commerce',
-                    'description' => 'Conversational AI shopping assistant that increased sales by 35% for clients.',
-                    'logo' => 'https://via.placeholder.com/400x300/4ecdc4/ffffff?text=RetailBot',
-                    'link' => 'https://retailbot.example.com',
-                    'tech' => ['React', 'FastAPI', 'Claude API', 'MongoDB'],
-                    'status' => 'live'
+                    'name' => 'Reciept Only Website',
+                    'category' => 'Open Source',
+                    'description' => '',
+                    'logo' => '',
+                    'link' => '',
+                    'tech' => [],
+                    'status' => 'Queue'
                 ],
                 [
-                    'name' => 'FinanceFlow',
-                    'category' => 'FinTech',
-                    'description' => 'Automated bookkeeping platform processing $2M+ in transactions monthly.',
-                    'logo' => 'https://via.placeholder.com/400x300/95e1d3/ffffff?text=FinanceFlow',
-                    'link' => 'https://financeflow.example.com',
-                    'tech' => ['Angular', 'Java Spring', 'Plaid API', 'MySQL'],
-                    'status' => 'live'
+                    'name' => 'AI Job Scrapper',
+                    'category' => 'Open Source',
+                    'description' => '',
+                    'logo' => '',
+                    'link' => '',
+                    'tech' => [],
+                    'status' => 'Queue'
                 ],
                 [
-                    'name' => 'FitnessPal AI',
-                    'category' => 'Health & Fitness',
-                    'description' => 'Personalized workout and nutrition app with AI coaching. 50K+ active users.',
-                    'logo' => 'https://via.placeholder.com/400x300/ffd93d/ffffff?text=FitnessPal',
-                    'link' => 'https://fitnesspal.example.com',
-                    'tech' => ['Flutter', 'Node.js', 'GPT-4', 'Firebase'],
-                    'status' => 'live'
+                    'name' => 'PRD Generation Platform (w/ User Stories)',
+                    'category' => 'Open Source',
+                    'description' => '',
+                    'logo' => '',
+                    'link' => '',
+                    'tech' => [],
+                    'status' => 'Queue'
+                ],
+				[
+                    'name' => 'Website Legal Boiler Plate',
+                    'category' => 'Open Source',
+                    'description' => '',
+                    'logo' => '',
+                    'link' => '',
+                    'tech' => [],
+                    'status' => 'Queue'
+                ],
+				[
+                    'name' => 'A Tourists Guide to St Augustine',
+                    'category' => 'Open Source',
+                    'description' => '',
+                    'logo' => '',
+                    'link' => '',
+                    'tech' => [],
+                    'status' => 'Queue'
+                ],
+				[
+                    'name' => 'Simple CRM',
+                    'category' => 'Open Source',
+                    'description' => '',
+                    'logo' => '',
+                    'link' => '',
+                    'tech' => [],
+                    'status' => 'Queue'
                 ]
             ];
 
@@ -88,7 +115,7 @@
                 <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden group <?php echo isset($project['highlight']) && $project['highlight'] ? 'ring-2 ring-primary-green' : ''; ?>">
                     <?php if (isset($project['highlight']) && $project['highlight']): ?>
                         <div class="bg-gradient-to-r from-primary-green to-primary-blue text-white text-center py-1 text-xs font-semibold">
-                            CASE STUDY AVAILABLE
+                            FREE DOWNLOAD • The Code that Built this Site
                         </div>
                     <?php endif; ?>
 
@@ -96,7 +123,8 @@
                     <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
                         <img src="<?php echo e($project['logo']); ?>"
                              alt="<?php echo e($project['name']); ?>"
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                             loading="lazy">
                     </div>
 
                     <!-- Project Info -->
@@ -111,7 +139,7 @@
                                 </p>
                             </div>
                             <?php if ($project['status'] === 'live'): ?>
-                                <span class="px-2 py-1 bg-green-100 text-green-600 text-xs font-semibold rounded-full">
+                                <span class="px-2 py-1 bg-primary-green text-xs font-semibold rounded-full" style="color: #000000 !important;">
                                     LIVE
                                 </span>
                             <?php endif; ?>
@@ -157,12 +185,12 @@
                 </div>
                 <div>
                     <blockquote class="text-lg text-theme-primary mb-4">
-                        "Travis and his AI team took our half-finished MVP and turned it into a market-ready product in just 4 weeks.
-                        The AI features they added became our main differentiator. We're now at $50K MRR and growing fast."
+                        "I tried implementing Travis's open source code myself - figured how hard could it be? Three weeks later, I hired him.
+                        He finished our stuck AI project in 5 days. The guy literally gives away expert-level code just to prove his point."
                     </blockquote>
                     <cite class="text-sm">
-                        <span class="font-semibold text-theme-primary">Sarah Mitchell</span>
-                        <span class="text-theme-secondary"> — Founder, TaskFlow Pro</span>
+                        <span class="font-semibold text-theme-primary">Marcus Chen</span>
+                        <span class="text-theme-secondary"> — Solo Developer, FinTech Startup</span>
                     </cite>
                 </div>
             </div>

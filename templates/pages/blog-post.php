@@ -84,6 +84,20 @@ $related_posts = array_slice($related_posts, 0, 3);
     </div>
 </section>
 
+<!-- Featured Image -->
+<?php if (!empty($image)): ?>
+    <section class="px-4 -mt-8 mb-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="relative overflow-hidden rounded-lg shadow-2xl">
+                <img src="<?php echo BASE_PATH . trim(trim($image), '"'); ?>"
+                     alt="<?php echo htmlspecialchars(strip_tags($title ?? 'Blog post image')); ?>"
+                     class="w-full h-64 md:h-96 object-cover"
+                     loading="lazy">
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
 <!-- Engagement Bar -->
 <section class="engagement-bar shadow-sm">
     <div class="max-w-4xl mx-auto px-4 py-3 sm:py-3 py-2">
@@ -145,7 +159,7 @@ $related_posts = array_slice($related_posts, 0, 3);
                             <div class="flex-grow">
                                 <h3 class="author-name text-lg font-bold mb-1">Written by Travis Sutphin</h3>
                                 <p class="author-description text-sm mb-3">
-                                    Fractional CTO helping founders ship their products.
+                                    AI-Tech-Solutions helping founders ship their products.
                                     I turn half-built apps into launched businesses.
                                 </p>
                                 <a href="<?php echo BASE_PATH; ?>/contact"

@@ -11,6 +11,15 @@
         'tags' => $tags ?? []
     ]); ?>
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-46PTMWC8QF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-46PTMWC8QF');
+    </script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -44,8 +53,30 @@
     <!-- Contact Page Section Styles -->
     <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/contact-sections.css">
 
+    <!-- Set dark theme immediately to prevent FOUC -->
+    <script>
+        (function() {
+            try {
+                // Check for saved theme preference
+                const savedTheme = localStorage.getItem('preferred-theme');
+                // Default to dark mode if no preference is saved
+                const theme = savedTheme || 'dark';
+
+                if (theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {
+                // Fallback to dark mode if localStorage fails
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
     <!-- Theme Switcher (Load early to prevent FOUC) -->
     <script src="<?php echo BASE_PATH; ?>/js/theme-switcher.js"></script>
+
+    <!-- Lazy Loading (Load early for performance) -->
+    <script src="<?php echo BASE_PATH; ?>/js/lazy-loading.js"></script>
     <script>
         tailwind.config = {
             theme: {

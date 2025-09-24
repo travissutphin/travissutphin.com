@@ -77,7 +77,8 @@
                     <div class="team-photo-container aspect-square">
                         <img src="<?php echo e($member['photo']); ?>"
                              alt="<?php echo e($member['name']); ?>"
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                             loading="lazy">
                     </div>
 
                     <!-- Info -->
