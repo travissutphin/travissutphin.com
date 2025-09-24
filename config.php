@@ -31,11 +31,11 @@ define('SITE_EMAIL', 'contact@travissutphin.com');
 
 
 // Site metadata defaults
-define('DEFAULT_META_DESCRIPTION', 'Your Half-Built App Deserves a Full Launch. As your Fractional CTO, I\'ll finish what you started—fast—with AI and automation baked in.');
+define('DEFAULT_META_DESCRIPTION', 'Your Half-Built App Deserves a Full Launch. As your AI-Tech-Solutions partner, I finish stuck AI projects and incomplete apps—fast—with proven deployment automation.');
 define('DEFAULT_OG_IMAGE', '/images/og-default.png');
 
 // Blog configuration
-define('POSTS_PER_PAGE', 10);
+define('POSTS_PER_PAGE', 20);
 
 // Environment
 define('DEBUG_MODE', false);
