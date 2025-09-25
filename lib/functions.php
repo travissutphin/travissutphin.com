@@ -150,15 +150,17 @@ function parse_markdown_frontmatter($content) {
         // Simple YAML parsing (for basic key: value pairs)
         $lines = explode("\n", $frontmatter);
         foreach ($lines as $line) {
+            // Remove any carriage returns (Windows line endings)
+            $line = trim($line, "\r");
             if (preg_match('/^([^:]+):\s*(.+)$/', $line, $line_matches)) {
                 $key = trim($line_matches[1]);
-                $value = trim($line_matches[2], ' "\'');
+                $value = trim($line_matches[2], " \"\'\r\n");
 
                 // Handle tags array
                 if ($key === 'tags' && preg_match('/\[(.*)\]/', $value, $tag_matches)) {
                     $tags_str = $tag_matches[1];
                     $tags = array_map(function($tag) {
-                        return trim($tag, ' "\'');
+                        return trim($tag, " \"\'\r\n");
                     }, explode(',', $tags_str));
                     $data[$key] = $tags;
                 } else {

@@ -31,11 +31,11 @@ if (empty($current_page)) $current_page = 'home';
             <span class="text-xs text-theme-inverse mt-1">Connect</span>
         </button>
 
-        <!-- Projects -->
+        <!-- Free Apps -->
         <a href="<?php echo BASE_PATH; ?>/projects"
            class="flex flex-col items-center justify-center py-2 px-3 <?php echo $current_page === 'projects' ? 'text-theme-primary' : 'text-theme-secondary'; ?>">
             <i data-lucide="folder" class="w-5 h-5 mb-1"></i>
-            <span class="text-xs">Projects</span>
+            <span class="text-xs">Free Apps</span>
         </a>
 
         <!-- Blog -->

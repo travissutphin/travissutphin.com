@@ -92,7 +92,7 @@
                 ],
                 [
                     'icon' => 'shield',
-                    'title' => 'Fractional CTO',
+                    'title' => 'AI-Tech-Solutions',
                     'subtitle' => 'Ongoing Support',
                     'description' => 'Get senior technical leadership at a fraction of the cost.',
                     'features' => [

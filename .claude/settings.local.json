@@ -13,7 +13,13 @@
       "Bash(git checkout:*)",
       "Bash(mv:*)",
       "Bash(tree:*)",
-      "Bash(git remote add:*)"
+      "Bash(git remote add:*)",
+      "Bash(git tag:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:travissutphin.com)",
+      "Read(//c/xampp/htdocs//**)",
+      "Bash(git remote:*)",
+      "Bash(git merge:*)"
     ],
     "deny": [],
     "ask": []

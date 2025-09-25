@@ -38,8 +38,8 @@ class ThemeSwitcher {
 
         } catch (error) {
             console.warn('Theme switcher initialization failed:', error);
-            // Fallback to light theme
-            this.setTheme(this.themes.LIGHT, false);
+            // Fallback to dark theme
+            this.setTheme(this.themes.DARK, false);
         }
     }
 
@@ -48,8 +48,8 @@ class ThemeSwitcher {
      */
     setInitialTheme() {
         const savedTheme = this.getSavedTheme();
-        const systemTheme = this.getSystemTheme();
-        const initialTheme = savedTheme || systemTheme;
+        // Default to dark mode for all users
+        const initialTheme = savedTheme || this.themes.DARK;
 
         this.setTheme(initialTheme, false);
     }
@@ -82,7 +82,7 @@ class ThemeSwitcher {
                 : this.themes.LIGHT;
         } catch (error) {
             console.warn('Failed to detect system theme:', error);
-            return this.themes.LIGHT;
+            return this.themes.DARK;
         }
     }
 
@@ -92,7 +92,7 @@ class ThemeSwitcher {
     setTheme(theme, save = true) {
         try {
             if (!this.isValidTheme(theme)) {
-                theme = this.themes.LIGHT;
+                theme = this.themes.DARK;
             }
 
             // Apply theme to document

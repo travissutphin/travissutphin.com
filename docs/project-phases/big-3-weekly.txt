@@ -1,0 +1,102 @@
+<main>
+    <article>
+
+      <section>
+        <p>As a Senior Project Manager, I've run projects with dozens of team members, shifting priorities, surprise roadblocks, and stakeholders who change their minds faster than the weather. But through it all, one habit has consistently helped me—and my teams—stay focused and drive results: the weekly <strong>Big 3</strong></p>
+        <p>These aren't just to-do list items. They're <em>mission-critical</em> outcomes that shape the week. Here's why the Big 3 matters and why it should be part of your project-management toolkit.</p>
+      </section>
+
+      <section>
+        <h2>1. Clarity Over Chaos</h2>
+        <p>In fast-moving environments, it's easy to mistake movement for progress. Without clear weekly priorities, you risk spending hours in meetings, responding to endless Slack messages, and checking off low-impact tasks only to realize you didn't actually <em>move the needle</em>.</p>
+        <p>The Big 3 forces you to pause and ask:</p>
+        <blockquote>
+          <p>"What three outcomes would make this week a win?"</p>
+        </blockquote>
+        <p>That shift in mindset helps cut through the noise and identify what truly matters.</p>
+      </section>
+
+      <section>
+        <h2>2. Team Alignment &amp; Accountability</h2>
+        <p>When everyone on the team knows your top three priorities, two things happen:</p>
+        <ol>
+          <li>They <strong>align their efforts</strong> to support you.</li>
+          <li>They <strong>hold you accountable</strong> to what you committed.</li>
+        </ol>
+        <p>Whether you're managing stakeholders, QA, or a sprint backlog, transparency around your weekly Big 3 encourages proactive updates, faster decisions, and better teamwork.</p>
+        <p><strong>Bonus:</strong> it's a great way to model accountability for junior PMs or cross-functional partners.</p>
+      </section>
+
+      <section>
+        <h2>3. Momentum You Can Measure</h2>
+        <p>Projects don't stall because of one big failure. They stall from weeks of busywork with no forward motion.</p>
+        <p>When you hit your Big 3 week after week, it builds a <em>compound effect</em>. Progress becomes visible. Wins stack up. And stakeholders stay confident because they can see real outcomes, even if the full deliverable is still weeks away.</p>
+      </section>
+
+      <section>
+        <h2>What Makes a Great Big 3?</h2>
+        <ul>
+          <li>Contributes directly to the project's success or removes a blocker.</li>
+          <li>Is achievable within the week.</li>
+          <li>Is specific and outcome-driven (e.g., "Finalize client sign-off on UI wireframes," not "Work on wireframes").</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Thought: Don't Let the Week Run You</h2>
+        <p>As project managers, we often serve everyone else's priorities, supporting the team, managing risk, solving problems. But if we don't carve out space to prioritize what matters most, we become reactive.</p>
+        <p>A Big 3 list is a simple but powerful guardrail to stay proactive, stay focused, and ensure you're leading, not just managing the project.</p>
+        <p><strong>Try it this week.</strong> Write down your Big 3. Share it with your team. And then deliver.</p>
+      </section>
+    </article>
+  </main>
+
+
+<div class="row mt-4">
+		<div class="col-lg-8 mx-auto">
+			<div class="alert alert-primary" role="alert">
+				<a class="category-link d-inline-block" href="transform-your-week-the-power-of-monday-planning">Transform Your Week: The Power of Monday Planning</a>
+				<br /><br />
+				<a class="category-link d-inline-block" href="how-we-do-anything-is-how-we-do-everything-pm-lifestyle-to-work-success">How We Do Anything Is How We Do Everything: PM Lifestyle to Work Success</a>
+			</div>
+		</div>
+	</div>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://travissutphin.com/why-every-project-manager-needs-a-weekly-big-3-priority-list"
+  },
+  "headline": "Why Every Project Manager Needs a Weekly Big 3 Priority List",
+  "description": "Senior Project Manager explains how a weekly Big 3 priority list helps drive project clarity, team accountability, and measurable momentum.",
+  "image": "https://travissutphin.com/assets/images_blog/why-every-project-manager-needs-a-weekly-big-3-priority-list.webp",  
+  "author": {
+    "@type": "Person",
+    "name": "Travis Sutphin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "travissutphin.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": ""
+    }
+  },
+  "datePublished": "2025-07-15",
+  "dateModified": "2025-07-15",
+  "keywords": "project management, weekly planning, big 3 priorities, PM tips, productivity",
+  "articleSection": "Project Management",
+  "mainEntity": {
+    "@type": "Question",
+    "name": "Why should project managers use a weekly Big 3 priority list?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A weekly Big 3 priority list helps project managers stay focused on the most critical outcomes, align their teams, and ensure measurable progress. It creates structure in fast-paced environments and prevents projects from stalling due to unclear priorities."
+    }
+  }
+}
+</script>

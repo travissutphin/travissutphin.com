@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://travissutphin.com/sitemap.xml
+
+# Block potential admin paths
+Disallow: /admin/
+Disallow: /private/

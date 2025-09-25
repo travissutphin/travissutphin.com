@@ -2,49 +2,109 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://travissutphin.com/</loc>
-        <lastmod>2024-11-17</lastmod>
+        <lastmod>2025-09-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://travissutphin.com/services</loc>
-        <lastmod>2024-11-17</lastmod>
+        <lastmod>2025-09-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://travissutphin.com/projects</loc>
+        <lastmod>2025-09-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/team</loc>
+        <lastmod>2025-09-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://travissutphin.com/blog</loc>
-        <lastmod>2024-11-17</lastmod>
+        <lastmod>2025-09-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://travissutphin.com/contact</loc>
-        <lastmod>2024-11-17</lastmod>
+        <lastmod>2025-09-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://travissutphin.com/blog/2024-11-15-welcome-to-my-blog</loc>
-        <lastmod>2024-11-15</lastmod>
+        <loc>https://travissutphin.com/blog/2024-10-26-raci-chart-project-management-guide</loc>
+        <lastmod>2024-10-26</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://travissutphin.com/blog/2024-11-16-why-projects-stall</loc>
-        <lastmod>2024-11-16</lastmod>
+        <loc>https://travissutphin.com/blog/2025-01-21-why-your-ai-project-stuck-80-percent</loc>
+        <lastmod>2025-01-21</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://travissutphin.com/blog/2024-11-17-how-to-complete-stalled-app</loc>
-        <lastmod>2024-11-17</lastmod>
+        <loc>https://travissutphin.com/blog/2025-09-21-why-your-ai-project-stuck-80-percent</loc>
+        <lastmod>2025-09-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-09-22-stop-firefighting-mondays-30-minute-ceo-framework</loc>
+        <lastmod>2025-09-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://travissutphin.com/blog/2024-11-18-simple-ai-guide</loc>
-        <lastmod>2024-11-18</lastmod>
+        <loc>https://travissutphin.com/blog/2025-09-23-outgrowing-excel-why-web-apps-transform-business-operations</loc>
+        <lastmod>2025-09-23</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-09-24-10-technical-pm-skills-nobody-warned-you-about</loc>
+        <lastmod>2025-09-24</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-09-25-learn-by-reading-master-by-doing</loc>
+        <lastmod>2025-09-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-09-26-12-agile-principles-that-actually-work-in-real-projects</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-09-27-recurring-tasks-best-practices-that-actually-work</loc>
+        <lastmod>2025-09-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-09-28-standard-naming-conventions-stop-file-chaos</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-09-29-how-we-do-anything-is-how-we-do-everything</loc>
+        <lastmod>2025-09-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-09-30-why-every-project-manager-needs-weekly-big-3</loc>
+        <lastmod>2025-09-30</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>

@@ -6,18 +6,18 @@
                 <?php echo e($headline ?? 'Your Half-Built App Deserves a Full Launch.'); ?>
             </h1>
             <p class="text-xl md:text-2xl mb-8">
-                <?php echo e($subheadline ?? 'As your Fractional CTO, I\'ll finish what you started—fast—with AI and automation baked in.'); ?>
+                <?php echo e($subheadline ?? 'Your AI-Tech-Solutions partner, I\'ll finish what you started—fast—with AI and automation baked in.'); ?>
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="<?php echo BASE_PATH; ?>/contact" class="bg-white text-dark-green hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
                     Finish My App
                 </a>
-                <a href="<?php echo BASE_PATH; ?>/services" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-dark-green px-6 py-3 rounded-lg font-semibold transition-colors">
+                <!--<a href="<?php //echo BASE_PATH; ?>/services" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-dark-green px-6 py-3 rounded-lg font-semibold transition-colors">
                     Add AI Automation
                 </a>
-                <a href="<?php echo BASE_PATH; ?>/contact" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-dark-green px-6 py-3 rounded-lg font-semibold transition-colors">
+                <a href="<?php //echo BASE_PATH; ?>/contact" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-dark-green px-6 py-3 rounded-lg font-semibold transition-colors">
                     Book Free Audit
-                </a>
+                </a>-->
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
                 ],
                 [
                     'icon' => 'brain',
-                    'title' => 'Fractional CTO',
+                    'title' => 'AI-Tech-Solutions',
                     'description' => 'Strategic technical leadership without the full-time cost.',
                     'features' => ['Technical strategy', 'Team guidance', 'Architecture decisions']
                 ]
@@ -138,15 +138,40 @@
     </div>
 </section>
 
+<!-- FAQ Section for AEO -->
+<section class="py-16 px-4 bg-theme-surface">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-theme-primary mb-12">Frequently Asked Questions</h2>
+        <div class="space-y-6">
+            <div class="faq-item p-6 bg-theme-card rounded-lg">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">How long does it take to finish a stuck AI project?</h3>
+                <p class="text-theme-secondary">Most AI projects that are 80% complete can be finished and deployed in 2-4 weeks. I focus on the critical completion tasks like error handling, deployment automation, and production optimization that typically block launches.</p>
+            </div>
+            <div class="faq-item p-6 bg-theme-card rounded-lg">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">What makes AI project completion different from regular app development?</h3>
+                <p class="text-theme-secondary">AI projects have unique challenges: API rate limiting, error handling for unpredictable AI responses, performance optimization for AI workflows, and deployment complexity. I specialize in these AI-specific completion blockers.</p>
+            </div>
+            <div class="faq-item p-6 bg-theme-card rounded-lg">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">Can you work with any AI technology or framework?</h3>
+                <p class="text-theme-secondary">Yes, I work with all major AI APIs (OpenAI, Anthropic, Google AI) and can adapt to your existing tech stack. If you're using uncommon technology, we'll discuss compatibility during the free project audit.</p>
+            </div>
+            <div class="faq-item p-6 bg-theme-card rounded-lg">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">Do you provide ongoing support after launching my AI app?</h3>
+                <p class="text-theme-secondary">Absolutely. Every completion includes 30 days of support, plus ongoing AI-Tech-Solutions services are available for continued optimization, feature additions, and scaling guidance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CTA Section -->
 <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
         <?php render_partial('cta-section', [
-            'headline' => 'Ready to Finally Launch Your App?',
-            'subheadline' => 'Let\'s turn your vision into a working product.',
+            'headline' => 'Ready to Finally Launch Your AI Project?',
+            'subheadline' => 'Let\'s turn your stuck AI project into a working product that customers actually use.',
             'buttons' => [
-                ['text' => 'Get Started', 'url' => BASE_PATH . '/contact', 'primary' => true],
-                ['text' => 'Learn More', 'url' => BASE_PATH . '/services', 'primary' => false]
+                ['text' => 'Get Free AI Project Audit', 'url' => BASE_PATH . '/contact', 'primary' => true],
+                ['text' => 'See AI Project Examples', 'url' => BASE_PATH . '/projects', 'primary' => false]
             ]
         ]); ?>
     </div>

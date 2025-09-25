@@ -1,5 +1,36 @@
 # Project: travissutphin.com
 
+## Core Principle
+Keep it simple, efficient, robust, best practice and scalable. No overengineering.
+
+## Development Guidelines
+1. Don't create files unless necessary
+2. Prefer editing over creating new files
+3. Keep animations simple and working
+4. No unnecessary comments in code
+5. Test all changes before marking complete
+
+# Team Practices & Methodologies
+
+## Core Methodology: Scrum + Kanban Hybrid
+
+### 🎯 Scrum Framework (Primary)
+- **Sprint Cycles**: 2-week iterations
+- **Roles**:
+  - **Product Owner**: [Travis]
+  - **Scrum Master**: [Codey] (TPM) - facilitates process, removes blockers
+  - **Development Team**: [TechTeam] - [Syntax], [Aesthetica], [Flow], [Sentinal], [Verity]
+
+### 📋 Key Ceremonies
+- **Sprint Planning**: Start of each sprint - define goals and backlog
+- **Daily Stand-up**: 15-min daily sync for [TechTeam]
+- **Sprint Review**: Demo working software to [MarketingTeam]
+- **Sprint Retrospective**: Process improvement discussion
+
+### 🔄 Kanban Integration
+- **Marketing Team**: Kanban board for content/campaign workflow
+- **Operational Work**: Separate board for bugs, security patches, infrastructure
+- **Flow States**:re Backlog → In Progress → Review → Done
 
 ## Team Member Role Designations
 - [Syntax] : Principal Engineer: experienced software engineer with deep technical expertise and strong soft skills, capable of designing complex systems, mentoring junior developers, and balancing best practices with delivery timelines to build high-quality, scalable applications. Their role involves a broad understanding of the entire software development lifecycle, not just writing code, allowing them to anticipate future needs and ensure long-term maintainability and performance.  
@@ -11,6 +42,7 @@
 - [Bran] : Digital Marketing Specialist:  works to create and implement marketing campaigns that leverage the power of online channels. Digital marketing specialists are responsible for creating strategic online marketing strategies that improve a brand's digital presence specifically SEO (Search Engine Optimization) - AEO (Answer Engine Optimization) - Schema.org
 - [Cipher] : StoryBrand Expert: professional who uses the StoryBrand framework to clarify a technology company's messaging. This person translates complex features into a compelling customer story, ensuring that the website and application clearly communicate how the product solves the user's problem. This is a key differentiator from traditional tech marketing, which often focuses on the company or product features. A StoryBrand expert helps businesses position their customer as the hero and the software as the guide.
 - [Echo] : Content Strategist: a professional who develops, plans, and manages content to meet business goals and user needs. This role involves conducting research, creating content plans and editorial calendars, overseeing content audits, and ensuring content is valuable, relevant, and engaging across various platforms. Content strategists work with data to measure content effectiveness and collaborate with other teams to align content with brand voice and overall business objectives. 
+- [ ] : CRM manager:
 
 ## Team Designations
 - [Team] : [Syntax], [Codey], [Aesthetica], [Sentinal], [Flow], [Verity], [Bran], [Cipher], [Echo]
@@ -18,14 +50,38 @@
 - [MarketingTeam] : include [Codey], [Bran], [Cipher], [Echo]
 - [RepositoryTeam] : include [Flow]), [Sentinel], [Syntax], [Verity]
 
-## External Links
-- Reddit : https://www.reddit.com/r/travissutphin/
-- GitHub : https://github.com/travissutphin?tab=repositories
-- LinkedIn : https://www.linkedin.com/in/travis-sutphin-4472a1a/
+## Development Practices
 
+### 🚀 Definition of Done
+- Code reviewed and approved
+- Automated tests passing
+- Security review completed
+- Deployed to staging environment
+- Product Owner acceptance
 
-## Core Principle
-Keep it simple, efficient, robust, best practice and scalable. No overengineering.
+### 🔒 Quality & Security
+- Shift-left testing: QA involved from requirements phase
+- Security reviews integrated into sprint cycle
+- Threat modeling for new features
+- Automated security scanning in CI/CD
+
+### 📱 Marketing Integration
+- Marketing team attends Sprint Reviews for early feedback
+- Product Owner maintains marketing requirements in backlog
+- Content and technical development synchronized weekly
+
+## Communication Channels
+- **Technical Discussions**: [TechTeam] channels
+- **Marketing Strategy**: [MarketingTeam] channels  
+- **Cross-team Sync**: Weekly Product Owner + TPM + Team Leads meeting
+- **Emergency Issues**: Direct to [Codey] (TPM) and relevant specialist
+
+## Success Metrics
+- Sprint goal completion rate
+- Cycle time from idea to deployment
+- Production bug frequency
+- Marketing campaign alignment with feature releases
+
 
 ## Tech Stack
 - PHP 8+ (file-based, no database)
@@ -42,28 +98,33 @@ Keep it simple, efficient, robust, best practice and scalable. No overengineerin
 └── /lib            # Core functions
 ```
 
-## Key Configuration
-- BASE_PATH: `/myPersonalSite/public`
-- Site URL: `http://localhost/myPersonalSite/public/`
-
 ## Commands
 ```bash
 # Check PHP syntax
 php -l filename.php
 
+# Start local development server (port 8080)
+cd public && php -S localhost:8080
+
 # Start server
 # XAMPP Control Panel (port 80)
 ```
 
-## Development Guidelines
-1. Don't create files unless necessary
-2. Prefer editing over creating new files
-3. Keep animations simple and working
-4. No unnecessary comments in code
-5. Test all changes before marking complete
+## Local Development
+- **Development Server**: `cd public && php -S localhost:8080`
+- **Access URL**: http://localhost:8080
+- **Document Root**: `/public` folder
+- **Alternative**: XAMPP on port 80 (requires copying public/* to htdocs/)
 
 ## Blog Posts
 Create new blog post: Add markdown file to `/content/blog/YYYY-MM-DD-slug.md`
+
+### Blog Image Requirements
+- **Format**: PNG preferred
+- **Dimensions**: 1200x630px (optimal for both display sizes)
+- **Location**: `/assets/images/blogs/YYYY-MM-DD-slug.png`
+- **Display**: 256px height (mobile), 384px height (desktop)
+- **Aspect Ratio**: 16:9 recommended for best fit
 
 ## Testing Checklist
 - [ ] Links work correctly with BASE_PATH
