@@ -1,11 +1,11 @@
 ---
 title: "12 Agile Principles That Actually Work in Real Projects"
-date: "2025-09-26"
+date: "2025-02-10"
 excerpt: "The Agile Manifesto isn't just theory. Here's how the 12 principles translate into real-world project success, with practical examples from the trenches."
 tags: ["Agile", "Project Management", "Software Development", "Team Leadership"]
 author: "Travis Sutphin"
 readingTime: 9
-image: "/assets/images/blogs/2025-09-26-12-agile-principles-that-actually-work-in-real-projects.png"
+image: "/assets/images/blogs/2025-02-10-12-agile-principles-that-actually-work-in-real-projects.png"
 ---
 
 # 12 Agile Principles That Actually Work in Real Projects

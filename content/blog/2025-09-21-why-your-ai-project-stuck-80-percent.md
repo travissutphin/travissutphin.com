@@ -16,11 +16,11 @@ But here's the thing: **80% feels like 99%, but that last 20% is where AI projec
 
 ## The "Almost Done" Trap That Kills AI Projects
 
-I've rescued 50+ stalled projects in my 20+ years as a developer, and I see the same pattern every time:
+The same pattern occur every time:
 
-- **Week 1-8**: Rapid progress, core features built, excitement high
-- **Week 9-12**: Edge cases emerge, AI integrations break, complexity explodes
-- **Week 13+**: Frustration sets in, progress crawls, project sits "almost done"
+- **Initial Phase**: Rapid progress, core features built, excitement high
+- **Shortly After**: Edge cases emerge, AI integrations break, complexity explodes
+- **Eventually**: Frustration sets in, progress crawls, project sits "almost done"
 
 Sound familiar?
 

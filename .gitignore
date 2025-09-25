@@ -100,3 +100,12 @@ ehthumbs.db
 # Documentation build artifacts
 /docs/build/
 /docs/_build/
+
+# Claude Code specific
+CLAUDE.md
+
+# Development documentation
+/docs/kanban.html
+/docs/marketing/
+/docs/features/
+/docs/project_phases/

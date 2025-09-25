@@ -1,11 +1,11 @@
 ---
 title: "Learn by Reading, Master by Doing: The 3-Stage Learning Framework"
-date: "2025-09-25"
+date: "2025-01-25"
 excerpt: "Reading gives you knowledge. Doing gives you mastery. Here's the proven 3-stage framework I use to transform theoretical concepts into real-world expertise."
 tags: ["Learning", "Professional Development", "Mastery", "Methodology"]
 author: "Travis Sutphin"
 readingTime: 6
-image: "/assets/images/blogs/2025-09-25-learn-by-reading-master-by-doing.png"
+image: "/assets/images/blogs/2025-01-25-learn-by-reading-master-by-doing.png"
 ---
 
 # Learn by Reading, Master by Doing: The 3-Stage Learning Framework

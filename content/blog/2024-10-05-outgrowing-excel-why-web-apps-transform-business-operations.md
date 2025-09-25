@@ -1,11 +1,11 @@
 ---
 title: "Outgrowing Excel: Why Web Apps Transform Business Operations"
-date: "2025-09-23"
+date: "2024-10-05"
 excerpt: "Excel feels familiar, but when your business grows, spreadsheets become barriers. Discover why web applications offer superior scalability, accuracy, and flexibility."
 tags: ["Web Development", "Business Operations", "Excel Alternative", "Scalability"]
 author: "Travis Sutphin"
 readingTime: 7
-image: "/assets/images/blogs/2025-09-23-outgrowing-excel-why-web-apps-transform-business-operations.png"
+image: "/assets/images/blogs/2024-10-05-outgrowing-excel-final.png"
 ---
 
 # Outgrowing Excel: Why Web Apps Transform Business Operations

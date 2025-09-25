@@ -19,7 +19,9 @@
       "WebFetch(domain:travissutphin.com)",
       "Read(//c/xampp/htdocs//**)",
       "Bash(git remote:*)",
-      "Bash(git merge:*)"
+      "Bash(git merge:*)",
+      "Bash(find:*)",
+      "Bash(git restore:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,11 +1,11 @@
 ---
 title: "Standard Naming Conventions: Stop the File Chaos"
-date: "2025-09-28"
+date: "2025-04-22"
 excerpt: "Ever wasted 20 minutes looking for 'presentation_final_FINAL_v2_updated.pptx'? Here's how standardized naming conventions save time, prevent errors, and restore sanity."
 tags: ["Organization", "Productivity", "File Management", "Team Efficiency"]
 author: "Travis Sutphin"
 readingTime: 5
-image: "/assets/images/blogs/2025-09-28-standard-naming-conventions-stop-file-chaos.png"
+image: "/assets/images/blogs/2025-04-22-standard-naming-conventions-stop-file-chaos.png"
 ---
 
 # Standard Naming Conventions: Stop the File Chaos

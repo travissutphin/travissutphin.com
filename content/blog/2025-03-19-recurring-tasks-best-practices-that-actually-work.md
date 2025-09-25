@@ -1,11 +1,11 @@
 ---
 title: "Recurring Tasks: Best Practices That Actually Work"
-date: "2025-09-27"
+date: "2025-03-19"
 excerpt: "Recurring tasks can keep your team on track or create chaos. Here's how to use them wisely with real-world examples of what works and what doesn't."
 tags: ["Project Management", "Productivity", "Team Management", "Workflows"]
 author: "Travis Sutphin"
 readingTime: 6
-image: "/assets/images/blogs/2025-09-27-recurring-tasks-best-practices-that-actually-work.png"
+image: "/assets/images/blogs/2025-03-19-recurring-tasks-best-practices-that-actually-work.png"
 ---
 
 # Recurring Tasks: Best Practices That Actually Work

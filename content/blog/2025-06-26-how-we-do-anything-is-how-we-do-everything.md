@@ -1,11 +1,11 @@
 ---
 title: "How We Do Anything Is How We Do Everything"
-date: "2025-09-29"
+date: "2025-06-26"
 excerpt: "Project management isn't confined to work. Your personal habits build the foundation for professional excellence. Here's how small disciplines create big results."
 tags: ["Leadership", "Personal Development", "Habits", "Professional Excellence"]
 author: "Travis Sutphin"
 readingTime: 7
-image: "/assets/images/blogs/2025-09-29-how-we-do-anything-is-how-we-do-everything.png"
+image: "/assets/images/blogs/2025-06-26-how-we-do-anything-is-how-we-do-everything.png"
 ---
 
 # How We Do Anything Is How We Do Everything

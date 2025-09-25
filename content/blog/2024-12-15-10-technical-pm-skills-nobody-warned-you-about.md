@@ -1,11 +1,11 @@
 ---
 title: "10 Technical PM Skills Nobody Warned You About"
-date: "2025-09-24"
+date: "2024-12-15"
 excerpt: "Being a Technical Project Manager isn't about knowing every framework. Here are the real skills that separate successful TPMs from the chaos-creators."
 tags: ["Project Management", "Technical Leadership", "TPM", "Engineering Management"]
 author: "Travis Sutphin"
 readingTime: 8
-image: "/assets/images/blogs/2025-09-24-10-technical-pm-skills-nobody-warned-you-about.png"
+image: "/assets/images/blogs/2024-12-15-10-technical-pm-skills-nobody-warned-you-about.png"
 ---
 
 # 10 Technical PM Skills Nobody Warned You About

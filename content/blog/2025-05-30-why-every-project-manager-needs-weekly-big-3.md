@@ -1,11 +1,11 @@
 ---
 title: "Why Every Project Manager Needs a Weekly Big 3"
-date: "2025-09-30"
+date: "2025-05-30"
 excerpt: "In chaotic project environments, the Big 3 weekly priorities framework cuts through noise to drive real results. Here's why this simple habit changes everything."
 tags: ["Project Management", "Productivity", "Weekly Planning", "Leadership"]
 author: "Travis Sutphin"
 readingTime: 5
-image: "/assets/images/blogs/2025-09-30-why-every-project-manager-needs-weekly-big-3.png"
+image: "/assets/images/blogs/2025-05-30-why-every-project-manager-needs-weekly-big-3.png"
 ---
 
 # Why Every Project Manager Needs a Weekly Big 3
