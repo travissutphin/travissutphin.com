@@ -82,6 +82,8 @@ Keep it simple, efficient, robust, best practice and scalable. No overengineerin
 - Production bug frequency
 - Marketing campaign alignment with feature releases
 
+## Process workflows
+- [ProcessTaskComplete] : the [RepositoryTeam] should review the git and commit as needed and push to github. [Codey] should review the /docs/kanban.html and update accordingly to ensure current task status is accurate
 
 ## Tech Stack
 - PHP 8+ (file-based, no database)
