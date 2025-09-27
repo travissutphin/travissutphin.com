@@ -1,11 +1,11 @@
 ---
 title: "The AI Speed Trap: Why Moving Fast Without Systems Breaks Everything"
-date: "2025-09-27"
+date: "2025-09-26"
 excerpt: "AI doesn't solve chaos, it amplifies it. Learn how to use AI not just to go faster, but to go faster correctly with sustainable systems."
 tags: ["AI", "Productivity", "Development", "Systems", "Quality"]
 author: "Travis Sutphin"
 readingTime: 8
-image: "/assets/images/blogs/2025-09-27-ai-speed-trap-why-moving-fast-without-systems-breaks-everything.png"
+image: "/assets/images/blogs/2025-09-26-ai-speed-trap-why-moving-fast-without-systems-breaks-everything.png"
 ---
 
 # The AI Speed Trap: Why Moving Fast Without Systems Breaks Everything
@@ -68,44 +68,30 @@ Try: "Generate a Python script to process user data with comprehensive docstring
 ### Let AI Maintain Your Systems
 
 **Your Kanban Board Updates**
-```
-"Based on this completed code, write a Jira ticket update including:
-- What was accomplished
-- Technical decisions made  
-- Any new dependencies
-- Next steps needed"
-```
+
+Ask AI: *"Based on this completed code, write a Jira ticket update including what was accomplished, technical decisions made, any new dependencies, and next steps needed."
+
+*
 
 **Your Documentation Stays Current**
-```
-"Review this code change and update the corresponding documentation:
-- API docs if endpoints changed
-- README if setup changed
-- Architecture docs if structure changed"
-```
+
+Ask AI: *"Review this code change and update the corresponding documentation - API docs if endpoints changed, README if setup changed, architecture docs if structure changed."
+
+*
 
 **Your Tests Stay Comprehensive**
-```
-"For this new function, create:
-- Unit tests covering edge cases
-- Integration test scenarios
-- Test documentation explaining what each test validates"
-```
+
+Ask AI: *"For this new function, create unit tests covering edge cases, integration test scenarios, and test documentation explaining what each test validates."
+
+*
 
 ### Build AI Workflows That Enforce Standards
 
 Create prompt templates that include your standards:
 
-```
-STANDARD PROMPT TEMPLATE:
-"Create [component] following these requirements:
-1. Use our naming convention: YYYY-MM-DD_ProjectCode_Type
-2. Include comprehensive error handling
-3. Add logging at key decision points
-4. Write JSDoc/docstring documentation
-5. Create accompanying unit tests
-6. Generate a markdown file explaining the architecture"
-```
+**Standard Prompt Template:**
+
+*"Create [component] following these requirements: Use our naming convention (YYYY-MM-DD_ProjectCode_Type), include comprehensive error handling, add logging at key decision points, write JSDoc/docstring documentation, create accompanying unit tests, and generate a markdown file explaining the architecture."*
 
 ## The Back-to-Basics AI Framework
 
@@ -130,13 +116,7 @@ After every AI-assisted work session:
 - Is this following our established patterns?
 
 ### 4. Use AI to Audit Yourself
-```
-"Review this codebase and identify:
-- Missing documentation
-- Inconsistent naming patterns
-- Areas lacking test coverage
-- Potential technical debt"
-```
+Ask AI: *"Review this codebase and identify missing documentation, inconsistent naming patterns, areas lacking test coverage, and potential technical debt."*
 
 ## Real Implementation: A Day in the Life
 
