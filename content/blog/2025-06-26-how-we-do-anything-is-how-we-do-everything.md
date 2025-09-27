@@ -75,13 +75,3 @@ Every personal habit is a building block for professional success. When we appro
 **Looking for someone who brings this level of attention to detail to your technical projects?**
 
 The same discipline that keeps my personal systems organized helps me deliver flawless project execution. Let's bring that precision to your stuck project.
-
-## Blog Image Requirements
-
-The concept perfectly captures:
-
-- ✅ **Visual metaphor:** Personal life activities (home, car, organization) flowing into professional success
-- ✅ **Lifestyle theme:** Clean, organized personal spaces transitioning to successful work outcomes
-- ✅ **Brand consistency:** Your green/blue color palette with aspirational gradients
-- ✅ **Clear connection:** Bridge between personal habits and professional excellence
-- ✅ **Social media ready:** 1200x630px optimized for leadership and personal development communities

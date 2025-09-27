@@ -105,13 +105,3 @@ The best TPMs ask questions, adapt, and keep the train on the tracks (most of th
 **Need a Technical Project Manager who's been through the chaos and lived to tell about it?**
 
 I've managed everything from AI integrations to complete system overhauls. Let's talk about getting your project unstuck.
-
-## Blog Image Requirements
-
-The concept perfectly captures:
-
-- ✅ **Visual metaphor:** Chaos-to-order transformation with project management elements
-- ✅ **Technical theme:** Code snippets, Gantt charts, and engineering tools in background
-- ✅ **Brand consistency:** Your green/blue color palette with professional gradients
-- ✅ **Clear hierarchy:** 10 skill icons arranged in organized grid format
-- ✅ **Social media ready:** 1200x630px optimized for LinkedIn and technical communities

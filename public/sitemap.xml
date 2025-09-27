@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://travissutphin.com/</loc>
-        <lastmod>2025-09-25</lastmod>
+        <lastmod>2025-09-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -26,7 +26,7 @@
     </url>
     <url>
         <loc>https://travissutphin.com/blog</loc>
-        <lastmod>2025-09-25</lastmod>
+        <lastmod>2025-09-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -36,6 +36,13 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <!-- Blog Posts -->
+    <url>
+        <loc>https://travissutphin.com/blog/2024-10-05-outgrowing-excel-why-web-apps-transform-business-operations</loc>
+        <lastmod>2024-10-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://travissutphin.com/blog/2024-10-26-raci-chart-project-management-guide</loc>
         <lastmod>2024-10-26</lastmod>
@@ -43,8 +50,50 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://travissutphin.com/blog/2025-01-21-why-your-ai-project-stuck-80-percent</loc>
-        <lastmod>2025-01-21</lastmod>
+        <loc>https://travissutphin.com/blog/2024-11-22-stop-firefighting-mondays-30-minute-ceo-framework</loc>
+        <lastmod>2024-11-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2024-12-15-10-technical-pm-skills-nobody-warned-you-about</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-01-25-learn-by-reading-master-by-doing</loc>
+        <lastmod>2025-01-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-02-10-12-agile-principles-that-actually-work-in-real-projects</loc>
+        <lastmod>2025-02-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-03-19-recurring-tasks-best-practices-that-actually-work</loc>
+        <lastmod>2025-03-19</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-04-22-standard-naming-conventions-stop-file-chaos</loc>
+        <lastmod>2025-04-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-05-30-why-every-project-manager-needs-weekly-big-3</loc>
+        <lastmod>2025-05-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-06-26-how-we-do-anything-is-how-we-do-everything</loc>
+        <lastmod>2025-06-26</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -53,59 +102,5 @@
         <lastmod>2025-09-21</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://travissutphin.com/blog/2025-09-22-stop-firefighting-mondays-30-minute-ceo-framework</loc>
-        <lastmod>2025-09-22</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://travissutphin.com/blog/2025-09-23-outgrowing-excel-why-web-apps-transform-business-operations</loc>
-        <lastmod>2025-09-23</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://travissutphin.com/blog/2025-09-24-10-technical-pm-skills-nobody-warned-you-about</loc>
-        <lastmod>2025-09-24</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://travissutphin.com/blog/2025-09-25-learn-by-reading-master-by-doing</loc>
-        <lastmod>2025-09-25</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://travissutphin.com/blog/2025-09-26-12-agile-principles-that-actually-work-in-real-projects</loc>
-        <lastmod>2025-09-26</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://travissutphin.com/blog/2025-09-27-recurring-tasks-best-practices-that-actually-work</loc>
-        <lastmod>2025-09-27</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://travissutphin.com/blog/2025-09-28-standard-naming-conventions-stop-file-chaos</loc>
-        <lastmod>2025-09-28</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://travissutphin.com/blog/2025-09-29-how-we-do-anything-is-how-we-do-everything</loc>
-        <lastmod>2025-09-29</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://travissutphin.com/blog/2025-09-30-why-every-project-manager-needs-weekly-big-3</loc>
-        <lastmod>2025-09-30</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
     </url>
 </urlset>

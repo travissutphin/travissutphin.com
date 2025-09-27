@@ -119,6 +119,16 @@ if (isset($is_blog_post) && $is_blog_post) {
     if (!empty($tags)) {
         $schema["keywords"] = implode(", ", $tags);
     }
+
+    // Add image if available
+    if (!empty($image)) {
+        $schema["image"] = [
+            "@type" => "ImageObject",
+            "url" => SITE_URL . trim(trim($image), '"'),
+            "width" => 1200,
+            "height" => 630
+        ];
+    }
 }
 
 echo json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);

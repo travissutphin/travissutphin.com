@@ -91,13 +91,3 @@ Agile isn't about standups and sticky notes. It's about delivering working softw
 **Need someone who's applied these principles to rescue stuck projects?**
 
 I've used Agile to turn around everything from failed AI integrations to legacy system modernizations. Let's get your project back on track.
-
-## Blog Image Requirements
-
-The concept perfectly captures:
-
-- ✅ **Visual metaphor:** Traditional waterfall workflow transforming into agile sprint cycles
-- ✅ **Agile theme:** Iterative circles, sprint boards, and collaborative team elements
-- ✅ **Brand consistency:** Your green/blue color palette with dynamic movement gradients
-- ✅ **Clear structure:** 12 principles arranged in an organized, easy-to-scan format
-- ✅ **Social media ready:** 1200x630px optimized for project management and development communities

@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<!--
+======================================
+  CONTENT CALENDAR - VERSION INFORMATION
+======================================
+  Version: 1.0.0
+  Release Date: 2025-09-26
+  Author: Marketing AI Team
+
+  CHANGELOG:
+  v1.0.0 (2025-09-26)
+  - Initial release based on DevOps Kanban v1.0.0
+  - 6-column editorial workflow (Ideas → In Development → Review → Scheduled → Published → Analytics)
+  - Content-specific metadata (channel, type, campaign)
+  - Mobile-responsive design
+  - AI team integration markers
+  - External icon links for channels
+
+  FEATURES:
+  - Self-contained single HTML file
+  - Embedded CSS/JS (icons linked externally)
+  - Responsive design (desktop/tablet/mobile)
+  - Print-friendly stylesheet
+  - Accessibility support (ARIA labels, keyboard navigation)
+  - Content type and channel tracking
+  - Campaign association support
+
+  USAGE:
+  Copy this file to any project directory and open in browser.
+  AI team can programmatically update cards using comment markers.
+======================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Calendar - Editorial Management v1.0.0</title>
+  
+  <!-- Font Awesome for channel icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f5f5f5;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    .calendar-container {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .calendar-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .calendar-header h1 {
+      color: #1f2937;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .calendar-header .sprint-info {
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    .calendar-footer {
+      text-align: center;
+      margin-top: 32px;
+      padding: 16px;
+    }
+
+    .calendar-footer p {
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    .calendar-board {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      min-height: 70vh;
+    }
+
+    .calendar-column {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      min-height: 400px;
+    }
+
+    .column-header {
+      padding: 14px;
+      border-bottom: 2px solid #e5e7eb;
+      background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+      border-radius: 8px 8px 0 0;
+    }
+
+    /* Column-specific header colors */
+    .column-ideas .column-header { border-bottom-color: #e0e7ff; background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%); }
+    .column-development .column-header { border-bottom-color: #fef3c7; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); }
+    .column-review .column-header { border-bottom-color: #fed7aa; background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%); }
+    .column-scheduled .column-header { border-bottom-color: #c7d2fe; background: linear-gradient(135deg, #eef2ff 0%, #c7d2fe 100%); }
+    .column-published .column-header { border-bottom-color: #bbf7d0; background: linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%); }
+    .column-analytics .column-header { border-bottom-color: #e9d5ff; background: linear-gradient(135deg, #faf5ff 0%, #e9d5ff 100%); }
+
+    .column-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #374151;
+      text-align: center;
+    }
+
+    .column-count {
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .column-content {
+      flex: 1;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .content-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 10px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    .content-card:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-id {
+      font-size: 0.7rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .card-type {
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* Content type colors */
+    .type-blog { background: #dbeafe; color: #1e40af; }
+    .type-social { background: #fce7f3; color: #a21caf; }
+    .type-video { background: #fee2e2; color: #b91c1c; }
+    .type-email { background: #e0e7ff; color: #4c1d95; }
+    .type-webinar { background: #d1fae5; color: #065f46; }
+    .type-infographic { background: #fed7aa; color: #92400e; }
+    .type-podcast { background: #fae8ff; color: #86198f; }
+
+    .card-channel {
+      font-size: 1.1rem;
+      color: #6b7280;
+    }
+
+    /* Channel icon colors */
+    .fa-globe { color: #3b82f6; } /* Website */
+    .fa-linkedin { color: #0077b5; } /* LinkedIn */
+    .fa-twitter { color: #1da1f2; } /* Twitter */
+    .fa-youtube { color: #ff0000; } /* YouTube */
+    .fa-instagram { color: #e4405f; } /* Instagram */
+    .fa-envelope { color: #ea4335; } /* Email */
+    .fa-facebook { color: #1877f2; } /* Facebook */
+
+    .card-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .card-campaign {
+      font-size: 0.65rem;
+      color: #9333ea;
+      font-weight: 500;
+      margin-bottom: 4px;
+      font-style: italic;
+    }
+
+    .card-description {
+      font-size: 0.7rem;
+      color: #4b5563;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      color: #6b7280;
+      padding-top: 6px;
+      border-top: 1px solid #f3f4f6;
+    }
+
+    .card-author {
+      font-weight: 500;
+      color: #4b5563;
+    }
+
+    .card-date {
+      font-size: 0.65rem;
+      font-weight: 600;
+    }
+
+    .date-overdue { color: #dc2626; }
+    .date-today { color: #ea580c; }
+    .date-upcoming { color: #059669; }
+
+    /* Tablet Styles */
+    @media (max-width: 1280px) {
+      .calendar-board {
+        grid-template-columns: repeat(3, 1fr);
+        overflow-x: auto;
+        padding-bottom: 16px;
+      }
+
+      .calendar-column {
+        min-width: 300px;
+      }
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 640px) {
+      body {
+        padding: 8px;
+      }
+
+      .calendar-board {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .calendar-column {
+        min-width: auto;
+        min-height: auto;
+      }
+
+      .column-header {
+        padding: 12px;
+      }
+
+      .column-content {
+        padding: 12px;
+      }
+
+      .content-card {
+        padding: 10px;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .calendar-board {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+      }
+
+      .content-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+      }
+    }
+
+    /* Quick stats bar */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 24px;
+      padding: 12px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Slideout Styles */
+    .slideout-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .slideout-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .slideout-panel {
+      position: fixed;
+      top: 0;
+      right: -80%;
+      width: 80%;
+      height: 100%;
+      background: white;
+      box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+      z-index: 1001;
+      transition: right 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slideout-overlay.active .slideout-panel {
+      right: 0;
+    }
+
+    .slideout-header {
+      padding: 20px;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f9fafb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slideout-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111827;
+      margin: 0;
+    }
+
+    .slideout-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #6b7280;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    .slideout-close:hover {
+      background-color: #e5e7eb;
+      color: #374151;
+    }
+
+    .slideout-content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+    }
+
+    .slideout-content h1, .slideout-content h2, .slideout-content h3 {
+      color: #111827;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .slideout-content h1 {
+      font-size: 1.875rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+
+    .slideout-content h2 {
+      font-size: 1.5rem;
+    }
+
+    .slideout-content h3 {
+      font-size: 1.25rem;
+    }
+
+    .slideout-content p {
+      margin-bottom: 1em;
+      color: #374151;
+    }
+
+    .slideout-content ul, .slideout-content ol {
+      margin-bottom: 1em;
+      padding-left: 1.5em;
+      color: #374151;
+    }
+
+    .slideout-content li {
+      margin-bottom: 0.25em;
+    }
+
+    .slideout-content code {
+      background: #f3f4f6;
+      padding: 0.125rem 0.25rem;
+      border-radius: 0.25rem;
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+      font-size: 0.875em;
+    }
+
+    .slideout-content pre {
+      background: #f3f4f6;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+
+    .slideout-content blockquote {
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
+      margin: 1rem 0;
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    .slideout-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      color: #6b7280;
+    }
+
+    .card-title-link {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .card-title-link:hover {
+      color: #3b82f6;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .slideout-panel {
+        width: 95%;
+        right: -95%;
+      }
+
+      .slideout-content {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar-container">
+    <div class="calendar-header">
+      <h1>Content Calendar - Editorial Pipeline</h1>
+      <div class="sprint-info">Sprint 23 (Sep 23-Oct 6, 2025) | Q4 Campaign: "Innovation Forward"</div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-value">12</div>
+        <div class="stat-label">This Week</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">47</div>
+        <div class="stat-label">This Month</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">8</div>
+        <div class="stat-label">In Production</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">5</div>
+        <div class="stat-label">Channels Active</div>
+      </div>
+    </div>
+
+    <div class="calendar-board">
+      <!-- Ideas/Backlog Column -->
+      <div class="calendar-column column-ideas">
+        <div class="column-header">
+          <div class="column-title">💡 Ideas</div>
+          <div class="column-count">0 items</div>
+        </div>
+        <div class="column-content">
+          <!-- CONTENT_IDEAS_START -->
+          <div class="content-card" data-id="C001" data-type="social">
+            <div class="card-header">
+              <div class="card-meta">
+                <span class="card-id">#C001</span>
+                <span class="card-type type-social">Social</span>
+              </div>
+              <span class="card-channel"><i class="fas fa-share-alt"></i></span>
+            </div>
+            <h4 class="card-title"><a href="#" class="card-title-link" data-md-file="marketing/2025-09-26-kickstand-launch-social-campaign.md">Kickstand AI CMS Launch Campaign</a></h4>
+            <p class="card-campaign">Campaign: Product Launch</p>
+            <p class="card-description">Problem-solution posts for LinkedIn, Reddit, Facebook. AI IS the CMS - no database, solopreneur focused.</p>
+            <div class="card-footer">
+              <span class="card-author">@MarketingTeam</span>
+              <span class="card-date date-upcoming">Target: Sep 29</span>
+            </div>
+          </div>
+
+          <div class="content-card" data-id="C002" data-type="blog">
+            <div class="card-header">
+              <div class="card-meta">
+                <span class="card-id">#C002</span>
+                <span class="card-type type-blog">Blog</span>
+              </div>
+              <span class="card-channel"><i class="fas fa-globe"></i></span>
+            </div>
+            <h4 class="card-title"><a href="#" class="card-title-link" data-md-file="marketing/2025-09-26-ai-as-your-team-campaign.md">AI As Your Complete Team - Revolutionary Framework</a></h4>
+            <p class="card-campaign">Campaign: Thought Leadership</p>
+            <p class="card-description">Detailed guide on managing AI with Scrum methodology. 9 specialized roles, sprint planning, team accountability.</p>
+            <div class="card-footer">
+              <span class="card-author">@Cipher + @Echo</span>
+              <span class="card-date date-upcoming">Target: Oct 3</span>
+            </div>
+          </div>
+
+          <div class="content-card" data-id="C003" data-type="social">
+            <div class="card-header">
+              <div class="card-meta">
+                <span class="card-id">#C003</span>
+                <span class="card-type type-social">Social</span>
+              </div>
+              <span class="card-channel"><i class="fab fa-linkedin"></i></span>
+            </div>
+            <h4 class="card-title"><a href="#" class="card-title-link" data-md-file="marketing/2025-09-26-ai-as-your-team-campaign.md">LinkedIn 3-Part Series: AI Team Management</a></h4>
+            <p class="card-campaign">Campaign: AI-as-Team</p>
+            <p class="card-description">Part 1: The Revelation, Part 2: The Process, Part 3: The Results. Show framework in action.</p>
+            <div class="card-footer">
+              <span class="card-author">@MarketingTeam</span>
+              <span class="card-date date-upcoming">Target: Oct 1-3</span>
+            </div>
+          </div>
+
+          <div class="content-card" data-id="C004" data-type="infographic">
+            <div class="card-header">
+              <div class="card-meta">
+                <span class="card-id">#C004</span>
+                <span class="card-type type-infographic">Infographic</span>
+              </div>
+              <span class="card-channel"><i class="fas fa-globe"></i></span>
+            </div>
+            <h4 class="card-title"><a href="#" class="card-title-link" data-md-file="marketing/storybrand-framework.md">The AI Team Org Chart</a></h4>
+            <p class="card-campaign">Campaign: AI-as-Team</p>
+            <p class="card-description">Visual breakdown of 9 AI roles, team structure, responsibilities. Clean, shareable design.</p>
+            <div class="card-footer">
+              <span class="card-author">@Aesthetica</span>
+              <span class="card-date date-upcoming">Target: Sep 30</span>
+            </div>
+          </div>
+          <!-- CONTENT_IDEAS_END -->
+        </div>
+      </div>
+
+      <!-- In Development Column -->
+      <div class="calendar-column column-development">
+        <div class="column-header">
+          <div class="column-title">✏️ In Development</div>
+          <div class="column-count">0 items</div>
+        </div>
+        <div class="column-content">
+          <!-- CONTENT_DEVELOPMENT_START -->
+          <!-- CONTENT_DEVELOPMENT_END -->
+        </div>
+      </div>
+
+      <!-- Review/Approval Column -->
+      <div class="calendar-column column-review">
+        <div class="column-header">
+          <div class="column-title">👀 Review</div>
+          <div class="column-count">0 items</div>
+        </div>
+        <div class="column-content">
+          <!-- CONTENT_REVIEW_START -->
+          <!-- CONTENT_REVIEW_END -->
+        </div>
+      </div>
+
+      <!-- Scheduled Column -->
+      <div class="calendar-column column-scheduled">
+        <div class="column-header">
+          <div class="column-title">📅 Scheduled</div>
+          <div class="column-count">0 items</div>
+        </div>
+        <div class="column-content">
+          <!-- CONTENT_SCHEDULED_START -->
+          <!-- CONTENT_SCHEDULED_END -->
+        </div>
+      </div>
+
+      <!-- Published Column -->
+      <div class="calendar-column column-published">
+        <div class="column-header">
+          <div class="column-title">✅ Published</div>
+          <div class="column-count">0 items</div>
+        </div>
+        <div class="column-content">
+          <!-- CONTENT_PUBLISHED_START -->
+          <!-- CONTENT_PUBLISHED_END -->
+        </div>
+      </div>
+
+      <!-- Analytics/Performance Column -->
+      <div class="calendar-column column-analytics">
+        <div class="column-header">
+          <div class="column-title">📊 Analytics</div>
+          <div class="column-count">0 items</div>
+        </div>
+        <div class="column-content">
+          <!-- CONTENT_ANALYTICS_START -->
+          <!-- CONTENT_ANALYTICS_END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="calendar-footer">
+      <p>Content Calendar v1.0.0 | Icons by Font Awesome | Updated: <span id="lastUpdate">Sep 26, 2025</span></p>
+    </div>
+  </div>
+
+  <!-- CARD_TEMPLATE_START -->
+  <!--
+  <div class="content-card" data-id="{ID}" data-type="{TYPE}">
+    <div class="card-header">
+      <div class="card-meta">
+        <span class="card-id">#{ID}</span>
+        <span class="card-type type-{TYPE}">{TYPE}</span>
+      </div>
+      <span class="card-channel">{CHANNEL_ICON}</span>
+    </div>
+    <h4 class="card-title">{TITLE}</h4>
+    <p class="card-campaign">Campaign: {CAMPAIGN}</p>
+    <p class="card-description">{DESCRIPTION}</p>
+    <div class="card-footer">
+      <span class="card-author">@{AUTHOR}</span>
+      <span class="card-date {DATE_CLASS}">{DATE}</span>
+    </div>
+  </div>
+
+  Channel Icons Reference:
+  - Website: <i class="fas fa-globe"></i>
+  - LinkedIn: <i class="fab fa-linkedin"></i>
+  - Twitter: <i class="fab fa-twitter"></i>
+  - YouTube: <i class="fab fa-youtube"></i>
+  - Instagram: <i class="fab fa-instagram"></i>
+  - Facebook: <i class="fab fa-facebook"></i>
+  - Email: <i class="fas fa-envelope"></i>
+
+  Content Types: blog, social, video, email, webinar, infographic, podcast
+  Date Classes: date-overdue, date-today, date-upcoming
+  -->
+  <!-- CARD_TEMPLATE_END -->
+
+  <!-- Slideout Panel -->
+  <div id="slideout-overlay" class="slideout-overlay">
+    <div class="slideout-panel">
+      <div class="slideout-header">
+        <h2 id="slideout-title" class="slideout-title">Content Details</h2>
+        <button id="slideout-close" class="slideout-close" aria-label="Close slideout">&times;</button>
+      </div>
+      <div id="slideout-content" class="slideout-content">
+        <div class="slideout-loading">Loading content...</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Content Calendar - Read-only view with auto-updating counts
+    // Cards can be modified by AI team using comment markers
+
+    document.addEventListener('DOMContentLoaded', function() {
+      updateColumnCounts();
+      updateStats();
+      highlightDates();
+    });
+
+    function updateColumnCounts() {
+      const columns = [
+        { marker: 'IDEAS', selector: '.column-ideas' },
+        { marker: 'DEVELOPMENT', selector: '.column-development' },
+        { marker: 'REVIEW', selector: '.column-review' },
+        { marker: 'SCHEDULED', selector: '.column-scheduled' },
+        { marker: 'PUBLISHED', selector: '.column-published' },
+        { marker: 'ANALYTICS', selector: '.column-analytics' }
+      ];
+
+      columns.forEach(column => {
+        const columnElement = document.querySelector(column.selector);
+        if (columnElement) {
+          const cards = columnElement.querySelectorAll('.content-card');
+          const countElement = columnElement.querySelector('.column-count');
+          if (countElement) {
+            const count = cards.length;
+            countElement.textContent = `${count} item${count !== 1 ? 's' : ''}`;
+          }
+        }
+      });
+    }
+
+    function updateStats() {
+      // This would connect to your analytics API in production
+      // For now, counting cards as example
+      const scheduled = document.querySelectorAll('.column-scheduled .content-card').length;
+      const development = document.querySelectorAll('.column-development .content-card').length;
+      const published = document.querySelectorAll('.column-published .content-card').length;
+      
+      // Update stats if needed
+    }
+
+    function highlightDates() {
+      // Check dates and add appropriate styling
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      
+      document.querySelectorAll('.card-date').forEach(dateElement => {
+        const dateText = dateElement.textContent;
+        if (dateText.includes('Sep 26')) {
+          dateElement.classList.add('date-today');
+        }
+        // Add more date logic as needed
+      });
+    }
+
+    // Accessibility: Add keyboard navigation
+    document.querySelectorAll('.content-card').forEach(card => {
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'article');
+      card.setAttribute('aria-label', 'Content card: ' + card.querySelector('.card-title').textContent);
+    });
+
+    // Update last modified date
+    document.getElementById('lastUpdate').textContent = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+
+    // Slideout functionality
+    const slideoutOverlay = document.getElementById('slideout-overlay');
+    const slideoutTitle = document.getElementById('slideout-title');
+    const slideoutContent = document.getElementById('slideout-content');
+    const slideoutClose = document.getElementById('slideout-close');
+
+    // Close slideout handlers
+    slideoutClose.addEventListener('click', closeSlideout);
+    slideoutOverlay.addEventListener('click', function(e) {
+      if (e.target === slideoutOverlay) {
+        closeSlideout();
+      }
+    });
+
+    // Escape key to close
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && slideoutOverlay.classList.contains('active')) {
+        closeSlideout();
+      }
+    });
+
+    function closeSlideout() {
+      slideoutOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function openSlideout(title, mdFile) {
+      slideoutTitle.textContent = title;
+      slideoutContent.innerHTML = '<div class="slideout-loading">Loading content...</div>';
+      slideoutOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      // Fetch and display markdown content
+      fetchMarkdownContent(mdFile);
+    }
+
+    async function fetchMarkdownContent(filePath) {
+      // Since we can't reliably fetch markdown files via HTTP in this setup,
+      // let's embed the content based on the file path
+      showEmbeddedContent(filePath);
+    }
+
+    function showEmbeddedContent(filePath) {
+      let content = '';
+
+      if (filePath.includes('kickstand-launch-social-campaign')) {
+        content = getKickstandCampaignContent();
+      } else if (filePath.includes('ai-as-your-team-campaign')) {
+        content = getAITeamCampaignContent();
+      } else if (filePath.includes('storybrand-framework')) {
+        content = getStoryBrandContent();
+      } else {
+        content = `
+          <div style="color: #ef4444; padding: 20px; text-align: center;">
+            <p><strong>Content not available</strong></p>
+            <p>File: ${filePath}</p>
+            <p style="font-size: 0.875rem; margin-top: 10px;">Content needs to be embedded or file path needs to be accessible via web server.</p>
+          </div>
+        `;
+      }
+
+      slideoutContent.innerHTML = content;
+    }
+
+    function getKickstandCampaignContent() {
+      return `
+        <h1>Kickstand AI CMS Launch Campaign</h1>
+        <h2>Campaign Overview</h2>
+        <p>Launch campaign for Kickstand AI CMS targeting solopreneurs and small business owners who need a simple, powerful content management solution.</p>
+
+        <h2>Key Messages</h2>
+        <ul>
+          <li><strong>AI IS the CMS</strong> - No database complexity</li>
+          <li><strong>Solopreneur Focused</strong> - Built for one-person teams</li>
+          <li><strong>Problem-Solution Fit</strong> - Addresses real pain points</li>
+        </ul>
+
+        <h2>Social Media Strategy</h2>
+        <h3>LinkedIn Posts</h3>
+        <p>Professional networking focus on business efficiency and AI automation benefits.</p>
+
+        <h3>Reddit Engagement</h3>
+        <p>Community-driven discussions in entrepreneur and web development subreddits.</p>
+
+        <h3>Facebook Business Groups</h3>
+        <p>Targeted content for small business and solopreneur communities.</p>
+
+        <h2>Content Calendar</h2>
+        <p><strong>Week 1:</strong> Problem awareness posts</p>
+        <p><strong>Week 2:</strong> Solution introduction</p>
+        <p><strong>Week 3:</strong> Feature demonstrations</p>
+        <p><strong>Week 4:</strong> User testimonials and case studies</p>
+
+        <h2>Sample Posts</h2>
+        <h3>LinkedIn Professional Post</h3>
+        <blockquote>
+        "Spent 3 hours yesterday trying to set up a 'simple' CMS. Database configuration, server setup, plugin conflicts...
+
+        There has to be a better way.
+
+        What if AI could BE your entire CMS? No database. No complex setup. Just tell it what you want.
+
+        That's exactly what we built. AI that thinks like your entire tech team.
+
+        #solopreneur #AI #cms #productivity"
+        </blockquote>
+
+        <h3>Reddit Community Post</h3>
+        <blockquote>
+        "Anyone else frustrated with CMS complexity? I just want to build content, not manage databases and server configurations. Built something that might help fellow solopreneurs - AI that handles all the technical stuff. Thoughts?"
+        </blockquote>
+      `;
+    }
+
+    function getAITeamCampaignContent() {
+      return `
+        <h1>AI As Your Complete Team - Revolutionary Framework</h1>
+        <h2>Executive Summary</h2>
+        <p>This campaign positions AI not as a tool, but as a complete team management framework using proven Scrum methodologies.</p>
+
+        <h2>Core Concept</h2>
+        <p>Transform how solopreneurs and small businesses think about AI by presenting it as a fully functional team with specialized roles, accountability, and sprint-based delivery.</p>
+
+        <h2>The 9 AI Team Roles</h2>
+        <ul>
+          <li><strong>[Syntax]</strong> - Principal Engineer: Deep technical expertise, system design, code quality</li>
+          <li><strong>[Codey]</strong> - Technical Program Manager: Project coordination, timeline management</li>
+          <li><strong>[Aesthetica]</strong> - Front-end Developer & UI/UX Designer: User experience, visual design</li>
+          <li><strong>[Sentinal]</strong> - Security Operations Specialist: Web security, threat assessment</li>
+          <li><strong>[Flow]</strong> - DevOps Engineer: Deployment, infrastructure, automation</li>
+          <li><strong>[Verity]</strong> - QA Specialist: Testing, quality assurance, bug detection</li>
+          <li><strong>[Bran]</strong> - Digital Marketing Specialist: SEO, online marketing strategy</li>
+          <li><strong>[Cipher]</strong> - StoryBrand Expert: Messaging clarity, customer communication</li>
+          <li><strong>[Echo]</strong> - Content Strategist: Content planning, editorial strategy</li>
+        </ul>
+
+        <h2>Framework Benefits</h2>
+        <ul>
+          <li><strong>Structured Accountability:</strong> Each AI role has clear responsibilities</li>
+          <li><strong>Sprint-Based Delivery:</strong> 2-week cycles with defined outcomes</li>
+          <li><strong>Quality Integration:</strong> Built-in review and testing processes</li>
+          <li><strong>Cross-functional Alignment:</strong> Marketing and technical teams work together</li>
+          <li><strong>Scalable Process:</strong> Grows with your business needs</li>
+        </ul>
+
+        <h2>Implementation Strategy</h2>
+        <h3>Sprint Planning Process</h3>
+        <ol>
+          <li>Define sprint goals with [Codey] (TPM)</li>
+          <li>Break down tasks by specialist area</li>
+          <li>Assign work to appropriate AI team members</li>
+          <li>Set review checkpoints and deliverables</li>
+        </ol>
+
+        <h3>Daily Stand-up Format</h3>
+        <p>Brief sync with each AI team member on:</p>
+        <ul>
+          <li>What was completed yesterday</li>
+          <li>What's planned for today</li>
+          <li>Any blockers or dependencies</li>
+        </ul>
+
+        <h2>Content Strategy</h2>
+        <h3>Blog Post Series</h3>
+        <p><strong>"From Chaos to Team: The AI Management Revolution"</strong></p>
+        <p>Detailed guide on implementing the AI team framework with real examples, templates, and step-by-step instructions.</p>
+
+        <h3>LinkedIn 3-Part Series</h3>
+        <p><strong>Part 1: The Revelation</strong> - "Why treating AI like a tool is limiting your potential"</p>
+        <p><strong>Part 2: The Process</strong> - "How to structure your AI team for maximum productivity"</p>
+        <p><strong>Part 3: The Results</strong> - "Real outcomes from 6 months of AI team management"</p>
+
+        <h3>Visual Content</h3>
+        <p><strong>AI Team Org Chart Infographic:</strong> Clean, shareable design showing the 9 roles and their relationships within the Scrum framework.</p>
+      `;
+    }
+
+    function getStoryBrandContent() {
+      return `
+        <h1>StoryBrand Framework for Tech Companies</h1>
+        <h2>Framework Overview</h2>
+        <p>The StoryBrand framework helps technology companies clarify their messaging by positioning the customer as the hero and the software as the guide that helps them succeed.</p>
+
+        <h2>The 7-Part StoryBrand Framework</h2>
+
+        <h3>1. A Character (The Hero)</h3>
+        <p><strong>Who:</strong> Solopreneurs and small business owners</p>
+        <p><strong>Characteristics:</strong> Overwhelmed by technical complexity, time-constrained, seeking efficiency</p>
+
+        <h3>2. Has a Problem</h3>
+        <p><strong>External Problem:</strong> Need a CMS without database complexity and technical overhead</p>
+        <p><strong>Internal Problem:</strong> Feel overwhelmed and frustrated by current technical solutions</p>
+        <p><strong>Philosophical Problem:</strong> Believe technology should empower creativity, not create barriers</p>
+
+        <h3>3. And Meets a Guide (Your Brand)</h3>
+        <p><strong>Authority:</strong> Kickstand AI CMS - Built by entrepreneurs who understand the struggle</p>
+        <p><strong>Empathy:</strong> "We've been there. We know the frustration of spending more time on tech than your business."</p>
+
+        <h3>4. Who Gives Them a Plan</h3>
+        <ol>
+          <li><strong>Install Kickstand AI CMS</strong> (Simple setup, no database required)</li>
+          <li><strong>Configure Your AI Team</strong> (9 specialized roles automatically assigned)</li>
+          <li><strong>Start Building</strong> (AI handles the technical complexity while you focus on content)</li>
+        </ol>
+
+        <h3>5. And Calls Them to Action</h3>
+        <p><strong>Direct Call to Action:</strong> "Start Your Free Trial Today"</p>
+        <p><strong>Transitional Call to Action:</strong> "Download Our Free AI Team Framework Guide"</p>
+
+        <h3>6. That Results in Success</h3>
+        <ul>
+          <li>A fully functional website built in hours, not weeks</li>
+          <li>AI team that works 24/7 on your project</li>
+          <li>Focus returned to your core business instead of technical issues</li>
+          <li>Professional results without hiring a technical team</li>
+        </ul>
+
+        <h3>7. And Helps Them Avoid Failure</h3>
+        <ul>
+          <li>No more frustrating technical setups that eat into business time</li>
+          <li>Avoid expensive developer costs for simple website changes</li>
+          <li>Prevent overwhelming technical debt that slows growth</li>
+          <li>Eliminate the need to become a technical expert to run your business</li>
+        </ul>
+
+        <h2>Application Across Marketing Materials</h2>
+
+        <h3>Website Homepage</h3>
+        <p><strong>Headline:</strong> "Stop Fighting Technology. Start Building Your Business."</p>
+        <p><strong>Subheading:</strong> "Kickstand AI CMS gives you a complete AI team that handles all the technical complexity while you focus on what matters most."</p>
+
+        <h3>Email Campaigns</h3>
+        <p>Subject lines that speak to the internal problem:</p>
+        <ul>
+          <li>"Tired of spending weekends on website updates?"</li>
+          <li>"What if your CMS worked as hard as you do?"</li>
+          <li>"The AI team that never sleeps (so you can)"</li>
+        </ul>
+
+        <h3>Social Media Posts</h3>
+        <p>Focus on the philosophical problem and transformation:</p>
+        <blockquote>
+        "Technology should amplify your creativity, not complicate it. That's why we built an AI team that handles everything technical, so you can get back to building your business."
+        </blockquote>
+
+        <h2>Messaging Guidelines</h2>
+        <ul>
+          <li><strong>Always lead with the customer's problem,</strong> not your solution features</li>
+          <li><strong>Position yourself as the guide,</strong> not the hero of the story</li>
+          <li><strong>Make success tangible</strong> with specific outcomes and timeframes</li>
+          <li><strong>Paint failure as avoidable</strong> when they choose your solution</li>
+          <li><strong>Keep language simple</strong> - avoid technical jargon that creates confusion</li>
+        </ul>
+      `;
+    }
+
+    function convertMarkdownToHTML(markdown) {
+      // Simple markdown to HTML converter (basic features)
+      let html = markdown
+        // Headers
+        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+        // Bold
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        // Italic
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        // Code blocks
+        .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+        // Inline code
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        // Links
+        .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+        // Line breaks
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/\n/g, '<br>');
+
+      // Wrap in paragraphs
+      html = '<p>' + html + '</p>';
+
+      // Clean up empty paragraphs
+      html = html.replace(/<p><\/p>/g, '');
+      html = html.replace(/<p>(<h[1-6]>)/g, '$1');
+      html = html.replace(/(<\/h[1-6]>)<\/p>/g, '$1');
+      html = html.replace(/<p>(<pre>)/g, '$1');
+      html = html.replace(/(<\/pre>)<\/p>/g, '$1');
+
+      return html;
+    }
+
+    // Add click handlers to card title links
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('card-title-link')) {
+        e.preventDefault();
+        const title = e.target.textContent;
+        const mdFile = e.target.getAttribute('data-md-file');
+        if (mdFile) {
+          openSlideout(title, mdFile);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -68,13 +68,3 @@ A Big 3 list is a simple but powerful guardrail to stay proactive, stay focused,
 **Need a project manager who knows how to cut through chaos and deliver what matters?**
 
 I've used the Big 3 framework to rescue stuck projects and keep complex initiatives on track. Let's get your project moving forward.
-
-## Blog Image Requirements
-
-The concept perfectly captures:
-
-- ✅ **Visual metaphor:** Chaotic task list narrowing down to focused Big 3 priorities
-- ✅ **Project management theme:** Clean weekly planning interface with priority hierarchy
-- ✅ **Brand consistency:** Your green/blue color palette with focus-driven gradients
-- ✅ **Clear structure:** Three prominent priority boxes with supporting elements
-- ✅ **Social media ready:** 1200x630px optimized for project management and leadership communities

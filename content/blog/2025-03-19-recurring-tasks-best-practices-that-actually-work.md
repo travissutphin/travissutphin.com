@@ -87,13 +87,3 @@ Recurring tasks should feel invisible when they work and obvious when they don't
 **Need help optimizing your team's workflows and project management systems?**
 
 I've implemented recurring task systems that keep teams on track without the overhead. Let's streamline your processes.
-
-## Blog Image Requirements
-
-The concept perfectly captures:
-
-- ✅ **Visual metaphor:** Calendar with automated task cycles and workflow arrows
-- ✅ **Productivity theme:** Clean, organized project management interface with recurring elements
-- ✅ **Brand consistency:** Your green/blue color palette with systematic gradients
-- ✅ **Clear structure:** Best practices vs. pitfalls comparison layout
-- ✅ **Social media ready:** 1200x630px optimized for project management and productivity communities

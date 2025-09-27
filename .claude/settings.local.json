@@ -21,7 +21,9 @@
       "Bash(git remote:*)",
       "Bash(git merge:*)",
       "Bash(find:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(xargs:*)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []

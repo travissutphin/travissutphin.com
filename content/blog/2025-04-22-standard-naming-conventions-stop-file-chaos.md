@@ -97,13 +97,3 @@ The 5 minutes you spend establishing naming standards save hours of searching la
 **Need help organizing your team's digital chaos and implementing better workflows?**
 
 I've helped teams transform from file anarchy to systematic organization. Let's bring order to your digital workspace.
-
-## Blog Image Requirements
-
-The concept perfectly captures:
-
-- ✅ **Visual metaphor:** Chaotic file pile transforming into organized, labeled file structure
-- ✅ **Organization theme:** Clean folder hierarchy with consistent naming patterns
-- ✅ **Brand consistency:** Your green/blue color palette with systematic gradients
-- ✅ **Clear progression:** Before (chaos) and after (organized) comparison
-- ✅ **Social media ready:** 1200x630px optimized for productivity and business communities
