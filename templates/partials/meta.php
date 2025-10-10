@@ -1,12 +1,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo e($title); ?></title>
-<meta name="description" content="<?php echo e($meta_description); ?>">
+<meta name="description" content="<?php echo e(isset($excerpt) ? $excerpt : $meta_description); ?>">
 <meta name="author" content="Travis Sutphin">
 
 <!-- Open Graph -->
 <meta property="og:title" content="<?php echo e($title); ?>">
-<meta property="og:description" content="<?php echo e($meta_description); ?>">
+<meta property="og:description" content="<?php echo e(isset($excerpt) ? $excerpt : $meta_description); ?>">
 <meta property="og:image" content="<?php echo SITE_URL . e($og_image); ?>">
 <meta property="og:url" content="<?php echo SITE_URL . $_SERVER['REQUEST_URI']; ?>">
 <meta property="og:type" content="<?php echo isset($og_type) ? e($og_type) : 'website'; ?>">
@@ -15,7 +15,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<?php echo e($title); ?>">
-<meta name="twitter:description" content="<?php echo e($meta_description); ?>">
+<meta name="twitter:description" content="<?php echo e(isset($excerpt) ? $excerpt : $meta_description); ?>">
 <meta name="twitter:image" content="<?php echo SITE_URL . e($og_image); ?>">
 <meta name="twitter:creator" content="@travissutphin">
 
@@ -90,30 +90,56 @@ $schema = [
 
 // Add Article schema for blog posts
 if (isset($is_blog_post) && $is_blog_post) {
+    // Use excerpt for description if available, otherwise use meta_description
+    $blog_description = isset($excerpt) ? $excerpt : $meta_description;
+
+    // Get article body text for Read Aloud feature
+    $article_text = '';
+    if (isset($html_content)) {
+        $article_text = strip_tags($html_content);
+    } elseif (isset($content)) {
+        $article_text = strip_tags(parse_markdown($content));
+    }
+
+    // Calculate accurate word count
+    $actual_word_count = !empty($article_text) ? str_word_count($article_text) : 500;
+
     $schema = [
         "@context" => "https://schema.org",
         "@type" => "BlogPosting",
         "headline" => $title ?? '',
-        "description" => $meta_description ?? '',
+        "description" => $blog_description,
+        "articleBody" => $article_text, // Required for Chrome Read Aloud
         "datePublished" => $date ?? '',
         "dateModified" => $date ?? '',
         "author" => [
             "@type" => "Person",
             "name" => "Travis Sutphin",
-            "url" => SITE_URL
+            "url" => SITE_URL,
+            "sameAs" => [
+                "https://linkedin.com/in/travissutphin",
+                "https://twitter.com/travissutphin"
+            ]
         ],
         "publisher" => [
-            "@type" => "Person",
-            "name" => "Travis Sutphin",
-            "url" => SITE_URL
+            "@type" => "Organization",
+            "name" => SITE_NAME,
+            "url" => SITE_URL,
+            "logo" => [
+                "@type" => "ImageObject",
+                "url" => SITE_URL . "/favicon_io/apple-touch-icon.png",
+                "width" => 180,
+                "height" => 180
+            ]
         ],
         "mainEntityOfPage" => [
             "@type" => "WebPage",
             "@id" => SITE_URL . $_SERVER['REQUEST_URI']
         ],
-        "wordCount" => isset($content) ? str_word_count(strip_tags($content)) : (isset($html_content) ? str_word_count(strip_tags($html_content)) : 500),
-        "timeRequired" => "PT" . (isset($readingTime) ? intval($readingTime) : (isset($reading_time) ? intval($reading_time) : 5)) . "M",
-        "articleSection" => isset($tags) && !empty($tags) ? $tags[0] : "Technology"
+        "wordCount" => $actual_word_count,
+        "timeRequired" => "PT" . (isset($readingTime) ? intval($readingTime) : (isset($reading_time) ? intval($reading_time) : ceil($actual_word_count / 200))) . "M",
+        "articleSection" => isset($tags) && !empty($tags) ? $tags[0] : "Technology",
+        "inLanguage" => "en-US"
     ];
 
     if (!empty($tags)) {
