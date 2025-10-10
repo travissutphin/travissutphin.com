@@ -30,8 +30,16 @@ RUN { \
 # Configure Apache
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
+# Set ServerName to suppress Apache warning
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+# Configure Apache to use Railway's PORT environment variable
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+
+# Configure Apache to listen on Railway's PORT (defaults to 80 for local development)
+RUN sed -i 's/Listen 80/Listen ${PORT:-80}/' /etc/apache2/ports.conf && \
+    sed -i 's/:80/:${PORT:-80}/' /etc/apache2/sites-available/000-default.conf
 
 # Create .htaccess for proper routing
 RUN echo '<Directory ${APACHE_DOCUMENT_ROOT}>' > /etc/apache2/conf-available/override.conf && \
@@ -46,17 +54,21 @@ WORKDIR /var/www/html
 # Copy application files
 COPY . /var/www/html/
 
+# Copy and set up entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 # Ensure proper permissions
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html \
     && chmod -R 775 /var/www/html/content
 
-# Health check
+# Health check (using PORT environment variable)
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost/ || exit 1
+    CMD curl -f http://localhost:${PORT:-80}/ || exit 1
 
-# Expose port 80
-EXPOSE 80
+# Expose port (Railway sets this dynamically)
+EXPOSE ${PORT:-80}
 
 # Labels for Railway and container metadata
 LABEL maintainer="[Flow] <devops@travissutphin.com>" \
@@ -64,5 +76,5 @@ LABEL maintainer="[Flow] <devops@travissutphin.com>" \
       description="travissutphin.com personal website" \
       team="[Flow], [Gordon], [Syntax]"
 
-# Start Apache in foreground
-CMD ["apache2-foreground"]
+# Use entrypoint script to handle Railway PORT configuration
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
