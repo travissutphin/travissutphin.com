@@ -8,7 +8,13 @@
         'is_blog_post' => $is_blog_post ?? false,
         'og_type' => $og_type ?? 'website',
         'date' => $date ?? null,
-        'tags' => $tags ?? []
+        'tags' => $tags ?? [],
+        'excerpt' => $excerpt ?? null,
+        'html_content' => $html_content ?? null,
+        'content' => $content ?? null,
+        'readingTime' => $readingTime ?? null,
+        'reading_time' => $reading_time ?? null,
+        'image' => $image ?? null
     ]); ?>
 
     <!-- Google Analytics -->
