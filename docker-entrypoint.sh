@@ -15,8 +15,9 @@ PORT=${PORT:-80}
 
 echo "=== Configuring Apache to listen on port $PORT ==="
 
-# Update ports.conf to listen on the correct port
-echo "Listen $PORT" > /etc/apache2/ports.conf
+# Update ports.conf to listen on all interfaces (0.0.0.0)
+# This is critical for Railway to reach the application
+echo "Listen 0.0.0.0:$PORT" > /etc/apache2/ports.conf
 
 # Update the default virtual host
 cat > /etc/apache2/sites-available/000-default.conf <<EOF
