@@ -8,8 +8,6 @@ readingTime: 6
 image: "/assets/images/blogs/2025-03-19-recurring-tasks-best-practices-that-actually-work.png"
 ---
 
-# Recurring Tasks: Best Practices That Actually Work
-
 Recurring tasks are one of the most underused, and misused features in many project management tools. When done right, they can keep your team on track without extra effort. Done wrong, they create clutter, confusion, and missed work.
 
 Let's walk through the best practices to help you use recurring tasks wisely with real-world project examples to make it clear when to hit "repeat" and when to skip it.

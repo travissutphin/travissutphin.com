@@ -8,8 +8,6 @@ readingTime: 8
 image: "/assets/images/blogs/2025-09-21-why-your-ai-project-stuck-80-percent.png"
 ---
 
-# Why Your AI Project Is Stuck at 80% (And How to Actually Ship It)
-
 You've been working on it for months. Maybe it's a web app with AI features, an automation workflow, or a custom tool for your business. The core functionality works. Users can log in. Data flows. It *almost* does what you envisioned.
 
 But here's the thing: **80% feels like 99%, but that last 20% is where AI projects go to die.**

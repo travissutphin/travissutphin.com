@@ -8,8 +8,6 @@ readingTime: 5
 image: "/assets/images/blogs/2024-11-22-stop-firefighting-mondays-updated.png"
 ---
 
-# Stop Firefighting Mondays: The 30-Minute CEO Framework That Transforms Your Week
-
 Why do Mondays feel like putting out fires while juggling chainsaws? Because we're doing it wrong.
 
 I used to start each week reacting to whatever landed in my inbox. The result? Constant stress, missed deadlines, and that nagging feeling that I was always playing catch-up.

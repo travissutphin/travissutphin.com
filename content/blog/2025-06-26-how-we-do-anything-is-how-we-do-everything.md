@@ -8,8 +8,6 @@ readingTime: 7
 image: "/assets/images/blogs/2025-06-26-how-we-do-anything-is-how-we-do-everything.png"
 ---
 
-# How We Do Anything Is How We Do Everything
-
 Project management isn't confined to workspaces, Gantt charts, or deadlines. It's a mindset, a way of approaching life with purpose and precision. I believe in striving daily for excellence, understanding that perfection is unattainable but the pursuit itself creates growth.
 
 **How we do anything is how we do everything.**

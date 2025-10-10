@@ -8,8 +8,6 @@ readingTime: 5
 image: "/assets/images/blogs/2025-05-30-why-every-project-manager-needs-weekly-big-3.png"
 ---
 
-# Why Every Project Manager Needs a Weekly Big 3
-
 As a Senior Project Manager, I've run projects with dozens of team members, shifting priorities, surprise roadblocks, and stakeholders who change their minds faster than the weather. But through it all, one habit has consistently helped me—and my teams—stay focused and drive results: the weekly **Big 3**.
 
 These aren't just to-do list items. They're *mission-critical* outcomes that shape the week. Here's why the Big 3 matters and why it should be part of your project-management toolkit.
