@@ -4,11 +4,18 @@
 
 set -e
 
-echo "=== Railway Deployment Startup ==="
+# Output to both stdout and stderr to ensure Railway captures it
+exec 1>&2
+
+echo "========================================"
+echo "RAILWAY ENTRYPOINT SCRIPT STARTING"
+echo "========================================"
 echo "Environment variables:"
 echo "  PORT: ${PORT:-not set}"
 echo "  RAILWAY_ENVIRONMENT: ${RAILWAY_ENVIRONMENT:-not set}"
 echo "  PWD: $(pwd)"
+echo "  USER: $(whoami)"
+echo "========================================"
 
 # Default to port 80 if PORT not set
 PORT=${PORT:-80}
@@ -62,6 +69,34 @@ else
     echo "✗ Document root missing!"
     exit 1
 fi
+
+# Create diagnostic file for Railway debugging
+echo "=== Creating diagnostic file ==="
+cat > /var/www/html/public/railway-diagnostics.txt <<DIAGEOF
+Railway Deployment Diagnostics
+================================
+Generated: $(date)
+PORT: $PORT
+RAILWAY_ENVIRONMENT: ${RAILWAY_ENVIRONMENT:-not set}
+PWD: $(pwd)
+USER: $(whoami)
+
+Apache Configuration:
+- Listening on: 0.0.0.0:$PORT
+- Document Root: /var/www/html/public
+- VirtualHost: *:$PORT
+
+Ports.conf content:
+$(cat /etc/apache2/ports.conf)
+
+VirtualHost config:
+$(cat /etc/apache2/sites-available/000-default.conf)
+
+Entrypoint script executed successfully.
+If you can see this file, Apache is serving files correctly.
+DIAGEOF
+
+echo "✓ Diagnostic file created at /var/www/html/public/railway-diagnostics.txt"
 
 # Start Apache
 echo "=== Starting Apache in foreground mode ==="
