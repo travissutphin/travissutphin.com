@@ -23,9 +23,19 @@
       "Bash(find:*)",
       "Bash(git restore:*)",
       "Bash(xargs:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(docker build:*)",
+      "Bash(chmod:*)",
+      "Bash(./automation/sync-docs.sh:*)",
+      "Bash(./automation/deploy.sh:*)",
+      "Bash(cat:*)",
+      "Bash(docker images:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker ps:*)",
+      "Bash(docker exec:*)"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "outputStyle": "Explanatory"
 }

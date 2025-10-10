@@ -1,0 +1,61 @@
+# Docker Compose for Local Development & Testing
+# travissutphin.com
+# Version: 1.0.0
+# Usage: docker-compose up -d
+
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: travissutphin-web
+    ports:
+      - "8080:80"
+    volumes:
+      # Mount content directory for live editing
+      - ./content:/var/www/html/content:ro
+      - ./public/assets:/var/www/html/public/assets:ro
+      # Mount templates for development
+      - ./templates:/var/www/html/templates:ro
+    environment:
+      - ENV=development
+      - PHP_DISPLAY_ERRORS=1
+      - PHP_ERROR_REPORTING=E_ALL
+    restart: unless-stopped
+    networks:
+      - travissutphin-net
+    labels:
+      - "com.travissutphin.environment=development"
+      - "com.travissutphin.team=[Flow][Gordon]"
+
+  # Optional: Add a local testing container that runs tests
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: travissutphin-test
+    command: >
+      sh -c "
+        echo 'Running PHP syntax checks...' &&
+        find /var/www/html -name '*.php' -exec php -l {} \; &&
+        echo 'Testing Apache configuration...' &&
+        apache2ctl configtest &&
+        echo 'All tests passed!'
+      "
+    volumes:
+      - ./:/var/www/html:ro
+    networks:
+      - travissutphin-net
+    profiles:
+      - test
+
+networks:
+  travissutphin-net:
+    driver: bridge
+    name: travissutphin-network
+
+# Volumes for persistent data (if needed in future)
+volumes:
+  travissutphin-data:

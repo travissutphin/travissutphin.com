@@ -1,0 +1,69 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+README.md
+CLAUDE.md
+
+# Development files
+.claude/
+serve.bat
+serve.php
+serve.sh
+
+# Docker files (don't include in build context)
+Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+.dockerignore
+
+# Railway deployment
+railway.json
+railway.toml
+
+# CI/CD and automation
+automation/
+.github/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+tmp/
+temp/
+cache/
+
+# Node modules (if any)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Test files
+tests/
+test/
+*.test.php
+*.spec.php
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Environment files
+.env
+.env.*
+
+# Build artifacts
+dist/
+build/

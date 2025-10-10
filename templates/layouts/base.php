@@ -139,8 +139,8 @@
                     }
                 });
 
-                // Also add to cards and articles
-                document.querySelectorAll('.card-hover, article').forEach(el => {
+                // Also add to cards and articles (but skip blog post article-section)
+                document.querySelectorAll('.card-hover, article:not(.article-section)').forEach(el => {
                     el.classList.add('animate-on-scroll');
                 });
 

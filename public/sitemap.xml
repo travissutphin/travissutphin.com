@@ -26,7 +26,7 @@
     </url>
     <url>
         <loc>https://travissutphin.com/blog</loc>
-        <lastmod>2025-09-26</lastmod>
+        <lastmod>2025-09-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -100,6 +100,18 @@
     <url>
         <loc>https://travissutphin.com/blog/2025-09-21-why-your-ai-project-stuck-80-percent</loc>
         <lastmod>2025-09-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-09-26-ai-speed-trap-why-moving-fast-without-systems-breaks-everything</loc>
+        <lastmod>2025-09-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-09-30-the-hidden-cost-of-vibe-coding-with-ai-why-planning-still-matters</loc>
+        <lastmod>2025-09-30</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
