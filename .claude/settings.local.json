@@ -32,7 +32,9 @@
       "Bash(docker images:*)",
       "Bash(docker-compose up:*)",
       "Bash(docker ps:*)",
-      "Bash(docker exec:*)"
+      "Bash(docker exec:*)",
+      "Bash(PORT=3000 bash:*)",
+      "Bash(docker run:*)"
     ],
     "deny": [],
     "ask": []
