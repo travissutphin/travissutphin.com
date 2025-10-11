@@ -145,8 +145,8 @@ function calculate_reading_time($content) {
                                 </div>
 
                                 <div class="p-8">
-                                    <!-- Blog Image -->
-                                    <div class="blog-thumbnail h-64 md:h-96 rounded-lg mb-6 overflow-hidden shadow-2xl">
+                                    <!-- Blog Image (Clickable) -->
+                                    <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($featured_post['slug']); ?>" class="blog-thumbnail h-64 md:h-96 rounded-lg mb-6 overflow-hidden shadow-2xl block">
                                         <?php if (!empty($featured_post['image'])): ?>
                                             <img src="<?php echo BASE_PATH . trim(trim($featured_post['image']), '"'); ?>"
                                                  alt="<?php echo htmlspecialchars($featured_post['title'] ?? 'Blog post'); ?>"
@@ -157,7 +157,7 @@ function calculate_reading_time($content) {
                                                 <i data-lucide="file-text" class="w-20 h-20 text-white opacity-50"></i>
                                             </div>
                                         <?php endif; ?>
-                                    </div>
+                                    </a>
 
                                     <!-- Category & Date -->
                                     <div class="flex items-center gap-4 mb-4">
@@ -166,10 +166,10 @@ function calculate_reading_time($content) {
                                                 <?php echo e($featured_post['tags'][0]); ?>
                                             </span>
                                         <?php endif; ?>
-                                        <span class="text-sm text-gray-dark">
+                                        <span class="text-sm text-theme-primary dark:text-white">
                                             <?php echo date('M d, Y', strtotime($featured_post['date'] ?? 'now')); ?>
                                         </span>
-                                        <span class="text-sm text-gray-dark">
+                                        <span class="text-sm text-theme-primary dark:text-white">
                                             <?php
                                             $reading_time = isset($featured_post['readingTime'])
                                                 ? intval($featured_post['readingTime'])
@@ -215,8 +215,8 @@ function calculate_reading_time($content) {
                         <?php foreach ($regular_posts as $post): ?>
                             <div class="animate-on-scroll blog-fade-in">
                                 <div class="blog-post-card h-full flex flex-col">
-                                    <!-- Thumbnail -->
-                                    <div class="blog-thumbnail h-48 overflow-hidden">
+                                    <!-- Thumbnail (Clickable) -->
+                                    <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($post['slug']); ?>" class="blog-thumbnail h-48 overflow-hidden block">
                                         <?php if (!empty($post['image'])): ?>
                                             <img src="<?php echo BASE_PATH . trim(trim($post['image']), '"'); ?>"
                                                  alt="<?php echo htmlspecialchars($post['title'] ?? 'Blog post'); ?>"
@@ -227,20 +227,20 @@ function calculate_reading_time($content) {
                                                 <i data-lucide="file-text" class="w-12 h-12 text-gray-400"></i>
                                             </div>
                                         <?php endif; ?>
-                                    </div>
+                                    </a>
 
                                     <div class="p-6 flex-grow flex flex-col">
                                         <!-- Category & Meta -->
-                                        <div class="flex items-center gap-3 mb-3 text-xs">
+                                        <div class="flex items-center gap-3 mb-3 text-sm">
                                             <?php if (!empty($post['tags'])): ?>
                                                 <span class="px-2 py-1 bg-light-blue text-primary-blue font-semibold rounded">
                                                     <?php echo e($post['tags'][0]); ?>
                                                 </span>
                                             <?php endif; ?>
-                                            <span class="text-gray-dark">
+                                            <span class="text-theme-primary dark:text-white">
                                                 <?php echo date('M d', strtotime($post['date'] ?? 'now')); ?>
                                             </span>
-                                            <span class="text-gray-dark">
+                                            <span class="text-theme-primary dark:text-white">
                                                 <?php
                                                 $reading_time = isset($post['readingTime'])
                                                     ? intval($post['readingTime'])
@@ -262,12 +262,21 @@ function calculate_reading_time($content) {
                                             <?php echo e($post['excerpt'] ?? ''); ?>
                                         </p>
 
-                                        <!-- Author -->
-                                        <div class="flex items-center gap-2 mt-auto">
-                                            <div class="w-8 h-8 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center">
-                                                <span class="text-white text-xs font-semibold">TS</span>
+                                        <!-- Author & Read More Button -->
+                                        <div class="flex items-center justify-between mt-auto">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-8 h-8 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center">
+                                                    <span class="text-white text-xs font-semibold">TS</span>
+                                                </div>
+                                                <div>
+                                                    <p class="text-xs font-semibold text-theme-primary">Travis Sutphin</p>
+                                                    <p class="text-xs text-theme-secondary">AI-Tech-Solutions</p>
+                                                </div>
                                             </div>
-                                            <span class="text-xs text-theme-secondary">Travis Sutphin</span>
+                                            <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($post['slug']); ?>"
+                                               class="px-3 py-1.5 bg-gradient-to-r from-primary-green to-primary-blue text-white text-xs rounded-lg font-semibold hover:shadow-lg transition-all">
+                                                Read More →
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
