@@ -1,7 +1,22 @@
 <?php
 // Pagination setup
 $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
-$all_posts = get_blog_posts();
+
+// Check for category or tag filtering
+$selected_category = isset($_GET['category']) ? $_GET['category'] : (isset($category_filter) ? $category_filter : null);
+$selected_tag = isset($_GET['tag']) ? $_GET['tag'] : null;
+
+// Build filters array
+$filters = [];
+if ($selected_category) {
+    $filters['category'] = $selected_category;
+}
+if ($selected_tag) {
+    $filters['tag'] = $selected_tag;
+}
+
+// Get posts with filtering applied
+$all_posts = get_blog_posts(null, $filters);
 $total_posts = count($all_posts);
 $posts_per_page = POSTS_PER_PAGE;
 $total_pages = ceil($total_posts / $posts_per_page);
@@ -9,6 +24,9 @@ $offset = ($page - 1) * $posts_per_page;
 
 // Get posts for current page
 $posts = array_slice($all_posts, $offset, $posts_per_page);
+
+// Get all categories for navigation
+$all_categories = get_all_categories();
 
 // Get all unique tags from posts
 $all_tags = [];
@@ -20,18 +38,9 @@ foreach ($all_posts as $post) {
 $all_tags = array_unique($all_tags);
 sort($all_tags);
 
-// Filter by tag if specified
-$selected_tag = isset($_GET['tag']) ? $_GET['tag'] : null;
-if ($selected_tag) {
-    $posts = array_filter($all_posts, function($post) use ($selected_tag) {
-        return isset($post['tags']) && in_array($selected_tag, $post['tags']);
-    });
-    $posts = array_slice($posts, $offset, $posts_per_page);
-}
-
 // Get featured post (newest post)
 $featured_post = !empty($all_posts) ? $all_posts[0] : null;
-$regular_posts = $selected_tag ? $posts : array_slice($posts, 1); // Skip featured if not filtering
+$regular_posts = ($selected_tag || $selected_category) ? $posts : array_slice($posts, 1); // Skip featured if filtering
 
 // Calculate reading time dynamically
 function calculate_reading_time($content) {
@@ -93,23 +102,64 @@ function calculate_reading_time($content) {
 </section>
 
 <!-- Category Filter Bar -->
-<section class="blog-filter-section py-8 px-4">
+<?php if (!empty($all_categories)): ?>
+<section class="blog-filter-section py-6 px-4 border-b border-gray-200 dark:border-gray-700">
     <div class="max-w-7xl mx-auto">
-        <p class="text-center text-sm text-theme-secondary mb-4">Explore by interest:</p>
+        <p class="text-center text-sm text-theme-secondary mb-4">📂 Browse by Category:</p>
         <div class="flex flex-wrap justify-center gap-3">
             <a href="<?php echo BASE_PATH; ?>/blog"
+               class="px-5 py-2 rounded-full text-sm font-semibold transition-all
+                      <?php echo !$selected_category
+                          ? 'filter-tag-active'
+                          : 'filter-tag'; ?>">
+                All Categories
+            </a>
+            <?php
+            // Category slug mapping
+            $category_slugs = [
+                'AI & Automation' => 'ai-automation',
+                'Project Management' => 'project-management',
+                'Productivity & Systems' => 'productivity',
+                'Technical Leadership' => 'technical-leadership',
+                'Business & Strategy' => 'business-strategy',
+                'Learning & Development' => 'learning-development'
+            ];
+
+            foreach ($all_categories as $category):
+                $category_slug = $category_slugs[$category] ?? create_slug($category);
+                $category_count = count(get_blog_posts(null, ['category' => $category]));
+            ?>
+                <a href="<?php echo BASE_PATH; ?>/blog/category/<?php echo $category_slug; ?>"
+                   class="px-5 py-2 rounded-full text-sm font-semibold transition-all
+                          <?php echo $selected_category === $category
+                              ? 'filter-tag-active'
+                              : 'filter-tag'; ?>">
+                    <?php echo e($category); ?> (<?php echo $category_count; ?>)
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- Tag Filter Bar -->
+<section class="blog-filter-section py-6 px-4">
+    <div class="max-w-7xl mx-auto">
+        <p class="text-center text-sm text-theme-secondary mb-4">🏷️ Filter by Tag:</p>
+        <div class="flex flex-wrap justify-center gap-3">
+            <a href="<?php echo BASE_PATH; ?>/blog<?php echo $selected_category ? '/category/' . $category_slugs[$selected_category] : ''; ?>"
                class="px-5 py-2 rounded-full text-sm font-semibold transition-all
                       <?php echo !$selected_tag
                           ? 'filter-tag-active'
                           : 'filter-tag'; ?>">
-                All Topics <?php echo !$selected_tag ? '(' . $total_posts . ')' : ''; ?>
+                All Tags <?php echo !$selected_tag ? '(' . $total_posts . ')' : ''; ?>
             </a>
             <?php foreach ($all_tags as $tag):
                 $tag_count = count(array_filter($all_posts, function($post) use ($tag) {
                     return isset($post['tags']) && in_array($tag, $post['tags']);
                 }));
             ?>
-                <a href="<?php echo BASE_PATH; ?>/blog?tag=<?php echo urlencode($tag); ?>"
+                <a href="<?php echo BASE_PATH; ?>/blog?tag=<?php echo urlencode($tag); ?><?php echo $selected_category ? '&category=' . urlencode($selected_category) : ''; ?>"
                    class="px-5 py-2 rounded-full text-sm font-semibold transition-all
                           <?php echo $selected_tag === $tag
                               ? 'filter-tag-active'

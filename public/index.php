@@ -37,6 +37,36 @@ $routes = [
     'blog' => 'blog-list.php'
 ];
 
+// Check for blog category routes: /blog/category/[category-slug]
+if (preg_match('#^blog/category/([a-z0-9-]+)$#', $route, $matches)) {
+    $category_slug = $matches[1];
+
+    // Map category slugs to display names
+    $category_map = [
+        'ai-automation' => 'AI & Automation',
+        'project-management' => 'Project Management',
+        'productivity' => 'Productivity & Systems',
+        'technical-leadership' => 'Technical Leadership',
+        'business-strategy' => 'Business & Strategy',
+        'learning-development' => 'Learning & Development'
+    ];
+
+    if (isset($category_map[$category_slug])) {
+        // Render blog list filtered by category
+        $_GET['category'] = $category_map[$category_slug];
+        render_page('blog-list.php', [
+            'title' => $category_map[$category_slug] . ' - Blog',
+            'category_filter' => $category_map[$category_slug]
+        ]);
+        exit;
+    } else {
+        // Invalid category, show 404
+        http_response_code(404);
+        render_page('404.php', ['title' => 'Category Not Found']);
+        exit;
+    }
+}
+
 // Check if route starts with 'blog/' for individual blog posts
 if (strpos($route, 'blog/') === 0) {
     $slug = substr($route, 5); // Remove 'blog/' prefix
