@@ -93,9 +93,9 @@ function render_page($template, $data = []) {
 }
 
 /**
- * Get blog posts
+ * Get blog posts with optional filtering
  */
-function get_blog_posts($limit = null) {
+function get_blog_posts($limit = null, $filters = []) {
     $blog_dir = __DIR__ . '/../content/blog/';
     $posts = [];
 
@@ -126,14 +126,75 @@ function get_blog_posts($limit = null) {
             }
         }
 
-        $posts[] = $post;
+        // Apply filters
+        $include_post = true;
 
-        if ($limit && count($posts) >= $limit) {
-            break;
+        // Filter by category
+        if (isset($filters['category']) && !empty($filters['category'])) {
+            if (!isset($post['category']) || $post['category'] !== $filters['category']) {
+                $include_post = false;
+            }
+        }
+
+        // Filter by topic
+        if ($include_post && isset($filters['topic']) && !empty($filters['topic'])) {
+            if (!isset($post['topics']) || !in_array($filters['topic'], $post['topics'])) {
+                $include_post = false;
+            }
+        }
+
+        // Filter by tag (existing functionality)
+        if ($include_post && isset($filters['tag']) && !empty($filters['tag'])) {
+            if (!isset($post['tags']) || !in_array($filters['tag'], $post['tags'])) {
+                $include_post = false;
+            }
+        }
+
+        if ($include_post) {
+            $posts[] = $post;
+
+            if ($limit && count($posts) >= $limit) {
+                break;
+            }
         }
     }
 
     return $posts;
+}
+
+/**
+ * Get all unique categories from blog posts
+ */
+function get_all_categories() {
+    $all_posts = get_blog_posts();
+    $categories = [];
+
+    foreach ($all_posts as $post) {
+        if (isset($post['category']) && !in_array($post['category'], $categories)) {
+            $categories[] = $post['category'];
+        }
+    }
+
+    sort($categories);
+    return $categories;
+}
+
+/**
+ * Get all unique topics from blog posts
+ */
+function get_all_topics() {
+    $all_posts = get_blog_posts();
+    $topics = [];
+
+    foreach ($all_posts as $post) {
+        if (isset($post['topics']) && is_array($post['topics'])) {
+            $topics = array_merge($topics, $post['topics']);
+        }
+    }
+
+    $topics = array_unique($topics);
+    sort($topics);
+    return $topics;
 }
 
 /**
@@ -147,7 +208,7 @@ function parse_markdown_frontmatter($content) {
         $frontmatter = $matches[1];
         $markdown_content = $matches[2];
 
-        // Simple YAML parsing (for basic key: value pairs)
+        // Simple YAML parsing (for basic key: value pairs and arrays)
         $lines = explode("\n", $frontmatter);
         foreach ($lines as $line) {
             // Remove any carriage returns (Windows line endings)
@@ -156,14 +217,20 @@ function parse_markdown_frontmatter($content) {
                 $key = trim($line_matches[1]);
                 $value = trim($line_matches[2], " \"\'\r\n");
 
-                // Handle tags array
-                if ($key === 'tags' && preg_match('/\[(.*)\]/', $value, $tag_matches)) {
-                    $tags_str = $tag_matches[1];
-                    $tags = array_map(function($tag) {
-                        return trim($tag, " \"\'\r\n");
-                    }, explode(',', $tags_str));
-                    $data[$key] = $tags;
-                } else {
+                // Handle array fields (tags, topics)
+                if (in_array($key, ['tags', 'topics']) && preg_match('/\[(.*)\]/', $value, $array_matches)) {
+                    $array_str = $array_matches[1];
+                    $array_values = array_map(function($item) {
+                        return trim($item, " \"\'\r\n");
+                    }, explode(',', $array_str));
+                    $data[$key] = $array_values;
+                }
+                // Handle boolean fields
+                elseif ($key === 'faq' && in_array(strtolower($value), ['true', 'false'])) {
+                    $data[$key] = strtolower($value) === 'true';
+                }
+                // Handle all other fields as strings
+                else {
                     $data[$key] = $value;
                 }
             }
