@@ -109,22 +109,35 @@ $actual_word_count = !empty($article_text) ? str_word_count($article_text) : 500
 
 ---
 
-## 🐛 Known Issue: Variables Not Passing Through
+## ✅ RESOLVED: Variables Not Passing Through
 
-### Problem
-After changes, blog posts still show:
+### Problem (RESOLVED)
+After changes, blog posts still showed:
 - `articleBody`: "" (empty)
 - `description`: Default site description
 - `wordCount`: 500
 
-### Root Cause
-The `$excerpt` and proper content variables aren't being passed from `render_blog_post()` to the meta template through `render_page()`.
+### Root Cause #1 (FIXED - Commit ddbeeef)
+The `$excerpt` and proper content variables weren't being passed from `base.php` to the `meta.php` partial.
 
-**Why?** The `extract($data)` in `render_page()` should make all variables available, but the meta.php partial might be executing before variables are fully extracted, or there's a scoping issue.
+**Solution Applied:** Updated `/templates/layouts/base.php` to explicitly pass all needed variables to the meta partial:
+- `excerpt`, `html_content`, `content`, `readingTime`, `reading_time`, `image`
 
-### Solution Needed
+### Root Cause #2 (FIXED - Commit e026216)
+New blog post `2025-10-10-vibe-coding-dos-and-donts.md` used nested YAML structures (`seo:`, `schema:`) which the YAML parser cannot handle.
 
-**Option 1: Pass variables explicitly to meta partial** (Recommended)
+**Problem:** Parser at `/lib/functions.php` lines 142-185 only handles flat `key: value` pairs, not nested objects.
+
+**Solution Applied:** Simplified the blog post's YAML frontmatter to match all working posts:
+- Removed nested `seo:` and `schema:` structures
+- Removed redundant `keywords` field
+- Kept only essential flat fields: title, date, excerpt, tags, author, readingTime, image
+
+**Note for Future:** All blog posts must use flat YAML structure. Nested objects will be ignored by the parser.
+
+### Solution (LEGACY - Not Needed)
+
+**Option 1: Pass variables explicitly to meta partial** ✅ COMPLETED
 Update `render_page()` in `/lib/functions.php`:
 
 ```php
@@ -280,6 +293,13 @@ git push origin main
 
 ---
 
-**Status**: Changes made, variable passing issue identified
-**Blocking**: Need to fix variable scoping in `render_page()`
-**Next**: [Syntax] to debug and implement variable passing fix
+## ✅ Status: COMPLETED
+
+**Fixed Issues:**
+1. ✅ BlogPosting schema missing `articleBody` (Commit 28179fc)
+2. ✅ Variable passing to meta partial (Commit ddbeeef)
+3. ✅ Nested YAML structure blocking parser (Commit e026216)
+
+**Result:** All blog posts now support Chrome's "Listen to this page" feature
+
+**Testing:** Verify on production at https://travissutphin.com/blog/2025-10-10-vibe-coding-dos-and-donts
