@@ -595,4 +595,4 @@ Each category page needs:
 **Date**: October 11, 2025
 **Status**: ✅ COMPLETE - READY FOR CATEGORY PAGE DESIGN
 
-**Questions?** Contact [Travis] for brand decisions, [Syntax] for technical implementation, or [Codey] for project coordination.
+**Questions?** Contact [Travis] for brand decisions, [Bran] for brand ideas/suggestions/best practices, [Syntax] for technical implementation, or [Codey] for project coordination.

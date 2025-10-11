@@ -1,7 +1,10 @@
 # Blog Taxonomy & Category Strategy for SEO/AEO
-**Date**: October 11, 2025
-**Team**: [Bran] (SEO/AEO), [Syntax] (Implementation), [Echo] (Content Strategy)
-**Status**: Strategic Planning
+**Status**: 🟢 CURRENT ⭐ AUTHORITATIVE
+**Owner**: [Bran] (SEO/AEO lead)
+**Contributors**: [Syntax] (Implementation), [Echo] (Content Strategy)
+**Last Updated**: October 11, 2025
+**Next Review**: January 11, 2026 (quarterly)
+**Purpose**: 8-week strategic plan for implementing blog taxonomy and SEO optimization
 
 ---
 

@@ -1,8 +1,12 @@
 # Deployment Guide
+**Status**: 🟢 CURRENT ⭐ AUTHORITATIVE
+**Owner**: [Flow] (DevOps Lead)
+**Last Updated**: October 10, 2025
+**Next Review**: January 10, 2026 (quarterly)
+**Version**: 2.0.0
+**Purpose**: Complete guide for Railway auto-deploy process and GitOps workflows
 
-> **Version:** 2.0.0
-> **Last Updated:** 2025-09-27
-> **Owner:** [Flow]
+---
 
 ## Deployment Overview
 

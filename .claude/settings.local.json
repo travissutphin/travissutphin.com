@@ -34,7 +34,14 @@
       "Bash(docker ps:*)",
       "Bash(docker exec:*)",
       "Bash(PORT=3000 bash:*)",
-      "Bash(docker run:*)"
+      "Bash(docker run:*)",
+      "Bash(for dir in docs/design/audit-screenshots/{home,services,projects,team,blog-list,blog-post,contact,404})",
+      "Bash(do touch \"$dir/.gitkeep\")",
+      "Bash(where magick)",
+      "Bash(where:*)",
+      "Bash(npm:*)",
+      "Bash(node:*)",
+      "Bash(git mv:*)"
     ],
     "deny": [],
     "ask": []

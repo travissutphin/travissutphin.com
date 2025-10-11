@@ -1,6 +1,9 @@
 # Master Tag & Category List
+**Status**: 🟢 CURRENT ⭐ AUTHORITATIVE
+**Owner**: [Echo] / [Bran]
 **Last Updated**: October 11, 2025
-**Status**: APPROVED - Ready for Implementation
+**Next Review**: January 11, 2026 (quarterly)
+**Purpose**: Single source of truth for all blog taxonomy (categories, topics, tags)
 
 ---
 
