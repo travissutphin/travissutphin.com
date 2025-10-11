@@ -198,10 +198,18 @@ function calculate_reading_time($content) {
                                     <!-- Blog Image (Clickable) -->
                                     <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($featured_post['slug']); ?>" class="blog-thumbnail h-64 md:h-96 rounded-lg mb-6 overflow-hidden shadow-2xl block">
                                         <?php if (!empty($featured_post['image'])): ?>
-                                            <img src="<?php echo BASE_PATH . trim(trim($featured_post['image']), '"'); ?>"
-                                                 alt="<?php echo htmlspecialchars($featured_post['title'] ?? 'Blog post'); ?>"
-                                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                                 loading="lazy">
+                                            <?php
+                                            // Generate WebP path from PNG path
+                                            $image_path = BASE_PATH . trim(trim($featured_post['image']), '"');
+                                            $image_path_webp = preg_replace('/\.png$/i', '.webp', $image_path);
+                                            ?>
+                                            <picture>
+                                                <source type="image/webp" srcset="<?php echo $image_path_webp; ?>">
+                                                <img src="<?php echo $image_path; ?>"
+                                                     alt="<?php echo htmlspecialchars($featured_post['title'] ?? 'Blog post'); ?>"
+                                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                                     loading="lazy">
+                                            </picture>
                                         <?php else: ?>
                                             <div class="bg-gradient-to-br from-primary-green to-primary-blue h-full flex items-center justify-center">
                                                 <i data-lucide="file-text" class="w-20 h-20 text-white opacity-50"></i>
@@ -268,10 +276,18 @@ function calculate_reading_time($content) {
                                     <!-- Thumbnail (Clickable) -->
                                     <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($post['slug']); ?>" class="blog-thumbnail h-48 overflow-hidden block">
                                         <?php if (!empty($post['image'])): ?>
-                                            <img src="<?php echo BASE_PATH . trim(trim($post['image']), '"'); ?>"
-                                                 alt="<?php echo htmlspecialchars($post['title'] ?? 'Blog post'); ?>"
-                                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                                 loading="lazy">
+                                            <?php
+                                            // Generate WebP path from PNG path
+                                            $image_path = BASE_PATH . trim(trim($post['image']), '"');
+                                            $image_path_webp = preg_replace('/\.png$/i', '.webp', $image_path);
+                                            ?>
+                                            <picture>
+                                                <source type="image/webp" srcset="<?php echo $image_path_webp; ?>">
+                                                <img src="<?php echo $image_path; ?>"
+                                                     alt="<?php echo htmlspecialchars($post['title'] ?? 'Blog post'); ?>"
+                                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                                     loading="lazy">
+                                            </picture>
                                         <?php else: ?>
                                             <div class="bg-gradient-to-br from-gray-100 to-gray-200 h-full flex items-center justify-center">
                                                 <i data-lucide="file-text" class="w-12 h-12 text-gray-400"></i>
