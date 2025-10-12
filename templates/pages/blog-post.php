@@ -139,17 +139,28 @@ $related_posts = array_slice($related_posts, 0, 3);
 
             <div class="flex items-center gap-3">
                 <!-- Share Buttons (Placeholder) -->
-                <button onclick="alert('Sharing coming soon!')" class="share-button p-2 rounded-lg" title="Share on Twitter">
+                <button onclick="alert('Sharing coming soon!')"
+                        class="share-button p-2 rounded-lg"
+                        title="Share on Twitter"
+                        aria-label="Share on Twitter">
                     <i data-lucide="twitter" class="w-5 h-5"></i>
                 </button>
-                <button onclick="alert('Sharing coming soon!')" class="share-button p-2 rounded-lg" title="Share on LinkedIn">
+                <button onclick="alert('Sharing coming soon!')"
+                        class="share-button p-2 rounded-lg"
+                        title="Share on LinkedIn"
+                        aria-label="Share on LinkedIn">
                     <i data-lucide="linkedin" class="w-5 h-5"></i>
                 </button>
-                <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" class="share-button p-2 rounded-lg" title="Copy link">
+                <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');"
+                        class="share-button p-2 rounded-lg"
+                        title="Copy link"
+                        aria-label="Copy link to clipboard">
                     <i data-lucide="link" class="w-5 h-5"></i>
                 </button>
                 <span class="text-gray-400">|</span>
-                <button onclick="alert('Comments coming soon!')" class="share-button flex items-center gap-2 px-3 py-1 rounded-lg">
+                <button onclick="alert('Comments coming soon!')"
+                        class="share-button flex items-center gap-2 px-3 py-1 rounded-lg"
+                        aria-label="Join discussion">
                     <i data-lucide="message-circle" class="w-4 h-4"></i>
                     <span class="hidden sm:inline">Join Discussion</span>
                     <span class="sm:hidden">💬</span>
@@ -354,7 +365,8 @@ $related_posts = array_slice($related_posts, 0, 3);
 
 <!-- Scroll to Top Button -->
 <button id="scroll-to-top"
-        class="scroll-to-top fixed bottom-20 right-6 w-12 h-12 text-white rounded-full opacity-0 pointer-events-none transition-all z-40 flex items-center justify-center">
+        class="scroll-to-top fixed bottom-20 right-6 w-12 h-12 text-white rounded-full opacity-0 pointer-events-none transition-all z-40 flex items-center justify-center"
+        aria-label="Scroll to top of page">
     <i data-lucide="arrow-up" class="w-6 h-6"></i>
 </button>
 
