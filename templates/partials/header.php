@@ -5,13 +5,23 @@
             <div class="flex-shrink-0">
                 <a href="<?php echo BASE_PATH; ?>/" class="inline-block">
                     <!-- Logo for Light Mode -->
-                    <img src="<?php echo BASE_PATH; ?>/assets/images/travissutphinLogo-forLight-400x103.png"
-                         alt="Travis Sutphin"
-                         class="logo-light h-12 md:h-16 w-auto object-contain">
+                    <picture class="logo-light">
+                        <source srcset="<?php echo BASE_PATH; ?>/assets/images/travissutphinLogo-forLight-400x103.webp" type="image/webp">
+                        <img src="<?php echo BASE_PATH; ?>/assets/images/travissutphinLogo-forLight-400x103.png"
+                             alt="Travis Sutphin"
+                             class="h-12 md:h-16 w-auto object-contain"
+                             width="400"
+                             height="103">
+                    </picture>
                     <!-- Logo for Dark Mode -->
-                    <img src="<?php echo BASE_PATH; ?>/assets/images/travissutphinLogo-forDark-400x103.png"
-                         alt="Travis Sutphin"
-                         class="logo-dark h-12 md:h-16 w-auto object-contain">
+                    <picture class="logo-dark">
+                        <source srcset="<?php echo BASE_PATH; ?>/assets/images/travissutphinLogo-forDark-400x103.webp" type="image/webp">
+                        <img src="<?php echo BASE_PATH; ?>/assets/images/travissutphinLogo-forDark-400x103.png"
+                             alt="Travis Sutphin"
+                             class="h-12 md:h-16 w-auto object-contain"
+                             width="400"
+                             height="103">
+                    </picture>
                 </a>
             </div>
 

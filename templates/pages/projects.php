@@ -121,10 +121,19 @@
 
                     <!-- Project Logo/Screenshot -->
                     <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                        <img src="<?php echo e($project['logo']); ?>"
-                             alt="<?php echo e($project['name']); ?>"
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                             loading="lazy">
+                        <?php
+                        $logo_path = $project['logo'];
+                        if (!empty($logo_path)) {
+                            $webp_path = preg_replace('/\.(png|jpg|jpeg)$/i', '.webp', $logo_path);
+                        ?>
+                            <picture>
+                                <source srcset="<?php echo e($webp_path); ?>" type="image/webp">
+                                <img src="<?php echo e($logo_path); ?>"
+                                     alt="<?php echo e($project['name']); ?>"
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                     loading="lazy">
+                            </picture>
+                        <?php } ?>
                     </div>
 
                     <!-- Project Info -->
