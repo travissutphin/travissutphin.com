@@ -38,26 +38,36 @@
     <!-- Theme CSS Variables -->
     <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/theme-variables.css">
 
-    <!-- Home Page Section Styles -->
-    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/home-sections.css">
+    <!-- Page-Specific Styles (conditional loading for performance) -->
+    <?php
+    // Determine which CSS to load based on current URL path
+    $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+    $css_file = null;
 
-    <!-- Services Page Section Styles -->
-    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/services-sections.css">
+    // Check URL path to determine page type
+    if (strpos($request_uri, '/blog/') !== false && strpos($request_uri, '/blog/category/') === false) {
+        // Individual blog post
+        $css_file = 'blog-post-sections.css';
+    } elseif (strpos($request_uri, '/blog') !== false || strpos($request_uri, '/blog/category/') !== false) {
+        // Blog list page or category
+        $css_file = 'blog-sections.css';
+    } elseif (strpos($request_uri, '/services') !== false) {
+        $css_file = 'services-sections.css';
+    } elseif (strpos($request_uri, '/projects') !== false) {
+        $css_file = 'projects-sections.css';
+    } elseif (strpos($request_uri, '/team') !== false) {
+        $css_file = 'team-sections.css';
+    } elseif (strpos($request_uri, '/contact') !== false) {
+        $css_file = 'contact-sections.css';
+    } elseif (strpos($request_uri, '/home') !== false || $request_uri === '' || $request_uri === '/' || $request_uri === '/home') {
+        $css_file = 'home-sections.css';
+    }
 
-    <!-- Projects Page Section Styles -->
-    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/projects-sections.css">
-
-    <!-- Team Page Section Styles -->
-    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/team-sections.css">
-
-    <!-- Blog Page Section Styles -->
-    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/blog-sections.css">
-
-    <!-- Blog Post Page Section Styles -->
-    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/blog-post-sections.css">
-
-    <!-- Contact Page Section Styles -->
-    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/contact-sections.css">
+    // Load the determined CSS file
+    if ($css_file !== null) {
+        echo '<link rel="stylesheet" href="' . BASE_PATH . '/css/' . $css_file . '">' . "\n";
+    }
+    ?>
 
     <!-- Set dark theme immediately to prevent FOUC -->
     <script>
@@ -100,9 +110,6 @@
             }
         }
     </script>
-
-    <!-- Theme Variables CSS -->
-    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/theme-variables.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/style.css">

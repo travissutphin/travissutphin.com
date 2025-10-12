@@ -1,7 +1,7 @@
 ---
 title: "Vibe Coding for Beginners: 5 Do's and 5 Don'ts That'll Save Your Sanity"
 date: "2025-10-10"
-excerpt: "Master AI-assisted coding with these 5 essential do's and don'ts. Learn to harness tools like Cursor, Replit, and GitHub Copilot without creating digital disasters—from rapid prototyping to production-ready code."
+excerpt: "Master AI-assisted coding with these 5 essential do's and don'ts. Learn to harness tools like My Favority Tool Claude Code or Cursor, Replit, and GitHub Copilot without creating digital disasters—from rapid prototyping to production-ready code."
 tags: ["AI", "Vibe Coding", "AI-Assisted Development", "Beginner Guide", "Code Generation", "Best Practices", "LLM Tools", "Software Development"]
 author: "Travis Sutphin"
 readingTime: 8
@@ -10,7 +10,7 @@ image: "/assets/images/blogs/2025-10-10-vibe-coding-dos-and-donts.png"
 
 **So you've discovered the magic of vibe coding—that incredible AI-assisted coding approach where you chat with an AI tool like you're DMing a really smart friend, and *poof*, working code appears. Welcome to the future, friend!**
 
-If you're new to this whole "describing what you want in plain English and watching AI generate code" thing, you're probably equal parts excited and terrified. Good news: you're in the right place. Let me break down the essential do's and don'ts that'll help you harness AI coding tools like Cursor, Replit, GitHub Copilot, and Claude without losing your mind (or accidentally creating a digital disaster).
+If you're new to this whole "describing what you want in plain English and watching AI generate code" thing, you're probably equal parts excited and terrified. Good news: you're in the right place. Let me break down the essential do's and don'ts that'll help you harness AI coding tools like Claude Code, Cursor, Replit, GitHub Copilot, and Claude without losing your mind (or accidentally creating a digital disaster).
 
 ---
 
@@ -148,10 +148,10 @@ So go forth and vibe code responsibly! Build that weird app idea you've been thi
 - [Replit](https://replit.com) - Browser-based development with AI Agent
 - [Cursor](https://cursor.sh) - AI-powered code editor built on VS Code
 - [GitHub Copilot](https://github.com/features/copilot) - AI pair programmer from GitHub
-- [Claude](https://claude.ai) - Anthropic's AI assistant with coding capabilities
 - [Google AI Studio](https://aistudio.google.com) - Quick prototyping with Gemini
+- [ClaudeCode](https://https://www.claude.com/product/claude-code) - Personal Favirite - Anthropic's AI assistant with coding capabilities
 
-**Remember:** The best way to learn is by doing (and maybe breaking things a little along the way).
+**Remember:** The best way to [Learn by Reading and Master by Doing](https://travissutphin.com/2025-01-25-learn-by-reading-master-by-doing) (and maybe breaking things a little along the way).
 
 ---
 

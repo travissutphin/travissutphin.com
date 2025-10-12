@@ -41,7 +41,10 @@
       "Bash(where:*)",
       "Bash(npm:*)",
       "Bash(node:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(pkill:*)",
+      "Bash(netstat:*)",
+      "Bash(tasklist)"
     ],
     "deny": [],
     "ask": []
