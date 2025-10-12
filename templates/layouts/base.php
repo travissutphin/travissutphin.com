@@ -26,14 +26,15 @@
         gtag('config', 'G-46PTMWC8QF');
     </script>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (required for styling, cannot defer) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font Awesome for social icons (deferred for non-blocking load) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Lucide Icons (deferred for non-blocking load) -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <!-- Theme CSS Variables -->
     <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/theme-variables.css">

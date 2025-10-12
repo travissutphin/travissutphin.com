@@ -89,10 +89,25 @@ $related_posts = array_slice($related_posts, 0, 3);
     <section class="px-4 -mt-8 mb-8">
         <div class="max-w-4xl mx-auto">
             <div class="relative overflow-hidden rounded-lg shadow-2xl">
-                <img src="<?php echo BASE_PATH . trim(trim($image), '"'); ?>"
-                     alt="<?php echo htmlspecialchars(strip_tags($title ?? 'Blog post image')); ?>"
-                     class="w-full h-64 md:h-96 object-cover"
-                     loading="lazy">
+                <?php
+                // Prepare image paths for WebP and PNG
+                $image_path = trim(trim($image), '"');
+                $webp_path = preg_replace('/\.(png|jpg|jpeg)$/i', '.webp', $image_path);
+                $full_image_path = BASE_PATH . $image_path;
+                $full_webp_path = BASE_PATH . $webp_path;
+                $alt_text = htmlspecialchars(strip_tags($title ?? 'Blog post image'));
+                ?>
+                <picture>
+                    <!-- WebP version for modern browsers (smaller file size) -->
+                    <source srcset="<?php echo $full_webp_path; ?>" type="image/webp">
+                    <!-- PNG fallback for older browsers -->
+                    <img src="<?php echo $full_image_path; ?>"
+                         alt="<?php echo $alt_text; ?>"
+                         class="w-full h-64 md:h-96 object-cover"
+                         loading="lazy"
+                         width="1200"
+                         height="630">
+                </picture>
             </div>
         </div>
     </section>

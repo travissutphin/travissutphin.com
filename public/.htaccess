@@ -11,7 +11,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # Route all requests through index.php
 RewriteRule ^(.*)$ index.php [QSA,L]
 
-# Security headers
+# Security and Cache headers
 <IfModule mod_headers.c>
     # Set environment variable for production
     SetEnvIf Host "travissutphin\.com" PRODUCTION
@@ -24,18 +24,59 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
     # HTTPS-specific headers (production only)
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=PRODUCTION
+
+    # Cache-Control headers for static assets
+    # Images - 1 year cache, immutable
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # CSS and JavaScript - 1 month cache
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+
+    # Fonts - 1 year cache, immutable
+    <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
 </IfModule>
 
 # Disable directory browsing
 Options -Indexes
 
-# Cache static assets
+# Cache static assets with optimal expiration times
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresByType image/jpg "access plus 1 month"
-    ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByType image/gif "access plus 1 month"
-    ExpiresByType image/png "access plus 1 month"
-    ExpiresByType text/css "access plus 1 week"
-    ExpiresByType application/javascript "access plus 1 week"
+
+    # Images - 1 year (immutable content)
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # CSS and JavaScript - 1 month
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+
+    # Fonts - 1 year
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+
+    # Data files
+    ExpiresByType application/json "access plus 1 week"
+    ExpiresByType application/xml "access plus 1 week"
+    ExpiresByType text/xml "access plus 1 week"
+
+    # HTML - short cache for dynamic content
+    ExpiresByType text/html "access plus 1 hour"
 </IfModule>
