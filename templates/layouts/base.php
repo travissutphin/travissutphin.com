@@ -26,8 +26,8 @@
         gtag('config', 'G-46PTMWC8QF');
     </script>
 
-    <!-- Tailwind CSS (required for styling, cannot defer) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS (pre-built for optimal performance) -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/tailwind.css">
 
     <!-- Font Awesome for social icons (deferred for non-blocking load) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
@@ -94,23 +94,6 @@
 
     <!-- Lazy Loading (deferred - runs after page load) -->
     <script src="<?php echo BASE_PATH; ?>/js/lazy-loading.js" defer></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-green': '#2be256',
-                        'dark-green': '#005a00',
-                        'primary-blue': '#3d608f',
-                        'light-blue': '#8dace1',
-                        'dark': '#1a1a1a',
-                        'gray-dark': '#4a4a4a',
-                        'gray-light': '#f8f9fa'
-                    }
-                }
-            }
-        }
-    </script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/style.css">
