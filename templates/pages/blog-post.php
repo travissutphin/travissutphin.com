@@ -90,16 +90,30 @@ $related_posts = array_slice($related_posts, 0, 3);
         <div class="max-w-4xl mx-auto">
             <div class="relative overflow-hidden rounded-lg shadow-2xl">
                 <?php
-                // Prepare image paths for WebP and PNG
+                // Prepare image paths for WebP and PNG with responsive sizes
                 $image_path = trim(trim($image), '"');
                 $webp_path = preg_replace('/\.(png|jpg|jpeg)$/i', '.webp', $image_path);
                 $full_image_path = BASE_PATH . $image_path;
                 $full_webp_path = BASE_PATH . $webp_path;
+
+                // Generate responsive image paths
+                $path_info = pathinfo($webp_path);
+                $base_name = $path_info['dirname'] . '/' . $path_info['filename'];
+                $webp_600 = BASE_PATH . $base_name . '-600w.webp';
+                $webp_900 = BASE_PATH . $base_name . '-900w.webp';
+
                 $alt_text = htmlspecialchars(strip_tags($title ?? 'Blog post image'));
                 ?>
                 <picture>
-                    <!-- WebP version for modern browsers (smaller file size) -->
-                    <source srcset="<?php echo $full_webp_path; ?>" type="image/webp">
+                    <!-- WebP version with responsive sizes for modern browsers -->
+                    <source
+                        srcset="<?php echo $webp_600; ?> 600w,
+                                <?php echo $webp_900; ?> 900w,
+                                <?php echo $full_webp_path; ?> 1200w"
+                        sizes="(max-width: 768px) 600px,
+                               (max-width: 1024px) 900px,
+                               1200px"
+                        type="image/webp">
                     <!-- PNG fallback for older browsers -->
                     <img src="<?php echo $full_image_path; ?>"
                          alt="<?php echo $alt_text; ?>"
