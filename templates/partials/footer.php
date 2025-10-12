@@ -3,16 +3,30 @@
         <div class="text-center">
             <!-- Social Media Icons - Hidden on mobile -->
             <div class="hidden md:flex justify-center space-x-4 mb-6">
-                <a href="https://www.reddit.com/r/travissutphin/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all">
+                <a href="https://www.reddit.com/r/travissutphin/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="w-10 h-10 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all"
+                   aria-label="Visit Reddit profile">
                     <i class="fab fa-reddit text-lg"></i>
                 </a>
-                <a href="https://github.com/travissutphin?tab=repositories" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all">
+                <a href="https://github.com/travissutphin?tab=repositories"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="w-10 h-10 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all"
+                   aria-label="Visit GitHub repositories">
                     <i class="fab fa-github text-lg"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/travis-sutphin-4472a1a/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all">
+                <a href="https://www.linkedin.com/in/travis-sutphin-4472a1a/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="w-10 h-10 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all"
+                   aria-label="Visit LinkedIn profile">
                     <i class="fab fa-linkedin-in text-lg"></i>
                 </a>
-                <a href="mailto:<?php echo SITE_EMAIL; ?>" class="w-10 h-10 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all">
+                <a href="mailto:<?php echo SITE_EMAIL; ?>"
+                   class="w-10 h-10 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all"
+                   aria-label="Send email">
                     <i class="fas fa-envelope text-lg"></i>
                 </a>
             </div>

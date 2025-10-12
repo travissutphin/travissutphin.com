@@ -57,24 +57,33 @@ if (empty($current_page)) $current_page = 'home';
         <h3 class="text-center font-semibold text-theme-primary mb-4">Connect With Me</h3>
 
         <div class="grid grid-cols-4 gap-4">
-            <a href="https://www.reddit.com/r/travissutphin/" target="_blank" rel="noopener noreferrer"
-               class="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-theme-tertiary transition-colors">
+            <a href="https://www.reddit.com/r/travissutphin/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-theme-tertiary transition-colors"
+               aria-label="Visit Reddit profile">
                 <div class="w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center mb-2">
                     <i class="fab fa-reddit text-white text-xl"></i>
                 </div>
                 <span class="text-xs text-theme-secondary">Reddit</span>
             </a>
 
-            <a href="https://github.com/travissutphin?tab=repositories" target="_blank" rel="noopener noreferrer"
-               class="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-theme-tertiary transition-colors">
+            <a href="https://github.com/travissutphin?tab=repositories"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-theme-tertiary transition-colors"
+               aria-label="Visit GitHub repositories">
                 <div class="w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center mb-2">
                     <i class="fab fa-github text-white text-xl"></i>
                 </div>
                 <span class="text-xs text-theme-secondary">GitHub</span>
             </a>
 
-            <a href="https://www.linkedin.com/in/travis-sutphin-4472a1a/" target="_blank" rel="noopener noreferrer"
-               class="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-theme-tertiary transition-colors">
+            <a href="https://www.linkedin.com/in/travis-sutphin-4472a1a/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-theme-tertiary transition-colors"
+               aria-label="Visit LinkedIn profile">
                 <div class="w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center mb-2">
                     <i class="fab fa-linkedin-in text-white text-xl"></i>
                 </div>
@@ -82,7 +91,8 @@ if (empty($current_page)) $current_page = 'home';
             </a>
 
             <a href="mailto:<?php echo SITE_EMAIL; ?>"
-               class="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-theme-tertiary transition-colors">
+               class="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-theme-tertiary transition-colors"
+               aria-label="Send email">
                 <div class="w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center mb-2">
                     <i class="fas fa-envelope text-white text-xl"></i>
                 </div>
