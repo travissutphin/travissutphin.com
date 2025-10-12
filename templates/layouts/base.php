@@ -89,11 +89,11 @@
         })();
     </script>
 
-    <!-- Theme Switcher (Load early to prevent FOUC) -->
-    <script src="<?php echo BASE_PATH; ?>/js/theme-switcher.js"></script>
+    <!-- Theme Switcher (deferred - theme is already set by inline script above) -->
+    <script src="<?php echo BASE_PATH; ?>/js/theme-switcher.js" defer></script>
 
-    <!-- Lazy Loading (Load early for performance) -->
-    <script src="<?php echo BASE_PATH; ?>/js/lazy-loading.js"></script>
+    <!-- Lazy Loading (deferred - runs after page load) -->
+    <script src="<?php echo BASE_PATH; ?>/js/lazy-loading.js" defer></script>
     <script>
         tailwind.config = {
             theme: {
