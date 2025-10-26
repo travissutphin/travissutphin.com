@@ -3,7 +3,7 @@ title: "Documentation Debt: The Hidden Cost of Disorganized Knowledge"
 date: "2025-10-11"
 category: "Project Management"
 topics: ["Team Leadership", "Project Planning"]
-tags: ["Project Management", "Best Practices", "Systems & Processes", "Team Leadership", "Workflows"]
+tags: ["Project Management", "Best Practices", "Systems & Organization", "Team Leadership", "Documentation"]
 intent: "informational"
 search_query: "documentation debt how to organize team documentation"
 author: "Travis Sutphin"

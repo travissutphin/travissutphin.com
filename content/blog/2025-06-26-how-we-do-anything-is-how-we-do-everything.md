@@ -1,11 +1,16 @@
 ---
 title: "How We Do Anything Is How We Do Everything"
 date: "2025-06-26"
+category: "Learning & Development"
+topics: ["Personal Development", "Professional Excellence"]
 excerpt: "Project management isn't confined to work. Your personal habits build the foundation for professional excellence. Here's how small disciplines create big results."
-tags: ["Leadership", "Personal Development", "Habits", "Professional Excellence"]
+tags: ["Team Leadership", "Professional Development", "Best Practices"]
+intent: "informational"
+search_query: "personal habits professional excellence"
 author: "Travis Sutphin"
 readingTime: 7
 image: "/assets/images/blogs/2025-06-26-how-we-do-anything-is-how-we-do-everything.png"
+faq: false
 ---
 
 Project management isn't confined to workspaces, Gantt charts, or deadlines. It's a mindset, a way of approaching life with purpose and precision. I believe in striving daily for excellence, understanding that perfection is unattainable but the pursuit itself creates growth.

@@ -3,7 +3,7 @@ title: "To Think or Not to Think: When to Use AI's Thinking Mode"
 date: "2025-10-25"
 category: "AI & Automation"
 topics: ["AI Development", "Productivity"]
-tags: ["AI", "Productivity", "Development", "Best Practices"]
+tags: ["AI Development", "Productivity", "Best Practices"]
 intent: "informational"
 search_query: "when to use ai thinking mode"
 author: "Travis Sutphin"

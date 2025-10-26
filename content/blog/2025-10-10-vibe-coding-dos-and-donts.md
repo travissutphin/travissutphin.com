@@ -1,11 +1,16 @@
 ---
 title: "Vibe Coding for Beginners: 5 Do's and 5 Don'ts That'll Save Your Sanity"
 date: "2025-10-10"
+category: "AI & Automation"
+topics: ["AI Development", "Beginner Guide"]
 excerpt: "Master AI-assisted coding with these 5 essential do's and don'ts. Learn to harness tools like My Favority Tool Claude Code or Cursor, Replit, and GitHub Copilot without creating digital disasters—from rapid prototyping to production-ready code."
-tags: ["AI", "Vibe Coding", "AI-Assisted Development", "Beginner Guide", "Code Generation", "Best Practices", "LLM Tools", "Software Development"]
+tags: ["AI Development", "Best Practices", "AI Tools", "Software Development"]
+intent: "informational"
+search_query: "vibe coding beginners guide dos donts"
 author: "Travis Sutphin"
 readingTime: 8
 image: "/assets/images/blogs/2025-10-10-vibe-coding-dos-and-donts.png"
+faq: false
 ---
 
 **So you've discovered the magic of vibe coding—that incredible AI-assisted coding approach where you chat with an AI tool like you're DMing a really smart friend, and *poof*, working code appears. Welcome to the future, friend!**

@@ -1,11 +1,16 @@
 ---
 title: "The AI Speed Trap: Why Moving Fast Without Systems Breaks Everything"
 date: "2025-09-26"
+category: "AI & Automation"
+topics: ["AI Development", "Productivity Systems"]
 excerpt: "AI doesn't solve chaos, it amplifies it. Learn how to use AI not just to go faster, but to go faster correctly with sustainable systems."
-tags: ["AI", "Productivity", "Development", "Systems", "Quality"]
+tags: ["AI Development", "Productivity", "Systems & Organization", "Best Practices"]
+intent: "informational"
+search_query: "ai development systems best practices"
 author: "Travis Sutphin"
 readingTime: 8
 image: "/assets/images/blogs/2025-09-26-ai-speed-trap-why-moving-fast-without-systems-breaks-everything.png"
+faq: false
 ---
 
 We've all felt it, that intoxicating rush of AI-powered productivity. You're cranking out code, generating content, automating tasks. You've never moved this fast before. 

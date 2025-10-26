@@ -1,11 +1,16 @@
 ---
 title: "Stop Firefighting Mondays: The 30-Minute CEO Framework That Transforms Your Week"
 date: "2024-11-22"
+category: "Productivity & Systems"
+topics: ["Time Management", "Weekly Planning"]
 excerpt: "Why Mondays feel like chaos and how 30 minutes of 'CEO mode' can transform your entire week from reactive firefighting to strategic execution."
-tags: ["Productivity", "CEO", "Time Management", "Framework"]
+tags: ["Productivity", "Planning & Strategy", "Best Practices"]
+intent: "informational"
+search_query: "monday planning framework ceo"
 author: "Travis Sutphin"
 readingTime: 5
 image: "/assets/images/blogs/2024-11-22-stop-firefighting-mondays-updated.png"
+faq: false
 ---
 
 Why do Mondays feel like putting out fires while juggling chainsaws? Because we're doing it wrong.

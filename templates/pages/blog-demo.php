@@ -88,7 +88,7 @@ function calculate_reading_time($content) {
                                     class="w-full px-4 py-3 pr-10 rounded-lg bg-white dark:bg-gray-800 text-gray-800 dark:text-white font-medium appearance-none cursor-pointer
                                            focus:outline-none focus:ring-2 focus:ring-primary-green transition-all"
                                     onchange="window.location.href = this.value">
-                                <option value="<?php echo BASE_PATH; ?>/blog" <?php echo !$selected_category ? 'selected' : ''; ?>>
+                                <option value="<?php echo BASE_PATH; ?>/blog-demo" <?php echo !$selected_category ? 'selected' : ''; ?>>
                                     📂 All Categories (<?php echo count(get_blog_posts()); ?>)
                                 </option>
                                 <?php
@@ -106,7 +106,7 @@ function calculate_reading_time($content) {
                                     $category_slug = $category_slugs[$category] ?? create_slug($category);
                                     $category_count = count(get_blog_posts(null, ['category' => $category]));
                                 ?>
-                                    <option value="<?php echo BASE_PATH; ?>/blog?category=<?php echo urlencode($category); ?>"
+                                    <option value="<?php echo BASE_PATH; ?>/blog-demo?category=<?php echo urlencode($category); ?>"
                                             <?php echo $selected_category === $category ? 'selected' : ''; ?>>
                                         <?php echo e($category); ?> (<?php echo $category_count; ?>)
                                     </option>
@@ -143,7 +143,7 @@ function calculate_reading_time($content) {
 
                     <!-- Clear Filters Button (shown when filters active) -->
                     <?php if ($selected_category || $selected_tag || $search_query): ?>
-                        <a href="<?php echo BASE_PATH; ?>/blog"
+                        <a href="<?php echo BASE_PATH; ?>/blog-demo"
                            class="flex-none px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-lg font-semibold
                                   transition-all flex items-center gap-2">
                             <i data-lucide="x" class="w-4 h-4"></i>
@@ -159,21 +159,21 @@ function calculate_reading_time($content) {
                         <?php if ($search_query): ?>
                             <span class="px-3 py-1 bg-white/20 text-white rounded-full flex items-center gap-1">
                                 🔍 "<?php echo e($search_query); ?>"
-                                <a href="<?php echo BASE_PATH; ?>/blog<?php echo $selected_category ? '?category=' . urlencode($selected_category) : ''; ?><?php echo ($selected_category && $selected_tag) ? '&' : ($selected_tag ? '?' : ''); ?><?php echo $selected_tag ? 'tag=' . urlencode($selected_tag) : ''; ?>"
+                                <a href="<?php echo BASE_PATH; ?>/blog-demo<?php echo $selected_category ? '?category=' . urlencode($selected_category) : ''; ?><?php echo ($selected_category && $selected_tag) ? '&' : ($selected_tag ? '?' : ''); ?><?php echo $selected_tag ? 'tag=' . urlencode($selected_tag) : ''; ?>"
                                    class="ml-1 hover:text-red-300">×</a>
                             </span>
                         <?php endif; ?>
                         <?php if ($selected_category): ?>
                             <span class="px-3 py-1 bg-white/20 text-white rounded-full flex items-center gap-1">
                                 📂 <?php echo e($selected_category); ?>
-                                <a href="<?php echo BASE_PATH; ?>/blog<?php echo $selected_tag ? '?tag=' . urlencode($selected_tag) : ''; ?><?php echo ($selected_tag && $search_query) ? '&' : ($search_query ? '?' : ''); ?><?php echo $search_query ? 'q=' . urlencode($search_query) : ''; ?>"
+                                <a href="<?php echo BASE_PATH; ?>/blog-demo<?php echo $selected_tag ? '?tag=' . urlencode($selected_tag) : ''; ?><?php echo ($selected_tag && $search_query) ? '&' : ($search_query ? '?' : ''); ?><?php echo $search_query ? 'q=' . urlencode($search_query) : ''; ?>"
                                    class="ml-1 hover:text-red-300">×</a>
                             </span>
                         <?php endif; ?>
                         <?php if ($selected_tag): ?>
                             <span class="px-3 py-1 bg-white/20 text-white rounded-full flex items-center gap-1">
                                 🏷️ <?php echo e($selected_tag); ?>
-                                <a href="<?php echo BASE_PATH; ?>/blog<?php echo $selected_category ? '?category=' . urlencode($selected_category) : ''; ?><?php echo ($selected_category && $search_query) ? '&' : ($search_query ? '?' : ''); ?><?php echo $search_query ? 'q=' . urlencode($search_query) : ''; ?>"
+                                <a href="<?php echo BASE_PATH; ?>/blog-demo<?php echo $selected_category ? '?category=' . urlencode($selected_category) : ''; ?><?php echo ($selected_category && $search_query) ? '&' : ($search_query ? '?' : ''); ?><?php echo $search_query ? 'q=' . urlencode($search_query) : ''; ?>"
                                    class="ml-1 hover:text-red-300">×</a>
                             </span>
                         <?php endif; ?>
@@ -219,7 +219,7 @@ function calculate_reading_time($content) {
                     }
                     ?>
                 </p>
-                <a href="<?php echo BASE_PATH; ?>/blog"
+                <a href="<?php echo BASE_PATH; ?>/blog-demo"
                    class="mt-4 inline-block px-6 py-3 bg-gradient-to-r from-primary-green to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all">
                     ← Back to All Posts
                 </a>
@@ -397,7 +397,7 @@ function calculate_reading_time($content) {
                     <?php if ($total_pages > 1 && !$selected_tag): ?>
                         <div class="mt-12 flex justify-center items-center space-x-2">
                             <?php if ($page > 1): ?>
-                                <a href="<?php echo BASE_PATH; ?>/blog?page=<?php echo $page - 1; ?><?php echo $selected_category ? '&category=' . urlencode($selected_category) : ''; ?>"
+                                <a href="<?php echo BASE_PATH; ?>/blog-demo?page=<?php echo $page - 1; ?><?php echo $selected_category ? '&category=' . urlencode($selected_category) : ''; ?>"
                                    class="pagination-btn px-4 py-2 rounded-lg shadow">
                                     ← Previous
                                 </a>
@@ -405,7 +405,7 @@ function calculate_reading_time($content) {
 
                             <div class="flex space-x-1">
                                 <?php for ($i = max(1, $page - 2); $i <= min($total_pages, $page + 2); $i++): ?>
-                                    <a href="<?php echo BASE_PATH; ?>/blog?page=<?php echo $i; ?><?php echo $selected_category ? '&category=' . urlencode($selected_category) : ''; ?>"
+                                    <a href="<?php echo BASE_PATH; ?>/blog-demo?page=<?php echo $i; ?><?php echo $selected_category ? '&category=' . urlencode($selected_category) : ''; ?>"
                                        class="w-10 h-10 flex items-center justify-center rounded-lg transition-all
                                               <?php echo $i === $page
                                                   ? 'pagination-active'
@@ -416,7 +416,7 @@ function calculate_reading_time($content) {
                             </div>
 
                             <?php if ($page < $total_pages): ?>
-                                <a href="<?php echo BASE_PATH; ?>/blog?page=<?php echo $page + 1; ?><?php echo $selected_category ? '&category=' . urlencode($selected_category) : ''; ?>"
+                                <a href="<?php echo BASE_PATH; ?>/blog-demo?page=<?php echo $page + 1; ?><?php echo $selected_category ? '&category=' . urlencode($selected_category) : ''; ?>"
                                    class="pagination-btn px-4 py-2 rounded-lg shadow">
                                     Next →
                                 </a>
@@ -462,7 +462,7 @@ function calculate_reading_time($content) {
                             <h3 class="sidebar-title text-lg font-bold mb-4">Popular Tags</h3>
                             <div class="flex flex-wrap gap-2">
                                 <?php foreach (array_slice($all_tags, 0, 10) as $tag): ?>
-                                    <a href="<?php echo BASE_PATH; ?>/blog?tag=<?php echo urlencode($tag); ?>"
+                                    <a href="<?php echo BASE_PATH; ?>/blog-demo?tag=<?php echo urlencode($tag); ?>"
                                        class="filter-tag px-3 py-1 text-xs rounded-full hover:bg-primary-green hover:text-white transition-colors">
                                         <?php echo e($tag); ?>
                                     </a>
@@ -575,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add "View all results" link if there are more posts
         if (matchingPosts.length > 5) {
             html += `
-                <a href="<?php echo BASE_PATH; ?>/blog?q=${encodeURIComponent(searchTerm)}"
+                <a href="<?php echo BASE_PATH; ?>/blog-demo?q=${encodeURIComponent(searchTerm)}"
                    class="block px-4 py-3 bg-gray-50 dark:bg-gray-900 text-center text-sm font-semibold text-primary-green hover:text-primary-blue transition-colors">
                     View all ${matchingPosts.length} results →
                 </a>
@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (searchTerm.length > 0) {
                 const currentCategory = <?php echo json_encode($selected_category); ?>;
                 const categoryParam = currentCategory ? '&category=' + encodeURIComponent(currentCategory) : '';
-                window.location.href = '<?php echo BASE_PATH; ?>/blog?q=' + encodeURIComponent(searchTerm) + categoryParam;
+                window.location.href = '<?php echo BASE_PATH; ?>/blog-demo?q=' + encodeURIComponent(searchTerm) + categoryParam;
             }
         }
     });

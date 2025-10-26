@@ -1,11 +1,16 @@
 ---
 title: "Learn by Reading, Master by Doing: The 3-Stage Learning Framework"
 date: "2025-01-25"
+category: "Learning & Development"
+topics: ["Professional Development", "Learning Frameworks"]
 excerpt: "Reading gives you knowledge. Doing gives you mastery. Here's the proven 3-stage framework I use to transform theoretical concepts into real-world expertise."
-tags: ["Learning", "Professional Development", "Mastery", "Methodology"]
+tags: ["Professional Development", "Best Practices"]
+intent: "informational"
+search_query: "learn by doing framework"
 author: "Travis Sutphin"
 readingTime: 6
 image: "/assets/images/blogs/2025-01-25-learn-by-reading-master-by-doing.png"
+faq: false
 ---
 
 In the dynamic world of technology and development, continuous learning is not just a necessity—it's a way of life. As a Director and Full-Stack Developer, I've come to realize that my journey of mastering new skills follows a distinct pattern: **I learn by Reading, and I Master by Doing**.

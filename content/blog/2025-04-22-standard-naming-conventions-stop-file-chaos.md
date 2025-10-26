@@ -1,11 +1,16 @@
 ---
 title: "Standard Naming Conventions: Stop the File Chaos"
 date: "2025-04-22"
+category: "Productivity & Systems"
+topics: ["Organization", "File Management"]
 excerpt: "Ever wasted 20 minutes looking for 'presentation_final_FINAL_v2_updated.pptx'? Here's how standardized naming conventions save time, prevent errors, and restore sanity."
-tags: ["Organization", "Productivity", "File Management", "Team Efficiency"]
+tags: ["Systems & Organization", "Best Practices", "Productivity", "Documentation"]
+intent: "informational"
+search_query: "file naming conventions best practices"
 author: "Travis Sutphin"
 readingTime: 5
 image: "/assets/images/blogs/2025-04-22-standard-naming-conventions-stop-file-chaos.png"
+faq: false
 ---
 
 In today's digital workplace, we're drowning in files, folders, and digital assets. Ever spent precious minutes searching for "presentation_final_FINAL_v2_updated.pptx"? Or accidentally overwrote an important document because of confusing version numbers?

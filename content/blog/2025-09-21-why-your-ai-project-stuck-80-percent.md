@@ -1,11 +1,16 @@
 ---
 title: "Why Your AI Project Is Stuck at 80% (And How to Actually Ship It)"
 date: "2025-09-21"
+category: "AI & Automation"
+topics: ["AI Development", "Project Completion"]
 excerpt: "AI projects get stuck at 80%. Learn the 2 proven paths to ship your stalled app with expert guidance or full completion services."
-tags: ["AI", "Development", "Project Management", "Consulting"]
+tags: ["AI Development", "Project Management", "Technical Debt"]
+intent: "commercial"
+search_query: "ai project stuck how to finish"
 author: "Travis Sutphin"
 readingTime: 8
 image: "/assets/images/blogs/2025-09-21-why-your-ai-project-stuck-80-percent.png"
+faq: false
 ---
 
 You've been working on it for months. Maybe it's a web app with AI features, an automation workflow, or a custom tool for your business. The core functionality works. Users can log in. Data flows. It *almost* does what you envisioned.

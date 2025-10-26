@@ -1,11 +1,16 @@
 ---
 title: "12 Agile Principles That Actually Work in Real Projects"
 date: "2025-02-10"
+category: "Project Management"
+topics: ["Agile Methodology", "Software Development"]
 excerpt: "The Agile Manifesto isn't just theory. Here's how the 12 principles translate into real-world project success, with practical examples from the trenches."
-tags: ["Agile", "Project Management", "Software Development", "Team Leadership"]
+tags: ["Agile", "Project Management", "Team Leadership", "Best Practices"]
+intent: "informational"
+search_query: "agile principles real world examples"
 author: "Travis Sutphin"
 readingTime: 9
 image: "/assets/images/blogs/2025-02-10-12-agile-principles-that-actually-work-in-real-projects.png"
+faq: false
 ---
 
 Agile methodology is a project management approach that focuses on delivering working products or services through iterative development cycles, known as "sprints." Agile emphasizes collaboration, flexibility, and rapid response to change, and has become a popular choice for many organizations looking to improve their project delivery process.

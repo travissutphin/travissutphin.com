@@ -1,11 +1,16 @@
 ---
 title: "Why Every Project Manager Needs a Weekly Big 3"
 date: "2025-05-30"
+category: "Project Management"
+topics: ["Priority Management", "Weekly Planning"]
 excerpt: "In chaotic project environments, the Big 3 weekly priorities framework cuts through noise to drive real results. Here's why this simple habit changes everything."
-tags: ["Project Management", "Productivity", "Weekly Planning", "Leadership"]
+tags: ["Project Management", "Productivity", "Planning & Strategy", "Team Leadership"]
+intent: "informational"
+search_query: "weekly priorities project manager"
 author: "Travis Sutphin"
 readingTime: 5
 image: "/assets/images/blogs/2025-05-30-why-every-project-manager-needs-weekly-big-3.png"
+faq: false
 ---
 
 As a Senior Project Manager, I've run projects with dozens of team members, shifting priorities, surprise roadblocks, and stakeholders who change their minds faster than the weather. But through it all, one habit has consistently helped me—and my teams—stay focused and drive results: the weekly **Big 3**.

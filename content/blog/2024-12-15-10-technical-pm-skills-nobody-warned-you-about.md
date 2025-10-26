@@ -1,11 +1,16 @@
 ---
 title: "10 Technical PM Skills Nobody Warned You About"
 date: "2024-12-15"
+category: "Project Management"
+topics: ["Technical Leadership", "Engineering Management"]
 excerpt: "Being a Technical Project Manager isn't about knowing every framework. Here are the real skills that separate successful TPMs from the chaos-creators."
-tags: ["Project Management", "Technical Leadership", "TPM", "Engineering Management"]
+tags: ["Project Management", "Team Leadership", "Team Collaboration", "Planning & Strategy"]
+intent: "informational"
+search_query: "technical project manager skills"
 author: "Travis Sutphin"
 readingTime: 8
 image: "/assets/images/blogs/2024-12-15-10-technical-pm-skills-nobody-warned-you-about.png"
+faq: false
 ---
 
 Being a Technical Project Manager isn't about memorizing every JavaScript framework or knowing how to deploy Kubernetes clusters. It's about being the translator, the roadblock-clearer, and sometimes the person who says "no" to impossible timelines.

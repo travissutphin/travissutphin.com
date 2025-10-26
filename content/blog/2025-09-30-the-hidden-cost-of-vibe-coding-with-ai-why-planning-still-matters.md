@@ -1,11 +1,16 @@
 ---
 title: "The Hidden Cost of 'Vibe Coding' with AI: Why Planning Still Matters"
 date: "2025-09-30"
+category: "AI & Automation"
+topics: ["AI Development", "Best Practices"]
 excerpt: "Building fast with AI feels amazing until reality hits. Learn why letting AI document its own work creates consistent, maintainable systems that scale from 0% to 100%."
-tags: ["AI", "Development", "Best Practices", "Documentation", "Technical Debt"]
+tags: ["AI Development", "Best Practices", "Documentation", "Technical Debt", "Planning & Strategy"]
+intent: "informational"
+search_query: "vibe coding ai planning documentation"
 author: "Travis Sutphin"
 readingTime: 12
 image: "/assets/images/blogs/2025-09-30-the-hidden-cost-of-vibe-coding-with-ai-why-planning-still-matters.png"
+faq: false
 ---
 
 You fire up Claude or Cursor, type "build me a SaaS dashboard," and watch the magic happen. Within hours, you've got 80% of a working app. It feels incredible, like you've discovered a development superpower.

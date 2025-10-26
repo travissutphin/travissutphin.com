@@ -2,11 +2,16 @@
 title: "RACI Chart Guide: Why Every Project Manager Needs This Simple Tool"
 slug: "raci-chart-project-management-guide"
 date: "2024-10-26"
+category: "Project Management"
+topics: ["Project Planning", "Team Leadership"]
 excerpt: "Stop project confusion with RACI charts. Learn how this simple tool clarifies roles, prevents bottlenecks, and ensures project success with real-world examples."
+tags: ["Project Management", "Team Leadership", "Team Collaboration", "Productivity"]
+intent: "informational"
+search_query: "raci chart project management guide"
 author: "Travis Sutphin"
-tags: ["Project Management", "Team Leadership", "Business Tools", "Productivity"]
-image: "/assets/images/blogs/2024-10-26-raci-chart-project-management-guide.png"
 readingTime: 8
+image: "/assets/images/blogs/2024-10-26-raci-chart-project-management-guide.png"
+faq: false
 ---
 
 Ever been in a project meeting where everyone's confused about who's supposed to do what? Or watched a deadline slip because two teams thought the other was handling it?
