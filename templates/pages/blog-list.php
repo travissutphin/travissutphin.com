@@ -96,7 +96,7 @@ function calculate_reading_time($content) {
                                 $category_slugs = [
                                     'AI & Automation' => 'ai-automation',
                                     'Project Management' => 'project-management',
-                                    'Productivity & Systems' => 'productivity',
+                                    'Productivity & Systems' => 'productivity-systems',
                                     'Technical Leadership' => 'technical-leadership',
                                     'Business & Strategy' => 'business-strategy',
                                     'Learning & Development' => 'learning-development'

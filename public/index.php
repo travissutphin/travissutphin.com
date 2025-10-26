@@ -34,7 +34,8 @@ $routes = [
     'projects' => 'projects.php',
     'team' => 'team.php',
     'contact' => 'contact.php',
-    'blog' => 'blog-list.php'
+    'blog' => 'blog-list.php',
+    'blog-demo' => 'blog-demo.php'
 ];
 
 // Check for blog category routes: /blog/category/[category-slug]
@@ -45,7 +46,7 @@ if (preg_match('#^blog/category/([a-z0-9-]+)$#', $route, $matches)) {
     $category_map = [
         'ai-automation' => 'AI & Automation',
         'project-management' => 'Project Management',
-        'productivity' => 'Productivity & Systems',
+        'productivity-systems' => 'Productivity & Systems',
         'technical-leadership' => 'Technical Leadership',
         'business-strategy' => 'Business & Strategy',
         'learning-development' => 'Learning & Development'
