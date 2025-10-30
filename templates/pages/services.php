@@ -1,239 +1,318 @@
-<!-- Hero Section - Matching Homepage Style -->
+<!-- Hero Section -->
 <section class="min-h-hero flex items-center gradient-green-blue px-4 py-16">
     <div class="max-w-7xl mx-auto">
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                Stop Losing $1000s Every Month Your App Isn't Live
+                Fractional CTO Services
             </h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                I\'ll finish your app in 30 days, add AI capabilities, and help you launch—guaranteed.
+                Get senior-level tech leadership without the full-time cost. Choose ongoing support or per-project solutions.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="<?php echo BASE_PATH; ?>/contact" class="bg-white text-dark-green hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                    Get My Free App Audit →
+                    Schedule Free Strategy Call
                 </a>
             </div>
-            <p class="text-sm mt-4 opacity-90">
-                No commitment required • Results in 48 hours
-            </p>
         </div>
     </div>
 </section>
 
-<!-- Problem Agitation (StoryBrand) -->
-<section class="stuck-section py-16 px-4">
-    <div class="floating-badge floating-badge-1"></div>
-    <div class="floating-badge floating-badge-2"></div>
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-        <h2 class="text-3xl font-bold text-theme-primary mb-6">You're Stuck Because...</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="stuck-card">
-                <i data-lucide="clock" class="stuck-icon w-12 h-12 text-red-500 mx-auto mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Time Is Running Out</h3>
-                <p class="text-theme-secondary">Your competitors launch while your app collects dust</p>
-            </div>
-            <div class="stuck-card">
-                <i data-lucide="code-2" class="stuck-icon w-12 h-12 text-red-500 mx-auto mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Your Developer Quit</h3>
-                <p class="text-theme-secondary">Left with messy code and no documentation</p>
-            </div>
-            <div class="stuck-card">
-                <i data-lucide="ban" class="stuck-icon w-12 h-12 text-red-500 mx-auto mb-4"></i>
-                <h3 class="font-semibold text-lg mb-2 text-theme-primary">Perfectionism Paralysis</h3>
-                <p class="text-theme-secondary">Waiting for "perfect" while missing real opportunities</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Solution - Services Grid with Better Visual Hierarchy -->
-<section class="unstuck-section py-16 px-4">
+<!-- Included Services Section -->
+<section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-theme-primary mb-4">
-                Here's How I'll Get You Unstuck
+                Included in Fractional CTO Services
             </h2>
             <p class="text-xl text-theme-secondary max-w-3xl mx-auto">
-                Choose the help you need. Most founders start with "Finish Your App" then add AI capabilities.
+                All of these services are included in your monthly fractional CTO engagement.
             </p>
         </div>
 
-        <!-- Primary Services (Top 3 from Homepage) -->
-        <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <div class="grid md:grid-cols-3 gap-8">
             <?php
-            $primaryServices = [
+            $includedServices = [
                 [
-                    'icon' => 'sparkles',
-                    'title' => 'Add AI Powers',
-                    'subtitle' => '3x Value',
-                    'description' => 'Transform your app with intelligent features users love.',
-                    'features' => [
-                        'ChatGPT/Claude integration',
-                        'Smart automation workflows',
-                        'AI-powered search & insights',
-                        'Content generation'
-                    ],
-                    'cta' => 'See AI Options',
+                    'icon' => 'wrench',
+                    'title' => 'Hands-On Problem Solving',
+                    'description' => 'When tech issues block your business, I jump in and fix them. Emergency support included.'
+                ],
+                [
+                    'icon' => 'compass',
+                    'title' => 'Strategic Technology Planning',
+                    'description' => 'Get clarity on tech decisions without the full-time CTO salary. I create technology roadmaps aligned with your business goals.'
+                ],
+                [
+                    'icon' => 'phone',
+                    'title' => 'Monthly Strategy Sessions',
+                    'description' => 'Regular calls to discuss challenges, review progress, and plan next steps for your technology.'
+                ],
+                [
+                    'icon' => 'users',
+                    'title' => 'Team Guidance & Mentoring',
+                    'description' => 'I mentor your technical team, help with hiring decisions, and ensure they have clear direction.'
+                ],
+                [
+                    'icon' => 'target',
+                    'title' => 'Architecture & Platform Decisions',
+                    'description' => 'Expert guidance on choosing the right technologies, platforms, and tools for your business needs.'
+                ],
+                [
+                    'icon' => 'alert-triangle',
+                    'title' => 'Hack/Malware Remediation',
+                    'description' => 'Site hacked? I clean it up, secure it, and prevent future attacks. Emergency response available.'
+                ],
+                [
+                    'icon' => 'mail',
+                    'title' => 'Email System Setup & Fixes',
+                    'description' => 'Fix delivery issues, configure SPF/DKIM/DMARC, or set up transactional email systems.'
+                ],
+                [
+                    'icon' => 'lock',
+                    'title' => 'Security Audit & Hardening',
+                    'description' => 'Comprehensive security review with actionable fixes. Protect your business from vulnerabilities.'
+                ],
+                [
+                    'icon' => 'gauge',
+                    'title' => 'Performance Optimization',
+                    'description' => 'Make your website lightning-fast. Database optimization, caching, and infrastructure improvements.'
+                ],
+                [
+                    'icon' => 'shield-check',
+                    'title' => 'Developer Team Oversight',
+                    'description' => 'Ensure your developers deliver quality work. I review code, manage vendors, and keep your technical projects on track.'
+                ],
+            ];
+
+            foreach ($includedServices as $service): ?>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-primary-green to-primary-blue rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="<?php echo e($service['icon']); ?>" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-green mb-3"><?php echo e($service['title']); ?></h3>
+                        <p class="text-gray-dark text-sm">
+                            <?php echo e($service['description']); ?>
+                        </p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- Per-Project Solutions Section -->
+<section class="py-16 px-4 bg-theme-surface">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-theme-primary mb-4">
+                Per-Project Solutions
+            </h2>
+            <p class="text-xl text-theme-secondary max-w-3xl mx-auto">
+                Need help with a specific project? These solutions are billed separately based on scope.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <?php
+            $projectServices = [
+                [
+                    'icon' => 'code',
+                    'title' => 'App Development & Completion',
+                    'description' => 'Build new features or complete your unfinished project. I take it from stuck to production-ready.',
                     'highlight' => false
                 ],
                 [
-                    'icon' => 'rocket',
-                    'title' => 'Finish Your App',
-                    'subtitle' => 'Most Popular',
-                    'description' => 'I\'ll complete your stalled project in 30 days or less.',
-                    'features' => [
-                        'Full code audit in 48 hours',
-                        'Complete remaining features',
-                        'Fix all critical bugs',
-                        'Deploy to production'
-                    ],
-                    'cta' => 'Start Free Audit',
+                    'icon' => 'search',
+                    'title' => 'SEO Optimization',
+                    'description' => 'Improve your search rankings and online visibility. Aanalytics setup, technical SEO, AEO (Answer Engine Optimization) and performance tracking.',
+					'highlight' => true
+                ],
+                [
+                    'icon' => 'sparkles',
+                    'title' => 'AI Integration & Automation',
+                    'description' => 'Add ChatGPT, Claude, or other AI capabilities to your WebApp.',
                     'highlight' => true
                 ],
                 [
-                    'icon' => 'shield',
-                    'title' => 'AI-Tech-Solutions',
-                    'subtitle' => 'Ongoing Support',
-                    'description' => 'Get senior technical leadership at a fraction of the cost.',
-                    'features' => [
-                        'Weekly strategy calls',
-                        'Architecture decisions',
-                        'Team mentoring',
-                        'Vendor management'
-                    ],
-                    'cta' => 'Learn More',
+                    'icon' => 'zap',
+                    'title' => 'Workflow Automation',
+                    'description' => 'Automate repetitive tasks with custom workflows. Save hours per week on manual processes.',
+                    'highlight' => false
+                ],
+                [
+                    'icon' => 'database',
+                    'title' => 'Data Migration & Integration',
+                    'description' => 'Migrate data between systems or integrate third-party APIs and services safely.',
+                    'highlight' => false
+                ],
+                [
+                    'icon' => 'cloud',
+                    'title' => 'Infrastructure & DevOps',
+                    'description' => 'Server setup, deployment pipelines, monitoring, and cloud infrastructure management.',
                     'highlight' => false
                 ]
             ];
 
-            foreach ($primaryServices as $service): ?>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden ring-2 ring-primary-green <?php echo $service['highlight'] ? 'transform scale-105' : ''; ?> card-hover">
+            foreach ($projectServices as $service): ?>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all <?php echo $service['highlight'] ? 'ring-2 ring-primary-green' : ''; ?>">
                     <?php if ($service['highlight']): ?>
-                        <div class="bg-gradient-to-r from-primary-green to-primary-blue text-white text-center py-2 text-sm font-semibold">
-                            MOST FOUNDERS START HERE
+                        <div class="bg-gradient-to-r from-primary-green to-primary-blue text-white text-center py-2 text-xs font-semibold uppercase">
+                            Popular Choice
                         </div>
                     <?php endif; ?>
-                    <div class="p-8">
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="w-14 h-14 bg-gradient-to-br from-primary-green to-primary-blue rounded-lg flex items-center justify-center">
-                                <i data-lucide="<?php echo e($service['icon']); ?>" class="w-8 h-8 text-white"></i>
-                            </div>
-                            <span class="text-sm text-primary-blue font-semibold"><?php echo e($service['subtitle']); ?></span>
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-primary-green to-primary-blue rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="<?php echo e($service['icon']); ?>" class="w-8 h-8 text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold text-dark-green mb-3"><?php echo e($service['title']); ?></h3>
-                        <p class="text-gray-dark mb-6">
+                        <p class="text-gray-dark text-sm mb-4">
                             <?php echo e($service['description']); ?>
                         </p>
-                        <ul class="space-y-3 mb-6">
-                            <?php foreach ($service['features'] as $feature): ?>
-                                <li class="flex items-start">
-                                    <i data-lucide="check" class="w-5 h-5 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
-                                    <span class="text-sm"><?php echo e($feature); ?></span>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
                         <a href="<?php echo BASE_PATH; ?>/contact"
-                           class="block text-center py-3 rounded-lg font-semibold transition-all
-                                  <?php echo $service['highlight']
-                                      ? 'bg-gradient-to-r from-primary-green to-primary-blue text-white hover:shadow-lg'
-                                      : 'bg-gray-100 text-dark-green hover:bg-gray-200'; ?>">
-                            <?php echo e($service['cta']); ?>
+                           class="inline-block text-primary-blue hover:text-dark-green font-semibold text-sm transition-colors">
+                            Get a Quote →
                         </a>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
+    </div>
+</section>
 
-        <!-- Additional Services -->
-        <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-theme-primary mb-4">Also Available</h3>
+<!-- Pricing Overview Section -->
+<section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-theme-primary mb-4">
+                How Pricing Works
+            </h2>
         </div>
-        <div class="grid md:grid-cols-2 gap-6">
-            <?php
-            $additionalServices = [
-                [
-                    'icon' => 'zap',
-                    'title' => 'Workflow Automation',
-                    'description' => 'Save 10+ hours/week with custom automation'
-                ],
-                [
-                    'icon' => 'lock',
-                    'title' => 'Security & Performance',
-                    'description' => 'Make your app bulletproof and lightning fast'
-                ]
-            ];
 
-            foreach ($additionalServices as $service): ?>
-                <div class="bg-white rounded-lg p-6 flex items-center space-x-4 card-hover">
-                    <div class="w-12 h-12 bg-light-blue rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i data-lucide="<?php echo e($service['icon']); ?>" class="w-6 h-6 text-primary-blue"></i>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Fractional CTO Pricing -->
+            <div class="bg-theme-card rounded-lg shadow-lg p-8 border-2 border-primary-green">
+                <div class="text-center mb-6">
+                    <div class="inline-block bg-gradient-to-r from-primary-green to-primary-blue text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                        ONGOING SUPPORT
                     </div>
-                    <div>
-                        <h4 class="font-semibold text-dark-green"><?php echo e($service['title']); ?></h4>
-                        <p class="text-sm text-gray-dark"><?php echo e($service['description']); ?></p>
-                    </div>
+                    <h3 class="text-2xl font-bold text-theme-primary mb-2">Fractional CTO</h3>
+                    <p class="text-theme-secondary text-sm">All included services</p>
                 </div>
-            <?php endforeach; ?>
+                <div class="text-center mb-6">
+                    <div class="text-4xl font-bold text-theme-primary mb-2">
+                        Starting at $2,500<span class="text-lg text-theme-secondary">/month</span>
+                    </div>
+                    <p class="text-sm text-theme-secondary">10 hours monthly • Cancel anytime</p>
+                </div>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">All included services above</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">Monthly strategy calls</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">Emergency support included</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">Scale hours up or down as needed</span>
+                    </li>
+                </ul>
+                <a href="<?php echo BASE_PATH; ?>/contact"
+                   class="block text-center bg-gradient-to-r from-primary-green to-primary-blue text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">
+                    Schedule Strategy Call
+                </a>
+            </div>
+
+            <!-- Per-Project Pricing -->
+            <div class="bg-theme-card rounded-lg shadow-lg p-8">
+                <div class="text-center mb-6">
+                    <div class="inline-block bg-theme-surface text-theme-primary px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                        ONE-TIME PROJECTS
+                    </div>
+                    <h3 class="text-2xl font-bold text-theme-primary mb-2">Per-Project Solutions</h3>
+                    <p class="text-theme-secondary text-sm">Billed based on scope</p>
+                </div>
+                <div class="text-center mb-6">
+                    <div class="text-4xl font-bold text-theme-primary mb-2">
+                        Custom Quote
+                    </div>
+                    <p class="text-sm text-theme-secondary">Fixed price or hourly available</p>
+                </div>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">Clear scope and timeline</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">Fixed-price or hourly options</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">No long-term commitment</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">Combine multiple projects for discount</span>
+                    </li>
+                </ul>
+                <a href="<?php echo BASE_PATH; ?>/contact"
+                   class="block text-center bg-theme-surface text-theme-primary py-3 rounded-lg font-semibold hover:opacity-80 transition-opacity">
+                    Request a Quote
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Process Section (Guide's Plan) -->
-<section class="process-section py-16 px-4">
-    <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center text-theme-primary mb-4">
-            My Simple 3-Step Process
-        </h2>
-        <p class="text-xl text-center text-theme-secondary mb-12 max-w-3xl mx-auto">
-            No lengthy contracts. No surprise costs. Just results.
-        </p>
-        <div class="process-timeline grid md:grid-cols-3 gap-8">
-            <div class="process-step text-center">
-                <div class="process-number w-20 h-20 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
-                    1
-                </div>
-                <h3 class="text-xl font-semibold mb-3">Free Technical Audit</h3>
-                <p>I review your code and create a detailed roadmap in 48 hours</p>
-                <span class="process-date">Day 0-2</span>
+<!-- FAQ Section -->
+<section class="py-16 px-4 bg-theme-surface">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-theme-primary mb-12">Common Questions</h2>
+        <div class="space-y-6">
+            <div class="faq-item p-6 bg-theme-card rounded-lg">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">What's the difference between Fractional CTO and per-project work?</h3>
+                <p class="text-theme-secondary">Fractional CTO is ongoing monthly support focused on strategic guidance, team oversight, and technical leadership. Per-project work is for specific deliverables like building a feature, fixing a hack, or setting up email systems. Many clients start with per-project work and transition to fractional CTO as their business grows.</p>
             </div>
-            <div class="process-step text-center">
-                <div class="process-number w-20 h-20 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
-                    2
-                </div>
-                <h3 class="text-xl font-semibold mb-3">Rapid Development</h3>
-                <p>Using AI tools, I complete features 3x faster than traditional dev</p>
-                <span class="process-date">Day 3-25</span>
+            <div class="faq-item p-6 bg-theme-card rounded-lg">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">Can I combine fractional CTO services with per-project work?</h3>
+                <p class="text-theme-secondary">Absolutely! Many fractional CTO clients also need specific projects completed. We can bundle services together, and fractional CTO clients receive priority scheduling and discounted rates on per-project work.</p>
             </div>
-            <div class="process-step text-center">
-                <div class="process-number w-20 h-20 bg-gradient-to-br from-primary-green to-primary-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
-                    3
-                </div>
-                <h3 class="text-xl font-semibold mb-3">Launch & Support</h3>
-                <p>Your app goes live with monitoring and 30-day support included</p>
-                <span class="process-date">Day 26-30</span>
+            <div class="faq-item p-6 bg-theme-card rounded-lg">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">How quickly can you start on an emergency project?</h3>
+                <p class="text-theme-secondary">For emergencies like site hacks or critical email issues, I typically start within 24 hours. Fractional CTO clients get priority emergency support. For non-emergency projects, most work begins within 7 days.</p>
+            </div>
+            <div class="faq-item p-6 bg-theme-card rounded-lg">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">Do you work with specific technologies or platforms?</h3>
+                <p class="text-theme-secondary">I work with most modern tech stacks including PHP, JavaScript/Node.js, Python, WordPress, custom web applications, cloud platforms (AWS, Google Cloud, Azure), and major AI APIs (OpenAI, Anthropic, Google AI). If you're using something uncommon, we'll discuss compatibility during our strategy call.</p>
             </div>
         </div>
     </div>
 </section>
 
-
-<!-- Final CTA (Clear Call to Action) -->
+<!-- Final CTA -->
 <section class="py-16 px-4 gradient-green-blue">
     <div class="max-w-4xl mx-auto text-center text-white">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Your App Has Waited Long Enough
+            Ready to Stop Wrestling with Technology?
         </h2>
         <p class="text-xl mb-8 opacity-95">
-            Every day you delay costs you customers, revenue, and market position.
+            Whether you need ongoing support or help with a specific project, let's talk about how I can help your business.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="<?php echo BASE_PATH; ?>/contact"
                class="bg-white text-dark-green hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
-                Get Your Free Audit Now →
+                Schedule Free Strategy Call
             </a>
         </div>
         <p class="text-sm mt-6 opacity-90">
-            🔥 Limited spots available • Most projects start within 7 days
+            No commitment required • Get clarity on your tech challenges
         </p>
     </div>
 </section>

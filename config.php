@@ -27,7 +27,7 @@ if ($is_production) {
     define('SITE_URL', 'http://' . $host . $port_suffix . BASE_PATH);
 }
 
-define('SITE_EMAIL', 'contact@travissutphin.com');
+define('SITE_EMAIL', 'info@travissutphin.com');
 
 
 // Site metadata defaults

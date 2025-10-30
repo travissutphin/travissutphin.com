@@ -1,52 +1,52 @@
 <?php
+// Include the enhanced contact handler
+require_once dirname(__DIR__, 2) . '/lib/contact-handler.php';
+
 // Handle form submission
 $success = false;
 $error = false;
+$submission_id = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!verify_csrf_token($_POST['csrf_token'] ?? '')) {
-        $error = 'Invalid request. Please try again.';
-    } else {
-        $name = $_POST['name'] ?? '';
-        $email = $_POST['email'] ?? '';
-        $message = $_POST['message'] ?? '';
-
-        if (empty($name) || empty($email) || empty($message)) {
-            $error = 'Please fill in all required fields.';
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error = 'Please enter a valid email address.';
-        } else {
-            // Prepare email
-            $to = SITE_EMAIL;
-            $subject = 'New Contact Form Submission from ' . $name;
-
-            // HTML email body
-            $body = "<html><body style='font-family: Arial, sans-serif;'>";
-            $body .= "<h2 style='color: #005a00;'>New Contact Form Submission</h2>";
-            $body .= "<p><strong>Name:</strong> " . htmlspecialchars($name) . "</p>";
-            $body .= "<p><strong>Email:</strong> " . htmlspecialchars($email) . "</p>";
-            $body .= "<p><strong>Message:</strong></p>";
-            $body .= "<p style='background-color: #f8f9fa; padding: 15px; border-left: 4px solid #2be256;'>" . nl2br(htmlspecialchars($message)) . "</p>";
-            $body .= "<hr style='margin-top: 30px; border: 1px solid #e0e0e0;'>";
-            $body .= "<p style='color: #666; font-size: 12px;'>This message was sent from the contact form on travissutphin.com</p>";
-            $body .= "</body></html>";
-
-            // Headers for HTML email
-            $headers = "MIME-Version: 1.0\r\n";
-            $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-            $headers .= "From: " . SITE_NAME . " <noreply@" . $_SERVER['HTTP_HOST'] . ">\r\n";
-            $headers .= "Reply-To: " . $email . "\r\n";
-            $headers .= "X-Mailer: PHP/" . phpversion();
-
-            // Send email
-            if (mail($to, $subject, $body, $headers)) {
-                $success = true;
-                // Clear form data
-                $_POST = [];
-            } else {
-                $error = 'Failed to send message. Please try again later.';
-            }
+    try {
+        // Verify CSRF token
+        if (!verify_csrf_token($_POST['csrf_token'] ?? '')) {
+            throw new Exception('Invalid security token. Please refresh and try again.');
         }
+
+        // Get client IP
+        $client_ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+
+        // Check rate limiting
+        if (!check_rate_limit($client_ip)) {
+            throw new Exception('Too many submissions. Please try again in an hour.');
+        }
+
+        // Check honeypot (anti-spam)
+        if (!check_honeypot($_POST)) {
+            // Silently reject bot submissions
+            $success = true; // Show success to confuse bots
+            $submission_id = 'BOT-' . uniqid();
+        } else {
+            // Sanitize and validate input
+            $clean_data = sanitize_contact_input($_POST);
+
+            // Save submission to local file
+            $submission_id = save_submission($clean_data, $client_ip);
+
+            // Send thank you email to submitter
+            send_thank_you_email($clean_data);
+
+            // Send notification to admin
+            send_admin_notification($clean_data, $submission_id);
+
+            $success = true;
+
+            // Clear form data
+            $_POST = [];
+        }
+    } catch (Exception $e) {
+        $error = $e->getMessage();
     }
 }
 ?>
@@ -61,11 +61,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </p>
 
         <?php if ($success): ?>
-            <?php render_partial('alert', [
-                'type' => 'success',
-                'title' => 'Message Sent!',
-                'message' => 'Thank you for your message. I\'ll get back to you within 24 hours.'
-            ]); ?>
+            <div class="bg-green-50 dark:bg-green-900/20 border-2 border-green-500 rounded-lg p-6 mb-8">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i data-lucide="check-circle" class="w-8 h-8 text-green-500"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-lg font-semibold text-green-800 dark:text-green-300 mb-2">
+                            Thank You for Contacting Me!
+                        </h3>
+                        <div class="text-green-700 dark:text-green-400">
+                            <p class="mb-2">Your message has been successfully received.</p>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>A confirmation email has been sent to your address</li>
+                                <li>I typically respond within 24 hours during business days</li>
+                                <li>For urgent matters, feel free to follow up at <?php echo SITE_EMAIL; ?></li>
+                            </ul>
+                            <?php if ($submission_id && !str_starts_with($submission_id, 'BOT-')): ?>
+                                <p class="mt-3 text-xs opacity-75">
+                                    Reference ID: <?php echo e($submission_id); ?>
+                                </p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <?php endif; ?>
 
         <?php if ($error): ?>
