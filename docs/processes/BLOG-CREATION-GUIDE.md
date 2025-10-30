@@ -828,6 +828,7 @@ SEO
 [ ] Schema.org validated
 [ ] Social preview checked
 [ ] Google Search Console monitored
+[ ] sitemap.xml updated
 
 POST-PUBLICATION
 [ ] Analytics tracking

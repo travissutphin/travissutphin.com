@@ -1,0 +1,89 @@
+{
+  "_comment": "Replace these placeholders when setting up framework in a new project",
+  "_version": "1.0.0",
+
+  "project": {
+    "name": "[PROJECT_NAME]",
+    "description": "[PROJECT_DESCRIPTION]",
+    "repository": "[GITHUB_REPO_URL]",
+    "production_url": "[PRODUCTION_URL]",
+    "local_url": "[LOCAL_DEV_URL]"
+  },
+
+  "tech_stack": {
+    "primary_language": "[PRIMARY_LANGUAGE]",
+    "css_framework": "[CSS_FRAMEWORK]",
+    "server_type": "[SERVER_TYPE]",
+    "deployment_platform": "[DEPLOYMENT_PLATFORM]",
+    "port": "[SERVER_PORT]"
+  },
+
+  "team": {
+    "product_owner": "[PRODUCT_OWNER_NAME]",
+    "tpm": "[TPM_NAME]",
+    "principal_engineer": "[ENGINEER_NAME]",
+    "designer": "[DESIGNER_NAME]",
+    "devops": "[DEVOPS_NAME]",
+    "qa": "[QA_NAME]",
+    "security": "[SECURITY_NAME]",
+    "marketing_seo": "[MARKETING_NAME]",
+    "content_strategist": "[CONTENT_NAME]",
+    "storybrand_expert": "[STORYBRAND_NAME]"
+  },
+
+  "paths": {
+    "docs_root": "[DOCS_ROOT_PATH]",
+    "kanban_dev": "[KANBAN_DEV_PATH]",
+    "kanban_content": "[KANBAN_CONTENT_PATH]",
+    "content_blog": "[BLOG_CONTENT_PATH]",
+    "public_root": "[PUBLIC_ROOT_PATH]",
+    "automation": "[AUTOMATION_PATH]"
+  },
+
+  "git": {
+    "main_branch": "[MAIN_BRANCH_NAME]",
+    "feature_prefix": "[FEATURE_BRANCH_PREFIX]"
+  },
+
+  "_example_values": {
+    "_comment": "Example from travissutphin.com project",
+    "project": {
+      "name": "travissutphin.com",
+      "description": "AI-powered portfolio and blog platform",
+      "repository": "https://github.com/travissutphin/travissutphin.com",
+      "production_url": "https://travissutphin.com",
+      "local_url": "http://localhost:80"
+    },
+    "tech_stack": {
+      "primary_language": "PHP 8+",
+      "css_framework": "Tailwind CSS",
+      "server_type": "XAMPP",
+      "deployment_platform": "Railway",
+      "port": "80"
+    },
+    "team": {
+      "product_owner": "Travis",
+      "tpm": "Codey",
+      "principal_engineer": "Syntax",
+      "designer": "Aesthetica",
+      "devops": "Flow",
+      "qa": "Verity",
+      "security": "Sentinal",
+      "marketing_seo": "Bran",
+      "content_strategist": "Echo",
+      "storybrand_expert": "Cipher"
+    },
+    "paths": {
+      "docs_root": "/docs",
+      "kanban_dev": "/docs/kanban/kanban_dev.html",
+      "kanban_content": "/docs/kanban/kanban_content.html",
+      "content_blog": "/content/blog",
+      "public_root": "/public",
+      "automation": "/automation"
+    },
+    "git": {
+      "main_branch": "main",
+      "feature_prefix": "feature/"
+    }
+  }
+}

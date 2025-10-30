@@ -1,0 +1,126 @@
+{
+  "_comment": "Kanban workflow states configuration - customize for your process",
+  "_version": "1.0.0",
+
+  "workflow_name": "Scrum + Kanban Hybrid",
+
+  "columns": [
+    {
+      "id": "backlog",
+      "name": "Backlog",
+      "icon": "📋",
+      "description": "Tasks not yet scheduled for sprint",
+      "color": "#ddd6fe",
+      "next_states": ["sprint"]
+    },
+    {
+      "id": "sprint",
+      "name": "Sprint",
+      "icon": "🚀",
+      "description": "Active development tasks for current sprint",
+      "color": "#bfdbfe",
+      "next_states": ["qa", "backlog"]
+    },
+    {
+      "id": "qa",
+      "name": "QA",
+      "icon": "🧪",
+      "description": "Testing and quality assurance",
+      "color": "#fed7aa",
+      "next_states": ["staged", "sprint"]
+    },
+    {
+      "id": "staged",
+      "name": "Staged",
+      "icon": "📦",
+      "description": "Deployed to staging environment, awaiting production",
+      "color": "#fde68a",
+      "next_states": ["live", "qa"]
+    },
+    {
+      "id": "live",
+      "name": "Live",
+      "icon": "✅",
+      "description": "Deployed to production",
+      "color": "#bbf7d0",
+      "next_states": []
+    }
+  ],
+
+  "automation_triggers": {
+    "_comment": "Define when automation should move cards between states",
+    "on_git_commit": {
+      "enabled": true,
+      "pattern": "deploy|live",
+      "action": "move_to_live"
+    },
+    "on_git_push_staging": {
+      "enabled": true,
+      "branch": "staging",
+      "action": "move_to_staged"
+    },
+    "on_git_push_main": {
+      "enabled": true,
+      "branch": "main",
+      "action": "move_to_live"
+    }
+  },
+
+  "card_properties": {
+    "task_types": [
+      {"id": "feature", "name": "Feature", "color": "#dbeafe"},
+      {"id": "bug", "name": "Bug", "color": "#fee2e2"},
+      {"id": "hotfix", "name": "Hotfix", "color": "#fef3c7"},
+      {"id": "refactor", "name": "Refactor", "color": "#e9d5ff"},
+      {"id": "test", "name": "Test", "color": "#d1fae5"},
+      {"id": "docs", "name": "Docs", "color": "#fed7e2"}
+    ],
+    "priorities": [
+      {"id": "high", "name": "High", "icon": "🔴"},
+      {"id": "medium", "name": "Medium", "icon": "🟡"},
+      {"id": "low", "name": "Low", "icon": "🟢"}
+    ],
+    "statuses": [
+      {"id": "completed", "name": "Completed", "icon": "✅"},
+      {"id": "blocked", "name": "Blocked", "icon": "🚫"},
+      {"id": "review", "name": "Review", "icon": "👀"}
+    ]
+  },
+
+  "html_markers": {
+    "_comment": "HTML comment markers used by kanban-updater.js to locate columns",
+    "backlog": {
+      "start": "<!-- KANBAN_BACKLOG_START -->",
+      "end": "<!-- KANBAN_BACKLOG_END -->"
+    },
+    "sprint": {
+      "start": "<!-- KANBAN_SPRINT_START -->",
+      "end": "<!-- KANBAN_SPRINT_END -->"
+    },
+    "qa": {
+      "start": "<!-- KANBAN_QA_START -->",
+      "end": "<!-- KANBAN_QA_END -->"
+    },
+    "staged": {
+      "start": "<!-- KANBAN_STAGED_START -->",
+      "end": "<!-- KANBAN_STAGED_END -->"
+    },
+    "live": {
+      "start": "<!-- KANBAN_LIVE_START -->",
+      "end": "<!-- KANBAN_LIVE_END -->"
+    }
+  },
+
+  "_alternative_workflows": {
+    "_comment": "Examples of other workflow configurations",
+    "simple_kanban": {
+      "columns": ["todo", "doing", "done"]
+    },
+    "gitflow": {
+      "columns": ["backlog", "development", "staging", "production"]
+    },
+    "agile": {
+      "columns": ["backlog", "ready", "in_progress", "review", "done"]
+    }
+  }
+}
