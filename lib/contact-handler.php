@@ -59,7 +59,7 @@ function sanitize_contact_input($data) {
     $clean = [];
 
     // Name validation
-    $clean['name'] = filter_var(trim($data['name'] ?? ''), FILTER_SANITIZE_STRING);
+    $clean['name'] = strip_tags(trim($data['name'] ?? ''));
     if (strlen($clean['name']) < 2 || strlen($clean['name']) > 100) {
         throw new Exception('Invalid name length');
     }
@@ -80,7 +80,7 @@ function sanitize_contact_input($data) {
     $clean['phone'] = preg_replace('/[^0-9\-\+\(\) ]/', '', $data['phone'] ?? '');
 
     // Subject (optional)
-    $clean['subject'] = filter_var(trim($data['subject'] ?? 'General Inquiry'), FILTER_SANITIZE_STRING);
+    $clean['subject'] = strip_tags(trim($data['subject'] ?? 'General Inquiry'));
 
     return $clean;
 }
