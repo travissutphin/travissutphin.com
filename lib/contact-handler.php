@@ -137,9 +137,8 @@ function save_submission($data, $ip) {
  * Send email via Resend API
  */
 function send_email_via_resend($to, $subject, $html_content, $reply_to = null) {
-    // Use onboarding domain if main domain not verified, or for testing
-    // Change this to SITE_EMAIL once domain is verified in Resend
-    $from_email = 'onboarding@resend.dev';
+    // Use verified domain email address
+    $from_email = SITE_EMAIL; // info@travissutphin.com
 
     // Debug: Log API key prefix (not the full key)
     $api_key_prefix = substr(RESEND_API_KEY, 0, 10);
