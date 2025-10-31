@@ -38,11 +38,11 @@ if (empty($current_page)) $current_page = 'home';
             <span class="text-xs">Free Apps</span>
         </a>
 
-        <!-- Blog -->
-        <a href="<?php echo BASE_PATH; ?>/blog"
-           class="flex flex-col items-center justify-center py-2 px-3 <?php echo strpos($current_page, 'blog') === 0 ? 'text-theme-primary' : 'text-theme-secondary'; ?>">
-            <i data-lucide="book-open" class="w-5 h-5 mb-1"></i>
-            <span class="text-xs">Blog</span>
+        <!-- Contact -->
+        <a href="<?php echo BASE_PATH; ?>/contact"
+           class="flex flex-col items-center justify-center py-2 px-3 <?php echo $current_page === 'contact' ? 'text-theme-primary' : 'text-theme-secondary'; ?>">
+            <i data-lucide="mail" class="w-5 h-5 mb-1"></i>
+            <span class="text-xs">Contact</span>
         </a>
     </div>
 </nav>
