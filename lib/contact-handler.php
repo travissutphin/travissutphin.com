@@ -137,8 +137,12 @@ function save_submission($data, $ip) {
  * Send email via Resend API
  */
 function send_email_via_resend($to, $subject, $html_content, $reply_to = null) {
+    // Use onboarding domain if main domain not verified, or for testing
+    // Change this to SITE_EMAIL once domain is verified in Resend
+    $from_email = 'onboarding@resend.dev';
+
     $payload = [
-        'from' => SITE_NAME . ' <' . SITE_EMAIL . '>',
+        'from' => SITE_NAME . ' <' . $from_email . '>',
         'to' => [$to],
         'subject' => $subject,
         'html' => $html_content
@@ -161,9 +165,19 @@ function send_email_via_resend($to, $subject, $html_content, $reply_to = null) {
 
     $response = curl_exec($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $curl_error = curl_error($ch);
     curl_close($ch);
 
-    return $http_code === 200;
+    // Log errors for debugging
+    if ($http_code !== 200) {
+        error_log("Resend API Error: HTTP $http_code - Response: $response");
+        if ($curl_error) {
+            error_log("cURL Error: $curl_error");
+        }
+        return false;
+    }
+
+    return true;
 }
 
 /**
