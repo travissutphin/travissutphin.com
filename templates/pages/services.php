@@ -296,6 +296,48 @@
     </div>
 </section>
 
+<!-- FAQPage Schema for AEO -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the difference between Fractional CTO and per-project work?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fractional CTO is ongoing monthly support focused on strategic guidance, team oversight, and technical leadership. Per-project work is for specific deliverables like building a feature, fixing a hack, or setting up email systems. Many clients start with per-project work and transition to fractional CTO as their business grows."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I combine fractional CTO services with per-project work?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! Many fractional CTO clients also need specific projects completed. We can bundle services together, and fractional CTO clients receive priority scheduling and discounted rates on per-project work."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How quickly can you start on an emergency project?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For emergencies like site hacks or critical email issues, I typically start within 24 hours. Fractional CTO clients get priority emergency support. For non-emergency projects, most work begins within 7 days."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you work with specific technologies or platforms?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I work with most modern tech stacks including PHP, JavaScript/Node.js, Python, WordPress, custom web applications, cloud platforms (AWS, Google Cloud, Azure), and major AI APIs (OpenAI, Anthropic, Google AI). If you're using something uncommon, we'll discuss compatibility during our strategy call."
+            }
+        }
+    ]
+}
+</script>
+
 <!-- Final CTA -->
 <section class="py-16 px-4 gradient-green-blue">
     <div class="max-w-4xl mx-auto text-center text-white">

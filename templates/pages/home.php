@@ -54,7 +54,7 @@
 
 		<div class="text-center mt-8">
 			<a href="<?php echo BASE_PATH; ?>/services" class="inline-block bg-theme-card border-2 border-primary-green text-theme-primary hover:bg-primary-green hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
-				View All Services Available
+				View All Available Services
 			</a>
 		</div>
     </div>
@@ -180,6 +180,64 @@
         </div>
     </div>
 </section>
+
+<!-- FAQPage Schema for AEO -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What exactly is a Fractional CTO?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Fractional CTO is a part-time Chief Technology Officer who provides senior-level technical leadership to your business without the full-time salary and commitment. You get access to 20+ years of tech expertise for 10-20 hours per month, perfect for small companies and solopreneurs who need strategic tech guidance but can't afford (or don't need) a full-time CTO."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How much does Fractional CTO service cost compared to hiring full-time?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A full-time CTO costs $150,000-$300,000+ annually plus benefits and equity. Fractional CTO services start at $3,000-$6,000/month for 10-20 hours of strategic guidance—roughly 10-20% of the cost with immediate access to senior expertise and no long-term commitment."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "I'm not technical at all. Can you still help me?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "That's exactly who I help! Non-technical founders need guidance the most. I translate technical concepts into plain business language, help you make confident tech decisions, and protect you from costly mistakes. You don't need to become technical—you just need someone technical on your side."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's included in Fractional CTO services?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fractional CTO services include strategic technology planning, architecture and platform decisions, developer team oversight and code reviews, vendor/freelancer management, emergency technical support, scalability planning, and serving as your technical advisor for business decisions. Think of me as your part-time CTO who's always available when you need guidance."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How is this different from hiring a developer or consultant?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Developers execute tasks; consultants give advice and leave. A Fractional CTO is your ongoing strategic technology partner. I don't just write code or create reports—I own your technical strategy, make decisions with you, guide your team, and ensure technology serves your business goals. I'm accountable for your technical success long-term."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if I already have developers or a technical team?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Perfect! Many of my clients have developers but lack technical leadership. I'll oversee your team, review their work, ensure quality standards, and translate between technical execution and business objectives. Your developers will be more effective with clear direction and oversight."
+            }
+        }
+    ]
+}
+</script>
 
 <!-- CTA Section -->
 <section class="py-16 px-4">
