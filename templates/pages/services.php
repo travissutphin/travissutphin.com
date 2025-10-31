@@ -201,14 +201,22 @@
                 </div>
                 <div class="text-center mb-6">
                     <div class="text-4xl font-bold text-theme-primary mb-2">
-                        $500<span class="text-lg text-theme-secondary"> one-time</span>
+                        $500<span class="text-lg text-theme-secondary"> /month</span>
                     </div>
-                    <p class="text-sm text-theme-secondary">Pay per occurrence • No monthly fees</p>
+                    <p class="text-sm text-theme-secondary">Pay per occurrence</p>
                 </div>
                 <ul class="space-y-3 mb-6">
                     <li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Immediate access to support</span>
+                        <span class="text-sm text-theme-secondary">5 Business Day Initial Audit Requrired & Included</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">$200 per hour</span>
+                    </li>
+					<li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">Access to support</span>
                     </li>
                     <li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
@@ -216,7 +224,7 @@
                     </li>
                     <li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">No monthly commitment</span>
+                        <span class="text-sm text-theme-secondary">No long term commitment</span>
                     </li>
                     <li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
