@@ -42,9 +42,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Check if emails sent successfully
             if (!$thank_you_sent || !$admin_notified) {
-                error_log("Contact form email failure - Thank you: " . ($thank_you_sent ? 'OK' : 'FAILED') .
-                         ", Admin: " . ($admin_notified ? 'OK' : 'FAILED'));
-                throw new Exception('Your message was saved but email notifications failed. We will review your submission manually. Reference ID: ' . $submission_id);
+                $debug_info = "Contact form email failure - Thank you: " . ($thank_you_sent ? 'OK' : 'FAILED') .
+                             ", Admin: " . ($admin_notified ? 'OK' : 'FAILED');
+                error_log($debug_info);
+
+                // In development, show more details
+                if (DEBUG_MODE) {
+                    throw new Exception($debug_info . ' - Check server logs for Resend API details. Ref: ' . $submission_id);
+                } else {
+                    throw new Exception('Your message was saved but email notifications failed. We will review your submission manually. Reference ID: ' . $submission_id);
+                }
             }
 
             $success = true;
