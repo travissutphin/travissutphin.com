@@ -2,7 +2,11 @@
 /**
  * Contact Form Handler with Local Storage
  * Security features: CSRF, rate limiting, input sanitization, honeypot
+ * Enhanced with advanced anti-spam module
  */
+
+// Include anti-spam module
+require_once __DIR__ . '/anti-spam.php';
 
 // Security constants
 define('SUBMISSIONS_DIR', dirname(__DIR__) . '/data/contact-submissions/');

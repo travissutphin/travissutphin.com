@@ -2,10 +2,16 @@
 // Include the enhanced contact handler
 require_once dirname(__DIR__, 2) . '/lib/contact-handler.php';
 
+// Initialize form session for time-based validation
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    init_form_session();
+}
+
 // Handle form submission
 $success = false;
 $error = false;
 $submission_id = '';
+$spam_detected = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
@@ -27,37 +33,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Silently reject bot submissions
             $success = true; // Show success to confuse bots
             $submission_id = 'BOT-' . uniqid();
+            $spam_detected = true;
         } else {
             // Sanitize and validate input
             $clean_data = sanitize_contact_input($_POST);
 
-            // Save submission to local file
-            $submission_id = save_submission($clean_data, $client_ip);
+            // Run advanced spam check
+            $spam_check = check_for_spam($clean_data, $client_ip);
 
-            // Send thank you email to submitter
-            $thank_you_sent = send_thank_you_email($clean_data);
+            if ($spam_check['is_spam']) {
+                error_log("Spam detected - Score: {$spam_check['score']}, Reasons: " . implode(', ', $spam_check['reasons']));
 
-            // Send notification to admin
-            $admin_notified = send_admin_notification($clean_data, $submission_id);
-
-            // Check if emails sent successfully
-            if (!$thank_you_sent || !$admin_notified) {
-                $debug_info = "Contact form email failure - Thank you: " . ($thank_you_sent ? 'OK' : 'FAILED') .
-                             ", Admin: " . ($admin_notified ? 'OK' : 'FAILED');
-                error_log($debug_info);
-
-                // In development, show more details
-                if (DEBUG_MODE) {
-                    throw new Exception($debug_info . ' - Check server logs for Resend API details. Ref: ' . $submission_id);
-                } else {
-                    throw new Exception('Your message was saved but email notifications failed. We will review your submission manually. Reference ID: ' . $submission_id);
+                if ($spam_check['action'] === 'block') {
+                    throw new Exception('Your submission has been blocked due to suspicious activity. If this is an error, please contact us directly at ' . SITE_EMAIL);
+                } elseif ($spam_check['action'] === 'silent_reject') {
+                    // Silently reject but show success
+                    $success = true;
+                    $submission_id = 'SPAM-' . uniqid();
+                    $spam_detected = true;
                 }
             }
 
-            $success = true;
+            if (!$spam_detected) {
+                // Save submission to local file
+                $submission_id = save_submission($clean_data, $client_ip);
 
-            // Clear form data
-            $_POST = [];
+                // Send thank you email to submitter
+                $thank_you_sent = send_thank_you_email($clean_data);
+
+                // Send notification to admin
+                $admin_notified = send_admin_notification($clean_data, $submission_id);
+
+                // Check if emails sent successfully
+                if (!$thank_you_sent || !$admin_notified) {
+                    $debug_info = "Contact form email failure - Thank you: " . ($thank_you_sent ? 'OK' : 'FAILED') .
+                                 ", Admin: " . ($admin_notified ? 'OK' : 'FAILED');
+                    error_log($debug_info);
+
+                    // In development, show more details
+                    if (DEBUG_MODE) {
+                        throw new Exception($debug_info . ' - Check server logs for Resend API details. Ref: ' . $submission_id);
+                    } else {
+                        throw new Exception('Your message was saved but email notifications failed. We will review your submission manually. Reference ID: ' . $submission_id);
+                    }
+                }
+
+                $success = true;
+
+                // Clear form data
+                $_POST = [];
+            }
         }
     } catch (Exception $e) {
         $error = $e->getMessage();
@@ -91,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <li>I typically respond within 24 hours during business days</li>
                                 <li>For urgent matters, feel free to follow up at <?php echo SITE_EMAIL; ?></li>
                             </ul>
-                            <?php if ($submission_id && !str_starts_with($submission_id, 'BOT-')): ?>
+                            <?php if ($submission_id && !str_starts_with($submission_id, 'BOT-') && !str_starts_with($submission_id, 'SPAM-')): ?>
                                 <p class="mt-3 text-xs opacity-75">
                                     Reference ID: <?php echo e($submission_id); ?>
                                 </p>
