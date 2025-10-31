@@ -29,6 +29,8 @@ if ($is_production) {
 
 define('SITE_EMAIL', 'info@travissutphin.com');
 
+// Email service configuration (Resend.com)
+define('RESEND_API_KEY', 're_TtsgHVjt_AJzDMNUeDHQcfP7PwPb6QfYe');
 
 // Site metadata defaults
 define('DEFAULT_META_DESCRIPTION', 'Your Half-Built App Deserves a Full Launch. As your AI-Tech-Solutions partner, I finish stuck AI projects and incomplete apps—fast—with proven deployment automation.');

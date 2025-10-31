@@ -134,6 +134,39 @@ function save_submission($data, $ip) {
 }
 
 /**
+ * Send email via Resend API
+ */
+function send_email_via_resend($to, $subject, $html_content, $reply_to = null) {
+    $payload = [
+        'from' => SITE_NAME . ' <' . SITE_EMAIL . '>',
+        'to' => [$to],
+        'subject' => $subject,
+        'html' => $html_content
+    ];
+
+    if ($reply_to) {
+        $payload['reply_to'] = [$reply_to];
+    }
+
+    $ch = curl_init('https://api.resend.com/emails');
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => [
+            'Authorization: Bearer ' . RESEND_API_KEY,
+            'Content-Type: application/json'
+        ],
+        CURLOPT_POSTFIELDS => json_encode($payload)
+    ]);
+
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    return $http_code === 200;
+}
+
+/**
  * Send thank you email to submitter
  */
 function send_thank_you_email($data) {
@@ -177,11 +210,7 @@ function send_thank_you_email($data) {
     </html>
     ";
 
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: " . SITE_NAME . " <noreply@" . $_SERVER['HTTP_HOST'] . ">\r\n";
-
-    return mail($to, $subject, $message, $headers);
+    return send_email_via_resend($to, $subject, $message);
 }
 
 /**
@@ -231,10 +260,5 @@ function send_admin_notification($data, $submission_id) {
     </html>
     ";
 
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: Contact Form <noreply@" . $_SERVER['HTTP_HOST'] . ">\r\n";
-    $headers .= "Reply-To: {$data['email']}\r\n";
-
-    return mail($to, $subject, $message, $headers);
+    return send_email_via_resend($to, $subject, $message, $data['email']);
 }
