@@ -30,9 +30,17 @@ if ($is_production) {
 define('SITE_EMAIL', 'info@travissutphin.com');
 
 // Email service configuration (Resend.com)
-// Read from environment variable for security (Railway, production)
-// Falls back to local value for development (XAMPP)
-define('RESEND_API_KEY', getenv('RESEND_API_KEY') ?: 're_TtsgHVjt_AJzDMNUeDHQcfP7PwPb6QfYe');
+// MUST set RESEND_API_KEY environment variable in Railway for production
+// For local development, set in your environment or use a test key
+$resend_key = getenv('RESEND_API_KEY');
+if (empty($resend_key)) {
+    // Local development fallback - replace with your test key
+    $resend_key = 're_test_key_for_local_development';
+    if (!$is_production) {
+        error_log('WARNING: Using fallback Resend API key for local development');
+    }
+}
+define('RESEND_API_KEY', $resend_key);
 
 // Site metadata defaults
 define('DEFAULT_META_DESCRIPTION', 'Your Half-Built App Deserves a Full Launch. As your AI-Tech-Solutions partner, I finish stuck AI projects and incomplete apps—fast—with proven deployment automation.');

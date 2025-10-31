@@ -141,6 +141,10 @@ function send_email_via_resend($to, $subject, $html_content, $reply_to = null) {
     // Change this to SITE_EMAIL once domain is verified in Resend
     $from_email = 'onboarding@resend.dev';
 
+    // Debug: Log API key prefix (not the full key)
+    $api_key_prefix = substr(RESEND_API_KEY, 0, 10);
+    error_log("Resend API: Using key starting with: {$api_key_prefix}... (to: {$to})");
+
     $payload = [
         'from' => SITE_NAME . ' <' . $from_email . '>',
         'to' => [$to],
@@ -177,6 +181,7 @@ function send_email_via_resend($to, $subject, $html_content, $reply_to = null) {
         return false;
     }
 
+    error_log("Resend API: Email sent successfully (HTTP 200)");
     return true;
 }
 

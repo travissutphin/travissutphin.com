@@ -35,10 +35,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $submission_id = save_submission($clean_data, $client_ip);
 
             // Send thank you email to submitter
-            send_thank_you_email($clean_data);
+            $thank_you_sent = send_thank_you_email($clean_data);
 
             // Send notification to admin
-            send_admin_notification($clean_data, $submission_id);
+            $admin_notified = send_admin_notification($clean_data, $submission_id);
+
+            // Check if emails sent successfully
+            if (!$thank_you_sent || !$admin_notified) {
+                error_log("Contact form email failure - Thank you: " . ($thank_you_sent ? 'OK' : 'FAILED') .
+                         ", Admin: " . ($admin_notified ? 'OK' : 'FAILED'));
+                throw new Exception('Your message was saved but email notifications failed. We will review your submission manually. Reference ID: ' . $submission_id);
+            }
 
             $success = true;
 
