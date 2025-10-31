@@ -12,9 +12,6 @@
                 <a href="<?php echo BASE_PATH; ?>/contact" class="bg-white text-dark-green hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
                     Schedule Free Strategy Call
                 </a>
-                <a href="<?php echo BASE_PATH; ?>/services" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-dark-green px-6 py-3 rounded-lg font-semibold transition-colors">
-                    See How Fractional CTO Works
-                </a>
             </div>
         </div>
     </div>
@@ -54,6 +51,12 @@
             }
             ?>
         </div>
+
+		<div class="text-center mt-8">
+			<a href="<?php echo BASE_PATH; ?>/services" class="inline-block bg-theme-card border-2 border-primary-green text-theme-primary hover:bg-primary-green hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
+				View All Services Available
+			</a>
+		</div>
     </div>
 </section>
 
