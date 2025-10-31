@@ -30,15 +30,10 @@ if ($is_production) {
 define('SITE_EMAIL', 'info@travissutphin.com');
 
 // Email service configuration (Resend.com)
-// MUST set RESEND_API_KEY environment variable in Railway for production
-// For local development, set in your environment or use a test key
-$resend_key = getenv('RESEND_API_KEY');
+// Railway injects as $_ENV, some servers use getenv()
+$resend_key = $_ENV['RESEND_API_KEY'] ?? getenv('RESEND_API_KEY') ?: null;
 if (empty($resend_key)) {
-    // Local development fallback - replace with your test key
-    $resend_key = 're_test_key_for_local_development';
-    if (!$is_production) {
-        error_log('WARNING: Using fallback Resend API key for local development');
-    }
+    error_log('ERROR: RESEND_API_KEY not found in environment');
 }
 define('RESEND_API_KEY', $resend_key);
 
