@@ -189,7 +189,46 @@
             </h2>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Retainer Pricing -->
+            <div class="bg-theme-card rounded-lg shadow-lg p-8">
+                <div class="text-center mb-6">
+                    <div class="inline-block bg-theme-surface text-theme-primary px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                        PAY AS YOU GO
+                    </div>
+                    <h3 class="text-2xl font-bold text-theme-primary mb-2">$500 Retainer</h3>
+                    <p class="text-theme-secondary text-sm">Access when you need help</p>
+                </div>
+                <div class="text-center mb-6">
+                    <div class="text-4xl font-bold text-theme-primary mb-2">
+                        $500<span class="text-lg text-theme-secondary"> one-time</span>
+                    </div>
+                    <p class="text-sm text-theme-secondary">Pay per occurrence • No monthly fees</p>
+                </div>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">Immediate access to support</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">Pay only when you need help</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">No monthly commitment</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-sm text-theme-secondary">Upgrade to fractional CTO anytime</span>
+                    </li>
+                </ul>
+                <a href="<?php echo BASE_PATH; ?>/contact"
+                   class="block text-center bg-theme-surface text-theme-primary py-3 rounded-lg font-semibold hover:opacity-80 transition-opacity">
+                    Get Started
+                </a>
+            </div>
+
             <!-- Fractional CTO Pricing -->
             <div class="bg-theme-card rounded-lg shadow-lg p-8 border-2 border-primary-green">
                 <div class="text-center mb-6">
