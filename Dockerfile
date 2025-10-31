@@ -28,5 +28,11 @@ LABEL maintainer="[Flow] <devops@travissutphin.com>" \
       version="2.0.0" \
       description="travissutphin.com personal website"
 
-# Use PHP built-in server - simple and works perfectly for this use case
-CMD php -S 0.0.0.0:${PORT:-8080} -t public
+# Enable error logging to stderr so Railway can capture it
+RUN echo "error_log = /dev/stderr" >> /usr/local/etc/php/php.ini-production && \
+    echo "log_errors = On" >> /usr/local/etc/php/php.ini-production && \
+    echo "display_errors = Off" >> /usr/local/etc/php/php.ini-production && \
+    cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
+
+# Use PHP built-in server with error logging
+CMD php -S 0.0.0.0:${PORT:-8080} -t public 2>&1
