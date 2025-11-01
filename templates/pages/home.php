@@ -158,20 +158,20 @@
                 <p class="text-theme-secondary">A Fractional CTO is a part-time Chief Technology Officer who provides senior-level technical leadership to your business without the full-time salary and commitment. You get access to 20+ years of tech expertise for 10-20 hours per month, perfect for small companies and solopreneurs who need strategic tech guidance but can't afford (or don't need) a full-time CTO.</p>
             </div>
             <div class="faq-item p-6 bg-theme-card rounded-lg">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">How is this different from hiring a developer or consultant?</h3>
+                <p class="text-theme-secondary">Developers execute tasks; consultants give advice and leave. A Fractional CTO is your ongoing strategic technology partner. I don't just write code or create reports—I own your technical strategy, make decisions with you, guide your team, and ensure technology serves your business goals. I'm accountable for your technical success long-term.</p>
+            </div>
+            <div class="faq-item p-6 bg-theme-card rounded-lg">
                 <h3 class="text-xl font-semibold text-theme-primary mb-3">How much does Fractional CTO service cost compared to hiring full-time?</h3>
-                <p class="text-theme-secondary">A full-time CTO costs $150,000-$300,000+ annually plus benefits and equity. Fractional CTO services start at $3,000-$6,000/month for 10-20 hours of strategic guidance—roughly 10-20% of the cost with immediate access to senior expertise and no long-term commitment.</p>
+                <p class="text-theme-secondary">A full-time CTO costs $100,000+ annually plus benefits and equity. Fractional CTO services start at $2,000/month for 20 hours of strategic guidance. A fraction of the cost with immediate access to senior expertise and no long-term commitment.</p>
             </div>
             <div class="faq-item p-6 bg-theme-card rounded-lg">
                 <h3 class="text-xl font-semibold text-theme-primary mb-3">I'm not technical at all. Can you still help me?</h3>
-                <p class="text-theme-secondary">That's exactly who I help! Non-technical founders need guidance the most. I translate technical concepts into plain business language, help you make confident tech decisions, and protect you from costly mistakes. You don't need to become technical—you just need someone technical on your side.</p>
+                <p class="text-theme-secondary">Non-technical founders need guidance the most. I translate technical concepts into plain business language, help you make confident tech decisions, and protect you from costly mistakes. You don't need to become technical—you just need someone technical on your side.</p>
             </div>
             <div class="faq-item p-6 bg-theme-card rounded-lg">
                 <h3 class="text-xl font-semibold text-theme-primary mb-3">What's included in Fractional CTO services?</h3>
-                <p class="text-theme-secondary">Fractional CTO services include strategic technology planning, architecture and platform decisions, developer team oversight and code reviews, vendor/freelancer management, emergency technical support, scalability planning, and serving as your technical advisor for business decisions. Think of me as your part-time CTO who's always available when you need guidance.</p>
-            </div>
-            <div class="faq-item p-6 bg-theme-card rounded-lg">
-                <h3 class="text-xl font-semibold text-theme-primary mb-3">How is this different from hiring a developer or consultant?</h3>
-                <p class="text-theme-secondary">Developers execute tasks; consultants give advice and leave. A Fractional CTO is your ongoing strategic technology partner. I don't just write code or create reports—I own your technical strategy, make decisions with you, guide your team, and ensure technology serves your business goals. I'm accountable for your technical success long-term.</p>
+                <p class="text-theme-secondary">Fractional CTO services included are outlined <a href="/resume">here</a>. Think of me as your part-time CTO who's always available when you need guidance.</p>
             </div>
             <div class="faq-item p-6 bg-theme-card rounded-lg">
                 <h3 class="text-xl font-semibold text-theme-primary mb-3">What if I already have developers or a technical team?</h3>
