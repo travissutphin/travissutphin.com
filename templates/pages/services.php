@@ -206,23 +206,23 @@
                     <div class="inline-block bg-theme-surface text-theme-primary px-4 py-1 rounded-full text-sm font-semibold mb-4">
                         PAY AS YOU GO
                     </div>
-                    <h3 class="text-2xl font-bold text-theme-primary mb-2">$500 Retainer</h3>
+                    <h3 class="text-2xl font-bold text-theme-primary mb-2">Retainer</h3>
                     <p class="text-theme-secondary text-sm">Access when you need help</p>
                 </div>
                 <div class="text-center mb-6">
                     <div class="text-4xl font-bold text-theme-primary mb-2">
                         $500<span class="text-lg text-theme-secondary"> /month</span>
                     </div>
-                    <p class="text-sm text-theme-secondary">Pay per occurrence</p>
+                    <p class="text-sm text-theme-secondary">then pay per occurrence</p>
                 </div>
                 <ul class="space-y-3 mb-6">
                     <li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">5 Business Day Initial Audit Requrired & Included</span>
+                        <span class="text-sm text-theme-secondary">5 Business Day Initial Audit Required</span>
                     </li>
                     <li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">$200 per hour</span>
+                        <span class="text-sm text-theme-secondary">$250 per hour</span>
                     </li>
 					<li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
@@ -258,7 +258,7 @@
                 </div>
                 <div class="text-center mb-6">
                     <div class="text-4xl font-bold text-theme-primary mb-2">
-                        Starting at $2,500<span class="text-lg text-theme-secondary">/month</span>
+                        Starting at $2,000<span class="text-lg text-theme-secondary">/month</span>
                     </div>
                     <p class="text-sm text-theme-secondary">10 hours monthly • Cancel anytime</p>
                 </div>
