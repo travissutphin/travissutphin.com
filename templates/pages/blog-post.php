@@ -370,7 +370,7 @@ $related_posts = array_slice($related_posts, 0, 3);
     <i data-lucide="arrow-up" class="w-6 h-6"></i>
 </button>
 
-<!-- BreadcrumbList Schema -->
+<!-- Structured Data (Schema.org) -->
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -396,6 +396,81 @@ $related_posts = array_slice($related_posts, 0, 3);
     ]
 }
 </script>
+
+<!-- BlogPosting Schema -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "<?php echo e($title ?? ''); ?>",
+    "description": "<?php echo e($excerpt ?? ''); ?>",
+    "image": "<?php echo SITE_URL . ($image ?? '/assets/images/og-default.png'); ?>",
+    "datePublished": "<?php echo $date ?? date('Y-m-d'); ?>",
+    "dateModified": "<?php echo $date ?? date('Y-m-d'); ?>",
+    "author": {
+        "@type": "Person",
+        "name": "<?php echo e($author ?? 'Travis Sutphin'); ?>",
+        "url": "<?php echo SITE_URL; ?>/about"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "<?php echo SITE_NAME; ?>",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "<?php echo SITE_URL; ?>/assets/images/logo.png"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "<?php echo SITE_URL . '/blog/' . ($slug ?? ''); ?>"
+    },
+    "keywords": "<?php echo isset($tags) ? implode(', ', $tags) : ''; ?>",
+    "articleSection": "<?php echo e($category ?? 'General'); ?>",
+    "wordCount": "<?php echo str_word_count(strip_tags($html_content ?? $content ?? '')); ?>"
+}
+</script>
+
+<?php if (isset($faq) && $faq === true): ?>
+<?php
+// Parse FAQ content from the blog post
+$faq_items = [];
+if (isset($html_content)) {
+    // Look for FAQ section
+    if (preg_match('/<h2[^>]*>FAQ<\/h2>(.*?)(?=<h2|<hr|$)/is', $html_content, $faq_section)) {
+        // Extract Q&A pairs
+        if (preg_match_all('/<strong>Q: (.*?)<\/strong>\s*(?:<br\s*\/?>)?\s*A: (.*?)(?=<strong>Q:|$)/is', $faq_section[1], $matches)) {
+            for ($i = 0; $i < count($matches[1]); $i++) {
+                $faq_items[] = [
+                    'question' => strip_tags($matches[1][$i]),
+                    'answer' => strip_tags($matches[2][$i])
+                ];
+            }
+        }
+    }
+}
+?>
+<?php if (!empty($faq_items)): ?>
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        <?php foreach ($faq_items as $index => $item): ?>
+        {
+            "@type": "Question",
+            "name": "<?php echo str_replace('"', '\"', $item['question']); ?>",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<?php echo str_replace('"', '\"', $item['answer']); ?>"
+            }
+        }<?php echo $index < count($faq_items) - 1 ? ',' : ''; ?>
+        <?php endforeach; ?>
+    ]
+}
+</script>
+<?php endif; ?>
+<?php endif; ?>
 
 <!-- Custom Styles for Blog Content -->
 <style>
