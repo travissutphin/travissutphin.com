@@ -33,9 +33,19 @@
             <?php
             $includedServices = [
                 [
+                    'icon' => 'map-pinned',
+                    'title' => 'Google Business Profile',
+                    'description' => 'Claim, optimize, and manage your Google Business Profile to boost local search visibility. Get found by customers searching for your services in your area.'
+                ],
+                [
                     'icon' => 'wrench',
                     'title' => 'Hands-On Problem Solving',
                     'description' => 'When tech issues block your business, I jump in and fix them. Emergency support included.'
+                ],
+                [
+                    'icon' => 'rss',
+                    'title' => 'Content Creation',
+                    'description' => 'Strategic blog posts, case studies, and technical content that position you as an industry expert. SEO-optimized writing that attracts qualified leads.'
                 ],
                 [
                     'icon' => 'compass',
