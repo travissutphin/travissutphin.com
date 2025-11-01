@@ -171,7 +171,7 @@
             </div>
             <div class="faq-item p-6 bg-theme-card rounded-lg">
                 <h3 class="text-xl font-semibold text-theme-primary mb-3">What's included in Fractional CTO services?</h3>
-                <p class="text-theme-secondary">Fractional CTO services included are outlined <a href="/resume">here</a>. Think of me as your part-time CTO who's always available when you need guidance.</p>
+                <p class="text-theme-secondary">Fractional CTO services included are outlined here: <u><a href="/services">https://travissutphin.com/services</a></u>. Think of me as your part-time CTO who's always available when you need guidance.</p>
             </div>
             <div class="faq-item p-6 bg-theme-card rounded-lg">
                 <h3 class="text-xl font-semibold text-theme-primary mb-3">What if I already have developers or a technical team?</h3>

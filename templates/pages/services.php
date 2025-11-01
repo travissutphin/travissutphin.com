@@ -38,6 +38,11 @@
                     'description' => 'When tech issues block your business, I jump in and fix them. Emergency support included.'
                 ],
                 [
+                    'icon' => 'alert-triangle',
+                    'title' => 'Hack/Malware Remediation',
+                    'description' => 'Site hacked? I clean it up, secure it, and prevent future attacks. Emergency response available.'
+                ],
+                [
                     'icon' => 'compass',
                     'title' => 'Strategic Technology Planning',
                     'description' => 'Get clarity on tech decisions without the full-time CTO salary. I create technology roadmaps aligned with your business goals.'
@@ -48,24 +53,14 @@
                     'description' => 'Regular calls to discuss challenges, review progress, and plan next steps for your technology.'
                 ],
                 [
-                    'icon' => 'users',
-                    'title' => 'Team Guidance & Mentoring',
-                    'description' => 'I mentor your technical team, help with hiring decisions, and ensure they have clear direction.'
+                    'icon' => 'mail',
+                    'title' => 'Email System Setup & Fixes',
+                    'description' => 'Fix delivery issues, configure SPF/DKIM/DMARC, or set up transactional email systems.'
                 ],
                 [
                     'icon' => 'target',
                     'title' => 'Architecture & Platform Decisions',
                     'description' => 'Expert guidance on choosing the right technologies, platforms, and tools for your business needs.'
-                ],
-                [
-                    'icon' => 'alert-triangle',
-                    'title' => 'Hack/Malware Remediation',
-                    'description' => 'Site hacked? I clean it up, secure it, and prevent future attacks. Emergency response available.'
-                ],
-                [
-                    'icon' => 'mail',
-                    'title' => 'Email System Setup & Fixes',
-                    'description' => 'Fix delivery issues, configure SPF/DKIM/DMARC, or set up transactional email systems.'
                 ],
                 [
                     'icon' => 'lock',
@@ -81,6 +76,11 @@
                     'icon' => 'shield-check',
                     'title' => 'Developer Team Oversight',
                     'description' => 'Ensure your developers deliver quality work. I review code, manage vendors, and keep your technical projects on track.'
+                ],
+                [
+                    'icon' => 'users',
+                    'title' => 'Team Guidance & Mentoring',
+                    'description' => 'I mentor your technical team, help with hiring decisions, and ensure they have clear direction.'
                 ],
             ];
 
