@@ -211,7 +211,7 @@
                 </div>
                 <div class="text-center mb-6">
                     <div class="text-4xl font-bold text-theme-primary mb-2">
-                        $500<span class="text-lg text-theme-secondary"> /month</span>
+                        $250<span class="text-lg text-theme-secondary"> /month</span>
                     </div>
                     <p class="text-sm text-theme-secondary">then pay per occurrence</p>
                 </div>
@@ -222,7 +222,7 @@
                     </li>
                     <li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">$250 per hour</span>
+                        <span class="text-sm text-theme-secondary">$150 per hour</span>
                     </li>
 					<li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
@@ -258,7 +258,7 @@
                 </div>
                 <div class="text-center mb-6">
                     <div class="text-4xl font-bold text-theme-primary mb-2">
-                        Starting at $2,000<span class="text-lg text-theme-secondary">/month</span>
+                        Starting at $1,000<span class="text-lg text-theme-secondary">/month</span>
                     </div>
                     <p class="text-sm text-theme-secondary">10 hours monthly • Cancel anytime</p>
                 </div>
