@@ -230,7 +230,7 @@
                     </li>
                     <li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Pay only when you need help</span>
+                        <span class="text-sm text-theme-secondary">Pay hourly only when you need help</span>
                     </li>
                     <li class="flex items-start">
                         <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
