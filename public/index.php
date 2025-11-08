@@ -31,6 +31,7 @@ $route = ltrim($request_uri, '/');
 $routes = [
     'home' => 'home.php',
     'services' => 'services.php',
+    'get-time-back' => 'get-time-back.php',
     'projects' => 'projects.php',
     'team' => 'team.php',
     'contact' => 'contact.php',

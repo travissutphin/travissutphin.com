@@ -14,7 +14,8 @@
         'content' => $content ?? null,
         'readingTime' => $readingTime ?? null,
         'reading_time' => $reading_time ?? null,
-        'image' => $image ?? null
+        'image' => $image ?? null,
+        'noindex' => $noindex ?? false
     ]); ?>
 
     <!-- Resource Hints: Preconnect to CDNs for faster loading -->

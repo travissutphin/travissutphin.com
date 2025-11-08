@@ -3,6 +3,9 @@
 <title><?php echo e($title); ?></title>
 <meta name="description" content="<?php echo e(isset($excerpt) ? $excerpt : $meta_description); ?>">
 <meta name="author" content="Travis Sutphin">
+<?php if (isset($noindex) && $noindex === true): ?>
+<meta name="robots" content="noindex, nofollow">
+<?php endif; ?>
 
 <!-- Open Graph -->
 <meta property="og:title" content="<?php echo e($title); ?>">

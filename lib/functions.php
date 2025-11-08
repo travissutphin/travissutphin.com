@@ -72,6 +72,7 @@ function render_page($template, $data = []) {
     $date = isset($data['date']) ? $data['date'] : null;
     $tags = isset($data['tags']) ? $data['tags'] : [];
     $html_content = isset($data['html_content']) ? $data['html_content'] : null;
+    $noindex = isset($data['noindex']) ? $data['noindex'] : false;
 
     // Start output buffering for content
     ob_start();
