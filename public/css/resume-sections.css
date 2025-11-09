@@ -1,234 +1,35 @@
-/* Resume Page - Light Mode Optimization */
-/* This file must override Tailwind CDN's dynamically generated styles */
+/* Resume Page - Light/Dark Mode Optimization */
+/* Uses CSS variables from theme-variables.css for automatic theme switching */
 
-/* CRITICAL: Use html:not([data-theme="dark"]) for maximum specificity in light mode */
-/* This ensures our rules beat Tailwind's utility classes */
-
-/* Force light backgrounds and dark text in light mode */
-:root {
-    --resume-bg-primary: #ffffff;
-    --resume-bg-secondary: #f9fafb;
-    --resume-bg-tertiary: #f3f4f6;
-    --resume-text-primary: #111827;
-    --resume-text-secondary: #374151;
-    --resume-text-tertiary: #6b7280;
-    --resume-border: #e5e7eb;
-}
-
-[data-theme="dark"] {
-    --resume-bg-primary: #0f1419;
-    --resume-bg-secondary: #1a202c;
-    --resume-bg-tertiary: #2d3748;
-    --resume-text-primary: #f7fafc;
-    --resume-text-secondary: #e2e8f0;
-    --resume-text-tertiary: #a0aec0;
-    --resume-border: #4a5568;
-}
-
-/* Override ALL Tailwind theme variable classes */
-html:not([data-theme="dark"]) .text-theme-primary,
-html:not([data-theme="dark"]) h1,
-html:not([data-theme="dark"]) h2,
-html:not([data-theme="dark"]) h3,
-html:not([data-theme="dark"]) h4 {
-    color: #111827 !important;
-}
-
-html:not([data-theme="dark"]) .text-theme-secondary,
-html:not([data-theme="dark"]) p,
-html:not([data-theme="dark"]) li,
-html:not([data-theme="dark"]) span {
-    color: #4b5563 !important;
-}
-
-/* Skill Tags - Better contrast in light mode */
+/* Skill Tags - Better contrast in both modes */
 .resume-skill-tag {
-    background-color: #e5e7eb; /* Darker gray for light mode */
-    color: #1f2937; /* Darker text for better contrast */
-    border: 1px solid #d1d5db;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-secondary);
 }
 
 [data-theme="dark"] .resume-skill-tag {
-    background-color: #374151;
-    color: #e5e7eb;
-    border: 1px solid #4b5563;
-}
-
-/* Competency Cards - Enhanced shadows and borders for light mode */
-.resume-competency-card {
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] .resume-competency-card {
-    border: 1px solid #374151;
-    box-shadow: none;
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+    border-color: var(--color-border-primary);
 }
 
 /* FAQ Section - Better borders and spacing */
 .resume-faq-item {
-    border-bottom: 1px solid #d1d5db;
+    border-bottom: 1px solid var(--color-border-secondary);
 }
 
 [data-theme="dark"] .resume-faq-item {
-    border-bottom: 1px solid #4b5563;
+    border-bottom-color: var(--color-border-primary);
 }
 
 /* FAQ Headings - Enhanced contrast */
 .resume-faq-heading {
-    color: #111827;
-}
-
-[data-theme="dark"] .resume-faq-heading {
-    color: #f9fafb;
+    color: var(--color-text-primary);
+    font-weight: 600;
 }
 
 /* Section Text - Better readability */
 .resume-text-secondary {
-    color: #374151 !important; /* Darker than default for better contrast */
-}
-
-[data-theme="dark"] .resume-text-secondary {
-    color: #d1d5db !important;
-}
-
-/* These are already covered by the html:not([data-theme="dark"]) selectors above */
-/* Removed duplicate rules */
-
-/* Metrics Cards - Better definition in light mode */
-.resume-metric-card {
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="dark"] .resume-metric-card {
-    border: none;
-}
-
-/* Experience Section Icons - Better visibility */
-.resume-icon-primary {
-    color: #059669 !important; /* Stronger green for light mode */
-}
-
-[data-theme="dark"] .resume-icon-primary {
-    color: #34d399 !important;
-}
-
-.resume-icon-secondary {
-    color: #2563eb !important; /* Stronger blue for light mode */
-}
-
-[data-theme="dark"] .resume-icon-secondary {
-    color: #60a5fa !important;
-}
-
-/* Override Tailwind text color classes for icons */
-html:not([data-theme="dark"]) .text-primary-green {
-    color: #059669 !important;
-}
-
-html[data-theme="dark"] .text-primary-green {
-    color: #5bb55b !important;
-}
-
-html:not([data-theme="dark"]) .text-primary-blue {
-    color: #2563eb !important;
-}
-
-html[data-theme="dark"] .text-primary-blue {
-    color: #4285f4 !important;
-}
-
-/* Section Headers - Enhanced hierarchy */
-.resume-section-title {
-    color: #111827;
-    font-weight: 700;
-}
-
-[data-theme="dark"] .resume-section-title {
-    color: #f9fafb;
-}
-
-/* Subsection Headers */
-.resume-subsection-title {
-    color: #1f2937;
-    font-weight: 600;
-}
-
-[data-theme="dark"] .resume-subsection-title {
-    color: #e5e7eb;
-}
-
-/* Additional heading overrides */
-html:not([data-theme="dark"]) h5,
-html:not([data-theme="dark"]) h6 {
-    color: #111827 !important;
-}
-
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] h4,
-html[data-theme="dark"] h5,
-html[data-theme="dark"] h6 {
-    color: #f9fafb !important;
-}
-
-/* Ensure strong/bold text is visible */
-html:not([data-theme="dark"]) strong {
-    color: #111827 !important;
-}
-
-html[data-theme="dark"] strong {
-    color: #f9fafb !important;
-}
-
-/* Fix text size classes */
-html:not([data-theme="dark"]) .text-lg,
-html:not([data-theme="dark"]) .text-xl,
-html:not([data-theme="dark"]) .text-2xl,
-html:not([data-theme="dark"]) .text-3xl,
-html:not([data-theme="dark"]) .text-4xl {
-    color: #374151 !important;
-}
-
-html[data-theme="dark"] .text-lg,
-html[data-theme="dark"] .text-xl,
-html[data-theme="dark"] .text-2xl,
-html[data-theme="dark"] .text-3xl,
-html[data-theme="dark"] .text-4xl {
-    color: #e2e8f0 !important;
-}
-
-/* Checkmark icons */
-html:not([data-theme="dark"]) .text-green-500,
-html:not([data-theme="dark"]) .text-green-600 {
-    color: #059669 !important;
-}
-
-html[data-theme="dark"] .text-green-500,
-html[data-theme="dark"] .text-green-600 {
-    color: #10b981 !important;
-}
-
-/* Small text elements (dates, labels, etc) */
-html:not([data-theme="dark"]) .text-sm,
-html:not([data-theme="dark"]) .text-xs {
-    color: #6b7280 !important;
-}
-
-html[data-theme="dark"] .text-sm,
-html[data-theme="dark"] .text-xs {
-    color: #9ca3af !important;
-}
-
-/* Green and blue color overrides for light mode visibility */
-html:not([data-theme="dark"]) .text-green-200,
-html:not([data-theme="dark"]) .text-green-300 {
-    color: #047857 !important;
-}
-
-html[data-theme="dark"] .text-green-200,
-html[data-theme="dark"] .text-green-300 {
-    color: #6ee7b7 !important;
+    color: var(--color-text-secondary);
 }

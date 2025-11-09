@@ -117,6 +117,7 @@
     <script src="<?php echo BASE_PATH; ?>/js/lazy-loading.js" defer></script>
     <script>
         tailwind.config = {
+            darkMode: ['selector', '[data-theme="dark"]'],
             theme: {
                 extend: {
                     colors: {
