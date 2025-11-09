@@ -33,10 +33,10 @@ if (empty($current_page)) $current_page = 'home';
         </a>
     </li>
     <li>
-        <a href="<?php echo BASE_PATH; ?>/projects"
-           class="relative px-2 py-1 text-theme-secondary hover:text-theme-primary transition-all duration-300 <?php echo $current_page === 'projects' ? 'text-theme-primary font-semibold' : ''; ?>">
-            Free Apps
-            <?php if ($current_page === 'projects'): ?>
+        <a href="<?php echo BASE_PATH; ?>/resume"
+           class="relative px-2 py-1 text-theme-secondary hover:text-theme-primary transition-all duration-300 <?php echo $current_page === 'resume' ? 'text-theme-primary font-semibold' : ''; ?>">
+            About
+            <?php if ($current_page === 'resume'): ?>
                 <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-green to-primary-blue"></span>
             <?php endif; ?>
         </a>

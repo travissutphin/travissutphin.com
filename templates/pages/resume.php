@@ -292,11 +292,11 @@
                 </h3>
                 <div class="space-y-3 text-sm">
                     <div>
-                        <div class="font-semibold text-theme-primary">How We Do Anything is How We Do Everything</div>
+                        <a href="<?php echo BASE_PATH; ?>/blog/2025-06-26-how-we-do-anything-is-how-we-do-everything" class="font-semibold text-primary-blue dark:text-primary-green hover:underline">How We Do Anything is How We Do Everything</a>
                         <div class="text-xs text-theme-secondary">Excellence in details creates success at scale</div>
                     </div>
                     <div>
-                        <div class="font-semibold text-theme-primary">Learn by Reading, Master by Doing</div>
+                        <a href="<?php echo BASE_PATH; ?>/blog/2025-01-25-learn-by-reading-master-by-doing" class="font-semibold text-primary-blue dark:text-primary-green hover:underline">Learn by Reading, Master by Doing</a>
                         <div class="text-xs text-theme-secondary">Continuous improvement through practical application</div>
                     </div>
                 </div>

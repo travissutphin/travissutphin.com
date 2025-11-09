@@ -37,6 +37,8 @@
                 <a href="<?php echo BASE_PATH; ?>/projects" class="text-theme-secondary hover:text-theme-primary transition-colors">Projects</a>
                 <a href="<?php echo BASE_PATH; ?>/team" class="text-theme-secondary hover:text-theme-primary transition-colors">Team</a>
                 <a href="<?php echo BASE_PATH; ?>/blog" class="text-theme-secondary hover:text-theme-primary transition-colors">Blog</a>
+                <a href="https://tools.travissutphin.com" target="_blank" rel="noopener noreferrer" class="text-theme-secondary hover:text-theme-primary transition-colors">Free Apps</a>
+                <a href="<?php echo BASE_PATH; ?>/resume" class="text-theme-secondary hover:text-theme-primary transition-colors">Resume</a>
                 <a href="<?php echo BASE_PATH; ?>/contact" class="text-theme-secondary hover:text-theme-primary transition-colors">Contact</a>
             </div>
 
