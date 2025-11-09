@@ -14,6 +14,8 @@ image: "/assets/images/blogs/2024-10-26-raci-chart-project-management-guide.png"
 faq: false
 ---
 
+# RACI Chart Guide: Why Every Project Manager Needs This Simple Tool
+
 Ever been in a project meeting where everyone's confused about who's supposed to do what? Or watched a deadline slip because two teams thought the other was handling it?
 
 You need a **RACI chart**.

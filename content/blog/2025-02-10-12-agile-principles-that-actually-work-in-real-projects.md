@@ -13,6 +13,8 @@ image: "/assets/images/blogs/2025-02-10-12-agile-principles-that-actually-work-i
 faq: false
 ---
 
+# 12 Agile Principles That Actually Work in Real Projects
+
 Agile methodology is a project management approach that focuses on delivering working products or services through iterative development cycles, known as "sprints." Agile emphasizes collaboration, flexibility, and rapid response to change, and has become a popular choice for many organizations looking to improve their project delivery process.
 
 Here are the Agile Values and 12 Principles along with real scenarios for each and why each principle matters in practice.

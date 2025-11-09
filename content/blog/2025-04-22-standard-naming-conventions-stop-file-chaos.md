@@ -13,6 +13,8 @@ image: "/assets/images/blogs/2025-04-22-standard-naming-conventions-stop-file-ch
 faq: false
 ---
 
+# Standard Naming Conventions: Stop the File Chaos
+
 In today's digital workplace, we're drowning in files, folders, and digital assets. Ever spent precious minutes searching for "presentation_final_FINAL_v2_updated.pptx"? Or accidentally overwrote an important document because of confusing version numbers?
 
 These aren't just minor annoyances—they're symptoms of a larger problem that costs organizations time, money, and sanity.

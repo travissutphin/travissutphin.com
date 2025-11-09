@@ -42,45 +42,8 @@ $related_posts = array_slice($related_posts, 0, 3);
             </ol>
         </nav>
 
-        <!-- Title -->
-        <h1 class="text-3xl md:text-5xl font-bold mb-6">
-            <?php echo e($title ?? 'Untitled Post'); ?>
-        </h1>
-
-        <!-- Meta Info -->
-        <div class="flex flex-wrap items-center gap-4 text-white/90">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
-                    <span class="text-white font-semibold">TS</span>
-                </div>
-                <div>
-                    <p class="font-semibold">Travis Sutphin</p>
-                    <p class="text-xs opacity-80">AI-Tech-Solutions</p>
-                </div>
-            </div>
-            <span class="text-white/60">•</span>
-            <time class="flex items-center gap-2">
-                <i data-lucide="calendar" class="w-4 h-4"></i>
-                <?php echo date('F d, Y', strtotime($date ?? 'now')); ?>
-            </time>
-            <span class="text-white/60">•</span>
-            <span class="flex items-center gap-2">
-                <i data-lucide="clock" class="w-4 h-4"></i>
-                <?php echo $reading_time; ?> min read
-            </span>
-        </div>
-
-        <!-- Tags -->
-        <?php if (!empty($tags)): ?>
-            <div class="flex flex-wrap gap-2 mt-4">
-                <?php foreach ($tags as $tag): ?>
-                    <a href="<?php echo BASE_PATH; ?>/blog?tag=<?php echo urlencode($tag); ?>"
-                       class="px-3 py-1 bg-white/20 backdrop-blur text-white text-sm rounded-full hover:bg-white/30 transition-colors">
-                        <?php echo e($tag); ?>
-                    </a>
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
+      
+		
     </div>
 </section>
 
@@ -127,9 +90,50 @@ $related_posts = array_slice($related_posts, 0, 3);
     </section>
 <?php endif; ?>
 
+
+
+		
 <!-- Engagement Bar -->
 <section class="engagement-bar shadow-sm">
-    <div class="max-w-4xl mx-auto px-4 py-3 sm:py-3 py-2">
+    <div class="max-w-4xl mx-auto px-4 pt-1 pb-3 sm:py-3">
+	
+			<!-- Meta Info -->
+        <div class="flex flex-wrap items-center gap-4 text-white/90">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
+                    <span class="text-white font-semibold">TS</span>
+                </div>
+                <div>
+                    <p class="font-semibold">Travis Sutphin</p>
+                    <p class="text-xs opacity-80">AI-Tech-Solutions</p>
+                </div>
+            </div>
+            <span class="text-white/60">•</span>
+            <time class="flex items-center gap-2">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+                <?php echo date('F d, Y', strtotime($date ?? 'now')); ?>
+            </time>
+            <span class="text-white/60">•</span>
+            <span class="flex items-center gap-2">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+                <?php echo $reading_time; ?> min read
+            </span>
+        </div>
+		
+		<!-- Tags -->
+        <?php if (!empty($tags)): ?>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <?php foreach ($tags as $tag): ?>
+                    <a href="<?php echo BASE_PATH; ?>/blog?tag=<?php echo urlencode($tag); ?>"
+                       class="px-3 py-1 bg-white/20 backdrop-blur text-white text-sm rounded-full hover:bg-white/30 transition-colors">
+                        <?php echo e($tag); ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+	
+	
+	
         <div class="flex items-center justify-between">
             <a href="<?php echo BASE_PATH; ?>/blog" class="back-link flex items-center gap-2">
                 <i data-lucide="arrow-left" class="w-4 h-4"></i>

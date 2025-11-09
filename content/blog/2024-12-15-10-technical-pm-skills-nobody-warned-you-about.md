@@ -13,6 +13,8 @@ image: "/assets/images/blogs/2024-12-15-10-technical-pm-skills-nobody-warned-you
 faq: false
 ---
 
+# 10 Technical PM Skills Nobody Warned You About
+
 Being a Technical Project Manager isn't about memorizing every JavaScript framework or knowing how to deploy Kubernetes clusters. It's about being the translator, the roadblock-clearer, and sometimes the person who says "no" to impossible timelines.
 
 Here are the **10 essential skills** that actually matter in the trenches:

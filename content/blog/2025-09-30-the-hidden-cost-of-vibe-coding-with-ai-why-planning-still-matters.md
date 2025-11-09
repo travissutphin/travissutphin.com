@@ -13,6 +13,8 @@ image: "/assets/images/blogs/2025-09-30-the-hidden-cost-of-vibe-coding-with-ai-w
 faq: false
 ---
 
+# The Hidden Cost of 'Vibe Coding' with AI: Why Planning Still Matters
+
 You fire up Claude or Cursor, type "build me a SaaS dashboard," and watch the magic happen. Within hours, you've got 80% of a working app. It feels incredible, like you've discovered a development superpower.
 
 Then reality hits.

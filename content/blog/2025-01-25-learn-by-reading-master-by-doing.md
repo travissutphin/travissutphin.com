@@ -13,6 +13,8 @@ image: "/assets/images/blogs/2025-01-25-learn-by-reading-master-by-doing.png"
 faq: false
 ---
 
+# Learn by Reading, Master by Doing: The 3-Stage Learning Framework
+
 In the dynamic world of technology and development, continuous learning is not just a necessity—it's a way of life. As a Director and Full-Stack Developer, I've come to realize that my journey of mastering new skills follows a distinct pattern: **I learn by Reading, and I Master by Doing**.
 
 This approach has not only helped me stay ahead in my fields but has also enabled me to lead my team effectively and deliver high-quality solutions consistently. Let me break down my thought process behind this philosophy.

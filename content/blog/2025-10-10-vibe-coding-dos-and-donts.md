@@ -13,6 +13,8 @@ image: "/assets/images/blogs/2025-10-10-vibe-coding-dos-and-donts.png"
 faq: false
 ---
 
+# Vibe Coding for Beginners: 5 Do's and 5 Don'ts That'll Save Your Sanity
+
 **So you've discovered the magic of vibe coding—that incredible AI-assisted coding approach where you chat with an AI tool like you're DMing a really smart friend, and *poof*, working code appears. Welcome to the future, friend!**
 
 If you're new to this whole "describing what you want in plain English and watching AI generate code" thing, you're probably equal parts excited and terrified. Good news: you're in the right place. Let me break down the essential do's and don'ts that'll help you harness AI coding tools like Claude Code, Cursor, Replit, GitHub Copilot, and Claude without losing your mind (or accidentally creating a digital disaster).
