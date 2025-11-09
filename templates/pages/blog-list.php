@@ -230,7 +230,7 @@ function calculate_reading_time($content) {
                 <div class="lg:w-3/4">
                     <?php if ($featured_post && !$selected_tag && $page == 1): ?>
                         <!-- Featured Post Card -->
-                        <div class="mb-12 animate-on-scroll">
+                        <div class="mb-12">
                             <div class="featured-post-card">
                                 <!-- Featured Badge -->
                                 <div class="featured-badge text-white text-center py-2 text-sm font-semibold">
@@ -314,7 +314,7 @@ function calculate_reading_time($content) {
                     <!-- Regular Blog Posts Grid -->
                     <div class="grid md:grid-cols-2 gap-8">
                         <?php foreach ($regular_posts as $post): ?>
-                            <div class="animate-on-scroll blog-fade-in">
+                            <div class="blog-fade-in">
                                 <div class="blog-post-card h-full flex flex-col">
                                     <!-- Thumbnail (Clickable) -->
                                     <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($post['slug']); ?>" class="blog-thumbnail h-48 overflow-hidden block">
