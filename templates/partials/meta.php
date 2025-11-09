@@ -116,8 +116,8 @@ if (isset($is_blog_post) && $is_blog_post) {
         "headline" => $title ?? '',
         "description" => $blog_description,
         "articleBody" => $article_text, // Required for Chrome Read Aloud
-        "datePublished" => $date ?? '',
-        "dateModified" => $date ?? '',
+        "datePublished" => isset($date) ? date('c', strtotime($date . ' 09:00:00')) : '',
+        "dateModified" => isset($date) ? date('c', strtotime($date . ' 09:00:00')) : '',
         "author" => [
             "@type" => "Person",
             "name" => "Travis Sutphin",

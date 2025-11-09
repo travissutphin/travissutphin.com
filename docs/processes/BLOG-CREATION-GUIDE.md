@@ -174,7 +174,7 @@ faq: false
 | Field | Type | Rules | Example |
 |-------|------|-------|---------|
 | `title` | String | 50-60 chars, include keyword, compelling | "3 Warning Signs Your AI Project Will Fail" |
-| `date` | String | YYYY-MM-DD format, matches filename | "2025-10-15" |
+| `date` | String | YYYY-MM-DD format, matches filename (auto-converted to ISO 8601 with timezone for schema) | "2025-10-15" |
 | `category` | String | ONE of 6 approved categories | "AI & Automation" |
 | `topics` | Array | 1-2 topics from category, quoted strings | `["AI Development", "Vibe Coding"]` |
 | `tags` | Array | 2-4 tags, 3+ post minimum rule | `["AI", "Project Management", "Best Practices"]` |
@@ -539,6 +539,9 @@ Click: Run Test
 **If FAQ Enabled** (`faq: true`):
 - `FAQPage` ✅
 - `Question` items ✅
+
+**Note on Date Formats:**
+Your `date` field in frontmatter (YYYY-MM-DD) is automatically converted to ISO 8601 format with timezone (YYYY-MM-DDTHH:MM:SS±HH:MM) for schema.org compliance. You should see no warnings about missing timezones in validation.
 
 ### 6.3 Social Share Preview
 
