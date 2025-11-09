@@ -314,7 +314,7 @@ function calculate_reading_time($content) {
                     <!-- Regular Blog Posts Grid -->
                     <div class="grid md:grid-cols-2 gap-8">
                         <?php foreach ($regular_posts as $post): ?>
-                            <div class="blog-fade-in">
+                            <div>
                                 <div class="blog-post-card h-full flex flex-col">
                                     <!-- Thumbnail (Clickable) -->
                                     <a href="<?php echo BASE_PATH; ?>/blog/<?php echo e($post['slug']); ?>" class="blog-thumbnail h-48 overflow-hidden block">
