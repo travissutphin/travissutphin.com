@@ -28,61 +28,22 @@ $related_posts = array_slice($related_posts, 0, 3);
     <div id="progress-bar" class="progress-bar-fill" style="width: 0%"></div>
 </div>
 
-<!-- Hero Section with Gradient -->
-<section class="gradient-green-blue px-4 py-12 mb-0">
-    <div class="max-w-4xl mx-auto text-white">
-        <!-- Breadcrumbs -->
-        <nav aria-label="Breadcrumb" class="mb-6">
-            <ol class="flex items-center space-x-2 text-sm text-white/80">
-                <li><a href="<?php echo BASE_PATH; ?>/" class="hover:text-white">Home</a></li>
-                <li><span class="mx-2">/</span></li>
-                <li><a href="<?php echo BASE_PATH; ?>/blog" class="hover:text-white">Blog</a></li>
-                <li><span class="mx-2">/</span></li>
-                <li class="text-white font-semibold truncate max-w-xs"><?php echo e($title ?? 'Post'); ?></li>
+<!-- Minimal Breadcrumb -->
+<section class="gradient-green-blue px-4 py-3">
+    <div class="max-w-4xl mx-auto">
+        <nav aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-1 text-xs text-white/80">
+                <li><a href="<?php echo BASE_PATH; ?>/" class="hover:text-white transition-colors">Home</a></li>
+                <li><span class="mx-1.5 text-white/60">›</span></li>
+                <li><a href="<?php echo BASE_PATH; ?>/blog" class="hover:text-white transition-colors">Blog</a></li>
             </ol>
         </nav>
-
-	<!-- Meta Info -->
-        <div class="flex flex-wrap items-center gap-4 text-white/90">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
-                    <span class="text-white font-semibold">TS</span>
-                </div>
-                <div>
-                    <p class="font-semibold">Travis Sutphin</p>
-                    <p class="text-xs opacity-80">AI-Tech-Solutions</p>
-                </div>
-            </div>
-            <span class="text-white/60">•</span>
-            <time class="flex items-center gap-2">
-                <i data-lucide="calendar" class="w-4 h-4"></i>
-                <?php echo date('F d, Y', strtotime($date ?? 'now')); ?>
-            </time>
-            <span class="text-white/60">•</span>
-            <span class="flex items-center gap-2">
-                <i data-lucide="clock" class="w-4 h-4"></i>
-                <?php echo $reading_time; ?> min read
-            </span>
-        </div>
-		
-		<!-- Tags -->
-        <?php if (!empty($tags)): ?>
-            <div class="flex flex-wrap gap-2 mt-4">
-                <?php foreach ($tags as $tag): ?>
-                    <a href="<?php echo BASE_PATH; ?>/blog?tag=<?php echo urlencode($tag); ?>"
-                       class="px-3 py-1 bg-white/20 backdrop-blur text-white text-sm rounded-full hover:bg-white/30 transition-colors">
-                        <?php echo e($tag); ?>
-                    </a>
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>      
-		
     </div>
 </section>
 
 <!-- Featured Image -->
 <?php if (!empty($image)): ?>
-    <section class="px-4 -mt-8 mb-8">
+    <section class="px-4 pt-0 pb-6 gradient-green-blue">
         <div class="max-w-4xl mx-auto">
             <div class="relative overflow-hidden rounded-lg shadow-2xl">
                 <?php
@@ -119,51 +80,77 @@ $related_posts = array_slice($related_posts, 0, 3);
                          height="630">
                 </picture>
             </div>
+
+            <!-- Ultra-Compact Meta Line -->
+            <div class="flex items-center gap-2 text-white/90 text-sm mt-4">
+                <div class="w-8 h-8 bg-white/20 backdrop-blur rounded-full flex items-center justify-center flex-shrink-0">
+                    <span class="text-white font-semibold text-xs">TS</span>
+                </div>
+                <span class="font-medium">Travis Sutphin</span>
+                <span class="text-white/60">·</span>
+                <time datetime="<?php echo $date ?? ''; ?>">
+                    <?php echo date('M j, Y', strtotime($date ?? 'now')); ?>
+                </time>
+                <span class="text-white/60">·</span>
+                <span><?php echo $reading_time; ?> min read</span>
+            </div>
+
+            <!-- Horizontal Scrolling Tags -->
+            <?php if (!empty($tags)): ?>
+                <div class="mt-3 -mx-2 px-2 overflow-x-auto scrollbar-hide">
+                    <div class="flex gap-2 min-w-min">
+                        <?php foreach ($tags as $tag): ?>
+                            <a href="<?php echo BASE_PATH; ?>/blog?tag=<?php echo urlencode($tag); ?>"
+                               class="px-3 py-1 bg-white/20 backdrop-blur text-white text-sm rounded-full hover:bg-white/30 transition-colors whitespace-nowrap flex-shrink-0">
+                                <?php echo e($tag); ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 <?php endif; ?>
 
 
-
-		
 <!-- Engagement Bar -->
 <section class="engagement-bar shadow-sm">
-    <div class="max-w-4xl mx-auto px-4 pt-1 pb-3 sm:py-3">
+    <div class="max-w-4xl mx-auto px-4 py-0 sm:py-2">
 	
 		
 	
 	
 	
         <div class="flex items-center justify-between">
-            <a href="<?php echo BASE_PATH; ?>/blog" class="back-link flex items-center gap-2">
+            <a href="<?php echo BASE_PATH; ?>/blog" class="back-link flex items-center gap-1 sm:gap-2 py-1">
                 <i data-lucide="arrow-left" class="w-4 h-4"></i>
                 <span class="hidden sm:inline">Back to Blog</span>
                 <span class="sm:hidden">Back</span>
             </a>
 
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-1.5 sm:gap-3">
                 <!-- Share Buttons (Placeholder) -->
                 <button onclick="alert('Sharing coming soon!')"
-                        class="share-button p-2 rounded-lg"
+                        class="share-button p-0.5 sm:p-2 rounded-lg"
                         title="Share on Twitter"
                         aria-label="Share on Twitter">
                     <i data-lucide="twitter" class="w-5 h-5"></i>
                 </button>
                 <button onclick="alert('Sharing coming soon!')"
-                        class="share-button p-2 rounded-lg"
+                        class="share-button p-0.5 sm:p-2 rounded-lg"
                         title="Share on LinkedIn"
                         aria-label="Share on LinkedIn">
                     <i data-lucide="linkedin" class="w-5 h-5"></i>
                 </button>
                 <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');"
-                        class="share-button p-2 rounded-lg"
+                        class="share-button p-0.5 sm:p-2 rounded-lg"
                         title="Copy link"
                         aria-label="Copy link to clipboard">
                     <i data-lucide="link" class="w-5 h-5"></i>
                 </button>
                 <span class="text-gray-400">|</span>
                 <button onclick="alert('Comments coming soon!')"
-                        class="share-button flex items-center gap-2 px-3 py-1 rounded-lg"
+                        class="share-button flex items-center gap-1 sm:gap-2 px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-lg"
                         aria-label="Join discussion">
                     <i data-lucide="message-circle" class="w-4 h-4"></i>
                     <span class="hidden sm:inline">Join Discussion</span>
