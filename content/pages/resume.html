@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travis Sutphin - AI - Tech - Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1a2332 0%, #2a3f5f 50%, #1f4068 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 217, 156, 0.1));
+            pointer-events: none;
+        }
+
+        .profile-pic-container {
+            flex-shrink: 0;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #00d99c;
+            background: linear-gradient(135deg, #f8f8f8, #ffffff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 217, 156, 0.3);
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-content {
+            flex-grow: 1;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 300;
+            color: #00d99c;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #00d99c;
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .content {
+            display: flex;
+            gap: 0;
+        }
+
+        .sidebar {
+            width: 320px;
+            background: #f8f8f8;
+            padding: 30px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 30px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c2c2c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #00d99c;
+        }
+
+        .sidebar .section-title {
+            border-bottom-color: #2a3f5f;
+        }
+
+        /* Summary */
+        .summary {
+            text-align: justify;
+            color: #4a4a4a;
+            line-height: 1.8;
+        }
+
+        /* Skills */
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        .skill-category-title {
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            color: #4a4a4a;
+            border: 1px solid #d0d0d0;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background: #00d99c;
+            color: white;
+            border-color: #00d99c;
+            transform: translateY(-2px);
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #00d99c;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .date-range {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .job-description {
+            color: #4a4a4a;
+            margin-bottom: 12px;
+        }
+
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .achievements li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #00d99c;
+            font-weight: bold;
+        }
+
+        /* Certifications */
+        .cert-item {
+            margin-bottom: 12px;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 3px;
+        }
+
+        .cert-details {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 3px;
+        }
+
+        .school {
+            color: #00d99c;
+            margin-bottom: 3px;
+        }
+
+        .edu-details {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Metric Highlights */
+        .metric-highlight {
+            background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+            border-left: 4px solid #00d99c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .metric-highlight h4 {
+            color: #2c2c2c;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .metric-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .metric-item:hover {
+            background: rgba(0, 217, 156, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2a3f5f;
+            transition: all 0.3s ease;
+        }
+        
+        .metric-item:hover .metric-value {
+            color: #00d99c;
+            transform: scale(1.05);
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        a {
+            color: #00d99c;
+        }
+        
+        /* Font Awesome Icons */
+        .fa, .fas, .far, .fab {
+            color: #00d99c;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="profile-pic-container">
+                <div class="profile-pic">
+                    <img src="/assets/images/TravisSutphin-Profile-2025.png" alt="Travis Sutphin Profile Photo">
+                </div>
+            </div>
+            <div class="header-content">
+                <h1 class="name">Travis Sutphin</h1>
+                <p class="title">Business Technology Consultant & Systems Architect</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i> <a href="mailto:travis.sutphin@gmail.com">travis.sutphin@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i> <a href="https://travissutphin.com" target="_blank">travissutphin.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i> <span>Remote</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Core Competencies -->
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i>Core Competencies</h2>
+                    
+                    <div class="skill-category">
+                        <div class="skill-category-title">Business Technology Solutions</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">WordPress Optimization</span>
+                            <span class="skill-tag">Business Automation</span>
+                            <span class="skill-tag">Systems Integration</span>
+                            <span class="skill-tag">Process Streamlining</span>
+                            <span class="skill-tag">Tech Stack Consultation</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Infrastructure & Operations</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Cloud Migration</span>
+                            <span class="skill-tag">Server Management</span>
+                            <span class="skill-tag">Performance Optimization</span>
+                            <span class="skill-tag">Disaster Recovery</span>
+                            <span class="skill-tag">Cost Optimization</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Development & Integration</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Custom Web Applications</span>
+                            <span class="skill-tag">API Development</span>
+                            <span class="skill-tag">Database Architecture</span>
+                            <span class="skill-tag">Third-Party Integrations</span>
+                            <span class="skill-tag">AI Implementation</span>
+                            <span class="skill-tag">No-Code Solutions</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Security & Compliance</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Security Audits</span>
+                            <span class="skill-tag">Data Protection</span>
+                            <span class="skill-tag">Backup Strategies</span>
+                            <span class="skill-tag">Compliance Implementation</span>
+                            <span class="skill-tag">Risk Assessment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-award"></i>Certifications</h2>
+                    <div class="cert-item">
+                        <div class="cert-name">Google Project Management</div>
+                        <div class="cert-details">Professional Certificate - 2023</div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i>Education</h2>
+                    <div class="education-item">
+                        <div class="degree">BS Business Administration</div>
+                        <div class="school">West Liberty University</div>
+                        <div class="edu-details">Computer Information Systems<br>& Management | 1995-1999</div>
+                    </div>
+                </div>
+                
+                <!-- Core Principles -->
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-compass"></i>My Approach</h2>
+                    <div class="education-item">
+                        <strong>How We Do Anything is How We Do Everything</strong><br>
+                        <small>Excellence in details creates success at scale</small><br><br>
+                        <strong>Learn by Reading, Master by Doing</strong><br>
+                        <small>Continuous improvement through practical application</small>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Professional Summary -->
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-bullseye"></i>Your Technology Partner for Business Growth</h2>
+                    <p class="summary">
+                        I help solopreneurs and small businesses reclaim their time by transforming overwhelming technology challenges into streamlined, automated systems that just work. With over two decades of hands-on experience managing technology for businesses, I understand the unique pressures you face: the constant website updates, security concerns, integration nightmares, and the feeling that technology is consuming your business instead of powering it.
+                    </p>
+                    <p class="summary" style="margin-top: 12px;">
+                        My approach is simple: I handle the complex technical details so you can focus on what you do best – growing your business. Whether you need to migrate from spreadsheets to scalable systems, secure your digital assets, or finally integrate all those disconnected tools that are slowing you down, I provide practical solutions that deliver immediate impact without the typical tech headaches.
+                    </p>
+                </div>
+
+                <!-- Current Operations Overview -->
+                <div class="metric-highlight">
+                    <h4><i class="fas fa-chart-line"></i> What I Bring to Your Business</h4>
+                    <div class="metric-grid">
+                        <div class="metric-item">
+                            <span class="metric-value">300+ Sites</span>
+                            <span class="metric-label">Successfully Managed</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">Peace of Mind</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">10+ Years</span>
+                            <span class="metric-label">Business Operations</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">Zero Downtime</span>
+                            <span class="metric-label">Migration Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-users"></i>How I Help Businesses Like Yours</h2>
+
+                    <div class="experience-item">
+                        <h3 class="job-title">Business Technology Leadership</h3>
+                        <div class="company">Director of Development & Operations</div>
+                        <div class="date-range">2015 - Present | Solving Real Business Problems</div>
+                        <p class="job-description">
+                            I've spent the last decade helping businesses transform their technology operations from cost centers into growth engines. Here's what I bring to your business:
+                        </p>
+                        <ul class="achievements">
+                            <li><strong>Profit-Focused Technology:</strong> I understand that every technology decision impacts your bottom line – I've managed P&L for entire departments and know how to make technology investments that pay for themselves.</li>
+                            <li><strong>System Integration Expertise:</strong> Tired of copying data between systems? I create seamless connections between your tools, eliminating duplicate work and reducing errors.</li>
+                            <li><strong>Process Automation:</strong> Those repetitive tasks eating your time? I identify and automate them, giving you hours back each week to focus on strategic work.</li>
+                            <li><strong>Scalable Infrastructure:</strong> I build systems that grow with your business, not ones you'll need to replace in six months when you hit capacity.</li>
+                            <li><strong>Team Enablement:</strong> I don't just solve problems – I document solutions and train your team so you're never dependent on a single person for critical operations.</li>
+                        </ul>
+                        <div class="metric-highlight">
+                            <strong>Real Impact:</strong> Transformed underperforming departments into the most profitable units in the organization while building custom business applications that continue to power operations years later.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3 class="job-title">Full-Stack Problem Solver</h3>
+                        <div class="company">Technology Services Group</div>
+                        <div class="date-range">2011 - 2015 | Building What Businesses Need</div>
+                        <p class="job-description">
+                            As a full-stack developer and technical lead, I learned to see technology through the business lens – not just what's possible, but what actually moves the needle:
+                        </p>
+                        <ul class="achievements">
+                            <li><strong>Custom Solutions:</strong> Built tailored web applications that solved specific business problems, not generic tools that sort-of worked.</li>
+                            <li><strong>User-First Design:</strong> Created interfaces that your team will actually use, not complex systems that require a manual.</li>
+                            <li><strong>Database Architecture:</strong> Designed data structures that make reporting simple and insights accessible.</li>
+                            <li><strong>API Integration:</strong> Connected disparate systems to create unified workflows that save hours of manual data entry.</li>
+                            <li><strong>Performance Optimization:</strong> Made slow systems fast and expensive systems efficient.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3 class="job-title">Infrastructure & Support Foundation</h3>
+                        <div class="company">Enterprise IT Support</div>
+                        <div class="date-range">1999 - 2011 | Understanding Technology from the Ground Up</div>
+                        <p class="job-description">
+                            Twelve years in the trenches taught me what businesses really need from their technology – reliability, simplicity, and someone who answers the phone when things go wrong:
+                        </p>
+                        <ul class="achievements">
+                            <li><strong>Crisis Management:</strong> Developed the ability to quickly diagnose and resolve critical issues that threaten business operations.</li>
+                            <li><strong>Preventive Maintenance:</strong> Learned to spot problems before they become emergencies, saving businesses from costly downtime.</li>
+                            <li><strong>Clear Communication:</strong> Mastered the art of explaining complex technical issues in terms that make sense to business owners.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Key Achievements -->
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-wrench"></i>Problems I Solve for Small Businesses</h2>
+                    <ul class="achievements">
+                        <li><strong>"My website is always breaking"</strong> – I implement monitoring, maintenance, and backup systems that prevent issues before they impact your business.</li>
+                        <li><strong>"I'm drowning in manual tasks"</strong> – I identify repetitive work and implement automation that gives you back hours every week.</li>
+                        <li><strong>"My tools don't talk to each other"</strong> – I create integrations that make your systems work as one cohesive unit.</li>
+                        <li><strong>"Technology costs are out of control"</strong> – I audit your tech stack and optimize for both performance and cost-efficiency.</li>
+                        <li><strong>"I don't know if we're secure"</strong> – I perform security audits and implement protection that lets you sleep soundly.</li>
+                        <li><strong>"We need to scale but don't know how"</strong> – I design growth-ready systems that expand with your business, not against it.</li>
+                    </ul>
+                    
+                    <h2 class="section-title"><i class="fas fa-magic"></i>The AI Advantage</h2>
+                    <ul class="achievements">
+                        <li><strong>10x Development Speed:</strong> Using AI pair programming, I deliver custom solutions faster and more affordably than traditional development approaches – what used to take weeks now takes days.</li>
+                        <li><strong>Future-Ready Solutions:</strong> I integrate cutting-edge AI tools into your workflows, giving you competitive advantages that larger companies are still planning.</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
