@@ -16,18 +16,18 @@
 
                 <!-- Contact Info -->
                 <div class="flex flex-wrap gap-6 justify-center md:justify-start text-sm md:text-base">
-                    <a href="mailto:travis.sutphin@gmail.com" class="flex items-center gap-2 hover:text-green-200 transition-colors">
-                        <i data-lucide="mail" class="w-4 h-4"></i>
-                        travis.sutphin@gmail.com
+                    <a href="mailto:info@travissutphin.com" class="flex items-center gap-2 hover:text-green-200 transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        info@travissutphin.com
                     </a>
-                    <a href="https://travissutphin.com" class="flex items-center gap-2 hover:text-green-200 transition-colors">
-                        <i data-lucide="globe" class="w-4 h-4"></i>
-                        travissutphin.com
+                    <a href="https://www.linkedin.com/in/travis-sutphin-4472a1a/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-green-200 transition-colors">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        LinkedIn
                     </a>
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="map-pin" class="w-4 h-4"></i>
-                        Remote
-                    </span>
+                    <a href="https://www.reddit.com/r/travissutphin/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-green-200 transition-colors">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        Reddit
+                    </a>
                 </div>
             </div>
         </div>
