@@ -2,28 +2,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo e($title); ?></title>
 <meta name="description" content="<?php echo e(isset($excerpt) ? $excerpt : $meta_description); ?>">
+<?php if (isset($keywords)): ?>
+<meta name="keywords" content="<?php echo e($keywords); ?>">
+<?php endif; ?>
 <meta name="author" content="Travis Sutphin">
 <?php if (isset($noindex) && $noindex === true): ?>
 <meta name="robots" content="noindex, nofollow">
 <?php endif; ?>
 
 <!-- Open Graph -->
-<meta property="og:title" content="<?php echo e($title); ?>">
-<meta property="og:description" content="<?php echo e(isset($excerpt) ? $excerpt : $meta_description); ?>">
-<meta property="og:image" content="<?php echo SITE_URL . e($og_image); ?>">
-<meta property="og:url" content="<?php echo SITE_URL . $_SERVER['REQUEST_URI']; ?>">
+<meta property="og:title" content="<?php echo e(isset($og_title) ? $og_title : $title); ?>">
+<meta property="og:description" content="<?php echo e(isset($og_description) ? $og_description : (isset($excerpt) ? $excerpt : $meta_description)); ?>">
+<meta property="og:image" content="<?php echo (isset($og_image) && strpos($og_image, 'http') === 0) ? e($og_image) : SITE_URL . e($og_image); ?>">
+<meta property="og:url" content="<?php echo isset($canonical) ? e($canonical) : SITE_URL . $_SERVER['REQUEST_URI']; ?>">
 <meta property="og:type" content="<?php echo isset($og_type) ? e($og_type) : 'website'; ?>">
 <meta property="og:site_name" content="<?php echo SITE_NAME; ?>">
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="<?php echo e($title); ?>">
-<meta name="twitter:description" content="<?php echo e(isset($excerpt) ? $excerpt : $meta_description); ?>">
-<meta name="twitter:image" content="<?php echo SITE_URL . e($og_image); ?>">
+<meta name="twitter:card" content="<?php echo isset($twitter_card) ? e($twitter_card) : 'summary_large_image'; ?>">
+<meta name="twitter:title" content="<?php echo e(isset($twitter_title) ? $twitter_title : $title); ?>">
+<meta name="twitter:description" content="<?php echo e(isset($twitter_description) ? $twitter_description : (isset($excerpt) ? $excerpt : $meta_description)); ?>">
+<meta name="twitter:image" content="<?php echo (isset($og_image) && strpos($og_image, 'http') === 0) ? e($og_image) : SITE_URL . e($og_image); ?>">
 <meta name="twitter:creator" content="@travissutphin">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="<?php echo SITE_URL . $_SERVER['REQUEST_URI']; ?>">
+<link rel="canonical" href="<?php echo isset($canonical) ? e($canonical) : SITE_URL . $_SERVER['REQUEST_URI']; ?>">
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo BASE_PATH; ?>/favicon_io/apple-touch-icon.png">

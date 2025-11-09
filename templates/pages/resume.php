@@ -1,3 +1,96 @@
+<!-- Schema.org Structured Data for Resume/Profile Page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Travis Sutphin",
+    "jobTitle": "Fractional CTO & Business Technology Consultant",
+    "description": "Fractional CTO with 20+ years helping small businesses automate operations, integrate systems, and scale through technology. Specializing in WordPress optimization, cloud migration, systems integration, and AI implementation.",
+    "url": "https://travissutphin.com/resume",
+    "image": "https://travissutphin.com/assets/images/TravisSutphin-Profile-2025.png",
+    "email": "info@travissutphin.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "WV",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/travis-sutphin-4472a1a/",
+      "https://www.reddit.com/r/travissutphin/",
+      "https://github.com/travissutphin",
+      "https://travissutphin.com"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@travissutphin.com",
+      "contactType": "Professional Services",
+      "areaServed": "US",
+      "availableLanguage": "English"
+    },
+    "knowsAbout": [
+      "WordPress Optimization",
+      "Business Automation",
+      "Systems Integration",
+      "Cloud Migration",
+      "AI Implementation",
+      "Process Streamlining",
+      "Custom Web Applications",
+      "API Development",
+      "Database Architecture",
+      "Security Audits",
+      "DevOps",
+      "Technical Leadership",
+      "Fractional CTO Services"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Fractional CTO & Business Technology Consultant",
+      "occupationLocation": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "skills": "WordPress, PHP, JavaScript, Cloud Architecture, Systems Integration, Business Automation, AI Implementation, DevOps, Security, Database Design",
+      "experienceRequirements": "20+ years"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "West Liberty University",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "West Liberty",
+        "addressRegion": "WV",
+        "addressCountry": "US"
+      }
+    },
+    "award": "Google Project Management Professional Certificate",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Travis Sutphin Consulting",
+      "url": "https://travissutphin.com"
+    }
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://travissutphin.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Resume",
+        "item": "https://travissutphin.com/resume"
+      }
+    ]
+  }
+}
+</script>
+
 <!-- Hero Section with Profile -->
 <section class="gradient-green-blue px-4 py-12">
     <div class="max-w-6xl mx-auto">
@@ -11,8 +104,9 @@
 
             <!-- Header Content -->
             <div class="flex-grow text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-bold mb-2">Travis Sutphin</h1>
-                <p class="text-xl md:text-2xl mb-4 text-green-200">Business Technology Consultant & Systems Architect</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-2">Travis Sutphin - Fractional CTO & Business Technology Consultant</h1>
+                <p class="text-xl md:text-2xl mb-2 text-green-200">WordPress Expert | Systems Architect | AI Implementation Specialist</p>
+                <p class="text-base md:text-lg mb-4 text-white/80">West Virginia, USA | 20+ Years Experience | Serving Clients Nationwide</p>
 
                 <!-- Contact Info -->
                 <div class="flex flex-wrap gap-6 justify-center md:justify-start text-sm md:text-base">
@@ -83,10 +177,12 @@
                 </h3>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">WordPress Optimization</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Business Automation</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Systems Integration</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Process Streamlining</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Tech Stack Consultation</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">WooCommerce Development</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Business Process Automation</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">API Systems Integration</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Workflow Automation</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Digital Transformation</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Tech Stack Optimization</span>
                 </div>
             </div>
 
@@ -97,11 +193,12 @@
                     Infrastructure & Operations
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Cloud Migration</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Server Management</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Performance Optimization</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Disaster Recovery</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Cost Optimization</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">AWS Cloud Migration</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Azure Cloud Solutions</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">DevOps Implementation</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Site Performance Optimization</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Disaster Recovery Planning</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Infrastructure Cost Reduction</span>
                 </div>
             </div>
 
@@ -112,12 +209,13 @@
                     Development & Integration
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Custom Web Applications</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">API Development</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Database Architecture</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Third-Party Integrations</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">AI Implementation</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">No-Code Solutions</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">PHP & JavaScript Development</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">RESTful API Development</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">MySQL Database Design</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Zapier & Make.com Integration</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">AI & ChatGPT Integration</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Airtable & No-Code Platforms</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Tailwind CSS</span>
                 </div>
             </div>
 
@@ -128,11 +226,12 @@
                     Security & Compliance
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Security Audits</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Data Protection</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Backup Strategies</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Compliance Implementation</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Risk Assessment</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">WordPress Security Hardening</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">SSL/TLS Implementation</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">GDPR Compliance</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Automated Backup Systems</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Malware Detection & Removal</span>
+                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Penetration Testing</span>
                 </div>
             </div>
         </div>
@@ -156,23 +255,23 @@
                 <ul class="space-y-2 text-theme-secondary">
                     <li class="flex gap-2">
                         <i data-lucide="chevron-right" class="w-5 h-5 text-primary-green flex-shrink-0 mt-0.5"></i>
-                        <span><strong>Profit-Focused Technology:</strong> I understand that every technology decision impacts your bottom line – I've managed P&L for entire departments and know how to make technology investments that pay for themselves.</span>
+                        <span><strong>Managed 300+ WordPress Sites:</strong> Successfully maintained and optimized over 300 WordPress installations with 99.9% uptime, implementing automated monitoring, security hardening, and performance optimization that reduced page load times by an average of 40%.</span>
                     </li>
                     <li class="flex gap-2">
                         <i data-lucide="chevron-right" class="w-5 h-5 text-primary-green flex-shrink-0 mt-0.5"></i>
-                        <span><strong>System Integration Expertise:</strong> Tired of copying data between systems? I create seamless connections between your tools, eliminating duplicate work and reducing errors.</span>
+                        <span><strong>System Integration Expertise:</strong> Designed and implemented API integrations connecting CRMs, payment processors, and marketing platforms, eliminating 20+ hours per week of manual data entry for clients and reducing human error by 95%.</span>
                     </li>
                     <li class="flex gap-2">
                         <i data-lucide="chevron-right" class="w-5 h-5 text-primary-green flex-shrink-0 mt-0.5"></i>
-                        <span><strong>Process Automation:</strong> Those repetitive tasks eating your time? I identify and automate them, giving you hours back each week to focus on strategic work.</span>
+                        <span><strong>Process Automation:</strong> Created custom automation workflows using Zapier, Make.com, and custom scripts that saved clients an average of 15-20 hours per week, allowing them to focus on revenue-generating activities instead of administrative tasks.</span>
                     </li>
                     <li class="flex gap-2">
                         <i data-lucide="chevron-right" class="w-5 h-5 text-primary-green flex-shrink-0 mt-0.5"></i>
-                        <span><strong>Scalable Infrastructure:</strong> I build systems that grow with your business, not ones you'll need to replace in six months when you hit capacity.</span>
+                        <span><strong>Cloud Migration Leadership:</strong> Orchestrated migration of 100+ websites from shared hosting to cloud infrastructure (AWS, DigitalOcean), improving performance by 3x and reducing hosting costs by an average of 30% while increasing reliability.</span>
                     </li>
                     <li class="flex gap-2">
                         <i data-lucide="chevron-right" class="w-5 h-5 text-primary-green flex-shrink-0 mt-0.5"></i>
-                        <span><strong>Team Enablement:</strong> I don't just solve problems – I document solutions and train your team so you're never dependent on a single person for critical operations.</span>
+                        <span><strong>Security & Compliance:</strong> Implemented comprehensive security protocols including SSL/TLS, malware scanning, and automated backups across entire client portfolio, preventing 100+ potential security incidents and achieving zero successful breaches over 10 years.</span>
                     </li>
                 </ul>
             </div>
@@ -304,6 +403,105 @@
         </div>
     </div>
 </section>
+
+<!-- FAQ Section -->
+<section class="py-16 px-4 bg-white dark:bg-gray-900">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-theme-primary mb-8 text-center">Frequently Asked Questions</h2>
+
+        <div class="space-y-6">
+            <!-- FAQ 1 -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">What is a Fractional CTO and how can it help my small business?</h3>
+                <p class="text-theme-secondary">
+                    A Fractional CTO is an experienced technology leader who works with your business part-time or on a contract basis, providing the same strategic technology guidance as a full-time CTO but at a fraction of the cost. For small businesses, this means you get expert-level technology leadership for WordPress optimization, cloud migration, systems integration, and AI implementation without the $200K+ annual salary. I help you make smart technology decisions, avoid costly mistakes, and leverage automation to scale your operations efficiently.
+                </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">How much does it cost to hire you as a Fractional CTO or technology consultant?</h3>
+                <p class="text-theme-secondary">
+                    My services are structured to be accessible for small businesses and solopreneurs. I offer flexible retainer packages starting at $1,500/month for ongoing technology leadership and strategic guidance, which typically includes 8-10 hours of dedicated time for infrastructure management, security monitoring, and strategic consulting. For specific projects like WordPress migrations, API integrations, or automation implementations, I provide fixed-price quotes after an initial assessment. This approach ensures you get enterprise-level expertise without enterprise-level costs.
+                </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">What technologies and platforms do you specialize in?</h3>
+                <p class="text-theme-secondary">
+                    I specialize in practical, business-focused technologies that deliver ROI. My core expertise includes WordPress and WooCommerce optimization (managing 300+ sites with 99.9% uptime), PHP and JavaScript development, RESTful API integration, cloud platforms (AWS, Azure, DigitalOcean), automation tools (Zapier, Make.com, Airtable), MySQL database design, and AI implementation (ChatGPT API, Claude API). I also work extensively with modern frameworks like Tailwind CSS and focus on no-code/low-code solutions that empower your team to make updates without always needing a developer.
+                </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">Do you only work with businesses in West Virginia, or do you serve clients nationwide?</h3>
+                <p class="text-theme-secondary">
+                    While I'm based in West Virginia, I work with clients across the United States and internationally. All of my services are delivered remotely, which means you get the same high-quality technology leadership regardless of your location. Over the past 10+ years, I've successfully managed infrastructure, implemented automation, and provided strategic technology guidance for clients from California to New York, all while maintaining 24/7 monitoring and support for critical systems.
+                </p>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="pb-6">
+                <h3 class="text-xl font-semibold text-theme-primary mb-3">How quickly can you help if my website goes down or I have a technology emergency?</h3>
+                <p class="text-theme-secondary">
+                    For retainer clients, I provide 24/7 monitoring of critical systems with automated alerts, which means I'm often aware of issues before you are. Response times vary by service level: Priority support clients receive acknowledgment within 1 hour and emergency resolution within 4 hours. Standard retainer clients receive response within 4 business hours. I've maintained this service level for 300+ WordPress sites over 10 years with a 99.9% uptime record. All clients also get access to my automated backup systems, ensuring we can restore your site quickly in worst-case scenarios.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Fractional CTO and how can it help my small business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Fractional CTO is an experienced technology leader who works with your business part-time or on a contract basis, providing the same strategic technology guidance as a full-time CTO but at a fraction of the cost. For small businesses, this means you get expert-level technology leadership for WordPress optimization, cloud migration, systems integration, and AI implementation without the $200K+ annual salary. I help you make smart technology decisions, avoid costly mistakes, and leverage automation to scale your operations efficiently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to hire you as a Fractional CTO or technology consultant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "My services are structured to be accessible for small businesses and solopreneurs. I offer flexible retainer packages starting at $1,500/month for ongoing technology leadership and strategic guidance, which typically includes 8-10 hours of dedicated time for infrastructure management, security monitoring, and strategic consulting. For specific projects like WordPress migrations, API integrations, or automation implementations, I provide fixed-price quotes after an initial assessment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What technologies and platforms do you specialize in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I specialize in WordPress and WooCommerce optimization (managing 300+ sites with 99.9% uptime), PHP and JavaScript development, RESTful API integration, cloud platforms (AWS, Azure, DigitalOcean), automation tools (Zapier, Make.com, Airtable), MySQL database design, AI implementation (ChatGPT API, Claude API), Tailwind CSS, and no-code/low-code solutions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you only work with businesses in West Virginia, or do you serve clients nationwide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While I'm based in West Virginia, I work with clients across the United States and internationally. All services are delivered remotely, providing high-quality technology leadership regardless of location. Over the past 10+ years, I've successfully managed infrastructure and provided strategic technology guidance for clients nationwide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you help if my website goes down or I have a technology emergency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For retainer clients, I provide 24/7 monitoring with automated alerts. Priority support clients receive acknowledgment within 1 hour and emergency resolution within 4 hours. Standard retainer clients receive response within 4 business hours. I've maintained a 99.9% uptime record for 300+ WordPress sites over 10 years with automated backup systems for quick restoration."
+      }
+    }
+  ]
+}
+</script>
 
 <!-- CTA Section -->
 <section class="py-16 px-4 gradient-green-blue">
