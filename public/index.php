@@ -35,6 +35,7 @@ $routes = [
     'projects' => 'projects.php',
     'team' => 'team.php',
     'contact' => 'contact.php',
+    'resume' => 'resume.php',
     'blog' => 'blog-list.php',
     'blog-demo' => 'blog-demo.php'
 ];
