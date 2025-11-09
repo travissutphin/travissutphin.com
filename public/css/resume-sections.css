@@ -1,5 +1,26 @@
 /* Resume Page - Light Mode Optimization */
 
+/* Force light backgrounds and dark text in light mode */
+:root {
+    --resume-bg-primary: #ffffff;
+    --resume-bg-secondary: #f9fafb;
+    --resume-bg-tertiary: #f3f4f6;
+    --resume-text-primary: #111827;
+    --resume-text-secondary: #374151;
+    --resume-text-tertiary: #6b7280;
+    --resume-border: #e5e7eb;
+}
+
+[data-theme="dark"] {
+    --resume-bg-primary: #0f1419;
+    --resume-bg-secondary: #1a202c;
+    --resume-bg-tertiary: #2d3748;
+    --resume-text-primary: #f7fafc;
+    --resume-text-secondary: #e2e8f0;
+    --resume-text-tertiary: #a0aec0;
+    --resume-border: #4a5568;
+}
+
 /* Skill Tags - Better contrast in light mode */
 .resume-skill-tag {
     background-color: #e5e7eb; /* Darker gray for light mode */
@@ -44,10 +65,45 @@
 
 /* Section Text - Better readability */
 .resume-text-secondary {
-    color: #374151; /* Darker than default for better contrast */
+    color: #374151 !important; /* Darker than default for better contrast */
 }
 
 [data-theme="dark"] .resume-text-secondary {
+    color: #d1d5db !important;
+}
+
+/* Override theme variables for all text on resume page */
+body .text-theme-primary {
+    color: #111827;
+}
+
+[data-theme="dark"] body .text-theme-primary {
+    color: #f7fafc;
+}
+
+body .text-theme-secondary {
+    color: #4b5563;
+}
+
+[data-theme="dark"] body .text-theme-secondary {
+    color: #d1d5db;
+}
+
+/* Ensure paragraph text is visible */
+p {
+    color: #4b5563;
+}
+
+[data-theme="dark"] p {
+    color: #d1d5db;
+}
+
+/* List items */
+li {
+    color: #4b5563;
+}
+
+[data-theme="dark"] li {
     color: #d1d5db;
 }
 
@@ -63,19 +119,36 @@
 
 /* Experience Section Icons - Better visibility */
 .resume-icon-primary {
-    color: #059669; /* Stronger green for light mode */
+    color: #059669 !important; /* Stronger green for light mode */
 }
 
 [data-theme="dark"] .resume-icon-primary {
-    color: #34d399;
+    color: #34d399 !important;
 }
 
 .resume-icon-secondary {
-    color: #2563eb; /* Stronger blue for light mode */
+    color: #2563eb !important; /* Stronger blue for light mode */
 }
 
 [data-theme="dark"] .resume-icon-secondary {
-    color: #60a5fa;
+    color: #60a5fa !important;
+}
+
+/* Override Tailwind text color classes for icons */
+.text-primary-green {
+    color: #059669 !important;
+}
+
+[data-theme="dark"] .text-primary-green {
+    color: #5bb55b !important;
+}
+
+.text-primary-blue {
+    color: #2563eb !important;
+}
+
+[data-theme="dark"] .text-primary-blue {
+    color: #4285f4 !important;
 }
 
 /* Section Headers - Enhanced hierarchy */
@@ -96,4 +169,91 @@
 
 [data-theme="dark"] .resume-subsection-title {
     color: #e5e7eb;
+}
+
+/* Force all headings to be visible in light mode */
+h1, h2, h3, h4, h5, h6 {
+    color: #111827 !important;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: #f9fafb !important;
+}
+
+/* Ensure strong/bold text is visible */
+strong {
+    color: #111827;
+}
+
+[data-theme="dark"] strong {
+    color: #f9fafb;
+}
+
+/* Fix any remaining text color issues */
+.text-lg, .text-xl, .text-2xl, .text-3xl {
+    color: #374151 !important;
+}
+
+[data-theme="dark"] .text-lg,
+[data-theme="dark"] .text-xl,
+[data-theme="dark"] .text-2xl,
+[data-theme="dark"] .text-3xl {
+    color: #e2e8f0 !important;
+}
+
+/* Ensure all spans with text classes are visible */
+span {
+    color: inherit;
+}
+
+span.text-theme-secondary {
+    color: #4b5563 !important;
+}
+
+[data-theme="dark"] span.text-theme-secondary {
+    color: #d1d5db !important;
+}
+
+/* Checkmark icons */
+.text-green-500, .text-green-600 {
+    color: #059669 !important;
+}
+
+[data-theme="dark"] .text-green-500,
+[data-theme="dark"] .text-green-600 {
+    color: #10b981 !important;
+}
+
+/* Small text elements (dates, labels, etc) */
+.text-sm, .text-xs {
+    color: #6b7280 !important;
+}
+
+[data-theme="dark"] .text-sm,
+[data-theme="dark"] .text-xs {
+    color: #9ca3af !important;
+}
+
+/* Ensure all divs with text classes have proper color */
+div.text-theme-secondary {
+    color: #4b5563 !important;
+}
+
+[data-theme="dark"] div.text-theme-secondary {
+    color: #d1d5db !important;
+}
+
+/* Green and blue color overrides for light mode visibility */
+.text-green-200, .text-green-300 {
+    color: #047857 !important;
+}
+
+[data-theme="dark"] .text-green-200,
+[data-theme="dark"] .text-green-300 {
+    color: #6ee7b7 !important;
 }
