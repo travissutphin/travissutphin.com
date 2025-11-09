@@ -1,4 +1,8 @@
 /* Resume Page - Light Mode Optimization */
+/* This file must override Tailwind CDN's dynamically generated styles */
+
+/* CRITICAL: Use html:not([data-theme="dark"]) for maximum specificity in light mode */
+/* This ensures our rules beat Tailwind's utility classes */
 
 /* Force light backgrounds and dark text in light mode */
 :root {
@@ -19,6 +23,22 @@
     --resume-text-secondary: #e2e8f0;
     --resume-text-tertiary: #a0aec0;
     --resume-border: #4a5568;
+}
+
+/* Override ALL Tailwind theme variable classes */
+html:not([data-theme="dark"]) .text-theme-primary,
+html:not([data-theme="dark"]) h1,
+html:not([data-theme="dark"]) h2,
+html:not([data-theme="dark"]) h3,
+html:not([data-theme="dark"]) h4 {
+    color: #111827 !important;
+}
+
+html:not([data-theme="dark"]) .text-theme-secondary,
+html:not([data-theme="dark"]) p,
+html:not([data-theme="dark"]) li,
+html:not([data-theme="dark"]) span {
+    color: #4b5563 !important;
 }
 
 /* Skill Tags - Better contrast in light mode */
@@ -72,40 +92,8 @@
     color: #d1d5db !important;
 }
 
-/* Override theme variables for all text on resume page */
-body .text-theme-primary {
-    color: #111827;
-}
-
-[data-theme="dark"] body .text-theme-primary {
-    color: #f7fafc;
-}
-
-body .text-theme-secondary {
-    color: #4b5563;
-}
-
-[data-theme="dark"] body .text-theme-secondary {
-    color: #d1d5db;
-}
-
-/* Ensure paragraph text is visible */
-p {
-    color: #4b5563;
-}
-
-[data-theme="dark"] p {
-    color: #d1d5db;
-}
-
-/* List items */
-li {
-    color: #4b5563;
-}
-
-[data-theme="dark"] li {
-    color: #d1d5db;
-}
+/* These are already covered by the html:not([data-theme="dark"]) selectors above */
+/* Removed duplicate rules */
 
 /* Metrics Cards - Better definition in light mode */
 .resume-metric-card {
@@ -135,19 +123,19 @@ li {
 }
 
 /* Override Tailwind text color classes for icons */
-.text-primary-green {
+html:not([data-theme="dark"]) .text-primary-green {
     color: #059669 !important;
 }
 
-[data-theme="dark"] .text-primary-green {
+html[data-theme="dark"] .text-primary-green {
     color: #5bb55b !important;
 }
 
-.text-primary-blue {
+html:not([data-theme="dark"]) .text-primary-blue {
     color: #2563eb !important;
 }
 
-[data-theme="dark"] .text-primary-blue {
+html[data-theme="dark"] .text-primary-blue {
     color: #4285f4 !important;
 }
 
@@ -171,89 +159,76 @@ li {
     color: #e5e7eb;
 }
 
-/* Force all headings to be visible in light mode */
-h1, h2, h3, h4, h5, h6 {
+/* Additional heading overrides */
+html:not([data-theme="dark"]) h5,
+html:not([data-theme="dark"]) h6 {
     color: #111827 !important;
 }
 
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4,
-[data-theme="dark"] h5,
-[data-theme="dark"] h6 {
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
     color: #f9fafb !important;
 }
 
 /* Ensure strong/bold text is visible */
-strong {
-    color: #111827;
+html:not([data-theme="dark"]) strong {
+    color: #111827 !important;
 }
 
-[data-theme="dark"] strong {
-    color: #f9fafb;
+html[data-theme="dark"] strong {
+    color: #f9fafb !important;
 }
 
-/* Fix any remaining text color issues */
-.text-lg, .text-xl, .text-2xl, .text-3xl {
+/* Fix text size classes */
+html:not([data-theme="dark"]) .text-lg,
+html:not([data-theme="dark"]) .text-xl,
+html:not([data-theme="dark"]) .text-2xl,
+html:not([data-theme="dark"]) .text-3xl,
+html:not([data-theme="dark"]) .text-4xl {
     color: #374151 !important;
 }
 
-[data-theme="dark"] .text-lg,
-[data-theme="dark"] .text-xl,
-[data-theme="dark"] .text-2xl,
-[data-theme="dark"] .text-3xl {
+html[data-theme="dark"] .text-lg,
+html[data-theme="dark"] .text-xl,
+html[data-theme="dark"] .text-2xl,
+html[data-theme="dark"] .text-3xl,
+html[data-theme="dark"] .text-4xl {
     color: #e2e8f0 !important;
 }
 
-/* Ensure all spans with text classes are visible */
-span {
-    color: inherit;
-}
-
-span.text-theme-secondary {
-    color: #4b5563 !important;
-}
-
-[data-theme="dark"] span.text-theme-secondary {
-    color: #d1d5db !important;
-}
-
 /* Checkmark icons */
-.text-green-500, .text-green-600 {
+html:not([data-theme="dark"]) .text-green-500,
+html:not([data-theme="dark"]) .text-green-600 {
     color: #059669 !important;
 }
 
-[data-theme="dark"] .text-green-500,
-[data-theme="dark"] .text-green-600 {
+html[data-theme="dark"] .text-green-500,
+html[data-theme="dark"] .text-green-600 {
     color: #10b981 !important;
 }
 
 /* Small text elements (dates, labels, etc) */
-.text-sm, .text-xs {
+html:not([data-theme="dark"]) .text-sm,
+html:not([data-theme="dark"]) .text-xs {
     color: #6b7280 !important;
 }
 
-[data-theme="dark"] .text-sm,
-[data-theme="dark"] .text-xs {
+html[data-theme="dark"] .text-sm,
+html[data-theme="dark"] .text-xs {
     color: #9ca3af !important;
 }
 
-/* Ensure all divs with text classes have proper color */
-div.text-theme-secondary {
-    color: #4b5563 !important;
-}
-
-[data-theme="dark"] div.text-theme-secondary {
-    color: #d1d5db !important;
-}
-
 /* Green and blue color overrides for light mode visibility */
-.text-green-200, .text-green-300 {
+html:not([data-theme="dark"]) .text-green-200,
+html:not([data-theme="dark"]) .text-green-300 {
     color: #047857 !important;
 }
 
-[data-theme="dark"] .text-green-200,
-[data-theme="dark"] .text-green-300 {
+html[data-theme="dark"] .text-green-200,
+html[data-theme="dark"] .text-green-300 {
     color: #6ee7b7 !important;
 }
