@@ -20,7 +20,7 @@
     </url>
     <url>
         <loc>https://travissutphin.com/blog</loc>
-        <lastmod>2025-11-01</lastmod>
+        <lastmod>2025-11-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -161,6 +161,12 @@
     <url>
         <loc>https://travissutphin.com/blog/2025-11-01-when-spam-attacks-how-we-stopped-80-percent-of-bot-traffic</loc>
         <lastmod>2025-11-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://travissutphin.com/blog/2025-11-09-reddit-ads-for-b2b-complete-setup-guide</loc>
+        <lastmod>2025-11-09</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.9</priority>
     </url>
