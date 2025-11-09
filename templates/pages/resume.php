@@ -176,13 +176,13 @@
                     Business Technology Solutions
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">WordPress Optimization</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">WooCommerce Development</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Business Process Automation</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">API Systems Integration</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Workflow Automation</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Digital Transformation</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Tech Stack Optimization</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">WordPress Optimization</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">WooCommerce Development</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Business Process Automation</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">API Systems Integration</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Workflow Automation</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Digital Transformation</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Tech Stack Optimization</span>
                 </div>
             </div>
 
@@ -193,12 +193,12 @@
                     Infrastructure & Operations
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">AWS Cloud Migration</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Azure Cloud Solutions</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">DevOps Implementation</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Site Performance Optimization</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Disaster Recovery Planning</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Infrastructure Cost Reduction</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">AWS Cloud Migration</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Azure Cloud Solutions</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">DevOps Implementation</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Site Performance Optimization</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Disaster Recovery Planning</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Infrastructure Cost Reduction</span>
                 </div>
             </div>
 
@@ -209,13 +209,13 @@
                     Development & Integration
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">PHP & JavaScript Development</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">RESTful API Development</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">MySQL Database Design</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Zapier & Make.com Integration</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">AI & ChatGPT Integration</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Airtable & No-Code Platforms</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Tailwind CSS</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">PHP & JavaScript Development</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">RESTful API Development</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">MySQL Database Design</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Zapier & Make.com Integration</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">AI & ChatGPT Integration</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Airtable & No-Code Platforms</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Tailwind CSS</span>
                 </div>
             </div>
 
@@ -226,12 +226,12 @@
                     Security & Compliance
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">WordPress Security Hardening</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">SSL/TLS Implementation</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">GDPR Compliance</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Automated Backup Systems</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Malware Detection & Removal</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-theme-secondary text-sm rounded-full">Penetration Testing</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">WordPress Security Hardening</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">SSL/TLS Implementation</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">GDPR Compliance</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Automated Backup Systems</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Malware Detection & Removal</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Penetration Testing</span>
                 </div>
             </div>
         </div>
@@ -411,41 +411,41 @@
 
         <div class="space-y-6">
             <!-- FAQ 1 -->
-            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
-                <h3 class="text-xl font-semibold text-theme-primary mb-3">What is a Fractional CTO and how can it help my small business?</h3>
-                <p class="text-theme-secondary">
+            <div class="resume-faq-item pb-6">
+                <h3 class="text-xl font-semibold resume-faq-heading mb-3">What is a Fractional CTO and how can it help my small business?</h3>
+                <p class="resume-text-secondary">
                     A Fractional CTO is an experienced technology leader who works with your business part-time or on a contract basis, providing the same strategic technology guidance as a full-time CTO but at a fraction of the cost. For small businesses, this means you get expert-level technology leadership for web optimization, cloud migration, systems integration, and AI implementation without a full-time executive salary. I help you make smart technology decisions, avoid costly mistakes, and leverage automation to scale your operations efficiently.
                 </p>
             </div>
 
             <!-- FAQ 2 -->
-            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
-                <h3 class="text-xl font-semibold text-theme-primary mb-3">How much does it cost to hire you as a Fractional CTO or technology consultant?</h3>
-                <p class="text-theme-secondary">
+            <div class="resume-faq-item pb-6">
+                <h3 class="text-xl font-semibold resume-faq-heading mb-3">How much does it cost to hire you as a Fractional CTO or technology consultant?</h3>
+                <p class="resume-text-secondary">
                     My services are structured to be accessible for small businesses and solopreneurs. I offer flexible retainer packages for ongoing technology leadership and strategic guidance, which includes dedicated time for infrastructure management, security monitoring, and strategic consulting. For specific projects like web migrations, API integrations, or automation implementations, I provide fixed-price quotes after an initial assessment. This approach ensures you get enterprise-level expertise at small business-friendly pricing.
                 </p>
             </div>
 
             <!-- FAQ 3 -->
-            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
-                <h3 class="text-xl font-semibold text-theme-primary mb-3">What technologies and platforms do you specialize in?</h3>
-                <p class="text-theme-secondary">
+            <div class="resume-faq-item pb-6">
+                <h3 class="text-xl font-semibold resume-faq-heading mb-3">What technologies and platforms do you specialize in?</h3>
+                <p class="resume-text-secondary">
                     I specialize in practical, business-focused technologies that deliver ROI. My core expertise includes WordPress and WooCommerce optimization, PHP and JavaScript development, RESTful API integration, cloud platforms (AWS, Azure, DigitalOcean), automation tools (Zapier, Make.com, Airtable), MySQL database design, and AI implementation (ChatGPT API, Claude API). I also work extensively with modern frameworks like Tailwind CSS and focus on no-code/low-code solutions that empower your team to make updates without always needing a developer.
                 </p>
             </div>
 
             <!-- FAQ 4 -->
-            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
-                <h3 class="text-xl font-semibold text-theme-primary mb-3">Do you work with clients globally, or are you limited to specific regions?</h3>
-                <p class="text-theme-secondary">
+            <div class="resume-faq-item pb-6">
+                <h3 class="text-xl font-semibold resume-faq-heading mb-3">Do you work with clients globally, or are you limited to specific regions?</h3>
+                <p class="resume-text-secondary">
                     I work with clients all over the world. All of my services are delivered remotely, which means you get the same high-quality technology leadership regardless of your location or timezone. I've successfully managed infrastructure, implemented automation, and provided strategic technology guidance for businesses across multiple continents, all while maintaining comprehensive monitoring and support for critical systems. Distance is no barrier to delivering exceptional results.
                 </p>
             </div>
 
             <!-- FAQ 5 -->
             <div class="pb-6">
-                <h3 class="text-xl font-semibold text-theme-primary mb-3">How quickly can you help if my website goes down or I have a technology emergency?</h3>
-                <p class="text-theme-secondary">
+                <h3 class="text-xl font-semibold resume-faq-heading mb-3">How quickly can you help if my website goes down or I have a technology emergency?</h3>
+                <p class="resume-text-secondary">
                     For retainer clients, I provide comprehensive monitoring of critical systems with automated alerts, which means I'm often aware of issues before you are. Response times vary by service level, with priority support clients receiving rapid acknowledgment and resolution, while standard retainer clients receive timely response during business hours. I've maintained excellent service levels and reliability records. All clients also get access to my automated backup systems, ensuring we can restore your site quickly in worst-case scenarios.
                 </p>
             </div>

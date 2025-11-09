@@ -1,0 +1,99 @@
+/* Resume Page - Light Mode Optimization */
+
+/* Skill Tags - Better contrast in light mode */
+.resume-skill-tag {
+    background-color: #e5e7eb; /* Darker gray for light mode */
+    color: #1f2937; /* Darker text for better contrast */
+    border: 1px solid #d1d5db;
+}
+
+[data-theme="dark"] .resume-skill-tag {
+    background-color: #374151;
+    color: #e5e7eb;
+    border: 1px solid #4b5563;
+}
+
+/* Competency Cards - Enhanced shadows and borders for light mode */
+.resume-competency-card {
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .resume-competency-card {
+    border: 1px solid #374151;
+    box-shadow: none;
+}
+
+/* FAQ Section - Better borders and spacing */
+.resume-faq-item {
+    border-bottom: 1px solid #d1d5db;
+}
+
+[data-theme="dark"] .resume-faq-item {
+    border-bottom: 1px solid #4b5563;
+}
+
+/* FAQ Headings - Enhanced contrast */
+.resume-faq-heading {
+    color: #111827;
+}
+
+[data-theme="dark"] .resume-faq-heading {
+    color: #f9fafb;
+}
+
+/* Section Text - Better readability */
+.resume-text-secondary {
+    color: #374151; /* Darker than default for better contrast */
+}
+
+[data-theme="dark"] .resume-text-secondary {
+    color: #d1d5db;
+}
+
+/* Metrics Cards - Better definition in light mode */
+.resume-metric-card {
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .resume-metric-card {
+    border: none;
+}
+
+/* Experience Section Icons - Better visibility */
+.resume-icon-primary {
+    color: #059669; /* Stronger green for light mode */
+}
+
+[data-theme="dark"] .resume-icon-primary {
+    color: #34d399;
+}
+
+.resume-icon-secondary {
+    color: #2563eb; /* Stronger blue for light mode */
+}
+
+[data-theme="dark"] .resume-icon-secondary {
+    color: #60a5fa;
+}
+
+/* Section Headers - Enhanced hierarchy */
+.resume-section-title {
+    color: #111827;
+    font-weight: 700;
+}
+
+[data-theme="dark"] .resume-section-title {
+    color: #f9fafb;
+}
+
+/* Subsection Headers */
+.resume-subsection-title {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .resume-subsection-title {
+    color: #e5e7eb;
+}

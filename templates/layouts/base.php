@@ -79,6 +79,8 @@
         $css_file = 'team-sections.css';
     } elseif (strpos($request_uri, '/contact') !== false) {
         $css_file = 'contact-sections.css';
+    } elseif (strpos($request_uri, '/resume') !== false) {
+        $css_file = 'resume-sections.css';
     } elseif (strpos($request_uri, '/home') !== false || $request_uri === '' || $request_uri === '/' || $request_uri === '/home') {
         $css_file = 'home-sections.css';
     }
