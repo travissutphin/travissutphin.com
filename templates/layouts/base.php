@@ -159,8 +159,8 @@
 
                 // Add animate-on-scroll class to elements we want to animate
                 document.querySelectorAll('section').forEach((el, index) => {
-                    // Skip the first hero section
-                    if (index > 0) {
+                    // Skip the first hero section and blog content sections
+                    if (index > 0 && !el.classList.contains('blog-content-section')) {
                         el.classList.add('animate-on-scroll');
                     }
                 });
