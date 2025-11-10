@@ -1,0 +1,32 @@
+{
+  "templates": [
+    {
+      "id": "landscaping-natures-canvas",
+      "name": "Nature's Canvas - Landscaping",
+      "framework": "Bootstrap 5",
+      "category": "Business Website",
+      "description": "Free landscaping website template with professional design featuring hero section, service showcase, portfolio gallery, and contact form. Warm earth-tone color palette with responsive Bootstrap 5 design. Perfect for landscaping companies, lawn care services, and outdoor design businesses.",
+      "preview_url": "/templates-free/bootstrap/landscaping-natures-canvas/index.html",
+      "download_url": "/templates-free/bootstrap/landscaping-natures-canvas/landscaping-natures-canvas.zip",
+      "preview_image": "/templates-free/bootstrap/landscaping-natures-canvas/preview.png",
+      "tech_stack": ["Bootstrap 5.3", "Bootstrap Icons", "Responsive", "Mobile-First"],
+      "features": ["Hero Section", "Service Cards", "Portfolio Gallery", "Contact Form", "Custom Color Scheme"],
+      "file_size": "13 KB",
+      "last_updated": "2025-11-09"
+    },
+    {
+      "id": "surf-shop",
+      "name": "Wave Riders - Surf Shop",
+      "framework": "Tailwind CSS",
+      "category": "E-commerce / Retail",
+      "description": "Free surf shop ecommerce template with vibrant ocean-inspired design, product showcase, and surf lesson booking. Built with Tailwind CSS featuring custom gradients and smooth animations. Perfect for surf shops, beach gear retailers, and water sports businesses.",
+      "preview_url": "/templates-free/tailwind/surf-shop/index.html",
+      "download_url": "/templates-free/tailwind/surf-shop/surf-shop.zip",
+      "preview_image": "/templates-free/tailwind/surf-shop/preview.png",
+      "tech_stack": ["Tailwind CSS", "Responsive", "Mobile-First", "Custom Animations"],
+      "features": ["Gradient Design", "Product Grid", "Lesson Booking", "Testimonials", "Custom Color Palette"],
+      "file_size": "9.4 KB",
+      "last_updated": "2025-11-09"
+    }
+  ]
+}

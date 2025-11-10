@@ -3,14 +3,157 @@
     <div class="max-w-7xl mx-auto">
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                Projects That Ship, Not Drift
+                Free HTML Templates & Portfolio Projects
             </h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                Real apps we've launched. Real problems we've solved. Real businesses we've transformed.
+                Production-ready Bootstrap & Tailwind templates (free forever) + real client work that shipped and scaled.
             </p>
         </div>
     </div>
 </section>
+
+<!-- Free HTML Templates Section -->
+<section id="free-templates" class="free-templates-section py-16 px-4 bg-theme-secondary">
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-theme-primary">Free HTML Templates</h2>
+            <p class="text-xl max-w-3xl mx-auto text-theme-secondary mb-4">
+                Production-ready templates built with Bootstrap & Tailwind. Download, customize, launch. No strings attached.
+            </p>
+            <p class="text-sm max-w-2xl mx-auto text-theme-tertiary">
+                Why free? I built these for client projects. You get production-ready code. I get to showcase my work. Win-win.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <?php
+            // Load free templates from JSON
+            $templates_json = file_get_contents(__DIR__ . '/../../content/data/free-templates.json');
+            $templates_data = json_decode($templates_json, true);
+            $free_templates = $templates_data['templates'] ?? [];
+
+            foreach ($free_templates as $template): ?>
+                <div class="template-card bg-theme-card border border-theme-primary rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                    <!-- Template Preview Image -->
+                    <div class="aspect-video bg-theme-tertiary overflow-hidden">
+                        <?php if (!empty($template['preview_image'])): ?>
+                            <a href="<?php echo BASE_PATH . e($template['preview_url']); ?>" target="_blank" rel="noopener noreferrer">
+                                <img src="<?php echo BASE_PATH . e($template['preview_image']); ?>"
+                                     alt="<?php echo e($template['name']); ?> Preview"
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                     loading="lazy">
+                            </a>
+                        <?php else: ?>
+                            <div class="w-full h-full flex items-center justify-center">
+                                <i data-lucide="file-code" class="w-16 h-16 text-theme-tertiary"></i>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
+                    <!-- Template Info -->
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark-green mb-1">
+                                    <?php echo e($template['name']); ?>
+                                </h3>
+                                <div class="flex gap-2 items-center">
+                                    <span class="px-2 py-1 bg-primary-blue bg-opacity-10 text-primary-blue text-xs font-semibold rounded">
+                                        <?php echo e($template['framework']); ?>
+                                    </span>
+                                    <span class="text-xs text-theme-tertiary">
+                                        <?php echo e($template['file_size']); ?>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-theme-primary mb-4 text-sm">
+                            <?php echo e($template['description']); ?>
+                        </p>
+
+                        <!-- Features/Tech Stack -->
+                        <?php if (!empty($template['tech_stack'])): ?>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <?php foreach ($template['tech_stack'] as $tech): ?>
+                                <span class="tech-tag px-2 py-1 text-xs rounded bg-theme-tertiary text-theme-primary">
+                                    <?php echo e($tech); ?>
+                                </span>
+                            <?php endforeach; ?>
+                        </div>
+                        <?php endif; ?>
+
+                        <!-- Action Buttons -->
+                        <div class="flex gap-3">
+                            <a href="<?php echo BASE_PATH . e($template['preview_url']); ?>"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="flex-1 inline-flex items-center justify-center gap-2 bg-primary-blue text-white hover:bg-opacity-90 px-4 py-2 rounded-lg font-semibold text-sm transition-all">
+                                <i data-lucide="eye" class="w-4 h-4"></i>
+                                Preview
+                            </a>
+                            <a href="<?php echo BASE_PATH; ?>/download-template.php?id=<?php echo e($template['id']); ?>"
+                               class="flex-1 inline-flex items-center justify-center gap-2 bg-primary-green text-black hover:bg-opacity-90 px-4 py-2 rounded-lg font-semibold text-sm transition-all">
+                                <i data-lucide="download" class="w-4 h-4"></i>
+                                Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <?php if (empty($free_templates)): ?>
+        <div class="text-center py-12">
+            <p class="text-theme-secondary">New templates coming soon! Check back regularly for updates.</p>
+        </div>
+        <?php endif; ?>
+    </div>
+</section>
+
+<!-- Schema.org Structured Data for Free Templates -->
+<?php if (!empty($free_templates)): ?>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Free HTML Templates",
+    "description": "Production-ready HTML templates for developers and businesses",
+    "itemListElement": [
+        <?php
+        $template_schemas = [];
+        foreach ($free_templates as $index => $template) {
+            $template_schemas[] = json_encode([
+                "@type" => "ListItem",
+                "position" => $index + 1,
+                "item" => [
+                    "@type" => "SoftwareSourceCode",
+                    "name" => $template['name'],
+                    "description" => $template['description'],
+                    "programmingLanguage" => "HTML",
+                    "runtimePlatform" => $template['framework'],
+                    "codeRepository" => SITE_URL . $template['download_url'],
+                    "author" => [
+                        "@type" => "Person",
+                        "name" => "Travis Sutphin",
+                        "url" => SITE_URL
+                    ],
+                    "dateModified" => $template['last_updated'],
+                    "offers" => [
+                        "@type" => "Offer",
+                        "price" => "0",
+                        "priceCurrency" => "USD",
+                        "availability" => "https://schema.org/InStock"
+                    ]
+                ]
+            ], JSON_UNESCAPED_SLASHES);
+        }
+        echo implode(",\n        ", $template_schemas);
+        ?>
+    ]
+}
+</script>
+<?php endif; ?>
 
 <!-- Featured Projects -->
 <section class="featured-projects-section py-16 px-4">
