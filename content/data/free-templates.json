@@ -27,6 +27,20 @@
       "features": ["Gradient Design", "Product Grid", "Lesson Booking", "Testimonials", "Custom Color Palette"],
       "file_size": "9.4 KB",
       "last_updated": "2025-11-09"
+    },
+    {
+      "id": "dog-rescue",
+      "name": "Paws & Hearts - Dog Rescue",
+      "framework": "Tailwind CSS",
+      "category": "Non-Profit / Animal Welfare",
+      "description": "Free dog rescue website template with heartwarming design featuring adoptable pet galleries, adoption process timeline, and success stories. Built with Tailwind CSS using warm earth-tone colors and StoryBrand messaging framework. Perfect for animal shelters, rescue organizations, and pet adoption centers looking to connect dogs with loving families.",
+      "preview_url": "/templates-free/tailwind/dog-rescue/index.html",
+      "download_url": "/templates-free/tailwind/dog-rescue/dog-rescue.zip",
+      "preview_image": "/templates-free/tailwind/dog-rescue/preview.png",
+      "tech_stack": ["Tailwind CSS", "Lucide Icons", "Responsive", "Mobile-First"],
+      "features": ["Adoptable Dogs Gallery", "Adoption Process Timeline", "Success Stories", "Contact Form", "StoryBrand Framework"],
+      "file_size": "8 KB",
+      "last_updated": "2025-11-11"
     }
   ]
 }

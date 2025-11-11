@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find your perfect companion. Rescue a dog and change two lives forever. Browse adoptable dogs and start your journey to unconditional love today.">
+    <title>Paws & Hearts Rescue - Find Your Perfect Companion</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#f3e9dc',
+                        copper: '#c08552',
+                        bark: '#5e3023',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles for pixel-perfect design */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(94, 48, 35, 0.95) 0%, rgba(94, 48, 35, 0.85) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f3e9dc" width="1200" height="800"/><g fill-opacity="0.1"><circle fill="%23c08552" cx="200" cy="200" r="180"/><circle fill="%23c08552" cx="800" cy="400" r="220"/><circle fill="%235e3023" cx="1000" cy="150" r="150"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(94, 48, 35, 0.15);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #c08552 0%, #a87245 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(192, 133, 82, 0.4);
+        }
+        
+        .section-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(192, 133, 82, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(94, 48, 35, 0.03) 0%, transparent 50%);
+        }
+        
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        @media (max-width: 640px) {
+            .hero-gradient {
+                background-size: cover;
+            }
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom checkbox styling */
+        .custom-checkbox:checked {
+            background-color: #c08552;
+            border-color: #c08552;
+        }
+        
+        /* Loading animation for images */
+        .dog-image {
+            background: linear-gradient(90deg, #f3e9dc 25%, #e8dccf 50%, #f3e9dc 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="font-sans text-bark bg-cream antialiased">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-md border-b border-copper/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-copper rounded-full flex items-center justify-center">
+                        <i data-lucide="heart" class="w-5 h-5 sm:w-6 sm:h-6 text-cream"></i>
+                    </div>
+                    <span class="text-lg sm:text-xl font-display font-bold text-bark">Paws & Hearts</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#dogs" class="text-bark/80 hover:text-copper transition-colors font-medium">Available Dogs</a>
+                    <a href="#process" class="text-bark/80 hover:text-copper transition-colors font-medium">How It Works</a>
+                    <a href="#stories" class="text-bark/80 hover:text-copper transition-colors font-medium">Success Stories</a>
+                    <a href="#adopt" class="btn-primary text-white px-6 py-2.5 rounded-full font-semibold">Adopt Now</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 text-bark hover:text-copper transition-colors" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-cream border-t border-copper/20" id="mobile-menu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#dogs" class="block text-bark/80 hover:text-copper transition-colors font-medium py-2">Available Dogs</a>
+                <a href="#process" class="block text-bark/80 hover:text-copper transition-colors font-medium py-2">How It Works</a>
+                <a href="#stories" class="block text-bark/80 hover:text-copper transition-colors font-medium py-2">Success Stories</a>
+                <a href="#adopt" class="block btn-primary text-white px-6 py-3 rounded-full font-semibold text-center">Adopt Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - StoryBrand: Character & Problem -->
+    <section class="hero-gradient pt-24 sm:pt-32 pb-16 sm:pb-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <!-- Hero Content -->
+                <div class="text-cream space-y-6 sm:space-y-8">
+                    <div class="inline-flex items-center space-x-2 bg-copper/30 backdrop-blur-sm px-4 py-2 rounded-full">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                        <span class="text-sm font-medium">Over 500 Happy Adoptions</span>
+                    </div>
+                    
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                        Your Perfect Companion is Waiting for You
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-cream/90 leading-relaxed max-w-xl">
+                        Looking for unconditional love? Rescue a dog and discover a friendship that will change both of your lives forever.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#dogs" class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center justify-center space-x-2 group">
+                            <span>Meet Your Match</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#process" class="bg-cream/20 backdrop-blur-sm text-cream px-8 py-4 rounded-full font-semibold text-lg hover:bg-cream/30 transition-all inline-flex items-center justify-center space-x-2">
+                            <i data-lucide="play-circle" class="w-5 h-5"></i>
+                            <span>How It Works</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Social Proof -->
+                    <div class="flex items-center space-x-8 pt-8 border-t border-cream/20">
+                        <div>
+                            <div class="text-3xl font-bold stat-number">500+</div>
+                            <div class="text-cream/80 text-sm">Dogs Adopted</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold stat-number">98%</div>
+                            <div class="text-cream/80 text-sm">Happy Families</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold stat-number">4.9★</div>
+                            <div class="text-cream/80 text-sm">Rating</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="relative lg:h-[600px] h-[400px] hidden lg:block">
+                    <div class="absolute inset-0 bg-copper/20 rounded-3xl overflow-hidden backdrop-blur-sm border-4 border-cream/30 shadow-2xl">
+                        <div class="dog-image w-full h-full flex items-center justify-center">
+                            <i data-lucide="dog" class="w-32 h-32 text-cream/50"></i>
+                        </div>
+                    </div>
+                    <!-- Floating Cards -->
+                    <div class="absolute -bottom-6 -left-6 bg-cream p-4 rounded-2xl shadow-xl">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-copper/20 rounded-full flex items-center justify-center">
+                                <i data-lucide="heart" class="w-6 h-6 text-copper"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-bark">Max</div>
+                                <div class="text-sm text-bark/60">Just adopted! 🎉</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Stakes Section -->
+    <section class="py-16 sm:py-24 px-4 bg-white section-pattern">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-bark mb-6">
+                    Don't Settle for Loneliness
+                </h2>
+                <p class="text-lg sm:text-xl text-bark/70 leading-relaxed">
+                    Life is better with a loyal companion. Every day without a furry friend is a day without unconditional love, joyful moments, and a reason to smile.
+                </p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Problem Card 1 -->
+                <div class="bg-cream rounded-2xl p-6 sm:p-8 card-hover border border-copper/20">
+                    <div class="w-14 h-14 bg-copper/20 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="home" class="w-7 h-7 text-copper"></i>
+                    </div>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold text-bark mb-3">Missing Companionship</h3>
+                    <p class="text-bark/70 leading-relaxed">Your home feels empty. You deserve the warmth and joy that only a loyal dog can bring to your life.</p>
+                </div>
+                
+                <!-- Problem Card 2 -->
+                <div class="bg-cream rounded-2xl p-6 sm:p-8 card-hover border border-copper/20">
+                    <div class="w-14 h-14 bg-copper/20 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="heart-crack" class="w-7 h-7 text-copper"></i>
+                    </div>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold text-bark mb-3">Dogs Need You</h3>
+                    <p class="text-bark/70 leading-relaxed">Thousands of amazing dogs are waiting in shelters. They need loving homes, and you can be their hero.</p>
+                </div>
+                
+                <!-- Problem Card 3 -->
+                <div class="bg-cream rounded-2xl p-6 sm:p-8 card-hover border border-copper/20">
+                    <div class="w-14 h-14 bg-copper/20 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="shield-alert" class="w-7 h-7 text-copper"></i>
+                    </div>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold text-bark mb-3">Overwhelming Process</h3>
+                    <p class="text-bark/70 leading-relaxed">Adoption can seem complicated. We make it simple, safe, and stress-free so you can focus on love.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Plan Section - StoryBrand: The Guide's Plan -->
+    <section id="process" class="py-16 sm:py-24 px-4 bg-bark text-cream">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <div class="inline-flex items-center space-x-2 bg-copper/30 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                    <i data-lucide="compass" class="w-4 h-4"></i>
+                    <span class="text-sm font-medium">Simple 3-Step Process</span>
+                </div>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                    Your Journey to Joy Starts Here
+                </h2>
+                <p class="text-lg sm:text-xl text-cream/80 leading-relaxed">
+                    We've helped hundreds of families find their perfect match. Here's how easy it is to change a life.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 sm:gap-12">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="bg-cream/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-cream/20 h-full">
+                        <div class="w-16 h-16 bg-copper rounded-2xl flex items-center justify-center mb-6 text-2xl font-bold font-display">1</div>
+                        <h3 class="font-display text-2xl sm:text-3xl font-bold mb-4">Browse & Fall in Love</h3>
+                        <p class="text-cream/80 leading-relaxed mb-6">
+                            Explore our available dogs with detailed profiles, photos, and personality insights. Find the one that makes your heart skip a beat.
+                        </p>
+                        <div class="flex items-center space-x-2 text-copper font-semibold">
+                            <span>View Available Dogs</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <!-- Connector Line -->
+                    <div class="hidden lg:block absolute top-1/2 -right-6 w-12 h-0.5 bg-cream/30"></div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="bg-cream/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-cream/20 h-full">
+                        <div class="w-16 h-16 bg-copper rounded-2xl flex items-center justify-center mb-6 text-2xl font-bold font-display">2</div>
+                        <h3 class="font-display text-2xl sm:text-3xl font-bold mb-4">Meet Your Match</h3>
+                        <p class="text-cream/80 leading-relaxed mb-6">
+                            Schedule a meet-and-greet at our facility. Spend quality time getting to know your potential new best friend in a comfortable setting.
+                        </p>
+                        <div class="flex items-center space-x-2 text-copper font-semibold">
+                            <span>Book a Visit</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <!-- Connector Line -->
+                    <div class="hidden lg:block absolute top-1/2 -right-6 w-12 h-0.5 bg-cream/30"></div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="bg-cream/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-cream/20 h-full">
+                        <div class="w-16 h-16 bg-copper rounded-2xl flex items-center justify-center mb-6 text-2xl font-bold font-display">3</div>
+                        <h3 class="font-display text-2xl sm:text-3xl font-bold mb-4">Bring Them Home</h3>
+                        <p class="text-cream/80 leading-relaxed mb-6">
+                            Complete our simple adoption application. We'll help with all paperwork, vaccinations, and provide ongoing support for a smooth transition.
+                        </p>
+                        <div class="flex items-center space-x-2 text-copper font-semibold">
+                            <span>Start Application</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="mt-12 sm:mt-16 pt-12 border-t border-cream/20">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+                    <div class="text-center">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-copper mx-auto mb-3"></i>
+                        <div class="font-semibold">Fully Vetted</div>
+                        <div class="text-sm text-cream/70">Health Guaranteed</div>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="heart-handshake" class="w-10 h-10 text-copper mx-auto mb-3"></i>
+                        <div class="font-semibold">Lifetime Support</div>
+                        <div class="text-sm text-cream/70">We're Always Here</div>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="home" class="w-10 h-10 text-copper mx-auto mb-3"></i>
+                        <div class="font-semibold">Home Check</div>
+                        <div class="text-sm text-cream/70">Perfect Match</div>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="user-check" class="w-10 h-10 text-copper mx-auto mb-3"></i>
+                        <div class="font-semibold">Expert Guidance</div>
+                        <div class="text-sm text-cream/70">Every Step</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Dogs Section - The Call to Action -->
+    <section id="dogs" class="py-16 sm:py-24 px-4 bg-cream">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-bark mb-6">
+                    Meet Your New Best Friend
+                </h2>
+                <p class="text-lg sm:text-xl text-bark/70 leading-relaxed">
+                    Each dog has a unique personality and story. Browse our available companions and find the one that speaks to your heart.
+                </p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Dog Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-copper/10">
+                    <div class="relative h-64 dog-image bg-copper/10">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i data-lucide="dog" class="w-20 h-20 text-copper/30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-copper text-cream px-3 py-1 rounded-full text-sm font-semibold">
+                            Available
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-display text-2xl font-bold text-bark mb-1">Luna</h3>
+                                <p class="text-bark/60">Golden Retriever Mix • 2 years</p>
+                            </div>
+                            <div class="w-10 h-10 bg-copper/10 rounded-full flex items-center justify-center">
+                                <i data-lucide="heart" class="w-5 h-5 text-copper"></i>
+                            </div>
+                        </div>
+                        <p class="text-bark/70 mb-4 leading-relaxed">
+                            Gentle, loving, and perfect with kids. Luna is looking for an active family who loves outdoor adventures.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-bark">Good with Kids</span>
+                            <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-bark">House Trained</span>
+                            <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-bark">Active</span>
+                        </div>
+                        <a href="#adopt" class="btn-primary text-white px-6 py-3 rounded-full font-semibold w-full inline-flex items-center justify-center space-x-2 group">
+                            <span>Meet Luna</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Dog Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-copper/10">
+                    <div class="relative h-64 dog-image bg-copper/10">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i data-lucide="dog" class="w-20 h-20 text-copper/30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-copper text-cream px-3 py-1 rounded-full text-sm font-semibold">
+                            Available
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-display text-2xl font-bold text-bark mb-1">Charlie</h3>
+                                <p class="text-bark/60">Labrador • 4 years</p>
+                            </div>
+                            <div class="w-10 h-10 bg-copper/10 rounded-full flex items-center justify-center">
+                                <i data-lucide="heart" class="w-5 h-5 text-copper"></i>
+                            </div>
+                        </div>
+                        <p class="text-bark/70 mb-4 leading-relaxed">
+                            Calm, loyal companion who loves cuddles. Charlie is ideal for someone looking for a relaxed, affectionate friend.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-bark">Calm</span>
+                            <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-bark">Trained</span>
+                            <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-bark">Senior Friendly</span>
+                        </div>
+                        <a href="#adopt" class="btn-primary text-white px-6 py-3 rounded-full font-semibold w-full inline-flex items-center justify-center space-x-2 group">
+                            <span>Meet Charlie</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Dog Card 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-copper/10">
+                    <div class="relative h-64 dog-image bg-copper/10">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i data-lucide="dog" class="w-20 h-20 text-copper/30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-copper text-cream px-3 py-1 rounded-full text-sm font-semibold">
+                            Available
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-display text-2xl font-bold text-bark mb-1">Bella</h3>
+                                <p class="text-bark/60">Beagle Mix • 3 years</p>
+                            </div>
+                            <div class="w-10 h-10 bg-copper/10 rounded-full flex items-center justify-center">
+                                <i data-lucide="heart" class="w-5 h-5 text-copper"></i>
+                            </div>
+                        </div>
+                        <p class="text-bark/70 mb-4 leading-relaxed">
+                            Playful and energetic! Bella loves playtime and would thrive in a home with a backyard and lots of toys.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-bark">Playful</span>
+                            <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-bark">Energetic</span>
+                            <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-bark">Smart</span>
+                        </div>
+                        <a href="#adopt" class="btn-primary text-white px-6 py-3 rounded-full font-semibold w-full inline-flex items-center justify-center space-x-2 group">
+                            <span>Meet Bella</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#adopt" class="inline-flex items-center space-x-2 text-copper font-semibold text-lg hover:underline">
+                    <span>View All Available Dogs</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section - StoryBrand: Success -->
+    <section id="stories" class="py-16 sm:py-24 px-4 bg-white section-pattern">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <div class="inline-flex items-center space-x-2 bg-copper/10 px-4 py-2 rounded-full mb-6">
+                    <i data-lucide="star" class="w-4 h-4 text-copper"></i>
+                    <span class="text-sm font-medium text-bark">Real Stories, Real Love</span>
+                </div>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-bark mb-6">
+                    Lives Changed Forever
+                </h2>
+                <p class="text-lg sm:text-xl text-bark/70 leading-relaxed">
+                    Don't just take our word for it. Hear from families who found their perfect match through Paws & Hearts Rescue.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-cream rounded-2xl p-6 sm:p-8 border border-copper/20 card-hover">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                    </div>
+                    <p class="text-bark/80 leading-relaxed mb-6 italic">
+                        "Adopting Max was the best decision we ever made. The team at Paws & Hearts made the entire process so easy, and Max has brought endless joy to our family."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-copper/20 rounded-full flex items-center justify-center">
+                            <span class="font-bold text-copper">SM</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-bark">Sarah Mitchell</div>
+                            <div class="text-sm text-bark/60">Adopted Max in 2024</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-cream rounded-2xl p-6 sm:p-8 border border-copper/20 card-hover">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                    </div>
+                    <p class="text-bark/80 leading-relaxed mb-6 italic">
+                        "I was nervous about the adoption process, but the staff was incredibly supportive. Rocky has completely changed my life - I can't imagine my days without him!"
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-copper/20 rounded-full flex items-center justify-center">
+                            <span class="font-bold text-copper">JD</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-bark">James Davis</div>
+                            <div class="text-sm text-bark/60">Adopted Rocky in 2024</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-cream rounded-2xl p-6 sm:p-8 border border-copper/20 card-hover">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-copper fill-copper"></i>
+                    </div>
+                    <p class="text-bark/80 leading-relaxed mb-6 italic">
+                        "The perfect match! Daisy is everything we hoped for and more. Thank you Paws & Hearts for bringing so much love into our home. Highly recommend!"
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-copper/20 rounded-full flex items-center justify-center">
+                            <span class="font-bold text-copper">EK</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-bark">Emily Kim</div>
+                            <div class="text-sm text-bark/60">Adopted Daisy in 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section - Strong Call to Action -->
+    <section id="adopt" class="py-16 sm:py-24 px-4 bg-bark text-cream">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 bg-copper/30 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                <i data-lucide="heart" class="w-4 h-4"></i>
+                <span class="text-sm font-medium">Your Journey Awaits</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                Ready to Change a Life?
+            </h2>
+            <p class="text-lg sm:text-xl text-cream/80 leading-relaxed mb-10">
+                Your perfect companion is waiting. Start your adoption journey today and experience the unconditional love that only a rescue dog can give.
+            </p>
+            
+            <!-- Application Form -->
+            <div class="bg-cream/10 backdrop-blur-sm rounded-2xl p-6 sm:p-10 border border-cream/20 text-left max-w-2xl mx-auto">
+                <h3 class="font-display text-2xl font-bold mb-6 text-center">Start Your Application</h3>
+                <form class="space-y-5">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">First Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-xl bg-cream/20 border border-cream/30 text-cream placeholder-cream/50 focus:outline-none focus:ring-2 focus:ring-copper" placeholder="John">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Last Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-xl bg-cream/20 border border-cream/30 text-cream placeholder-cream/50 focus:outline-none focus:ring-2 focus:ring-copper" placeholder="Smith">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-3 rounded-xl bg-cream/20 border border-cream/30 text-cream placeholder-cream/50 focus:outline-none focus:ring-2 focus:ring-copper" placeholder="john@example.com">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Phone</label>
+                        <input type="tel" class="w-full px-4 py-3 rounded-xl bg-cream/20 border border-cream/30 text-cream placeholder-cream/50 focus:outline-none focus:ring-2 focus:ring-copper" placeholder="(555) 123-4567">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Which dog are you interested in?</label>
+                        <select class="w-full px-4 py-3 rounded-xl bg-cream/20 border border-cream/30 text-cream focus:outline-none focus:ring-2 focus:ring-copper">
+                            <option>Luna - Golden Retriever Mix</option>
+                            <option>Charlie - Labrador</option>
+                            <option>Bella - Beagle Mix</option>
+                            <option>Not sure yet - just browsing</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Tell us about your home and family</label>
+                        <textarea rows="4" class="w-full px-4 py-3 rounded-xl bg-cream/20 border border-cream/30 text-cream placeholder-cream/50 focus:outline-none focus:ring-2 focus:ring-copper" placeholder="Tell us about your living situation, family members, other pets, etc."></textarea>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <input type="checkbox" class="custom-checkbox w-5 h-5 rounded border-cream/30 text-copper focus:ring-copper focus:ring-offset-0 mt-1">
+                        <label class="text-sm text-cream/80">I agree to a home visit and understand that all information will be verified for the safety of our animals.</label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg w-full inline-flex items-center justify-center space-x-2 group">
+                        <span>Submit Application</span>
+                        <i data-lucide="send" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </form>
+                
+                <p class="text-center text-sm text-cream/60 mt-6">
+                    <i data-lucide="shield-check" class="w-4 h-4 inline mr-1"></i>
+                    Your information is secure and will only be used to process your adoption application.
+                </p>
+            </div>
+            
+            <div class="mt-12 pt-12 border-t border-cream/20">
+                <p class="text-cream/80 mb-6">Have questions? We're here to help!</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:555-123-4567" class="inline-flex items-center space-x-2 bg-cream/20 backdrop-blur-sm text-cream px-6 py-3 rounded-full font-semibold hover:bg-cream/30 transition-all">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        <span>(555) 123-4567</span>
+                    </a>
+                    <a href="mailto:adopt@pawshearts.org" class="inline-flex items-center space-x-2 bg-cream/20 backdrop-blur-sm text-cream px-6 py-3 rounded-full font-semibold hover:bg-cream/30 transition-all">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span>adopt@pawshearts.org</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cream py-12 sm:py-16 px-4 border-t border-copper/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-copper rounded-full flex items-center justify-center">
+                            <i data-lucide="heart" class="w-6 h-6 text-cream"></i>
+                        </div>
+                        <span class="text-xl font-display font-bold text-bark">Paws & Hearts</span>
+                    </div>
+                    <p class="text-bark/70 text-sm leading-relaxed">
+                        Connecting loving families with rescue dogs who need a second chance. Every adoption changes two lives.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-copper/20 rounded-full flex items-center justify-center text-copper hover:bg-copper hover:text-cream transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-copper/20 rounded-full flex items-center justify-center text-copper hover:bg-copper hover:text-cream transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-copper/20 rounded-full flex items-center justify-center text-copper hover:bg-copper hover:text-cream transition-all">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display font-bold text-bark mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-bark/70">
+                        <li><a href="#dogs" class="hover:text-copper transition-colors">Available Dogs</a></li>
+                        <li><a href="#process" class="hover:text-copper transition-colors">Adoption Process</a></li>
+                        <li><a href="#stories" class="hover:text-copper transition-colors">Success Stories</a></li>
+                        <li><a href="#adopt" class="hover:text-copper transition-colors">Apply to Adopt</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h4 class="font-display font-bold text-bark mb-4">Resources</h4>
+                    <ul class="space-y-2 text-bark/70">
+                        <li><a href="#" class="hover:text-copper transition-colors">Dog Care Guide</a></li>
+                        <li><a href="#" class="hover:text-copper transition-colors">Volunteer</a></li>
+                        <li><a href="#" class="hover:text-copper transition-colors">Donate</a></li>
+                        <li><a href="#" class="hover:text-copper transition-colors">Foster Program</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-display font-bold text-bark mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-bark/70">
+                        <li class="flex items-start space-x-2">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-copper mt-0.5"></i>
+                            <span class="text-sm">123 Rescue Lane<br>Dogtown, ST 12345</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="phone" class="w-5 h-5 text-copper"></i>
+                            <span class="text-sm">(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="mail" class="w-5 h-5 text-copper"></i>
+                            <span class="text-sm">adopt@pawshearts.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="pt-8 border-t border-copper/20 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                <p class="text-bark/60 text-sm">© 2024 Paws & Hearts Rescue. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-bark/60">
+                    <a href="#" class="hover:text-copper transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-copper transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-copper transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Add scroll effect to navigation
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
