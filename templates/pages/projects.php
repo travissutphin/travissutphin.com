@@ -54,7 +54,7 @@
                     <div class="p-6">
                         <div class="flex items-start justify-between mb-3">
                             <div>
-                                <h3 class="text-xl font-bold text-dark-green mb-1">
+                                <h3 class="text-xl font-bold text-dark-green">
                                     <?php echo e($template['name']); ?>
                                 </h3>
                                 <div class="flex gap-2 items-center">
