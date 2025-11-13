@@ -119,12 +119,14 @@
                 [
                     'icon' => 'map-pinned',
                     'title' => 'Google Business Profile',
-                    'description' => 'Claim, optimize, and manage your Google Business Profile to boost local search visibility. Get found by customers searching for your services in your area.'
+                    'description' => 'Claim, optimize, and manage your Google Business Profile to boost local search visibility. Get found by customers searching for your services in your area.',
+                    'highlight' => false
                 ],
                 [
                     'icon' => 'rss',
                     'title' => 'Content Creation',
-                    'description' => 'Strategic blog posts, case studies, and technical content that position you as an industry expert. SEO-optimized writing that attracts qualified leads.'
+                    'description' => 'Strategic blog posts, case studies, and technical content that position you as an industry expert. SEO-optimized writing that attracts qualified leads.',
+                    'highlight' => false
                 ],
                 [
                     'icon' => 'code',
@@ -190,140 +192,121 @@
     </div>
 </section>
 
-<!-- Pricing Overview Section -->
+<!-- How It Works Section -->
 <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-theme-primary mb-4">
-                How Pricing Works
+                How It Works
             </h2>
+            <p class="text-xl text-theme-secondary max-w-3xl mx-auto">
+                Simple, transparent process. No surprises, no long-term commitments.
+            </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- Retainer Pricing -->
-            <div class="bg-theme-card rounded-lg shadow-lg p-8">
-                <div class="text-center mb-6">
-                    <div class="inline-block bg-theme-surface text-theme-primary px-4 py-1 rounded-full text-sm font-semibold mb-4">
-                        PAY AS YOU GO
+            <!-- Step 1 -->
+            <div class="relative">
+                <div class="bg-white rounded-lg shadow-lg p-8 h-full">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">1</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-theme-primary mb-2">Retainer</h3>
-                    <p class="text-theme-secondary text-sm">Access when you need help</p>
-                </div>
-                <div class="text-center mb-6">
-                    <div class="text-4xl font-bold text-theme-primary mb-2">
-                        $250<span class="text-lg text-theme-secondary"> /month</span>
+                    <div class="pt-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-primary-green to-primary-blue rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="phone" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-green mb-3">Free Strategy Call</h3>
+                        <p class="text-gray-dark mb-4">
+                            30-minute call where I diagnose your exact problem. No sales pitch—just honest technical assessment.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-dark">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Identify root causes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Discuss potential solutions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Get immediate recommendations</span>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="text-sm text-theme-secondary">then pay per occurrence</p>
                 </div>
-                <ul class="space-y-3 mb-6">
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">5 Business Day Initial Audit Required</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">$150 per hour</span>
-                    </li>
-					<li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Access to support</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Pay hourly only when you need help</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">No long term commitment</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Upgrade to fractional CTO anytime</span>
-                    </li>
-                </ul>
-                <a href="<?php echo BASE_PATH; ?>/contact"
-                   class="block text-center bg-theme-surface text-theme-primary py-3 rounded-lg font-semibold hover:opacity-80 transition-opacity">
-                    Get Started
-                </a>
             </div>
 
-            <!-- Fractional CTO Pricing -->
-            <div class="bg-theme-card rounded-lg shadow-lg p-8 border-2 border-primary-green">
-                <div class="text-center mb-6">
-                    <div class="inline-block bg-gradient-to-r from-primary-green to-primary-blue text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">
-                        ONGOING SUPPORT
+            <!-- Step 2 -->
+            <div class="relative">
+                <div class="bg-white rounded-lg shadow-lg p-8 h-full">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">2</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-theme-primary mb-2">Fractional CTO</h3>
-                    <p class="text-theme-secondary text-sm">All included services</p>
-                </div>
-                <div class="text-center mb-6">
-                    <div class="text-4xl font-bold text-theme-primary mb-2">
-                        Starting at $1,000<span class="text-lg text-theme-secondary">/month</span>
+                    <div class="pt-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-primary-green to-primary-blue rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="file-text" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-green mb-3">Custom Proposal</h3>
+                        <p class="text-gray-dark mb-4">
+                            Transparent pricing tailored to YOUR specific situation. Choose ongoing support or per-project pricing.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-dark">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Clear scope and timeline</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Fixed-price or hourly options</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>No hidden fees or surprises</span>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="text-sm text-theme-secondary">10 hours monthly • Cancel anytime</p>
                 </div>
-                <ul class="space-y-3 mb-6">
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">All included services above</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Monthly strategy calls</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Emergency support included</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Scale hours up or down as needed</span>
-                    </li>
-                </ul>
-                <a href="<?php echo BASE_PATH; ?>/contact"
-                   class="block text-center bg-gradient-to-r from-primary-green to-primary-blue text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">
-                    Schedule Strategy Call
-                </a>
             </div>
 
-            <!-- Per-Project Pricing -->
-            <div class="bg-theme-card rounded-lg shadow-lg p-8">
-                <div class="text-center mb-6">
-                    <div class="inline-block bg-theme-surface text-theme-primary px-4 py-1 rounded-full text-sm font-semibold mb-4">
-                        ONE-TIME PROJECTS
+            <!-- Step 3 -->
+            <div class="relative">
+                <div class="bg-white rounded-lg shadow-lg p-8 h-full">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">3</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-theme-primary mb-2">Per-Project Solutions</h3>
-                    <p class="text-theme-secondary text-sm">Billed based on scope</p>
-                </div>
-                <div class="text-center mb-6">
-                    <div class="text-4xl font-bold text-theme-primary mb-2">
-                        Custom Quote
+                    <div class="pt-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-primary-green to-primary-blue rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="rocket" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-green mb-3">Fast Start</h3>
+                        <p class="text-gray-dark mb-4">
+                            Emergencies start within 24 hours. Most projects begin within 7 days. You stay in control the entire time.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-dark">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Regular progress updates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Cancel anytime (ongoing plans)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-green mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Direct access—no account managers</span>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="text-sm text-theme-secondary">Fixed price or hourly available</p>
                 </div>
-                <ul class="space-y-3 mb-6">
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Clear scope and timeline</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Fixed-price or hourly options</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">No long-term commitment</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check" class="w-5 h-5 text-primary-blue mr-2 mt-0.5 flex-shrink-0"></i>
-                        <span class="text-sm text-theme-secondary">Combine multiple projects for discount</span>
-                    </li>
-                </ul>
-                <a href="<?php echo BASE_PATH; ?>/contact"
-                   class="block text-center bg-theme-surface text-theme-primary py-3 rounded-lg font-semibold hover:opacity-80 transition-opacity">
-                    Request a Quote
-                </a>
             </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="<?php echo BASE_PATH; ?>/contact"
+               class="inline-block bg-gradient-to-r from-primary-green to-primary-blue text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-shadow">
+                Schedule Your Free Assessment Now
+            </a>
         </div>
     </div>
 </section>

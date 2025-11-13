@@ -38,12 +38,12 @@ if (empty($current_page)) $current_page = 'home';
             <span class="text-xs">Blog</span>
         </a>
 
-        <!-- Contact -->
-        <a href="<?php echo BASE_PATH; ?>/contact"
-           class="flex flex-col items-center justify-center py-2 px-3 <?php echo $current_page === 'contact' ? 'text-theme-primary' : 'text-theme-secondary'; ?>">
-            <i data-lucide="mail" class="w-5 h-5 mb-1"></i>
-            <span class="text-xs">Contact</span>
-        </a>
+        <!-- More -->
+        <button id="more-menu-btn"
+                class="flex flex-col items-center justify-center py-2 px-3 text-theme-secondary">
+            <i data-lucide="menu" class="w-5 h-5 mb-1"></i>
+            <span class="text-xs">More</span>
+        </button>
     </div>
 </nav>
 
@@ -106,6 +106,59 @@ if (empty($current_page)) $current_page = 'home';
     </div>
 </div>
 
+<!-- More Menu Popup -->
+<div id="more-popup" class="hidden fixed inset-0 z-40 md:hidden">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50" id="more-overlay"></div>
+
+    <!-- Popup Content -->
+    <div class="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-theme-card rounded-2xl shadow-xl p-6 w-11/12 max-w-sm">
+        <h3 class="text-center font-semibold text-theme-primary mb-4">More Options</h3>
+
+        <div class="space-y-3">
+            <!-- Contact -->
+            <a href="<?php echo BASE_PATH; ?>/contact"
+               class="flex items-center p-4 rounded-lg hover:bg-theme-tertiary transition-colors">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center mr-4">
+                    <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-theme-primary">Contact</div>
+                    <div class="text-xs text-theme-secondary">Get in touch</div>
+                </div>
+            </a>
+
+            <!-- Free Templates -->
+            <a href="<?php echo BASE_PATH; ?>/projects#free-templates"
+               class="flex items-center p-4 rounded-lg hover:bg-theme-tertiary transition-colors">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center mr-4">
+                    <i data-lucide="layout-template" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-theme-primary">Free Templates</div>
+                    <div class="text-xs text-theme-secondary">Download templates</div>
+                </div>
+            </a>
+
+            <!-- Resume -->
+            <a href="<?php echo BASE_PATH; ?>/resume"
+               class="flex items-center p-4 rounded-lg hover:bg-theme-tertiary transition-colors">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center mr-4">
+                    <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-theme-primary">Resume</div>
+                    <div class="text-xs text-theme-secondary">View my experience</div>
+                </div>
+            </a>
+        </div>
+
+        <button id="close-more" class="mt-4 w-full py-2 text-theme-secondary text-sm">
+            Close
+        </button>
+    </div>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const socialBtn = document.getElementById('social-menu-btn');
@@ -133,6 +186,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (closeBtn) {
         closeBtn.addEventListener('click', closeSocial);
+    }
+
+    // More Menu functionality
+    const moreBtn = document.getElementById('more-menu-btn');
+    const morePopup = document.getElementById('more-popup');
+    const moreOverlay = document.getElementById('more-overlay');
+    const closeMoreBtn = document.getElementById('close-more');
+
+    function openMore() {
+        morePopup.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMore() {
+        morePopup.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    if (moreBtn) {
+        moreBtn.addEventListener('click', openMore);
+    }
+
+    if (moreOverlay) {
+        moreOverlay.addEventListener('click', closeMore);
+    }
+
+    if (closeMoreBtn) {
+        closeMoreBtn.addEventListener('click', closeMore);
     }
 });
 </script>
