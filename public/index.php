@@ -37,7 +37,8 @@ $routes = [
     'contact' => 'contact.php',
     'resume' => 'resume.php',
     'blog' => 'blog-list.php',
-    'blog-demo' => 'blog-demo.php'
+    'blog-demo' => 'blog-demo.php',
+    'case-studies' => 'case-study-list.php'
 ];
 
 // Check for blog category routes: /blog/category/[category-slug]
@@ -74,6 +75,13 @@ if (preg_match('#^blog/category/([a-z0-9-]+)$#', $route, $matches)) {
 if (strpos($route, 'blog/') === 0) {
     $slug = substr($route, 5); // Remove 'blog/' prefix
     render_blog_post($slug);
+    exit;
+}
+
+// Check if route starts with 'case-studies/' for individual case studies
+if (strpos($route, 'case-studies/') === 0) {
+    $slug = substr($route, 13); // Remove 'case-studies/' prefix
+    render_case_study($slug);
     exit;
 }
 

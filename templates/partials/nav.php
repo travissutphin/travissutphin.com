@@ -24,6 +24,15 @@ if (empty($current_page)) $current_page = 'home';
         </a>
     </li>
     <li>
+        <a href="<?php echo BASE_PATH; ?>/case-studies"
+           class="relative px-2 py-1 text-theme-secondary hover:text-theme-primary transition-all duration-300 <?php echo strpos($current_page, 'case-studies') === 0 ? 'text-theme-primary font-semibold' : ''; ?>">
+            Case Studies
+            <?php if (strpos($current_page, 'case-studies') === 0): ?>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-green to-primary-blue"></span>
+            <?php endif; ?>
+        </a>
+    </li>
+    <li>
         <a href="<?php echo BASE_PATH; ?>/blog"
            class="relative px-2 py-1 text-theme-secondary hover:text-theme-primary transition-all duration-300 <?php echo strpos($current_page, 'blog') === 0 ? 'text-theme-primary font-semibold' : ''; ?>">
             Blog

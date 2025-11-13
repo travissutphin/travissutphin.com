@@ -68,8 +68,14 @@
     if (strpos($request_uri, '/blog/') !== false && strpos($request_uri, '/blog/category/') === false) {
         // Individual blog post
         $css_file = 'blog-post-sections.css';
+    } elseif (strpos($request_uri, '/case-studies/') !== false) {
+        // Individual case study - use blog post styles for content formatting
+        $css_file = 'blog-post-sections.css';
     } elseif (strpos($request_uri, '/blog') !== false || strpos($request_uri, '/blog/category/') !== false) {
         // Blog list page or category
+        $css_file = 'blog-sections.css';
+    } elseif (strpos($request_uri, '/case-studies') !== false) {
+        // Case studies list page
         $css_file = 'blog-sections.css';
     } elseif (strpos($request_uri, '/services') !== false) {
         $css_file = 'services-sections.css';

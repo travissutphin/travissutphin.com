@@ -128,6 +128,18 @@ if (empty($current_page)) $current_page = 'home';
                 </div>
             </a>
 
+            <!-- Case Studies -->
+            <a href="<?php echo BASE_PATH; ?>/case-studies"
+               class="flex items-center p-4 rounded-lg hover:bg-theme-tertiary transition-colors">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center mr-4">
+                    <i data-lucide="bar-chart-3" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-theme-primary">Case Studies</div>
+                    <div class="text-xs text-theme-secondary">Success stories</div>
+                </div>
+            </a>
+
             <!-- Free Templates -->
             <a href="<?php echo BASE_PATH; ?>/projects#free-templates"
                class="flex items-center p-4 rounded-lg hover:bg-theme-tertiary transition-colors">
