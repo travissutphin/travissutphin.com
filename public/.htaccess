@@ -4,6 +4,16 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.travissutphin\.com$ [NC]
 RewriteRule ^(.*)$ https://travissutphin.com/$1 [L,R=301]
 
+# Blog post URL redirects
+RewriteRule ^how-we-do-anything-is-how-we-do-everything$ /blog/2025-06-26-how-we-do-anything-is-how-we-do-everything [L,R=301]
+RewriteRule ^travis-sutphin-resume$ /resume [L,R=301]
+RewriteRule ^learn-by-reading-master-by-doing$ /blog/2025-01-25-learn-by-reading-master-by-doing [L,R=301]
+RewriteRule ^standard-naming-conventions-stop-file-chaos$ /blog/2025-04-22-standard-naming-conventions-stop-file-chaos [L,R=301]
+RewriteRule ^ai-and-tech$ /resume [L,R=301]
+
+# Custom error pages
+ErrorDocument 404 /resume
+
 # Allow direct access to static files (don't route through PHP)
 # This enables Apache's cache headers and compression
 RewriteCond %{REQUEST_FILENAME} -f
