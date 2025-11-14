@@ -27,6 +27,20 @@ if (empty($request_uri) || $request_uri === '/') {
 // Remove leading slash for route matching
 $route = ltrim($request_uri, '/');
 
+// Handle URL redirects (301 permanent redirects for SEO)
+$redirects = [
+    'how-we-do-anything-is-how-we-do-everything' => '/blog/2025-06-26-how-we-do-anything-is-how-we-do-everything',
+    'travis-sutphin-resume' => '/resume',
+    'learn-by-reading-master-by-doing' => '/blog/2025-01-25-learn-by-reading-master-by-doing',
+    'standard-naming-conventions-stop-file-chaos' => '/blog/2025-04-22-standard-naming-conventions-stop-file-chaos',
+    'ai-and-tech' => '/resume',
+];
+
+if (isset($redirects[$route])) {
+    header('Location: ' . SITE_URL . $redirects[$route], true, 301);
+    exit;
+}
+
 // Define available routes
 $routes = [
     'home' => 'home.php',
@@ -64,9 +78,8 @@ if (preg_match('#^blog/category/([a-z0-9-]+)$#', $route, $matches)) {
         ]);
         exit;
     } else {
-        // Invalid category, show 404
-        http_response_code(404);
-        render_page('404.php', ['title' => 'Category Not Found']);
+        // Invalid category - redirect to resume
+        header('Location: ' . SITE_URL . '/resume', true, 301);
         exit;
     }
 }
@@ -101,7 +114,7 @@ if (array_key_exists($route, $routes)) {
     // Render the page
     render_page($template, $page_data);
 } else {
-    // 404 page
-    http_response_code(404);
-    render_page('404.php', ['title' => 'Page Not Found']);
+    // 404 page - redirect to resume
+    header('Location: ' . SITE_URL . '/resume', true, 301);
+    exit;
 }

@@ -322,9 +322,9 @@ function render_blog_post($slug) {
     $files = glob($blog_dir . '*' . $slug . '.md');
 
     if (empty($files)) {
-        http_response_code(404);
-        render_page('404.php', ['title' => 'Post Not Found']);
-        return;
+        // Redirect to resume instead of showing 404
+        header('Location: ' . SITE_URL . '/resume', true, 301);
+        exit;
     }
 
     $file = $files[0];
@@ -589,9 +589,9 @@ function render_case_study($slug) {
     $files = glob($case_study_dir . '*' . $slug . '.md');
 
     if (empty($files)) {
-        http_response_code(404);
-        render_page('404.php', ['title' => 'Case Study Not Found']);
-        return;
+        // Redirect to resume instead of showing 404
+        header('Location: ' . SITE_URL . '/resume', true, 301);
+        exit;
     }
 
     $file = $files[0];
