@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional bookkeeping and accounting services for small businesses. Get organized, stay compliant, and focus on growth.">
+    <meta name="keywords" content="bookkeeping, accounting, small business, tax preparation, financial services, QuickBooks">
+    <meta name="author" content="Ledger & Balance Accounting">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Ledger & Balance - Your Financial Peace of Mind">
+    <meta property="og:description" content="Stop drowning in receipts. Professional bookkeeping that gives you clarity and confidence.">
+    <meta property="og:type" content="website">
+    
+    <title>Ledger & Balance Accounting | Professional Bookkeeping for Small Business</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================== ROOT VARIABLES ==================== */
+        :root {
+            --deep-teal: #335c67;
+            --medium-teal: #4a7885;
+            --light-teal: #7ba3ae;
+            --cream-yellow: #fff3b0;
+            --light-cream: #fffbdb;
+            --warm-orange: #e09f3e;
+            --light-orange: #f4c07e;
+            --off-white: #fafaf8;
+            --soft-white: #ffffff;
+            --text-dark: #1a2e35;
+            --text-medium: #335c67;
+            --text-light: #6b8893;
+            --border-light: #e5ede9;
+            --shadow-sm: 0 2px 8px rgba(51, 92, 103, 0.08);
+            --shadow-md: 0 4px 16px rgba(51, 92, 103, 0.12);
+            --shadow-lg: 0 8px 32px rgba(51, 92, 103, 0.16);
+            --shadow-xl: 0 16px 48px rgba(51, 92, 103, 0.2);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==================== GLOBAL STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background: var(--off-white);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-dark);
+        }
+
+        section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ==================== DECORATIVE ELEMENTS ==================== */
+        .graph-decoration {
+            position: absolute;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        .navbar {
+            padding: 1rem 0;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .navbar.scrolled {
+            padding: 0.7rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--deep-teal);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .brand-icon {
+            color: var(--warm-orange);
+            font-size: 1.8rem;
+        }
+
+        .nav-link {
+            color: var(--text-medium);
+            font-weight: 600;
+            padding: 0.5rem 1.2rem !important;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--warm-orange);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 60%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--deep-teal);
+        }
+
+        .btn-nav {
+            background: var(--warm-orange);
+            color: var(--soft-white);
+            padding: 0.7rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            border: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-nav:hover {
+            background: var(--deep-teal);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ==================== HERO SECTION - CREATIVE DIAGONAL SPLIT ==================== */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-diagonal-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .diagonal-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--deep-teal), var(--medium-teal));
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+        }
+
+        .diagonal-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 243, 176, 0.3), rgba(224, 159, 62, 0.2));
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-left {
+            color: var(--soft-white);
+            padding: 2rem 0;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--warm-orange);
+            color: var(--soft-white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.8rem);
+            font-weight: 800;
+            color: var(--soft-white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            animation: slideInLeft 0.8s ease-out 0.2s both;
+        }
+
+        .hero-title-highlight {
+            color: var(--cream-yellow);
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            line-height: 1.8;
+            animation: slideInLeft 0.8s ease-out 0.4s both;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: slideInLeft 0.8s ease-out 0.6s both;
+        }
+
+        .btn-primary-cta {
+            background: var(--warm-orange);
+            color: var(--soft-white);
+            padding: 1.3rem 3rem;
+            border-radius: 8px;
+            font-weight: 700;
+            border: none;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 24px rgba(224, 159, 62, 0.4);
+            font-size: 1.05rem;
+        }
+
+        .btn-primary-cta:hover {
+            background: var(--cream-yellow);
+            color: var(--text-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(224, 159, 62, 0.5);
+        }
+
+        .btn-secondary-cta {
+            background: transparent;
+            color: var(--soft-white);
+            padding: 1.3rem 3rem;
+            border-radius: 8px;
+            font-weight: 700;
+            border: 2px solid var(--soft-white);
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.05rem;
+        }
+
+        .btn-secondary-cta:hover {
+            background: var(--soft-white);
+            color: var(--deep-teal);
+            transform: translateY(-3px);
+        }
+
+        .trust-indicators {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+            animation: slideInLeft 0.8s ease-out 0.8s both;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .trust-icon {
+            color: var(--cream-yellow);
+            font-size: 1.8rem;
+        }
+
+        .trust-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trust-text strong {
+            color: var(--soft-white);
+            font-size: 0.95rem;
+        }
+
+        .trust-text span {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.85rem;
+        }
+
+        /* Hero Right - Interactive Stats Cards */
+        .hero-right {
+            position: relative;
+        }
+
+        .hero-stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            animation: slideInRight 0.8s ease-out 0.4s both;
+        }
+
+        .stat-card {
+            background: var(--soft-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--deep-teal), var(--warm-orange));
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 20px 60px rgba(51, 92, 103, 0.3);
+            border-color: var(--warm-orange);
+        }
+
+        .stat-card:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .stat-card:nth-child(2) {
+            animation-delay: 0.6s;
+            margin-top: 3rem;
+        }
+
+        .stat-card:nth-child(3) {
+            animation-delay: 0.7s;
+            margin-top: -2rem;
+        }
+
+        .stat-card:nth-child(4) {
+            animation-delay: 0.8s;
+            margin-top: 1rem;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--warm-orange), var(--light-orange));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--soft-white);
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--deep-teal);
+            margin-bottom: 0.5rem;
+            font-family: 'Lora', serif;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .floating-receipt {
+            top: 10%;
+            right: 10%;
+            font-size: 3rem;
+            color: var(--warm-orange);
+            animation-delay: 0s;
+        }
+
+        .floating-chart {
+            bottom: 15%;
+            right: 5%;
+            font-size: 2.5rem;
+            color: var(--deep-teal);
+            animation-delay: 2s;
+        }
+
+        .floating-calculator {
+            top: 30%;
+            left: 5%;
+            font-size: 2rem;
+            color: var(--cream-yellow);
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ==================== PROBLEM SECTION ==================== */
+        .problem-section {
+            padding: 100px 0;
+            background: var(--soft-white);
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--deep-teal);
+            color: var(--soft-white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            max-width: 750px;
+            margin: 0 auto 4rem;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: var(--transition);
+            border: 2px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--warm-orange);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--warm-orange);
+        }
+
+        .problem-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .problem-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--deep-teal), var(--medium-teal));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--soft-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .problem-text {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ==================== GUIDE SECTION ==================== */
+        .guide-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(255, 243, 176, 0.3), rgba(224, 159, 62, 0.1));
+        }
+
+        .empathy-box {
+            background: var(--soft-white);
+            padding: 3rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--warm-orange);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .empathy-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .empathy-author {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .credential-item {
+            background: var(--soft-white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .credential-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .credential-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--warm-orange), var(--light-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--soft-white);
+            margin: 0 auto 1.5rem;
+        }
+
+        .credential-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .credential-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ==================== PLAN SECTION ==================== */
+        .plan-section {
+            padding: 100px 0;
+            background: var(--soft-white);
+        }
+
+        .plan-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .plan-step {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: var(--off-white);
+            border-radius: 12px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .plan-step::after {
+            content: '';
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 1.5rem;
+            background: var(--border-light);
+        }
+
+        .plan-step:last-child::after {
+            display: none;
+        }
+
+        .plan-step:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+            background: var(--soft-white);
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--warm-orange), var(--light-orange));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--soft-white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .step-content h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* ==================== SERVICES SECTION ==================== */
+        .services-section {
+            padding: 100px 0;
+            background: var(--deep-teal);
+            color: var(--soft-white);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .services-header .section-badge {
+            background: var(--warm-orange);
+        }
+
+        .services-header .section-title {
+            color: var(--soft-white);
+        }
+
+        .services-header .section-description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--soft-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--warm-orange);
+            transform: scale(1.05);
+        }
+
+        .pricing-header {
+            background: linear-gradient(135deg, var(--deep-teal), var(--medium-teal));
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: var(--soft-white);
+        }
+
+        .pricing-card.featured .pricing-header {
+            background: linear-gradient(135deg, var(--warm-orange), var(--light-orange));
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--cream-yellow);
+            color: var(--text-dark);
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .pricing-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--soft-white);
+        }
+
+        .pricing-subtitle {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--soft-white);
+        }
+
+        .pricing-period {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .pricing-body {
+            padding: 2.5rem 2rem;
+            background: var(--soft-white);
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            color: var(--text-medium);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features i {
+            color: var(--warm-orange);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .btn-pricing {
+            background: var(--warm-orange);
+            color: var(--soft-white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            border: none;
+            transition: var(--transition);
+            width: 100%;
+            box-shadow: var(--shadow-sm);
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .btn-pricing:hover {
+            background: var(--deep-teal);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ==================== FAILURE SECTION ==================== */
+        .failure-section {
+            padding: 100px 0;
+            background: var(--text-dark);
+            color: var(--soft-white);
+        }
+
+        .failure-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .failure-content .section-title {
+            color: var(--soft-white);
+        }
+
+        .failure-content .section-description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .failure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .failure-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .failure-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            border-color: var(--warm-orange);
+        }
+
+        .failure-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--warm-orange);
+        }
+
+        .failure-card h4 {
+            color: var(--soft-white);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .failure-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ==================== SUCCESS SECTION ==================== */
+        .success-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(255, 243, 176, 0.5), rgba(224, 159, 62, 0.2));
+        }
+
+        .success-vision {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .success-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: var(--soft-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--warm-orange);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--deep-teal), var(--medium-teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+            color: var(--soft-white);
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-text {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ==================== TESTIMONIALS ==================== */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--soft-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--off-white);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 2px solid var(--border-light);
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--warm-orange);
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--cream-yellow);
+            opacity: 0.6;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-stars {
+            color: var(--warm-orange);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-medium);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border-light);
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--deep-teal), var(--warm-orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--soft-white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .author-info h5 {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* ==================== FINAL CTA SECTION ==================== */
+        .final-cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--deep-teal), var(--medium-teal));
+            color: var(--soft-white);
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: var(--soft-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta-text {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .btn-final-cta {
+            background: var(--warm-orange);
+            color: var(--soft-white);
+            padding: 1.5rem 4rem;
+            border-radius: 8px;
+            font-weight: 800;
+            border: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-final-cta:hover {
+            background: var(--cream-yellow);
+            color: var(--text-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .guarantee-box {
+            margin-top: 3rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+        }
+
+        .guarantee-icon {
+            font-size: 2rem;
+            color: var(--cream-yellow);
+        }
+
+        .guarantee-text {
+            text-align: left;
+        }
+
+        .guarantee-text strong {
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .guarantee-text span {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-brand {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--soft-white);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-brand i {
+            color: var(--warm-orange);
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .footer-title {
+            color: var(--soft-white);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--warm-orange);
+            padding-left: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--soft-white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--warm-orange);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        /* ==================== SCROLL TO TOP BUTTON ==================== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: var(--warm-orange);
+            color: var(--soft-white);
+            border-radius: 8px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .scroll-top.show {
+            display: flex;
+        }
+
+        .scroll-top:hover {
+            background: var(--deep-teal);
+            transform: translateY(-5px);
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 100px 0 60px;
+                min-height: auto;
+            }
+
+            /* Simplify diagonal background on mobile */
+            .diagonal-left {
+                width: 100%;
+                clip-path: none;
+            }
+
+            .diagonal-right {
+                display: none;
+            }
+
+            .hero-left {
+                padding-bottom: 3rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .btn-primary-cta,
+            .btn-secondary-cta {
+                text-align: center;
+                width: 100%;
+            }
+
+            .trust-indicators {
+                flex-direction: column;
+            }
+
+            .trust-item {
+                width: 100%;
+            }
+
+            /* Stats cards responsive */
+            .hero-stats-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stat-card:nth-child(n) {
+                margin-top: 0 !important;
+            }
+
+            /* Hide floating elements on mobile */
+            .floating-element {
+                display: none;
+            }
+
+            .problem-section,
+            .guide-section,
+            .plan-section,
+            .services-section,
+            .failure-section,
+            .success-section,
+            .testimonials-section,
+            .final-cta-section {
+                padding: 60px 0;
+            }
+
+            .plan-step {
+                flex-direction: column;
+            }
+
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .navbar-collapse {
+                background: var(--soft-white);
+                padding: 1.5rem;
+                border-radius: 12px;
+                margin-top: 1rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .btn-nav {
+                margin-top: 1rem;
+                display: block;
+                text-align: center;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==================== PRINT STYLES ==================== */
+        @media print {
+            .navbar,
+            .scroll-top,
+            .footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="bi bi-calculator brand-icon"></i>
+                Ledger & Balance
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#process">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn-nav" onclick="window.location.href='#contact'">Get Started</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION - CREATIVE DIAGONAL SPLIT ==================== -->
+    <section class="hero-section" id="home">
+        <!-- Diagonal Background -->
+        <div class="hero-diagonal-bg">
+            <div class="diagonal-left"></div>
+            <div class="diagonal-right"></div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <i class="bi bi-receipt floating-element floating-receipt"></i>
+        <i class="bi bi-bar-chart-fill floating-element floating-chart"></i>
+        <i class="bi bi-calculator-fill floating-element floating-calculator"></i>
+        
+        <div class="container hero-content-wrapper">
+            <div class="row align-items-center g-5">
+                <!-- Left Side - Main Content -->
+                <div class="col-lg-6 hero-left">
+                    <span class="hero-badge">📊 Trusted by 500+ Small Businesses</span>
+                    <h1 class="hero-title">
+                        Stop Drowning in 
+                        <span class="hero-title-highlight">Receipts & Spreadsheets</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        You started a business to follow your passion, not to spend nights reconciling accounts. We handle your bookkeeping so you can focus on growth.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#contact" class="btn-primary-cta">Get Your Free Consultation</a>
+                        <a href="#process" class="btn-secondary-cta">See How It Works</a>
+                    </div>
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <i class="bi bi-patch-check-fill trust-icon"></i>
+                            <div class="trust-text">
+                                <strong>CPA Reviewed</strong>
+                                <span>Accurate & Compliant</span>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <i class="bi bi-shield-fill-check trust-icon"></i>
+                            <div class="trust-text">
+                                <strong>Bank-Level Security</strong>
+                                <span>Your Data Protected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Stats Cards -->
+                <div class="col-lg-6 hero-right">
+                    <div class="hero-stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="bi bi-piggy-bank-fill"></i>
+                            </div>
+                            <div class="stat-number">$12K</div>
+                            <div class="stat-label">Average Tax Savings</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="bi bi-clock-fill"></i>
+                            </div>
+                            <div class="stat-number">15hrs</div>
+                            <div class="stat-label">Saved Per Month</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Audit Ready Books</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROBLEM SECTION ==================== -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge">We Get It</span>
+                <h2 class="section-title">Running a Business is Hard Enough</h2>
+                <p class="section-description">
+                    You didn't become an entrepreneur to spend weekends sorting receipts. Yet here you are, struggling with financial chaos that keeps you up at night.
+                </p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="bi bi-hourglass-split"></i>
+                    </div>
+                    <h3 class="problem-title">No Time</h3>
+                    <p class="problem-text">
+                        Between serving customers, managing employees, and growing your business, when are you supposed to categorize expenses and reconcile accounts?
+                    </p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="bi bi-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="problem-title">Tax Anxiety</h3>
+                    <p class="problem-text">
+                        That nagging fear that you're missing deductions or making mistakes that could trigger an audit. The uncertainty is exhausting.
+                    </p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="bi bi-cash-stack"></i>
+                    </div>
+                    <h3 class="problem-title">Money Mystery</h3>
+                    <p class="problem-text">
+                        You're making sales, but where's the money going? Without clear books, you're flying blind and can't make confident financial decisions.
+                    </p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="bi bi-emoji-frown"></i>
+                    </div>
+                    <h3 class="problem-title">Overwhelmed</h3>
+                    <p class="problem-text">
+                        The shoebox of receipts keeps growing. The spreadsheet errors multiply. You know you need help but don't know where to start.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GUIDE SECTION ==================== -->
+    <section class="guide-section" id="about">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='guideGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23fff3b0;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23e09f3e;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23guideGrad)' width='800' height='600' rx='12'/%3E%3Cg fill='%23335c67' fill-opacity='0.15'%3E%3Ccircle cx='400' cy='300' r='150'/%3E%3Crect x='200' y='450' width='400' height='100' rx='12'/%3E%3Cpolygon points='400,100 500,250 300,250'/%3E%3C/g%3E%3C/svg%3E" alt="Professional Team" class="hero-image">
+                </div>
+                <div class="col-lg-6">
+                    <span class="section-badge">Your Guide</span>
+                    <h2 class="section-title">We've Been There, We Can Help</h2>
+                    
+                    <div class="empathy-box">
+                        <p class="empathy-quote">
+                            "I started my own business 15 years ago and nearly failed because I couldn't keep my books straight. I vowed to help other entrepreneurs avoid that same nightmare."
+                        </p>
+                        <p class="empathy-author">— Sarah Chen, CPA & Founder</p>
+                    </div>
+                    
+                    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 2rem;">
+                        We're not just number crunchers—we're small business owners who understand your challenges. For over a decade, we've helped hundreds of entrepreneurs gain financial clarity and peace of mind.
+                    </p>
+                    
+                    <div class="credentials-grid">
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <i class="bi bi-award-fill"></i>
+                            </div>
+                            <h4 class="credential-title">Certified CPAs</h4>
+                            <p class="credential-text">Licensed & experienced accountants</p>
+                        </div>
+                        
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <h4 class="credential-title">15+ Years</h4>
+                            <p class="credential-text">Serving small businesses</p>
+                        </div>
+                        
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <h4 class="credential-title">500+ Clients</h4>
+                            <p class="credential-text">Trust us with their books</p>
+                        </div>
+                        
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <i class="bi bi-patch-check-fill"></i>
+                            </div>
+                            <h4 class="credential-title">QuickBooks Pro</h4>
+                            <p class="credential-text">Certified advisors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PLAN SECTION ==================== -->
+    <section class="plan-section" id="process">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge">Simple Process</span>
+                <h2 class="section-title">How We Make Your Books Perfect</h2>
+                <p class="section-description">
+                    Getting organized is easier than you think. Just three simple steps to financial clarity:
+                </p>
+            </div>
+            
+            <div class="plan-container">
+                <div class="plan-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Free Discovery Call</h3>
+                        <p>
+                            We'll discuss your business, current financial situation, and goals. No pressure, no commitment—just a friendly conversation to see if we're a good fit. We'll answer all your questions and give you honest advice.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="plan-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Quick & Easy Setup</h3>
+                        <p>
+                            We'll connect to your bank accounts and existing tools (QuickBooks, etc.) using secure, bank-level encryption. Within 48 hours, we'll have your system organized and ready. Most clients spend less than 30 minutes on their part.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="plan-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Ongoing Support & Reports</h3>
+                        <p>
+                            We handle everything monthly: categorize transactions, reconcile accounts, and deliver clear financial reports. You'll always know where your business stands. Tax time? Easy. We have everything organized and ready.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="services-header">
+                <span class="section-badge">Pricing That Makes Sense</span>
+                <h2 class="section-title">Choose Your Plan</h2>
+                <p class="section-description">
+                    Transparent pricing. No hidden fees. Cancel anytime. All plans include CPA review and tax-ready reports.
+                </p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Starter</h3>
+                        <p class="pricing-subtitle">Perfect for solopreneurs</p>
+                        <div class="pricing-amount">$299<span class="pricing-period">/month</span></div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Up to 50 transactions/month</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Monthly financial reports</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Bank reconciliation</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>QuickBooks setup & support</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Email support</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Tax-ready financials</span></li>
+                        </ul>
+                        <button class="btn-pricing" onclick="window.location.href='#contact'">Get Started</button>
+                    </div>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Growth</h3>
+                        <p class="pricing-subtitle">For growing businesses</p>
+                        <div class="pricing-amount">$599<span class="pricing-period">/month</span></div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Up to 200 transactions/month</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Everything in Starter, plus:</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Accounts payable/receivable</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Expense categorization</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Quarterly tax estimates</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Priority phone support</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Monthly strategy call</span></li>
+                        </ul>
+                        <button class="btn-pricing" onclick="window.location.href='#contact'">Get Started</button>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Professional</h3>
+                        <p class="pricing-subtitle">For established companies</p>
+                        <div class="pricing-amount">$999<span class="pricing-period">/month</span></div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Unlimited transactions</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Everything in Growth, plus:</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Payroll processing</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Multi-entity support</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>CFO advisory services</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Custom reporting</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Dedicated bookkeeper</span></li>
+                        </ul>
+                        <button class="btn-pricing" onclick="window.location.href='#contact'">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAILURE SECTION ==================== -->
+    <section class="failure-section">
+        <div class="container">
+            <div class="failure-content">
+                <span class="section-badge">Don't Risk It</span>
+                <h2 class="section-title">What Happens Without Proper Bookkeeping</h2>
+                <p class="section-description">
+                    Poor financial management isn't just inconvenient—it can destroy your business. Here's what you're risking:
+                </p>
+            </div>
+            
+            <div class="failure-grid">
+                <div class="failure-card">
+                    <div class="failure-icon">
+                        <i class="bi bi-coin"></i>
+                    </div>
+                    <h4>Thousands in Lost Deductions</h4>
+                    <p>
+                        Without organized records, you'll miss tax deductions that could save you $5,000-$15,000 annually. That's money left on the table.
+                    </p>
+                </div>
+                
+                <div class="failure-card">
+                    <div class="failure-icon">
+                        <i class="bi bi-exclamation-octagon"></i>
+                    </div>
+                    <h4>IRS Penalties & Audits</h4>
+                    <p>
+                        Sloppy books increase audit risk and guarantee penalties for mistakes. One tax error can cost thousands in fines and interest.
+                    </p>
+                </div>
+                
+                <div class="failure-card">
+                    <div class="failure-icon">
+                        <i class="bi bi-graph-down-arrow"></i>
+                    </div>
+                    <h4>Bad Business Decisions</h4>
+                    <p>
+                        Without accurate financials, you're guessing. That "profitable" product line? It might be losing money. You just don't know.
+                    </p>
+                </div>
+                
+                <div class="failure-card">
+                    <div class="failure-icon">
+                        <i class="bi bi-door-closed"></i>
+                    </div>
+                    <h4>Missed Growth Opportunities</h4>
+                    <p>
+                        Banks and investors require clean books. Without them, you can't access capital to grow or weather tough times.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SUCCESS SECTION ==================== -->
+    <section class="success-section">
+        <div class="container">
+            <div class="success-vision">
+                <span class="section-badge">Your Success</span>
+                <h2 class="section-title">Imagine Your Business Running Smoothly</h2>
+                <p class="section-description">
+                    With organized books, you'll make confident decisions, sleep better at night, and have time to focus on what you do best—growing your business.
+                </p>
+            </div>
+            
+            <div class="success-benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+                    <h4 class="benefit-title">Crystal Clear Finances</h4>
+                    <p class="benefit-text">
+                        Know exactly where every dollar goes. Make decisions based on data, not guesswork. Understand your true profitability.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="bi bi-umbrella"></i>
+                    </div>
+                    <h4 class="benefit-title">Tax Time Confidence</h4>
+                    <p class="benefit-text">
+                        No more scrambling or anxiety. Walk into tax season with organized records and maximized deductions. Sleep easy.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <h4 class="benefit-title">Time Freedom</h4>
+                    <p class="benefit-text">
+                        Reclaim 10-15 hours per month. Spend that time growing your business, with family, or doing anything but bookkeeping.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="bi bi-graph-up"></i>
+                    </div>
+                    <h4 class="benefit-title">Ready to Scale</h4>
+                    <p class="benefit-text">
+                        Professional books open doors to bank loans, investors, and partnerships. You'll be ready when opportunities arise.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge">Client Success Stories</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-description">
+                    Don't take our word for it—hear from business owners who've transformed their finances:
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "I was three years behind on my bookkeeping and terrified of the IRS. Ledger & Balance caught me up in two months and saved me over $12,000 in deductions I didn't know I could claim."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h5>Marcus Rodriguez</h5>
+                            <p>Construction Company Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Finally, I can see my business clearly. The monthly reports help me make smart decisions, and tax season is no longer a nightmare. Best investment I've made in my business."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JP</div>
+                        <div class="author-info">
+                            <h5>Jennifer Park</h5>
+                            <p>E-commerce Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "My bank required three years of clean financials for a business loan. Ledger & Balance delivered everything perfectly organized. I got the loan and expanded to a second location!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DT</div>
+                        <div class="author-info">
+                            <h5>David Thompson</h5>
+                            <p>Coffee Shop Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FINAL CTA SECTION ==================== -->
+    <section class="final-cta-section" id="contact">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2 class="final-cta-title">Ready to Take Control of Your Finances?</h2>
+                <p class="final-cta-text">
+                    Stop stressing about bookkeeping. Join 500+ business owners who sleep better at night knowing their books are handled by professionals.
+                </p>
+                <a href="#home" class="btn-final-cta">Schedule Your Free Consultation</a>
+                <div class="guarantee-box">
+                    <i class="bi bi-shield-fill-check guarantee-icon"></i>
+                    <div class="guarantee-text">
+                        <strong>Our Promise to You</strong>
+                        <span>If you're not completely satisfied in the first 30 days, we'll refund 100% of your fees.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <i class="bi bi-calculator"></i>
+                        Ledger & Balance
+                    </div>
+                    <p class="footer-description">
+                        Professional bookkeeping and accounting services for small businesses. Get organized, stay compliant, and focus on growth.
+                    </p>
+                    <div class="social-links">
+                        <a href="javascript:void(0)" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="javascript:void(0)" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="javascript:void(0)" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="javascript:void(0)" class="social-link"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#services">Bookkeeping</a></li>
+                        <li><a href="#services">Tax Preparation</a></li>
+                        <li><a href="#services">Payroll</a></li>
+                        <li><a href="#services">CFO Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="javascript:void(0)">Resources</a></li>
+                        <li><a href="javascript:void(0)">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="javascript:void(0)">Help Center</a></li>
+                        <li><a href="javascript:void(0)">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ledger & Balance Accounting. All rights reserved. CPA Reviewed | Licensed & Insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCROLL TO TOP BUTTON ==================== -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Active navigation link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only process if href has more than just '#'
+                if (href && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                            bsCollapse.hide();
+                        }
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.problem-card, .plan-step, .pricing-card, .benefit-card, .testimonial-card, .credential-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>

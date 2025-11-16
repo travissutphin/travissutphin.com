@@ -41,6 +41,20 @@
       "features": ["Adoptable Dogs Gallery", "Adoption Process Timeline", "Success Stories", "Contact Form", "impactFul Framework"],
       "file_size": "8 KB",
       "last_updated": "2025-11-11"
+    },
+    {
+      "id": "bookkeeping-ledger-and-balance",
+      "name": "Ledger & Balance - Bookkeeping",
+      "framework": "Bootstrap 5",
+      "category": "Professional Services",
+      "description": "Free bookkeeping and accounting website template with professional teal and orange color scheme. Features service breakdown, pricing tables, client testimonials, and contact form. Built with Bootstrap 5.3 and Bootstrap Icons. Perfect for bookkeepers, accountants, tax preparers, and financial services businesses.",
+      "preview_url": "/templates-free/bootstrap/bookkeeping-ledger-and-balance/index.html",
+      "download_url": "/templates-free/bootstrap/bookkeeping-ledger-and-balance/bookkeeping-ledger-and-balance.zip",
+      "preview_image": "/templates-free/bootstrap/bookkeeping-ledger-and-balance/preview.png",
+      "tech_stack": ["Bootstrap 5.3", "Bootstrap Icons", "Google Fonts", "Responsive", "Mobile-First"],
+      "features": ["Hero Section", "Service Cards", "Pricing Tables", "Testimonials", "Contact Form", "Custom Color Scheme"],
+      "file_size": "13 KB",
+      "last_updated": "2025-11-16"
     }
   ]
 }
