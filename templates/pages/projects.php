@@ -171,32 +171,32 @@
             <?php
             $projects = [
                 [
-                    'name' => 'Kickstand - Your New WebSite',
-                    'category' => 'Open Source',
-                    'description' => 'Complete business website with AI deployment automation. Full source code on GitHub. Three options: DIY with the free code, partner with me, or I build it for you.',
-                    'logo' => '/assets/images/travissutphincom-avatar-green.png',
-                    'link' => 'https://github.com/travissutphin/travissutphin.com',
-                    'tech' => ['PHP 8+', 'Tailwind CSS', 'AI Integration', 'GitHub'],
+                    'name' => 'Thorium90.app',
+                    'category' => 'AI-Powered CMS',
+                    'description' => 'Next-generation content management system with AI-driven workflows, automated publishing, and intelligent content optimization. Built for teams who ship fast.',
+                    'logo' => '/assets/images/projects/thorium90-project-image-official.png',
+                    'link' => 'https://thorium90.app',
+                    'tech' => ['React', 'Node.js', 'PostgreSQL', 'OpenAI', 'Prisma'],
                     'status' => 'live',
                     'highlight' => true
                 ],
                 [
-                    'name' => 'TechPulseDaily.app',
-                    'category' => 'Open Source',
-                    'description' => 'AI-Powered Tech News Aggregator - No database required',
-                    'logo' => '/assets/images/projects/techpulsedaily-badge.png',
-                    'link' => '',
-                    'tech' => [],
-                    'status' => 'production'
+                    'name' => 'rapidPRD.app',
+                    'category' => 'Product Management',
+                    'description' => 'Generate production-ready PRDs with user stories in minutes, not days. AI-powered requirements documentation that engineering teams actually use.',
+                    'logo' => '/assets/images/projects/rapidprd-project-image-official.png',
+                    'link' => 'https://rapidprd.app',
+                    'tech' => ['Next.js', 'TypeScript', 'OpenAI', 'Tailwind', 'Stripe'],
+                    'status' => 'live'
                 ],
                 [
-                    'name' => 'AI Website Builder',
-                    'category' => 'Open Source',
-                    'description' => '',
-                    'logo' => '',
-                    'link' => '',
-                    'tech' => [],
-                    'status' => 'queue'
+                    'name' => 'TechPulseDaily.app',
+                    'category' => 'Tech News',
+                    'description' => 'AI-curated tech news aggregator delivering the most important stories in AI, startups, and software development. No database, pure RSS intelligence.',
+                    'logo' => '/assets/images/projects/techpulsedaily-project-image-official.png',
+                    'link' => 'https://techpulsedaily.app',
+                    'tech' => ['PHP 8+', 'RSS Feeds', 'OpenAI', 'Tailwind', 'Railway'],
+                    'status' => 'live'
                 ],
                 [
                     'name' => 'Reciept Only Website',
@@ -258,7 +258,7 @@
                 <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden group <?php echo isset($project['highlight']) && $project['highlight'] ? 'ring-2 ring-primary-green' : ''; ?>">
                     <?php if (isset($project['highlight']) && $project['highlight']): ?>
                         <div class="bg-gradient-to-r from-primary-green to-primary-blue text-white text-center py-1 text-xs font-semibold">
-                            FREE DOWNLOAD • The Code that Built this Site
+                            FEATURED PROJECT • AI-Powered CMS Platform
                         </div>
                     <?php endif; ?>
 
