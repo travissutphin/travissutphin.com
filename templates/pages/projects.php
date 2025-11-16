@@ -176,6 +176,7 @@
                     'description' => 'Next-generation content management system with AI-driven workflows, automated publishing, and intelligent content optimization. Built for teams who ship fast.',
                     'logo' => '/assets/images/projects/thorium90-project-image-official.png',
                     'link' => 'https://thorium90.app',
+                    'case_study_link' => '/case-studies/2025-11-13-thorium90-app',
                     'tech' => ['React', 'Node.js', 'PostgreSQL', 'OpenAI', 'Prisma'],
                     'status' => 'live',
                     'highlight' => true
@@ -199,58 +200,58 @@
                     'status' => 'live'
                 ],
                 [
-                    'name' => 'Reciept Only Website',
-                    'category' => 'Open Source',
+                    'name' => 'Recipe Only Website',
+                    'category' => 'Food & Recipe',
                     'description' => '',
-                    'logo' => '',
+                    'logo' => '/assets/images/projects/just-the-recipe.png',
                     'link' => '',
                     'tech' => [],
-                    'status' => 'Queue'
+                    'status' => 'production'
+                ],
+                [
+                    'name' => 'Home Based Business Directory',
+                    'category' => 'Directory',
+                    'description' => '',
+                    'logo' => '/assets/images/projects/home-based-business-directory.png',
+                    'link' => '',
+                    'tech' => [],
+                    'status' => 'production'
                 ],
                 [
                     'name' => 'AI Job Scrapper',
-                    'category' => 'Open Source',
+                    'category' => '',
                     'description' => '',
-                    'logo' => '',
+                    'logo' => '/assets/images/projects/project-placeholder-default.png',
                     'link' => '',
                     'tech' => [],
-                    'status' => 'Queue'
-                ],
-                [
-                    'name' => 'PRD Generation Platform (w/ User Stories)',
-                    'category' => 'Open Source',
-                    'description' => '',
-                    'logo' => '',
-                    'link' => '',
-                    'tech' => [],
-                    'status' => 'Queue'
+                    'status' => 'queue'
                 ],
 				[
                     'name' => 'Website Legal Boiler Plate',
-                    'category' => 'Open Source',
+                    'category' => '',
                     'description' => '',
-                    'logo' => '',
+                    'logo' => '/assets/images/projects/project-placeholder-default.png',
                     'link' => '',
                     'tech' => [],
-                    'status' => 'Queue'
+                    'status' => 'queue'
                 ],
 				[
                     'name' => 'A Tourists Guide to St Augustine',
-                    'category' => 'Open Source',
+                    'category' => '',
                     'description' => '',
-                    'logo' => '',
+                    'logo' => '/assets/images/projects/project-placeholder-default.png',
                     'link' => '',
                     'tech' => [],
-                    'status' => 'Queue'
+                    'status' => 'queue'
                 ],
 				[
                     'name' => 'Simple CRM',
-                    'category' => 'Open Source',
+                    'category' => '',
                     'description' => '',
-                    'logo' => '',
+                    'logo' => '/assets/images/projects/project-placeholder-default.png',
                     'link' => '',
                     'tech' => [],
-                    'status' => 'Queue'
+                    'status' => 'queue'
                 ]
             ];
 
@@ -270,8 +271,8 @@
                             $webp_path = preg_replace('/\.(png|jpg|jpeg)$/i', '.webp', $logo_path);
                         ?>
                             <picture>
-                                <source srcset="<?php echo e($webp_path); ?>" type="image/webp">
-                                <img src="<?php echo e($logo_path); ?>"
+                                <source srcset="<?php echo BASE_PATH . e($webp_path); ?>" type="image/webp">
+                                <img src="<?php echo BASE_PATH . e($logo_path); ?>"
                                      alt="<?php echo e($project['name']); ?>"
                                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                      loading="lazy">
@@ -294,6 +295,14 @@
                                 <span class="px-2 py-1 bg-primary-green text-xs font-semibold rounded-full" style="color: #000000 !important;">
                                     LIVE
                                 </span>
+                            <?php elseif ($project['status'] === 'production'): ?>
+                                <span class="px-2 py-1 bg-primary-blue text-white text-xs font-semibold rounded-full">
+                                    IN PRODUCTION
+                                </span>
+                            <?php elseif ($project['status'] === 'queue'): ?>
+                                <span class="px-2 py-1 bg-gray-400 text-white text-xs font-semibold rounded-full">
+                                    IN QUEUE
+                                </span>
                             <?php endif; ?>
                         </div>
 
@@ -310,14 +319,25 @@
                             <?php endforeach; ?>
                         </div>
 
-                        <!-- View Project Link -->
-                        <a href="<?php echo e($project['link']); ?>"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="inline-flex items-center gap-2 text-primary-blue hover:text-primary-green transition-colors font-semibold">
-                            View Project
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
-                        </a>
+                        <!-- View Project Links -->
+                        <div class="flex gap-3">
+                            <?php if (!empty($project['link'])): ?>
+                                <a href="<?php echo e($project['link']); ?>"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="inline-flex items-center gap-2 text-primary-blue hover:text-primary-green transition-colors font-semibold">
+                                    View Project
+                                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                                </a>
+                            <?php endif; ?>
+                            <?php if (!empty($project['case_study_link'])): ?>
+                                <a href="<?php echo BASE_PATH . e($project['case_study_link']); ?>"
+                                   class="inline-flex items-center gap-2 text-primary-green hover:text-primary-blue transition-colors font-semibold">
+                                    Case Study
+                                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                                </a>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             <?php endforeach; ?>
