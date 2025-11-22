@@ -55,6 +55,20 @@
       "features": ["Hero Section", "Service Cards", "Pricing Tables", "Testimonials", "Contact Form", "Custom Color Scheme"],
       "file_size": "13 KB",
       "last_updated": "2025-11-16"
+    },
+    {
+      "id": "law-firm",
+      "name": "Sterling & Associates - Law Firm",
+      "framework": "Tailwind CSS",
+      "category": "Professional Services",
+      "description": "Free law firm website template with professional StoryBrand messaging framework. Features practice area showcase, client testimonials, 3-step consultation process, and contact form. Built with Tailwind CSS and Lucide Icons featuring elegant coral and teal color palette. Perfect for law firms, attorneys, legal practices, and professional service businesses.",
+      "preview_url": "/templates-free/tailwind/law-firm/index.html",
+      "download_url": "/templates-free/tailwind/law-firm/law-firm.zip",
+      "preview_image": "/templates-free/tailwind/law-firm/preview.png",
+      "tech_stack": ["Tailwind CSS", "Lucide Icons", "Google Fonts", "Responsive", "Mobile-First"],
+      "features": ["StoryBrand Framework", "Practice Areas", "3-Step Process", "Testimonials", "Contact Form", "Trust Indicators"],
+      "file_size": "9 KB",
+      "last_updated": "2025-11-22"
     }
   ]
 }

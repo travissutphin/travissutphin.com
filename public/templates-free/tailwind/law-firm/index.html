@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expert legal representation to protect your rights and secure your future. Free consultation available.">
+    <meta name="keywords" content="law firm, legal services, attorney, lawyer, legal representation">
+    <title>Sterling & Associates Law - Your Legal Advocates</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vibrant-coral': {
+                            DEFAULT: '#ff6f59',
+                            100: '#440900',
+                            200: '#891200',
+                            300: '#cd1b00',
+                            400: '#ff3212',
+                            500: '#ff6f59',
+                            600: '#ff8a78',
+                            700: '#ffa79a',
+                            800: '#ffc5bc',
+                            900: '#ffe2dd'
+                        },
+                        'dark-slate': {
+                            DEFAULT: '#254441',
+                            100: '#070e0d',
+                            200: '#0f1c1b',
+                            300: '#162a28',
+                            400: '#1e3835',
+                            500: '#254441',
+                            600: '#427a74',
+                            700: '#62aaa3',
+                            800: '#96c7c2',
+                            900: '#cbe3e0'
+                        },
+                        'seagrass': {
+                            DEFAULT: '#43aa8b',
+                            100: '#0d221b',
+                            200: '#1b4337',
+                            300: '#286552',
+                            400: '#35866e',
+                            500: '#43aa8b',
+                            600: '#61c0a4',
+                            700: '#89d0bb',
+                            800: '#b0e0d1',
+                            900: '#d8efe8'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Playfair Display', 'Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        
+        /* Smooth transitions */
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+        
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Custom gradient */
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(37, 68, 65, 0.95) 0%, rgba(37, 68, 65, 0.85) 100%);
+        }
+        
+        /* Navigation scroll effect */
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Button pulse effect */
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+        
+        .btn-pulse::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.5rem;
+            background: #ff6f59;
+            animation: pulse-ring 2s infinite;
+            z-index: -1;
+        }
+        
+        /* Responsive video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #43aa8b;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #35866e;
+        }
+    </style>
+</head>
+<body class="bg-white text-dark-slate-500 antialiased">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-seagrass to-dark-slate rounded-lg flex items-center justify-center">
+                        <i data-lucide="scale" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <span class="font-display text-2xl font-bold text-dark-slate">Sterling & Associates</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-dark-slate-500 hover:text-seagrass transition-colors font-medium">Services</a>
+                    <a href="#process" class="text-dark-slate-500 hover:text-seagrass transition-colors font-medium">Our Process</a>
+                    <a href="#results" class="text-dark-slate-500 hover:text-seagrass transition-colors font-medium">Results</a>
+                    <a href="#about" class="text-dark-slate-500 hover:text-seagrass transition-colors font-medium">About</a>
+                    <a href="#contact" class="bg-vibrant-coral hover:bg-vibrant-coral-400 text-white px-6 py-3 rounded-lg font-semibold transition-all hover:shadow-lg">
+                        Free Consultation
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-dark-slate-500 hover:text-seagrass transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#services" class="block text-dark-slate-500 hover:text-seagrass transition-colors font-medium py-2">Services</a>
+                <a href="#process" class="block text-dark-slate-500 hover:text-seagrass transition-colors font-medium py-2">Our Process</a>
+                <a href="#results" class="block text-dark-slate-500 hover:text-seagrass transition-colors font-medium py-2">Results</a>
+                <a href="#about" class="block text-dark-slate-500 hover:text-seagrass transition-colors font-medium py-2">About</a>
+                <a href="#contact" class="block bg-vibrant-coral text-white px-6 py-3 rounded-lg font-semibold text-center">
+                    Free Consultation
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - StoryBrand: The Character -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-gradient-to-br from-dark-slate via-dark-slate-400 to-seagrass-400 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column -->
+                <div class="text-white animate-fade-in-up">
+                    <div class="inline-flex items-center space-x-2 bg-seagrass/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-seagrass/30">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-seagrass-300"></i>
+                        <span class="text-sm font-medium text-white">Trusted Legal Representation</span>
+                    </div>
+                    
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Your Rights Protected.<br>
+                        <span class="text-vibrant-coral-800">Your Future Secured.</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+                        Don't navigate complex legal challenges alone. Our experienced attorneys fight for the outcomes you deserve while you focus on what matters most.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="relative inline-flex items-center justify-center bg-vibrant-coral hover:bg-vibrant-coral-400 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:shadow-2xl hover:scale-105 group">
+                            <span>Schedule Free Consultation</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="tel:+15551234567" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all border border-white/20 hover:border-white/40">
+                            <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                            <span>(555) 123-4567</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="mt-12 pt-8 border-t border-white/20">
+                        <div class="grid grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="font-display text-3xl font-bold text-white mb-1">25+</div>
+                                <div class="text-sm text-gray-300">Years Experience</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-display text-3xl font-bold text-white mb-1">98%</div>
+                                <div class="text-sm text-gray-300">Success Rate</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-display text-3xl font-bold text-white mb-1">5000+</div>
+                                <div class="text-sm text-gray-300">Cases Won</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Hero Image -->
+                <div class="hidden lg:block">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-seagrass/20 rounded-2xl transform rotate-6"></div>
+                        <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                            <div class="aspect-square bg-gradient-to-br from-seagrass-300 to-dark-slate-300 rounded-xl flex items-center justify-center">
+                                <i data-lucide="briefcase" class="w-32 h-32 text-white opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section - StoryBrand: Has a Problem -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="font-display text-3xl lg:text-4xl font-bold text-dark-slate mb-4">
+                    Legal Issues That Keep You Up At Night
+                </h2>
+                <p class="text-lg text-gray-600">
+                    We understand the stress and uncertainty that comes with legal challenges
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-vibrant-coral-900 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="clock" class="w-8 h-8 text-vibrant-coral"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-dark-slate mb-3">Time Sensitive</h3>
+                    <p class="text-gray-600">Legal deadlines are approaching and you can't afford to make mistakes that could cost you everything.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-vibrant-coral-900 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="alert-circle" class="w-8 h-8 text-vibrant-coral"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-dark-slate mb-3">Overwhelming Complexity</h3>
+                    <p class="text-gray-600">The legal system is confusing and you're unsure which steps to take to protect your interests.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-vibrant-coral-900 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="shield-alert" class="w-8 h-8 text-vibrant-coral"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-dark-slate mb-3">High Stakes</h3>
+                    <p class="text-gray-600">Your family, finances, or freedom are at risk, and you need an experienced advocate on your side.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section - StoryBrand: Meets a Guide -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Column -->
+                <div>
+                    <div class="inline-block px-4 py-2 bg-seagrass-900 text-seagrass-500 rounded-full text-sm font-semibold mb-6">
+                        YOUR TRUSTED LEGAL PARTNER
+                    </div>
+                    
+                    <h2 class="font-display text-4xl lg:text-5xl font-bold text-dark-slate mb-6">
+                        Experienced Attorneys Who Understand Your Challenges
+                    </h2>
+                    
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        For over 25 years, Sterling & Associates has helped thousands of clients navigate complex legal matters with confidence. We've been where you are, and we know exactly how to achieve the outcomes you need.
+                    </p>
+                    
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Our team combines decades of courtroom experience with personalized attention to every case. We don't just understand the law—we understand what you're going through.
+                    </p>
+                    
+                    <!-- Authority Indicators -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-12 h-12 bg-seagrass-900 rounded-lg flex items-center justify-center">
+                                <i data-lucide="award" class="w-6 h-6 text-seagrass"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-slate mb-1">Board Certified</div>
+                                <div class="text-sm text-gray-600">Specialized expertise</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-12 h-12 bg-seagrass-900 rounded-lg flex items-center justify-center">
+                                <i data-lucide="star" class="w-6 h-6 text-seagrass"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-slate mb-1">Top Rated</div>
+                                <div class="text-sm text-gray-600">500+ 5-star reviews</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-12 h-12 bg-seagrass-900 rounded-lg flex items-center justify-center">
+                                <i data-lucide="users" class="w-6 h-6 text-seagrass"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-slate mb-1">Proven Team</div>
+                                <div class="text-sm text-gray-600">15+ expert attorneys</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-12 h-12 bg-seagrass-900 rounded-lg flex items-center justify-center">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-seagrass"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-slate mb-1">Track Record</div>
+                                <div class="text-sm text-gray-600">98% success rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Image Placeholder -->
+                <div class="relative">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-seagrass to-dark-slate rounded-2xl flex items-center justify-center shadow-2xl">
+                        <i data-lucide="scale" class="w-32 h-32 text-white opacity-30"></i>
+                    </div>
+                    
+                    <!-- Floating Stats Card -->
+                    <div class="absolute -bottom-8 -left-8 bg-white rounded-xl shadow-xl p-6 border-2 border-seagrass-900">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 bg-seagrass rounded-lg flex items-center justify-center">
+                                <i data-lucide="trophy" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-display text-3xl font-bold text-dark-slate">$450M+</div>
+                                <div class="text-sm text-gray-600">Won For Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - StoryBrand: Who Gives Them a Plan -->
+    <section id="services" class="py-20 bg-dark-slate text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold mb-4">
+                    Comprehensive Legal Services
+                </h2>
+                <p class="text-xl text-gray-300">
+                    Specialized expertise across multiple practice areas to protect your interests
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards -->
+                <div class="bg-dark-slate-400 rounded-xl p-8 hover-lift border border-dark-slate-300">
+                    <div class="w-16 h-16 bg-seagrass rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="home" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3">Family Law</h3>
+                    <p class="text-gray-300 mb-6">Divorce, custody, and family matters handled with compassion and expertise.</p>
+                    <a href="#contact" class="inline-flex items-center text-seagrass-300 hover:text-seagrass-400 font-semibold transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-dark-slate-400 rounded-xl p-8 hover-lift border border-dark-slate-300">
+                    <div class="w-16 h-16 bg-seagrass rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3">Business Law</h3>
+                    <p class="text-gray-300 mb-6">Contracts, disputes, and business transactions that protect your company.</p>
+                    <a href="#contact" class="inline-flex items-center text-seagrass-300 hover:text-seagrass-400 font-semibold transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-dark-slate-400 rounded-xl p-8 hover-lift border border-dark-slate-300">
+                    <div class="w-16 h-16 bg-seagrass rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="user-check" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3">Personal Injury</h3>
+                    <p class="text-gray-300 mb-6">Maximum compensation for injuries caused by negligence or accidents.</p>
+                    <a href="#contact" class="inline-flex items-center text-seagrass-300 hover:text-seagrass-400 font-semibold transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-dark-slate-400 rounded-xl p-8 hover-lift border border-dark-slate-300">
+                    <div class="w-16 h-16 bg-seagrass rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="landmark" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3">Estate Planning</h3>
+                    <p class="text-gray-300 mb-6">Secure your legacy with wills, trusts, and estate administration.</p>
+                    <a href="#contact" class="inline-flex items-center text-seagrass-300 hover:text-seagrass-400 font-semibold transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-dark-slate-400 rounded-xl p-8 hover-lift border border-dark-slate-300">
+                    <div class="w-16 h-16 bg-seagrass rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="shield" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3">Criminal Defense</h3>
+                    <p class="text-gray-300 mb-6">Aggressive defense to protect your rights and freedom.</p>
+                    <a href="#contact" class="inline-flex items-center text-seagrass-300 hover:text-seagrass-400 font-semibold transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-dark-slate-400 rounded-xl p-8 hover-lift border border-dark-slate-300">
+                    <div class="w-16 h-16 bg-seagrass rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="file-text" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3">Real Estate</h3>
+                    <p class="text-gray-300 mb-6">Property transactions, disputes, and title matters resolved efficiently.</p>
+                    <a href="#contact" class="inline-flex items-center text-seagrass-300 hover:text-seagrass-400 font-semibold transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section - StoryBrand: And Calls Them to Action -->
+    <section id="process" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-dark-slate mb-4">
+                    Our Simple 3-Step Process
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Getting expert legal help is easier than you think
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Step 1 -->
+                <div class="relative text-center">
+                    <div class="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-seagrass to-seagrass-400 rounded-full mb-6 shadow-lg">
+                        <i data-lucide="phone-call" class="w-10 h-10 text-white"></i>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-vibrant-coral rounded-full flex items-center justify-center text-white font-bold shadow-lg">1</div>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-dark-slate mb-3">Schedule Consultation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Call us or fill out our form to schedule a free, no-obligation consultation. We'll listen to your situation and answer your questions.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative text-center">
+                    <div class="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-seagrass to-seagrass-400 rounded-full mb-6 shadow-lg">
+                        <i data-lucide="clipboard-check" class="w-10 h-10 text-white"></i>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-vibrant-coral rounded-full flex items-center justify-center text-white font-bold shadow-lg">2</div>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-dark-slate mb-3">Develop Your Strategy</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        We'll create a personalized legal strategy tailored to your unique situation and goals, with clear timelines and expectations.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="relative text-center">
+                    <div class="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-seagrass to-seagrass-400 rounded-full mb-6 shadow-lg">
+                        <i data-lucide="check-circle" class="w-10 h-10 text-white"></i>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-vibrant-coral rounded-full flex items-center justify-center text-white font-bold shadow-lg">3</div>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-dark-slate mb-3">Achieve Your Outcome</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Relax while we handle the legal complexities. We'll keep you informed every step of the way until we achieve the best possible outcome.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="text-center mt-16">
+                <a href="#contact" class="inline-flex items-center justify-center bg-vibrant-coral hover:bg-vibrant-coral-400 text-white px-10 py-5 rounded-lg font-semibold text-lg transition-all hover:shadow-xl hover:scale-105">
+                    Start Your Free Consultation Now
+                    <i data-lucide="arrow-right" class="w-5 h-5 ml-3"></i>
+                </a>
+                <p class="text-sm text-gray-500 mt-4">No obligation • Confidential • Free case evaluation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success/Results Section - StoryBrand: That Ends in Success -->
+    <section id="results" class="py-20 bg-gradient-to-br from-seagrass-900 to-seagrass-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-dark-slate mb-4">
+                    Real Results For Real People
+                </h2>
+                <p class="text-lg text-dark-slate-400">
+                    See how we've helped clients achieve the outcomes they deserved
+                </p>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Sterling & Associates fought for my family when I didn't know where to turn. They secured full custody of my children and gave me peace of mind. I can't thank them enough."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-seagrass rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            SM
+                        </div>
+                        <div>
+                            <div class="font-bold text-dark-slate">Sarah M.</div>
+                            <div class="text-sm text-gray-600">Family Law Client</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"After my accident, I was overwhelmed with medical bills and insurance companies. This team secured a $2.3M settlement that changed my life. Highly recommend!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-seagrass rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            JR
+                        </div>
+                        <div>
+                            <div class="font-bold text-dark-slate">James R.</div>
+                            <div class="text-sm text-gray-600">Personal Injury Client</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Professional, responsive, and incredibly knowledgeable. They handled my business dispute with precision and achieved a settlement that exceeded my expectations."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-seagrass rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            MC
+                        </div>
+                        <div>
+                            <div class="font-bold text-dark-slate">Michelle C.</div>
+                            <div class="text-sm text-gray-600">Business Law Client</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="bg-white rounded-2xl p-12 shadow-xl">
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="font-display text-5xl font-bold text-seagrass mb-2">5000+</div>
+                        <div class="text-gray-600 font-medium">Cases Resolved</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-5xl font-bold text-seagrass mb-2">$450M+</div>
+                        <div class="text-gray-600 font-medium">Recovered</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-5xl font-bold text-seagrass mb-2">98%</div>
+                        <div class="text-gray-600 font-medium">Success Rate</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-5xl font-bold text-seagrass mb-2">25+</div>
+                        <div class="text-gray-600 font-medium">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avoid Failure Section - StoryBrand: And Helps Them Avoid Failure -->
+    <section class="py-20 bg-vibrant-coral-900 border-y-4 border-vibrant-coral">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center space-x-2 bg-vibrant-coral/20 px-4 py-2 rounded-full mb-6">
+                <i data-lucide="alert-triangle" class="w-5 h-5 text-vibrant-coral"></i>
+                <span class="text-sm font-semibold text-vibrant-coral-300">DON'T WAIT</span>
+            </div>
+            
+            <h2 class="font-display text-3xl lg:text-4xl font-bold text-dark-slate mb-6">
+                Every Day You Wait Could Cost You
+            </h2>
+            
+            <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Legal deadlines expire. Evidence disappears. Your rights can be lost. Don't let uncertainty keep you from taking action. The longer you wait, the fewer options you may have. Get expert guidance before it's too late.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="inline-flex items-center justify-center bg-vibrant-coral hover:bg-vibrant-coral-400 text-white px-10 py-5 rounded-lg font-semibold text-lg transition-all hover:shadow-2xl hover:scale-105">
+                    Protect Your Rights Now
+                    <i data-lucide="shield" class="w-5 h-5 ml-3"></i>
+                </a>
+                <a href="tel:+15551234567" class="inline-flex items-center justify-center bg-dark-slate hover:bg-dark-slate-400 text-white px-10 py-5 rounded-lg font-semibold text-lg transition-all hover:shadow-xl">
+                    <i data-lucide="phone" class="w-5 h-5 mr-3"></i>
+                    (555) 123-4567
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - StoryBrand: And Calls Them to Action -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Column - Contact Form -->
+                <div>
+                    <h2 class="font-display text-4xl lg:text-5xl font-bold text-dark-slate mb-4">
+                        Schedule Your Free Consultation
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Fill out the form below and we'll contact you within 24 hours to discuss your case. All consultations are confidential.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-dark-slate mb-2">First Name *</label>
+                                <input type="text" placeholder="John" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-seagrass focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-dark-slate mb-2">Last Name *</label>
+                                <input type="text" placeholder="Doe" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-seagrass focus:outline-none transition-colors">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-dark-slate mb-2">Email Address *</label>
+                            <input type="email" placeholder="john@example.com" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-seagrass focus:outline-none transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-dark-slate mb-2">Phone Number *</label>
+                            <input type="tel" placeholder="(555) 123-4567" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-seagrass focus:outline-none transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-dark-slate mb-2">Legal Service Needed</label>
+                            <select class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-seagrass focus:outline-none transition-colors">
+                                <option>Select a service...</option>
+                                <option>Family Law</option>
+                                <option>Business Law</option>
+                                <option>Personal Injury</option>
+                                <option>Estate Planning</option>
+                                <option>Criminal Defense</option>
+                                <option>Real Estate</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-dark-slate mb-2">Tell Us About Your Case *</label>
+                            <textarea rows="4" placeholder="Please provide a brief description of your legal matter..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-seagrass focus:outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        
+                        <button class="w-full bg-vibrant-coral hover:bg-vibrant-coral-400 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:shadow-xl flex items-center justify-center group">
+                            <span>Get Your Free Consultation</span>
+                            <i data-lucide="send" class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        
+                        <p class="text-sm text-gray-500 text-center">
+                            By submitting this form, you agree to be contacted by our team. All information is confidential.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Contact Info -->
+                <div class="bg-gradient-to-br from-dark-slate to-dark-slate-400 rounded-2xl p-12 text-white">
+                    <h3 class="font-display text-3xl font-bold mb-8">Get In Touch</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-14 h-14 bg-seagrass rounded-lg flex items-center justify-center">
+                                <i data-lucide="phone" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold mb-1">Call Us</div>
+                                <a href="tel:+15551234567" class="text-seagrass-300 hover:text-seagrass-400 text-lg transition-colors">(555) 123-4567</a>
+                                <div class="text-sm text-gray-300 mt-1">Mon-Fri 8am-6pm</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-14 h-14 bg-seagrass rounded-lg flex items-center justify-center">
+                                <i data-lucide="mail" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold mb-1">Email Us</div>
+                                <a href="mailto:contact@sterlinglaw.com" class="text-seagrass-300 hover:text-seagrass-400 transition-colors">contact@sterlinglaw.com</a>
+                                <div class="text-sm text-gray-300 mt-1">Response within 24 hours</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-14 h-14 bg-seagrass rounded-lg flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold mb-1">Visit Our Office</div>
+                                <div class="text-gray-300">
+                                    123 Justice Boulevard<br>
+                                    Suite 500<br>
+                                    Metropolitan City, ST 12345
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-14 h-14 bg-seagrass rounded-lg flex items-center justify-center">
+                                <i data-lucide="clock" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold mb-1">Office Hours</div>
+                                <div class="text-gray-300">
+                                    Monday - Friday: 8:00 AM - 6:00 PM<br>
+                                    Saturday: 9:00 AM - 2:00 PM<br>
+                                    Sunday: By Appointment
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 pt-8 border-t border-white/20">
+                        <div class="font-semibold mb-4">Follow Us</div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-white/10 hover:bg-seagrass rounded-lg flex items-center justify-center transition-colors">
+                                <i data-lucide="facebook" class="w-6 h-6"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/10 hover:bg-seagrass rounded-lg flex items-center justify-center transition-colors">
+                                <i data-lucide="twitter" class="w-6 h-6"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/10 hover:bg-seagrass rounded-lg flex items-center justify-center transition-colors">
+                                <i data-lucide="linkedin" class="w-6 h-6"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/10 hover:bg-seagrass rounded-lg flex items-center justify-center transition-colors">
+                                <i data-lucide="instagram" class="w-6 h-6"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-slate-100 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-seagrass to-dark-slate rounded-lg flex items-center justify-center">
+                            <i data-lucide="scale" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <span class="font-display text-2xl font-bold">Sterling & Associates</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Experienced legal representation you can trust. Protecting your rights and securing your future for over 25 years.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-seagrass transition-colors">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-seagrass transition-colors">
+                            <i data-lucide="twitter" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-seagrass transition-colors">
+                            <i data-lucide="linkedin" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-seagrass transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-seagrass transition-colors">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-seagrass transition-colors">About Us</a></li>
+                        <li><a href="#results" class="text-gray-400 hover:text-seagrass transition-colors">Results</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-seagrass transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-seagrass transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-seagrass transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-seagrass transition-colors">Disclaimer</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-seagrass transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Sterling & Associates Law Firm. All rights reserved. | Licensed to practice in all 50 states.</p>
+                <p class="mt-2">This website is for informational purposes only and does not constitute legal advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
