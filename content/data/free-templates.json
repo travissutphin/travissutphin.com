@@ -61,14 +61,28 @@
       "name": "Sterling & Associates - Law Firm",
       "framework": "Tailwind CSS",
       "category": "Professional Services",
-      "description": "Free law firm website template with professional StoryBrand messaging framework. Features practice area showcase, client testimonials, 3-step consultation process, and contact form. Built with Tailwind CSS and Lucide Icons featuring elegant coral and teal color palette. Perfect for law firms, attorneys, legal practices, and professional service businesses.",
+      "description": "Free law firm website template with professional impactFul messaging framework. Features practice area showcase, client testimonials, 3-step consultation process, and contact form. Built with Tailwind CSS and Lucide Icons featuring elegant coral and teal color palette. Perfect for law firms, attorneys, legal practices, and professional service businesses.",
       "preview_url": "/templates-free/tailwind/law-firm/index.html",
       "download_url": "/templates-free/tailwind/law-firm/law-firm.zip",
       "preview_image": "/templates-free/tailwind/law-firm/preview.png",
       "tech_stack": ["Tailwind CSS", "Lucide Icons", "Google Fonts", "Responsive", "Mobile-First"],
-      "features": ["StoryBrand Framework", "Practice Areas", "3-Step Process", "Testimonials", "Contact Form", "Trust Indicators"],
+      "features": ["impactFul Framework", "Practice Areas", "3-Step Process", "Testimonials", "Contact Form", "Trust Indicators"],
       "file_size": "9 KB",
       "last_updated": "2025-11-22"
+    },
+    {
+      "id": "hvac-services",
+      "name": "ComfortPro - HVAC Services",
+      "framework": "Tailwind CSS",
+      "category": "Home Services",
+      "description": "Free HVAC services website template with impactFul messaging framework. Features hero with trust indicators, service breakdown, 3-step process, and contact form with 24/7 emergency callout. Built with Tailwind CSS and Lucide Icons using professional navy and gold color palette. Perfect for HVAC companies, heating and cooling contractors, and home comfort service businesses.",
+      "preview_url": "/templates-free/tailwind/hvac-services/index.html",
+      "download_url": "/templates-free/tailwind/hvac-services/hvac-services.zip",
+      "preview_image": "/templates-free/tailwind/hvac-services/preview.png",
+      "tech_stack": ["Tailwind CSS", "Lucide Icons", "Responsive", "Mobile-First"],
+      "features": ["impactFul Framework", "6 Service Cards", "3-Step Process", "Testimonials", "Contact Form", "24/7 Emergency CTA"],
+      "file_size": "8 KB",
+      "last_updated": "2025-11-23"
     }
   ]
 }

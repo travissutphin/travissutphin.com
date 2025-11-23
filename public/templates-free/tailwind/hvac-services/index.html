@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional HVAC services for your home comfort. Expert heating, cooling, and air quality solutions with 24/7 emergency service.">
+    <meta name="keywords" content="HVAC, heating, cooling, air conditioning, furnace repair, AC repair, emergency HVAC">
+    <title>ComfortPro HVAC | Expert Heating & Cooling Services</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Custom Color Palette */
+        :root {
+            --regal-navy: #0d3b66;
+            --regal-navy-100: #030c15;
+            --regal-navy-800: #74b2ed;
+            --lemon-chiffon: #faf0ca;
+            --royal-gold: #f4d35e;
+            --royal-gold-600: #f6dc7d;
+        }
+        
+        /* Custom Tailwind Configuration */
+        @layer utilities {
+            .text-regal-navy { color: var(--regal-navy); }
+            .bg-regal-navy { background-color: var(--regal-navy); }
+            .bg-regal-navy-100 { background-color: var(--regal-navy-100); }
+            .bg-lemon-chiffon { background-color: var(--lemon-chiffon); }
+            .bg-royal-gold { background-color: var(--royal-gold); }
+            .text-royal-gold { color: var(--royal-gold); }
+            .border-royal-gold { border-color: var(--royal-gold); }
+            .hover\:bg-royal-gold-600:hover { background-color: var(--royal-gold-600); }
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Button Styles */
+        .btn-primary {
+            background-color: var(--royal-gold);
+            color: var(--regal-navy);
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--royal-gold-600);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(244, 211, 94, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--regal-navy);
+        }
+        
+        /* Hero Background Pattern */
+        .hero-pattern {
+            background-color: var(--regal-navy);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(116, 178, 237, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(244, 211, 94, 0.1) 0%, transparent 50%);
+        }
+        
+        /* Card Hover Effects */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(13, 59, 102, 0.15);
+        }
+        
+        /* Stats Counter Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <i data-lucide="flame" class="text-royal-gold w-10 h-10"></i>
+                    <span class="text-2xl font-bold text-regal-navy">ComfortPro</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#services" class="text-regal-navy hover:text-royal-gold transition font-medium">Services</a>
+                    <a href="#process" class="text-regal-navy hover:text-royal-gold transition font-medium">How It Works</a>
+                    <a href="#testimonials" class="text-regal-navy hover:text-royal-gold transition font-medium">Reviews</a>
+                    <a href="#contact" class="bg-royal-gold text-regal-navy px-6 py-3 rounded-lg font-bold hover:bg-royal-gold-600 transition">Get Free Quote</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6 text-regal-navy"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <div class="py-4 space-y-4">
+                    <a href="#services" class="block text-regal-navy hover:text-royal-gold transition font-medium">Services</a>
+                    <a href="#process" class="block text-regal-navy hover:text-royal-gold transition font-medium">How It Works</a>
+                    <a href="#testimonials" class="block text-regal-navy hover:text-royal-gold transition font-medium">Reviews</a>
+                    <a href="#contact" class="block bg-royal-gold text-regal-navy px-6 py-3 rounded-lg font-bold text-center">Get Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section - StoryBrand: Character with a Problem -->
+    <section class="hero-pattern pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Your Home Deserves Perfect Comfort, All Year Round
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-200">
+                        Don't suffer through another day of broken AC, freezing winters, or sky-high energy bills. Our expert HVAC technicians restore your comfort fast.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="btn-primary">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            Schedule Service Now
+                        </a>
+                        <a href="#process" class="btn-secondary">
+                            <i data-lucide="play-circle" class="w-5 h-5"></i>
+                            See How It Works
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap gap-6 mt-10 pt-10 border-t border-white/20">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">24/7 Emergency Service</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Licensed & Insured</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="star" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">5-Star Rated</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image/Stats -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-6 bg-lemon-chiffon rounded-xl">
+                            <div class="text-4xl font-bold text-regal-navy mb-2">2,500+</div>
+                            <div class="text-sm text-gray-700">Happy Customers</div>
+                        </div>
+                        <div class="text-center p-6 bg-lemon-chiffon rounded-xl">
+                            <div class="text-4xl font-bold text-regal-navy mb-2">15+</div>
+                            <div class="text-sm text-gray-700">Years Experience</div>
+                        </div>
+                        <div class="text-center p-6 bg-lemon-chiffon rounded-xl">
+                            <div class="text-4xl font-bold text-regal-navy mb-2">Same</div>
+                            <div class="text-sm text-gray-700">Day Service</div>
+                        </div>
+                        <div class="text-center p-6 bg-lemon-chiffon rounded-xl">
+                            <div class="text-4xl font-bold text-regal-navy mb-2">100%</div>
+                            <div class="text-sm text-gray-700">Satisfaction</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Emergency CTA -->
+                    <div class="mt-8 p-6 bg-regal-navy rounded-xl text-white text-center">
+                        <div class="text-sm font-semibold mb-2">Emergency Service Available</div>
+                        <a href="tel:555-123-4567" class="text-3xl font-bold text-royal-gold hover:underline">(555) 123-4567</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem Statement - StoryBrand: Stakes -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-regal-navy mb-4">
+                    Your HVAC Problems Are Costing You More Than You Think
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Every day without reliable heating and cooling means discomfort, health risks, and wasted money on energy bills.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-8 border-2 border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="thermometer-snowflake" class="w-8 h-8 text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-regal-navy mb-4">System Breakdowns</h3>
+                    <p class="text-gray-600">Unexpected failures during extreme weather leave your family uncomfortable and stressed.</p>
+                </div>
+                
+                <div class="text-center p-8 border-2 border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="banknote" class="w-8 h-8 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-regal-navy mb-4">High Energy Bills</h3>
+                    <p class="text-gray-600">Inefficient systems drain your wallet every month with unnecessarily high utility costs.</p>
+                </div>
+                
+                <div class="text-center p-8 border-2 border-gray-200 rounded-xl">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="wind" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-regal-navy mb-4">Poor Air Quality</h3>
+                    <p class="text-gray-600">Dust, allergens, and pollutants circulating through your home affect your family's health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- The Guide - StoryBrand: Meet Your Guide -->
+    <section class="py-20 bg-lemon-chiffon">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block bg-royal-gold px-4 py-2 rounded-full text-sm font-semibold text-regal-navy mb-4">
+                        Your Trusted HVAC Partner
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-regal-navy mb-6">
+                        We've Helped Thousands of Homeowners Just Like You
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        For over 15 years, ComfortPro has been the go-to HVAC experts for homeowners who refuse to compromise on comfort. Our certified technicians have seen it all and solved it all.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8">
+                        We understand the stress of a broken HVAC system. That's why we respond fast, diagnose accurately, and fix it right the first time—with transparent pricing and no surprises.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-royal-gold rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="badge-check" class="w-6 h-6 text-regal-navy"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-regal-navy mb-1">Certified Technicians</h4>
+                                <p class="text-gray-600">All our technicians are EPA-certified and continuously trained on the latest HVAC technology.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-royal-gold rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clock-3" class="w-6 h-6 text-regal-navy"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-regal-navy mb-1">Fast Response Times</h4>
+                                <p class="text-gray-600">Same-day service available. We arrive on time and get your system running fast.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-royal-gold rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield" class="w-6 h-6 text-regal-navy"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-regal-navy mb-1">100% Satisfaction Guarantee</h4>
+                                <p class="text-gray-600">If you're not completely satisfied with our work, we'll make it right—no questions asked.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <h3 class="text-2xl font-bold text-regal-navy mb-6">What Our Customers Say</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-royal-gold pl-4">
+                            <div class="flex gap-1 mb-2">
+                                <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                            </div>
+                            <p class="text-gray-700 mb-2">"Our AC broke during a heat wave. ComfortPro came out the same day and had us cool again in hours. Professional, fair pricing, highly recommend!"</p>
+                            <p class="text-sm font-semibold text-regal-navy">- Sarah M., Homeowner</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-royal-gold pl-4">
+                            <div class="flex gap-1 mb-2">
+                                <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                            </div>
+                            <p class="text-gray-700 mb-2">"Best HVAC company we've worked with. Honest, knowledgeable, and our energy bills dropped by 30% after their service."</p>
+                            <p class="text-sm font-semibold text-regal-navy">- Michael T., Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- The Plan - StoryBrand: Give Them a Plan -->
+    <section id="process" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-regal-navy mb-4">
+                    Getting Your Comfort Back Is Simple
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our streamlined 3-step process means less hassle for you and faster comfort for your home.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="service-card bg-lemon-chiffon rounded-2xl p-8 text-center relative">
+                    <div class="w-16 h-16 bg-royal-gold rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-regal-navy">
+                        1
+                    </div>
+                    <h3 class="text-2xl font-bold text-regal-navy mb-4">Schedule Your Service</h3>
+                    <p class="text-gray-700 mb-6">
+                        Call us or book online. Tell us about your issue and we'll schedule a convenient time—often same-day service available.
+                    </p>
+                    <div class="w-12 h-12 mx-auto">
+                        <i data-lucide="calendar-check" class="w-12 h-12 text-regal-navy"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="service-card bg-lemon-chiffon rounded-2xl p-8 text-center relative">
+                    <div class="w-16 h-16 bg-royal-gold rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-regal-navy">
+                        2
+                    </div>
+                    <h3 class="text-2xl font-bold text-regal-navy mb-4">Expert Diagnosis</h3>
+                    <p class="text-gray-700 mb-6">
+                        Our certified technician arrives on time, diagnoses the problem, and provides transparent pricing before any work begins.
+                    </p>
+                    <div class="w-12 h-12 mx-auto">
+                        <i data-lucide="search-check" class="w-12 h-12 text-regal-navy"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="service-card bg-lemon-chiffon rounded-2xl p-8 text-center relative">
+                    <div class="w-16 h-16 bg-royal-gold rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-regal-navy">
+                        3
+                    </div>
+                    <h3 class="text-2xl font-bold text-regal-navy mb-4">Enjoy Perfect Comfort</h3>
+                    <p class="text-gray-700 mb-6">
+                        We fix it right the first time. You get back to enjoying your perfectly comfortable home with confidence.
+                    </p>
+                    <div class="w-12 h-12 mx-auto">
+                        <i data-lucide="home" class="w-12 h-12 text-regal-navy"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="btn-primary">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    Start Your Service Today
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services - StoryBrand: Solutions -->
+    <section id="services" class="py-20 bg-regal-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Complete HVAC Solutions for Your Home
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    From emergency repairs to new installations, we handle everything to keep your home comfortable year-round.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white text-gray-900 rounded-xl p-8 service-card">
+                    <div class="w-16 h-16 bg-lemon-chiffon rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="wrench" class="w-8 h-8 text-regal-navy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-regal-navy mb-4">AC Repair & Service</h3>
+                    <p class="text-gray-600 mb-4">Fast, reliable air conditioning repairs to restore cool comfort. Same-day service available for emergencies.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Emergency repairs</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Preventive maintenance</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">System tune-ups</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white text-gray-900 rounded-xl p-8 service-card">
+                    <div class="w-16 h-16 bg-lemon-chiffon rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="flame" class="w-8 h-8 text-regal-navy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-regal-navy mb-4">Heating & Furnace</h3>
+                    <p class="text-gray-600 mb-4">Keep your family warm all winter with expert heating system repairs and maintenance.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Furnace repair</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Heat pump service</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Winter preparation</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white text-gray-900 rounded-xl p-8 service-card">
+                    <div class="w-16 h-16 bg-lemon-chiffon rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="package-plus" class="w-8 h-8 text-regal-navy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-regal-navy mb-4">New Installations</h3>
+                    <p class="text-gray-600 mb-4">Upgrade to a modern, energy-efficient system that saves money and improves comfort.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">System replacement</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">New construction</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Free consultations</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white text-gray-900 rounded-xl p-8 service-card">
+                    <div class="w-16 h-16 bg-lemon-chiffon rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="wind" class="w-8 h-8 text-regal-navy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-regal-navy mb-4">Air Quality Solutions</h3>
+                    <p class="text-gray-600 mb-4">Breathe easier with advanced filtration and air purification systems for healthier indoor air.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Air purifiers</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Humidity control</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Duct cleaning</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-white text-gray-900 rounded-xl p-8 service-card">
+                    <div class="w-16 h-16 bg-lemon-chiffon rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="clock-alert" class="w-8 h-8 text-regal-navy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-regal-navy mb-4">24/7 Emergency Service</h3>
+                    <p class="text-gray-600 mb-4">HVAC emergencies don't wait. Neither do we. Call anytime for immediate assistance.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Always available</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Fast response</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">No extra fees</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-white text-gray-900 rounded-xl p-8 service-card">
+                    <div class="w-16 h-16 bg-lemon-chiffon rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="list-checks" class="w-8 h-8 text-regal-navy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-regal-navy mb-4">Maintenance Plans</h3>
+                    <p class="text-gray-600 mb-4">Protect your investment with regular maintenance that prevents costly breakdowns.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Bi-annual service</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Priority scheduling</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-royal-gold"></i>
+                            <span class="text-sm">Member discounts</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials - StoryBrand: Success -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-regal-navy mb-4">
+                    Join Thousands of Happy Homeowners
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Real stories from real customers who trusted us with their comfort.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-lemon-chiffon rounded-xl p-8">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">"After three other companies couldn't fix our AC, ComfortPro diagnosed and repaired it in one visit. They're the only HVAC company we'll ever use."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-royal-gold rounded-full flex items-center justify-center font-bold text-regal-navy">
+                            JD
+                        </div>
+                        <div>
+                            <p class="font-semibold text-regal-navy">Jennifer Davis</p>
+                            <p class="text-sm text-gray-600">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-lemon-chiffon rounded-xl p-8">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Outstanding service from start to finish. They installed our new system efficiently, cleaned up perfectly, and our energy bills dropped immediately."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-royal-gold rounded-full flex items-center justify-center font-bold text-regal-navy">
+                            RC
+                        </div>
+                        <div>
+                            <p class="font-semibold text-regal-navy">Robert Chen</p>
+                            <p class="text-sm text-gray-600">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-lemon-chiffon rounded-xl p-8">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-royal-gold fill-current"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The technician was knowledgeable, respectful, and took time to explain everything. Fair pricing with no hidden fees. Highly recommend!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-royal-gold rounded-full flex items-center justify-center font-bold text-regal-navy">
+                            LP
+                        </div>
+                        <div>
+                            <p class="font-semibold text-regal-navy">Linda Patterson</p>
+                            <p class="text-sm text-gray-600">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section - StoryBrand: Call to Action -->
+    <section id="contact" class="py-20 bg-regal-navy text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                Ready to Restore Your Home's Comfort?
+            </h2>
+            <p class="text-xl mb-10 text-gray-300">
+                Don't wait another day in discomfort. Get expert HVAC service today with transparent pricing and guaranteed satisfaction.
+            </p>
+            
+            <div class="bg-white rounded-2xl p-8 md:p-12 text-left max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold text-regal-navy mb-6 text-center">Schedule Your Service Now</h3>
+                
+                <form class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-regal-navy mb-2">First Name</label>
+                            <input type="text" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-royal-gold focus:outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-regal-navy mb-2">Last Name</label>
+                            <input type="text" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-royal-gold focus:outline-none" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-regal-navy mb-2">Phone Number</label>
+                        <input type="tel" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-royal-gold focus:outline-none" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-regal-navy mb-2">Email Address</label>
+                        <input type="email" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-royal-gold focus:outline-none" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-regal-navy mb-2">Service Needed</label>
+                        <select class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-royal-gold focus:outline-none" required>
+                            <option value="">Select a service...</option>
+                            <option value="ac-repair">AC Repair</option>
+                            <option value="heating-repair">Heating/Furnace Repair</option>
+                            <option value="installation">New Installation</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="emergency">Emergency Service</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-regal-navy mb-2">Tell us about your issue</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-royal-gold focus:outline-none" placeholder="Describe your HVAC problem or service needs..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-royal-gold text-regal-navy font-bold py-4 rounded-lg hover:bg-royal-gold-600 transition flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Request Free Quote
+                    </button>
+                </form>
+                
+                <div class="mt-8 pt-8 border-t-2 border-gray-200 text-center">
+                    <p class="text-sm text-gray-600 mb-4">Prefer to call? We're here 24/7</p>
+                    <a href="tel:555-123-4567" class="text-3xl font-bold text-regal-navy hover:text-royal-gold transition">(555) 123-4567</a>
+                </div>
+            </div>
+            
+            <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-royal-gold"></i>
+                    <span>100% Satisfaction Guaranteed</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="clock" class="w-5 h-5 text-royal-gold"></i>
+                    <span>Same-Day Service Available</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="award" class="w-5 h-5 text-royal-gold"></i>
+                    <span>Licensed & Insured</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-regal-navy-100 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i data-lucide="flame" class="text-royal-gold w-8 h-8"></i>
+                        <span class="text-xl font-bold">ComfortPro</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Your trusted HVAC partner for over 15 years. Professional service, honest pricing, guaranteed satisfaction.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#services" class="hover:text-royal-gold transition">AC Repair</a></li>
+                        <li><a href="#services" class="hover:text-royal-gold transition">Heating Services</a></li>
+                        <li><a href="#services" class="hover:text-royal-gold transition">Installation</a></li>
+                        <li><a href="#services" class="hover:text-royal-gold transition">Maintenance Plans</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-royal-gold transition">About Us</a></li>
+                        <li><a href="#testimonials" class="hover:text-royal-gold transition">Reviews</a></li>
+                        <li><a href="#" class="hover:text-royal-gold transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-royal-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-royal-gold"></i>
+                            <a href="tel:555-123-4567" class="hover:text-royal-gold transition">(555) 123-4567</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4 text-royal-gold"></i>
+                            <a href="mailto:info@comfortpro.com" class="hover:text-royal-gold transition">info@comfortpro.com</a>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-royal-gold mt-1"></i>
+                            <span>123 Main Street<br>Your City, ST 12345</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">
+                    © 2024 ComfortPro HVAC. All rights reserved.
+                </p>
+                <div class="flex gap-6 text-sm text-gray-400">
+                    <a href="#" class="hover:text-royal-gold transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-royal-gold transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+        
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.remove('active');
+                }
+            });
+        });
+        
+        // Form submission handler (customize as needed)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your request! We will contact you shortly to schedule your service.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
