@@ -209,13 +209,14 @@
                     'status' => 'production'
                 ],
                 [
-                    'name' => 'Home Based Business Directory',
-                    'category' => 'Directory',
-                    'description' => '',
-                    'logo' => '/assets/images/projects/home-based-business-directory.png',
-                    'link' => '',
-                    'tech' => [],
-                    'status' => 'production'
+                    'name' => 'MyHBB.app',
+                    'category' => 'Local Business Directory',
+                    'description' => 'Free directory platform that gives home-based entrepreneurs enterprise-grade SEO visibility. Schema.org structured data, AI-optimized content, and location-based discovery—all at zero cost.',
+                    'logo' => '/assets/images/projects/myhbb-project-image-official.png',
+                    'link' => 'https://myhbb.app',
+                    'case_study_link' => '/case-studies/2025-11-29-myhbb-app',
+                    'tech' => ['Next.js 14', 'React', 'PostgreSQL', 'Prisma', 'Tailwind', 'Railway'],
+                    'status' => 'live'
                 ],
                 [
                     'name' => 'AI Job Scrapper',
@@ -344,6 +345,50 @@
         </div>
     </div>
 </section>
+
+<!-- Schema.org Structured Data for Featured Projects -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Featured Web Development Projects",
+    "description": "Portfolio of live web applications and SaaS products built by Travis Sutphin",
+    "itemListElement": [
+        <?php
+        $live_projects = array_filter($projects, fn($p) => $p['status'] === 'live' && !empty($p['link']));
+        $project_schemas = [];
+        $position = 1;
+        foreach ($live_projects as $project) {
+            $schema_item = [
+                "@type" => "ListItem",
+                "position" => $position,
+                "item" => [
+                    "@type" => "WebApplication",
+                    "name" => $project['name'],
+                    "description" => $project['description'],
+                    "url" => $project['link'],
+                    "applicationCategory" => $project['category'],
+                    "operatingSystem" => "Web Browser",
+                    "offers" => [
+                        "@type" => "Offer",
+                        "price" => "0",
+                        "priceCurrency" => "USD"
+                    ],
+                    "author" => [
+                        "@type" => "Person",
+                        "name" => "Travis Sutphin",
+                        "url" => SITE_URL
+                    ]
+                ]
+            ];
+            $project_schemas[] = json_encode($schema_item, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+            $position++;
+        }
+        echo implode(",\n        ", $project_schemas);
+        ?>
+    ]
+}
+</script>
 
 <!-- Client Testimonial -->
 <section class="testimonial-section py-16 px-4">
