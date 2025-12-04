@@ -209,12 +209,12 @@
                     'status' => 'production'
                 ],
                 [
-                    'name' => 'MyHBB.app',
+                    'name' => 'FrontDoorDirectory.com',
                     'category' => 'Local Business Directory',
                     'description' => 'Free directory platform that gives home-based entrepreneurs enterprise-grade SEO visibility. Schema.org structured data, AI-optimized content, and location-based discovery—all at zero cost.',
-                    'logo' => '/assets/images/projects/myhbb-project-image-official.png',
-                    'link' => 'https://myhbb.app',
-                    'case_study_link' => '/case-studies/2025-11-29-myhbb-app',
+                    'logo' => '/assets/images/projects/frontdoor-directory-project-image-official.png',
+                    'link' => 'https://frontdoordirectory.com',
+                    'case_study_link' => '/case-studies/2025-11-29-frontdoor-directory',
                     'tech' => ['Next.js 14', 'React', 'PostgreSQL', 'Prisma', 'Tailwind', 'Railway'],
                     'status' => 'live'
                 ],

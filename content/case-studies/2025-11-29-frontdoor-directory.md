@@ -1,8 +1,8 @@
 ---
-title: "Case Study: MyHBB.app - How a Free Directory Empowers Home-Based Businesses to Compete Online"
+title: "Case Study: FrontDoorDirectory.com - How a Free Directory Empowers Home-Based Businesses to Compete Online"
 date: 2025-11-29
-excerpt: "Discover how myhbb.app provides home-based entrepreneurs with enterprise-grade SEO visibility at zero cost, helping local customers find and support small businesses in their community."
-image: "/assets/images/case-studies/2025-11-29-myhbb-app.png"
+excerpt: "Discover how FrontDoorDirectory.com provides home-based entrepreneurs with enterprise-grade SEO visibility at zero cost, helping local customers find and support small businesses in their community."
+image: "/assets/images/case-studies/2025-11-29-frontdoor-directory.png"
 author: "Travis Sutphin"
 
 caseStudyType: "internal-project"
@@ -12,7 +12,7 @@ services:
   - "SEO Optimization"
   - "Community Building"
   - "Web Application"
-client: "MyHBB.app (Internal Project)"
+client: "FrontDoorDirectory.com (Internal Project)"
 projectDuration: "4 weeks"
 
 results:
@@ -47,7 +47,7 @@ twitterCard: "summary_large_image"
 
 ## Executive Summary
 
-My Home Based Business (myhbb.app) is a purpose-built directory platform that solves a critical visibility problem for home-based entrepreneurs. Unlike traditional business directories that charge monthly fees or bury small businesses behind paid listings, myhbb.app provides enterprise-grade SEO optimization completely free.
+Front Door Directory (FrontDoorDirectory.com) is a purpose-built directory platform that solves a critical visibility problem for home-based entrepreneurs. Unlike traditional business directories that charge monthly fees or bury small businesses behind paid listings, Front Door Directory provides enterprise-grade SEO optimization completely free.
 
 The platform combines Schema.org structured data, AI-optimized content (AEO), and local search integration to help home-based businesses appear in Google, AI assistants, and "near me" searches. With 15 service categories covering everything from creative services to professional consulting, the directory creates a centralized hub where local customers can discover and support small businesses operating from home.
 
@@ -75,7 +75,7 @@ Home-based businesses represent a significant portion of the American economy, y
 
 ### Philosophy: Free Forever, Community First
 
-The core principle behind myhbb.app is radical simplicity: provide maximum value at zero cost. No freemium upsells, no premium tiers, no hidden fees. Every feature available to every business owner, forever.
+The core principle behind Front Door Directory is radical simplicity: provide maximum value at zero cost. No freemium upsells, no premium tiers, no hidden fees. Every feature available to every business owner, forever.
 
 This isn't charity—it's strategic. By removing financial barriers, the platform can:
 - Attract a critical mass of quality listings
@@ -224,7 +224,7 @@ The platform organizes home-based businesses into 15 distinct categories:
 
 ### For Home-Based Businesses
 
-| Metric | Traditional Approach | myhbb.app | Improvement |
+| Metric | Traditional Approach | FrontDoorDirectory.com | Improvement |
 |--------|---------------------|-----------|-------------|
 | Directory Listing Cost | $20-$100/month | $0 | 100% savings |
 | SEO Setup Time | Days-weeks | 3 minutes | 99% faster |
@@ -252,7 +252,7 @@ The platform organizes home-based businesses into 15 distinct categories:
 5. Manage recurring charges
 Result: $240-$1,200/year minimum
 
-**myhbb.app Approach:**
+**Front Door Directory Approach:**
 1. Sign up free
 Result: Done. $0 forever.
 
@@ -266,7 +266,7 @@ Result: Done. $0 forever.
 5. Monitor and adjust
 Result: Months of work, thousands of dollars
 
-**myhbb.app Approach:**
+**Front Door Directory Approach:**
 1. Create listing with business details
 Result: Schema.org markup automatically applied
 
@@ -279,7 +279,7 @@ Result: Schema.org markup automatically applied
 4. Manage multiple profiles
 Result: Complex, expensive, often impossible for home businesses
 
-**myhbb.app Approach:**
+**Front Door Directory Approach:**
 1. Select your service area
 2. Choose your category
 Result: Appear in location-based directory instantly
@@ -291,7 +291,7 @@ Result: Appear in location-based directory instantly
 2. No control over how AI interprets your business
 Result: Inconsistent AI recommendations
 
-**myhbb.app Approach:**
+**Front Door Directory Approach:**
 1. Structured data optimized for AI assistants
 Result: Clear, accurate AI understanding of your services
 
@@ -339,7 +339,7 @@ Email verification, manual review of flagged listings, and community reporting m
 - Customers may not know to look for specialized directories
 
 **Mitigation:**
-myhbb.app doesn't compete with general directories—it serves a specific audience those platforms ignore. Home-based businesses and the customers who value them find a dedicated home here.
+Front Door Directory doesn't compete with general directories—it serves a specific audience those platforms ignore. Home-based businesses and the customers who value them find a dedicated home here.
 
 ### 5. Revenue Sustainability
 
@@ -354,7 +354,7 @@ The platform operates with minimal infrastructure costs and serves as a portfoli
 
 ## Scalability Analysis
 
-| Dimension | Traditional Directories | myhbb.app |
+| Dimension | Traditional Directories | FrontDoorDirectory.com |
 |-----------|------------------------|-----------|
 | **Horizontal** | Add servers, increase costs | Serverless-ready architecture |
 | **Vertical** | Expensive database upgrades | Efficient queries, optimized indices |
@@ -368,17 +368,17 @@ The platform operates with minimal infrastructure costs and serves as a portfoli
 ### vs. Yelp / Google Business Profile
 - **Yelp**: Primarily for storefronts; pay-to-play visibility
 - **Google**: Requires physical location verification
-- **myhbb.app**: Built specifically for home-based businesses
+- **Front Door Directory**: Built specifically for home-based businesses
 
 ### vs. Industry-Specific Directories
 - **Thumbtack/Angi**: Service marketplaces with fees and competition
-- **myhbb.app**: Pure directory with no middleman
+- **Front Door Directory**: Pure directory with no middleman
 
 ### vs. Social Media
 - **Facebook/Instagram**: Algorithms control visibility
-- **myhbb.app**: Direct listing, no algorithm games
+- **Front Door Directory**: Direct listing, no algorithm games
 
-### Why myhbb.app Wins
+### Why Front Door Directory Wins
 - **Purpose-built**: Designed for home-based businesses from day one
 - **Truly free**: No hidden costs or premium pressure
 - **SEO-native**: Visibility built into the platform architecture
@@ -448,7 +448,7 @@ The platform operates with minimal infrastructure costs and serves as a portfoli
 ## Lessons for Other Industries
 
 ### 1. Simplicity Creates Adoption
-By removing barriers (cost, complexity, time), myhbb.app achieves what feature-rich competitors cannot: actual usage. This applies to any industry where overengineered solutions exclude potential users.
+By removing barriers (cost, complexity, time), Front Door Directory achieves what feature-rich competitors cannot: actual usage. This applies to any industry where overengineered solutions exclude potential users.
 
 ### 2. Serve the Underserved
 Major platforms optimize for their biggest customers, leaving niches underserved. Purpose-built solutions for overlooked audiences can create loyal communities that larger platforms can't replicate.
@@ -480,13 +480,13 @@ Rather than treating SEO as an afterthought, building discoverability into the p
 
 ## FAQ
 
-**Q: Is myhbb.app really free? What's the catch?**
+**Q: Is Front Door Directory really free? What's the catch?**
 
 A: Yes, completely free with no hidden costs. The platform operates with minimal overhead and serves as a demonstration of technical capabilities. There are no premium tiers, no ads, and no data selling.
 
 **Q: How do I get my business listed?**
 
-A: Visit myhbb.app, click "List Your Business Free," enter your email and business details, and verify your email. The entire process takes about 3 minutes.
+A: Visit FrontDoorDirectory.com, click "List Your Business Free," enter your email and business details, and verify your email. The entire process takes about 3 minutes.
 
 **Q: Do I need technical knowledge to create a listing?**
 
@@ -510,7 +510,7 @@ A: The "Specialized Services" category covers unique offerings. If you believe a
 
 **Q: How is this different from Google Business Profile?**
 
-A: Google Business Profile requires address verification that's difficult for home-based businesses. myhbb.app is specifically designed for entrepreneurs without commercial locations.
+A: Google Business Profile requires address verification that's difficult for home-based businesses. Front Door Directory is specifically designed for entrepreneurs without commercial locations.
 
 **Q: Is my information secure?**
 
@@ -526,10 +526,10 @@ A: Review functionality is planned for a future update. Currently, customers can
 
 Join the growing community of home-based entrepreneurs gaining visibility without the cost.
 
-**[List Your Business Free →](https://myhbb.app/register)**
+**[List Your Business Free →](https://frontdoordirectory.com/register)**
 
-**[Browse Local Directories →](https://myhbb.app/directories)**
+**[Browse Local Directories →](https://frontdoordirectory.com/directories)**
 
 ---
 
-*This case study documents the development and launch of myhbb.app, a free directory platform for home-based businesses. For questions or to discuss similar projects, [contact Travis Sutphin](https://travissutphin.com/contact).*
+*This case study documents the development and launch of FrontDoorDirectory.com, a free directory platform for home-based businesses. For questions or to discuss similar projects, [contact Travis Sutphin](https://travissutphin.com/contact).*
