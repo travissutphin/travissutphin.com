@@ -214,7 +214,7 @@
                     <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">MySQL Database Design</span>
                     <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Zapier & Make.com Integration</span>
                     <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">AI & ChatGPT Integration</span>
-                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Airtable & No-Code Platforms</span>
+                    <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">ColdFusion Development</span>
                     <span class="px-3 py-1 resume-skill-tag text-sm rounded-full">Tailwind CSS</span>
                 </div>
             </div>
@@ -430,7 +430,7 @@
             <div class="resume-faq-item pb-6">
                 <h3 class="text-xl font-semibold resume-faq-heading mb-3">What technologies and platforms do you specialize in?</h3>
                 <p class="resume-text-secondary">
-                    I specialize in practical, business-focused technologies that deliver ROI. My core expertise includes WordPress and WooCommerce optimization, PHP and JavaScript development, RESTful API integration, cloud platforms (AWS, Azure, DigitalOcean), automation tools (Zapier, Make.com, Airtable), MySQL database design, and AI implementation (ChatGPT API, Claude API). I also work extensively with modern frameworks like Tailwind CSS and focus on no-code/low-code solutions that empower your team to make updates without always needing a developer.
+                    I specialize in practical, business-focused technologies that deliver ROI. My core expertise includes WordPress and WooCommerce optimization, PHP and JavaScript development, ColdFusion development, RESTful API integration, cloud platforms (AWS, Azure, DigitalOcean), automation tools (Zapier, Make.com), MySQL database design, and AI implementation (ChatGPT API, Claude API). I also work extensively with modern frameworks like Tailwind CSS and focus on solutions that empower your team to make updates without always needing a developer.
                 </p>
             </div>
 
@@ -480,7 +480,7 @@
       "name": "What technologies and platforms do you specialize in?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "I specialize in WordPress and WooCommerce optimization, PHP and JavaScript development, RESTful API integration, cloud platforms (AWS, Azure, DigitalOcean), automation tools (Zapier, Make.com, Airtable), MySQL database design, AI implementation (ChatGPT API, Claude API), Tailwind CSS, and no-code/low-code solutions."
+        "text": "I specialize in WordPress and WooCommerce optimization, PHP and JavaScript development, ColdFusion development, RESTful API integration, cloud platforms (AWS, Azure, DigitalOcean), automation tools (Zapier, Make.com), MySQL database design, AI implementation (ChatGPT API, Claude API), and Tailwind CSS."
       }
     },
     {
