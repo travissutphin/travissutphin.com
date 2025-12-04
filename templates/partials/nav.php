@@ -4,7 +4,7 @@ $current_page = str_replace(BASE_PATH . '/', '', $current_path);
 $current_page = strtok($current_page, '?');
 if (empty($current_page)) $current_page = 'home';
 ?>
-<ul class="flex space-x-8">
+<ul class="flex items-center space-x-8">
     <li>
         <a href="<?php echo BASE_PATH; ?>/"
            class="relative px-2 py-1 text-theme-secondary hover:text-theme-primary transition-all duration-300 <?php echo $current_page === 'home' ? 'text-theme-primary font-semibold' : ''; ?>">
