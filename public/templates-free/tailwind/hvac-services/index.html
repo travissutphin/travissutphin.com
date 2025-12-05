@@ -122,10 +122,109 @@
         .mobile-menu.active {
             max-height: 500px;
         }
+
+        /* ==================== TEMPLATE CREDIT BANNER ==================== */
+        .template-credit-banner {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        .template-credit-banner .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .template-credit-banner p {
+            margin: 0;
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        .template-credit-banner strong {
+            font-weight: 600;
+        }
+
+        .template-credit-banner a {
+            color: #f4d35e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .template-credit-banner a:hover {
+            color: #f6dc7d;
+            text-decoration: underline;
+        }
+
+        .btn-close-banner {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .btn-close-banner:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .template-credit-banner p {
+                font-size: 12px;
+            }
+            .template-credit-banner .container {
+                padding: 0 15px;
+            }
+        }
     </style>
 </head>
 <body class="font-sans antialiased">
-    
+
+    <!-- Template Credit Banner -->
+    <div class="template-credit-banner" id="templateBanner">
+        <div class="container">
+            <p>
+                <strong>🎨 Like this template?</strong>
+                See more free templates + premium projects by
+                <a href="https://travissutphin.com/projects" target="_blank" rel="noopener">Travis Sutphin</a>
+            </p>
+            <button class="btn-close-banner" onclick="closeBanner()" aria-label="Close banner">×</button>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -830,6 +929,37 @@
             alert('Thank you for your request! We will contact you shortly to schedule your service.');
             this.reset();
         });
+    </script>
+
+    <!-- Template Banner Functionality -->
+    <script>
+        (function() {
+            const bannerDismissed = localStorage.getItem('templateBannerDismissed');
+            const dismissTime = localStorage.getItem('templateBannerDismissTime');
+            if (bannerDismissed && dismissTime) {
+                const daysSinceDismiss = (Date.now() - parseInt(dismissTime)) / (1000 * 60 * 60 * 24);
+                if (daysSinceDismiss > 30) {
+                    localStorage.removeItem('templateBannerDismissed');
+                    localStorage.removeItem('templateBannerDismissTime');
+                } else {
+                    document.getElementById('templateBanner').style.display = 'none';
+                }
+            }
+        })();
+
+        function closeBanner() {
+            const banner = document.getElementById('templateBanner');
+            banner.style.animation = 'slideUp 0.2s ease-in-out';
+            setTimeout(function() {
+                banner.style.display = 'none';
+                localStorage.setItem('templateBannerDismissed', 'true');
+                localStorage.setItem('templateBannerDismissTime', Date.now().toString());
+            }, 200);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = '@keyframes slideUp { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-100%); opacity: 0; } }';
+        document.head.appendChild(style);
     </script>
 </body>
 </html>

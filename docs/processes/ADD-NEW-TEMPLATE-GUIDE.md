@@ -2,8 +2,8 @@
 
 **Process Owner:** [Travis]
 **Support Team:** [Syntax], [Bran], [Echo]
-**Last Updated:** 2025-11-09
-**Version:** 1.0
+**Last Updated:** 2025-12-04
+**Version:** 1.1
 
 ---
 
@@ -16,11 +16,13 @@ This guide walks you through adding new free HTML templates to the `/projects` p
 ## Quick Start Checklist
 
 - [ ] Template files ready (HTML, CSS, JS, images)
-- [ ] Preview screenshot created (1200x630px recommended)
+- [ ] **Credit banner added** to template HTML (required)
+- [ ] Preview screenshot created (1200px wide, ~630px height)
+- [ ] **Preview image converted to WebP** (target: <50KB)
 - [ ] Template tested locally
 - [ ] Template description written (2-3 sentences)
 - [ ] .zip file created
-- [ ] JSON metadata updated
+- [ ] JSON metadata updated (**newest template first**)
 - [ ] Sitemap updated (if adding template preview URLs)
 - [ ] Live page tested
 
@@ -33,8 +35,9 @@ This guide walks you through adding new free HTML templates to the `/projects` p
 **Directory Structure:**
 ```
 /public/templates-free/{framework}/{template-slug}/
-├── index.html          # Main template file (the preview)
-├── preview.png         # Screenshot (1200x630px)
+├── index.html          # Main template file (with credit banner)
+├── preview.webp        # Screenshot in WebP format (optimized)
+├── preview.png         # Original screenshot (keep for reference)
 ├── {template-slug}.zip # Downloadable package
 └── README.md           # Optional: Usage instructions
 ```
@@ -43,18 +46,156 @@ This guide walks you through adding new free HTML templates to the `/projects` p
 ```
 /public/templates-free/bootstrap/landing-page-modern/
 ├── index.html
-├── preview.png
+├── preview.webp        # Optimized (target: <50KB)
+├── preview.png         # Original
 ├── landing-page-modern.zip
 └── README.md
 ```
 
 **Framework Options:**
 - `bootstrap` - For Bootstrap 5.x templates
-- `tailwind` - For Tailwind CSS templates (coming soon)
+- `tailwind` - For Tailwind CSS templates
 
 ---
 
-### **Step 2: Create the Template .zip File**
+### **Step 2: Add Credit Banner to Template HTML (Required)**
+
+Every template MUST include a sticky credit banner at the top. This drives traffic back to travissutphin.com/projects.
+
+**Banner CSS (add to `<style>` section before `</head>`):**
+```css
+/* ==================== TEMPLATE CREDIT BANNER ==================== */
+.template-credit-banner {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 12px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease-in-out;
+}
+
+.template-credit-banner .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.template-credit-banner p {
+    margin: 0;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.template-credit-banner strong { font-weight: 600; }
+
+.template-credit-banner a {
+    color: #3b82f6;  /* Customize to match template's accent color */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.template-credit-banner a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.btn-close-banner {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-close-banner:hover { background: rgba(255, 255, 255, 0.1); }
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .template-credit-banner p { font-size: 12px; }
+    .template-credit-banner .container { padding: 0 15px; }
+}
+```
+
+**Banner HTML (add right after `<body>`):**
+```html
+<!-- Template Credit Banner -->
+<div class="template-credit-banner" id="templateBanner">
+    <div class="container">
+        <p>
+            <strong>🎨 Like this template?</strong>
+            See more free templates + premium projects by
+            <a href="https://travissutphin.com/projects" target="_blank" rel="noopener">Travis Sutphin</a>
+        </p>
+        <button class="btn-close-banner" onclick="closeBanner()" aria-label="Close banner">×</button>
+    </div>
+</div>
+```
+
+**Banner JavaScript (add before `</body>`):**
+```html
+<!-- Template Banner Functionality -->
+<script>
+    (function() {
+        const bannerDismissed = localStorage.getItem('templateBannerDismissed');
+        const dismissTime = localStorage.getItem('templateBannerDismissTime');
+        if (bannerDismissed && dismissTime) {
+            const daysSinceDismiss = (Date.now() - parseInt(dismissTime)) / (1000 * 60 * 60 * 24);
+            if (daysSinceDismiss > 30) {
+                localStorage.removeItem('templateBannerDismissed');
+                localStorage.removeItem('templateBannerDismissTime');
+            } else {
+                document.getElementById('templateBanner').style.display = 'none';
+            }
+        }
+    })();
+
+    function closeBanner() {
+        const banner = document.getElementById('templateBanner');
+        banner.style.animation = 'slideUp 0.2s ease-in-out';
+        setTimeout(function() {
+            banner.style.display = 'none';
+            localStorage.setItem('templateBannerDismissed', 'true');
+            localStorage.setItem('templateBannerDismissTime', Date.now().toString());
+        }, 200);
+    }
+
+    const style = document.createElement('style');
+    style.textContent = '@keyframes slideUp { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-100%); opacity: 0; } }';
+    document.head.appendChild(style);
+</script>
+```
+
+**Banner Behavior:**
+- Appears at top of page on load
+- User can dismiss with × button
+- Stays dismissed for 30 days (localStorage)
+- Re-appears after 30 days
+
+---
+
+### **Step 3: Create the Template .zip File**
 
 **What to Include in the .zip:**
 - All HTML files
@@ -94,24 +235,48 @@ MIT License - Free for personal and commercial use
 
 ---
 
-### **Step 3: Create Preview Screenshot**
+### **Step 4: Create & Optimize Preview Screenshot**
 
 **Specifications:**
-- **Dimensions:** 1200x630px (optimal for social sharing)
-- **Format:** PNG or JPG
-- **File Size:** Under 200 KB
+- **Dimensions:** 1200px wide (height varies, ~630px typical)
+- **Source Format:** PNG
+- **Final Format:** WebP (required for production)
+- **Target File Size:** Under 50KB (WebP)
 - **Content:** Full-page screenshot or hero section
 
-**Tools:**
+**Step 4a: Capture Screenshot**
 - Browser DevTools (responsive mode at 1200px width)
 - Screenshot tools (Snagit, Lightshot, or browser extensions)
-- Image optimization (TinyPNG, ImageOptim)
+- Save as `preview.png` (keep original for reference)
 
-**Save as:** `/public/templates-free/{framework}/{template-slug}/preview.png`
+**Step 4b: Convert to WebP (Required)**
+```bash
+# Install sharp-cli globally (one-time)
+npm install -g sharp-cli
+
+# Convert PNG to WebP (run from project root)
+sharp -i "public/templates-free/{framework}/{template-slug}/preview.png" \
+      -o "public/templates-free/{framework}/{template-slug}/" \
+      -f webp -q 80 resize 1200
+```
+
+**Compression Results (typical):**
+| Original PNG | WebP Output | Savings |
+|-------------|-------------|---------|
+| 500-1300 KB | 25-50 KB    | 90-95%  |
+
+**Final Files:**
+```
+/public/templates-free/{framework}/{template-slug}/
+├── preview.png   # Original (keep for reference)
+├── preview.webp  # Optimized (used in production)
+```
+
+**Important:** The `free-templates.json` must reference `preview.webp`, not `preview.png`!
 
 ---
 
-### **Step 4: Write Template Description**
+### **Step 5: Write Template Description**
 
 **Formula:** [What it is] + [Key benefit] + [Who it's for]
 
@@ -129,15 +294,22 @@ MIT License - Free for personal and commercial use
 ❌ **Too Technical:**
 > "Utilizes Bootstrap 5.3 grid system with flexbox utilities and responsive breakpoints at 768px and 1024px."
 
+❌ **Wrong Usage:**
+> "Do not use "StoryBrand Framework", instead us "impactFul Framework"
+
 **Length:** 2-3 sentences, ~30-50 words
 
 ---
 
-### **Step 5: Update `/content/data/free-templates.json`**
+### **Step 6: Update `/content/data/free-templates.json`**
 
 **Location:** `C:\xampp\htdocs\travissutphin.com\content\data\free-templates.json`
 
-**Add Your Template Entry:**
+⚠️ **IMPORTANT: Ordering Rule - Newest Templates First!**
+
+Templates are displayed in the order they appear in the JSON array. **Always add new templates at the TOP of the array** so the newest template appears first on the /projects page.
+
+**Add Your Template Entry (at the TOP of the array):**
 
 ```json
 {
@@ -150,12 +322,13 @@ MIT License - Free for personal and commercial use
       "description": "Modern landing page template with hero section, features grid, and contact form. Fully responsive with clean code. Perfect for SaaS products and service businesses.",
       "preview_url": "/templates-free/bootstrap/landing-page-modern/index.html",
       "download_url": "/templates-free/bootstrap/landing-page-modern/landing-page-modern.zip",
-      "preview_image": "/templates-free/bootstrap/landing-page-modern/preview.png",
+      "preview_image": "/templates-free/bootstrap/landing-page-modern/preview.webp",
       "tech_stack": ["Bootstrap 5", "Responsive", "Mobile-First", "SEO Ready"],
       "features": ["Hero Section", "Features Grid", "Contact Form", "Testimonials"],
       "file_size": "450 KB",
       "last_updated": "2025-01-15"
-    }
+    },
+    // ... older templates follow ...
   ]
 }
 ```
@@ -171,7 +344,7 @@ MIT License - Free for personal and commercial use
 | `description` | 2-3 sentence description | See examples above |
 | `preview_url` | Path to live preview | `"/templates-free/bootstrap/...index.html"` |
 | `download_url` | Path to .zip file | `"/templates-free/bootstrap/...zip"` |
-| `preview_image` | Path to screenshot | `"/templates-free/bootstrap/...preview.png"` |
+| `preview_image` | Path to screenshot (**use .webp**) | `"/templates-free/bootstrap/...preview.webp"` |
 | `tech_stack` | Array of technologies | `["Bootstrap 5", "Responsive"]` |
 | `features` | Array of key features (optional) | `["Hero Section", "Contact Form"]` |
 | `file_size` | Approximate .zip size | `"450 KB"` (check actual file) |
@@ -179,7 +352,7 @@ MIT License - Free for personal and commercial use
 
 ---
 
-### **Step 6: Test Locally**
+### **Step 7: Test Locally**
 
 **Via XAMPP (Port 80):**
 ```
@@ -195,18 +368,20 @@ Then visit: `http://localhost:8080/projects`
 
 **QA Checklist:**
 - [ ] Template card displays correctly
-- [ ] Preview image loads
+- [ ] Preview image loads (WebP format)
 - [ ] Framework badge shows correct framework
 - [ ] Tech stack tags display
 - [ ] "Preview" button opens template in new tab
 - [ ] "Download" button triggers .zip download
 - [ ] Template preview page renders correctly
+- [ ] **Credit banner appears** at top of template
+- [ ] **Banner dismiss button** works and persists (localStorage)
 - [ ] No PHP errors in error log
 - [ ] Mobile responsive (test at 375px, 768px, 1024px)
 
 ---
 
-### **Step 7: Update Sitemap (Optional but Recommended)**
+### **Step 8: Update Sitemap (Optional but Recommended)**
 
 **Location:** `C:\xampp\htdocs\travissutphin.com\public\sitemap.xml`
 
@@ -237,7 +412,7 @@ Then visit: `http://localhost:8080/projects`
 
 ---
 
-### **Step 8: Marketing & Promotion** (Recommended)
+### **Step 9: Marketing & Promotion** (Recommended)
 
 **Internal Promotion:**
 - [ ] Mention template in relevant blog post
