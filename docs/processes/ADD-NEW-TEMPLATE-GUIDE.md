@@ -3,7 +3,7 @@
 **Process Owner:** [Travis]
 **Support Team:** [Syntax], [Bran], [Echo]
 **Last Updated:** 2025-12-04
-**Version:** 1.1
+**Version:** 1.2
 
 ---
 
@@ -195,6 +195,44 @@ Every template MUST include a sticky credit banner at the top. This drives traff
 
 ---
 
+### **Step 2b: Add Footer Credit Link (Required)**
+
+Every template MUST include a footer credit link. This provides a permanent backlink even if users dismiss the top banner.
+
+**Footer Credit HTML:**
+Add this to the footer section of your template (typically at the bottom, after copyright):
+
+**For Tailwind CSS templates:**
+```html
+<p class="text-sm text-gray-400 mt-4">
+    Like this template? See more free templates + premium projects by
+    <a href="https://travissutphin.com/projects#free-templates"
+       target="_blank"
+       rel="noopener"
+       class="text-white hover:text-[ACCENT-COLOR] transition-colors font-semibold">Travis Sutphin</a>
+</p>
+```
+
+**For Bootstrap templates:**
+```html
+<p class="footer-description">
+    Like this template? See more free templates + premium projects by
+    <a href="https://travissutphin.com/projects#free-templates"
+       target="_blank"
+       rel="noopener"
+       style="color: #fff; font-weight: 600; text-decoration: none;">Travis Sutphin</a>
+</p>
+```
+
+**Customization:**
+- Replace `[ACCENT-COLOR]` with the template's accent color (e.g., `text-royal-gold`, `text-seagrass`, `text-[#E63946]`)
+- Place in footer's bottom section, after copyright/legal links
+- Use `font-semibold` on the link for emphasis
+
+**Important:** The anchor `#free-templates` links directly to the Free Templates section on /projects.
+
+---
+
 ### **Step 3: Create the Template .zip File**
 
 **What to Include in the .zip:**
@@ -376,6 +414,8 @@ Then visit: `http://localhost:8080/projects`
 - [ ] Template preview page renders correctly
 - [ ] **Credit banner appears** at top of template
 - [ ] **Banner dismiss button** works and persists (localStorage)
+- [ ] **Footer credit link** appears in footer section
+- [ ] **Footer link** opens to /projects#free-templates (new tab)
 - [ ] No PHP errors in error log
 - [ ] Mobile responsive (test at 375px, 768px, 1024px)
 
