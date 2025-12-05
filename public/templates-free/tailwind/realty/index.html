@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Realty - Luxury Real Estate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-red: #E63946;
+            --color-cream: #F1FAEE;
+            --color-light-blue: #A8DADC;
+            --color-blue: #457B9D;
+            --color-navy: #1D3557;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Parallax Effect */
+        .parallax-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+        }
+        
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(29, 53, 87, 0.88), rgba(69, 123, 157, 0.78));
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-slideInLeft {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-scaleIn {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+        
+        .visible {
+            opacity: 1 !important;
+        }
+        
+        /* Delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-700 { animation-delay: 0.7s; }
+        .delay-800 { animation-delay: 0.8s; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--color-cream);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-blue);
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-navy);
+        }
+        
+        /* Navbar */
+        .navbar {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(0px);
+        }
+        
+        .navbar-scrolled {
+            background: rgba(29, 53, 87, 0.97) !important;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Property Cards */
+        .property-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .property-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(29, 53, 87, 0.95), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .property-card:hover::before {
+            opacity: 1;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 48px rgba(29, 53, 87, 0.25);
+        }
+        
+        .property-card .card-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .property-image {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .property-card:hover .property-image {
+            transform: scale(1.1);
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-red) 0%, #c92a36 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(230, 57, 70, 0.4);
+        }
+        
+        .btn-secondary {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--color-navy);
+            transform: translateY(-2px);
+        }
+        
+        /* Stats */
+        .stat-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-light-blue), white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Service Cards */
+        .service-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            background: white;
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(29, 53, 87, 0.2);
+        }
+        
+        .service-icon {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 48px rgba(29, 53, 87, 0.18);
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-red), var(--color-blue));
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+        
+        /* Contact Form */
+        .contact-input {
+            transition: all 0.3s ease;
+            border: 2px solid #A8DADC;
+        }
+        
+        .contact-input:focus {
+            outline: none;
+            border-color: var(--color-blue);
+            box-shadow: 0 0 0 4px rgba(69, 123, 157, 0.1);
+        }
+        
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#F1FAEE]">
+
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50 py-5 px-6" style="background: transparent;">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <div class="text-white text-3xl font-bold animate-fadeIn">
+                <span class="text-[#E63946]">Elite</span> Realty
+            </div>
+            <div class="hidden md:flex space-x-8 animate-fadeIn delay-200">
+                <a href="#home" class="text-white hover:text-[#A8DADC] transition-colors duration-300 font-medium">Home</a>
+                <a href="#properties" class="text-white hover:text-[#A8DADC] transition-colors duration-300 font-medium">Properties</a>
+                <a href="#services" class="text-white hover:text-[#A8DADC] transition-colors duration-300 font-medium">Services</a>
+                <a href="#testimonials" class="text-white hover:text-[#A8DADC] transition-colors duration-300 font-medium">Testimonials</a>
+                <a href="#contact" class="text-white hover:text-[#A8DADC] transition-colors duration-300 font-medium">Contact</a>
+            </div>
+            <button class="btn-primary text-white px-6 py-3 rounded-full font-semibold animate-fadeIn delay-300 hidden md:block">
+                <i class="fas fa-calendar-alt mr-2"></i>Schedule Tour
+            </button>
+            <button class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Parallax -->
+    <section id="home" class="parallax-container min-h-screen flex items-center justify-center relative">
+        <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80');"></div>
+        <div class="parallax-overlay"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10 max-w-6xl">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 animate-fadeInUp leading-tight">
+                Find Your Dream Home
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl text-[#A8DADC] mb-10 animate-fadeInUp delay-200 max-w-3xl mx-auto">
+                Luxury properties in the most exclusive neighborhoods
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center animate-fadeInUp delay-400 mb-20">
+                <button class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl">
+                    <i class="fas fa-search mr-2"></i>Browse Properties
+                </button>
+                <button class="btn-secondary bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg">
+                    <i class="fas fa-play mr-2"></i>Watch Video
+                </button>
+            </div>
+            
+            <!-- Floating Stats -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 animate-fadeInUp delay-600">
+                <div class="stat-card rounded-2xl p-6 animate-float">
+                    <div class="stat-number" data-target="500">0</div>
+                    <p class="text-white text-sm mt-2 font-medium">Properties Sold</p>
+                </div>
+                <div class="stat-card rounded-2xl p-6 animate-float delay-100">
+                    <div class="stat-number" data-target="1200">0</div>
+                    <p class="text-white text-sm mt-2 font-medium">Happy Clients</p>
+                </div>
+                <div class="stat-card rounded-2xl p-6 animate-float delay-200">
+                    <div class="stat-number" data-target="15">0</div>
+                    <p class="text-white text-sm mt-2 font-medium">Years Experience</p>
+                </div>
+                <div class="stat-card rounded-2xl p-6 animate-float delay-300">
+                    <div class="stat-number" data-target="50">0</div>
+                    <p class="text-white text-sm mt-2 font-medium">Expert Agents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section id="properties" class="py-24 bg-[#F1FAEE]">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1D3557] mb-4 animate-fadeInUp opacity-0">Featured Properties</h2>
+                <div class="section-divider"></div>
+                <p class="text-[#457B9D] text-lg md:text-xl mt-4 animate-fadeInUp delay-200 opacity-0">Handpicked exclusive listings just for you</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property Card 1 -->
+                <div class="property-card rounded-3xl overflow-hidden shadow-xl animate-scaleIn opacity-0">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80" alt="Modern Villa" class="property-image w-full h-72 object-cover">
+                        <div class="absolute top-4 right-4 bg-[#E63946] text-white px-5 py-2 rounded-full font-bold shadow-lg">
+                            $2.5M
+                        </div>
+                        <div class="absolute top-4 left-4 bg-[#1D3557] text-white px-5 py-2 rounded-full text-sm font-semibold">
+                            For Sale
+                        </div>
+                    </div>
+                    <div class="card-content p-6">
+                        <h3 class="text-2xl font-bold text-[#1D3557] mb-2">Modern Villa</h3>
+                        <p class="text-[#457B9D] mb-4 flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>Beverly Hills, CA
+                        </p>
+                        <div class="flex justify-between text-[#457B9D] mb-5 text-sm">
+                            <span><i class="fas fa-bed mr-2"></i>4 Beds</span>
+                            <span><i class="fas fa-bath mr-2"></i>3 Baths</span>
+                            <span><i class="fas fa-ruler-combined mr-2"></i>3,200 sqft</span>
+                        </div>
+                        <button class="w-full bg-[#457B9D] text-white py-3 rounded-xl hover:bg-[#1D3557] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="property-card rounded-3xl overflow-hidden shadow-xl animate-scaleIn opacity-0 delay-200">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Luxury Apartment" class="property-image w-full h-72 object-cover">
+                        <div class="absolute top-4 right-4 bg-[#E63946] text-white px-5 py-2 rounded-full font-bold shadow-lg">
+                            $1.8M
+                        </div>
+                        <div class="absolute top-4 left-4 bg-[#1D3557] text-white px-5 py-2 rounded-full text-sm font-semibold">
+                            For Sale
+                        </div>
+                    </div>
+                    <div class="card-content p-6">
+                        <h3 class="text-2xl font-bold text-[#1D3557] mb-2">Luxury Apartment</h3>
+                        <p class="text-[#457B9D] mb-4 flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>Manhattan, NY
+                        </p>
+                        <div class="flex justify-between text-[#457B9D] mb-5 text-sm">
+                            <span><i class="fas fa-bed mr-2"></i>3 Beds</span>
+                            <span><i class="fas fa-bath mr-2"></i>2 Baths</span>
+                            <span><i class="fas fa-ruler-combined mr-2"></i>2,400 sqft</span>
+                        </div>
+                        <button class="w-full bg-[#457B9D] text-white py-3 rounded-xl hover:bg-[#1D3557] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="property-card rounded-3xl overflow-hidden shadow-xl animate-scaleIn opacity-0 delay-400">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Beachfront Estate" class="property-image w-full h-72 object-cover">
+                        <div class="absolute top-4 right-4 bg-[#E63946] text-white px-5 py-2 rounded-full font-bold shadow-lg">
+                            $3.2M
+                        </div>
+                        <div class="absolute top-4 left-4 bg-[#1D3557] text-white px-5 py-2 rounded-full text-sm font-semibold">
+                            For Sale
+                        </div>
+                    </div>
+                    <div class="card-content p-6">
+                        <h3 class="text-2xl font-bold text-[#1D3557] mb-2">Beachfront Estate</h3>
+                        <p class="text-[#457B9D] mb-4 flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>Malibu, CA
+                        </p>
+                        <div class="flex justify-between text-[#457B9D] mb-5 text-sm">
+                            <span><i class="fas fa-bed mr-2"></i>5 Beds</span>
+                            <span><i class="fas fa-bath mr-2"></i>4 Baths</span>
+                            <span><i class="fas fa-ruler-combined mr-2"></i>4,500 sqft</span>
+                        </div>
+                        <button class="w-full bg-[#457B9D] text-white py-3 rounded-xl hover:bg-[#1D3557] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section with Parallax -->
+    <section id="services" class="parallax-container py-24 relative">
+        <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80');"></div>
+        <div class="parallax-overlay"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 max-w-7xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 animate-fadeInUp opacity-0">Our Services</h2>
+                <div class="section-divider"></div>
+                <p class="text-[#A8DADC] text-lg md:text-xl mt-4 animate-fadeInUp delay-200 opacity-0">Comprehensive real estate solutions</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card rounded-3xl p-8 text-center animate-fadeInUp opacity-0 delay-300">
+                    <div class="service-icon w-24 h-24 bg-gradient-to-br from-[#E63946] to-[#c92a36] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-home text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#1D3557] mb-4">Property Sales</h3>
+                    <p class="text-[#457B9D] leading-relaxed">Expert guidance through every step of buying or selling your property with maximum value and efficiency.</p>
+                </div>
+                
+                <div class="service-card rounded-3xl p-8 text-center animate-fadeInUp opacity-0 delay-500">
+                    <div class="service-icon w-24 h-24 bg-gradient-to-br from-[#457B9D] to-[#1D3557] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-key text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#1D3557] mb-4">Property Management</h3>
+                    <p class="text-[#457B9D] leading-relaxed">Full-service management solutions to maximize your investment returns and ensure complete peace of mind.</p>
+                </div>
+                
+                <div class="service-card rounded-3xl p-8 text-center animate-fadeInUp opacity-0 delay-700">
+                    <div class="service-icon w-24 h-24 bg-gradient-to-br from-[#A8DADC] to-[#457B9D] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-chart-line text-[#1D3557] text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#1D3557] mb-4">Investment Consulting</h3>
+                    <p class="text-[#457B9D] leading-relaxed">Strategic advice to help you make informed decisions for profitable and sustainable real estate investments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-[#F1FAEE]">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1D3557] mb-4 animate-fadeInUp opacity-0">What Clients Say</h2>
+                <div class="section-divider"></div>
+                <p class="text-[#457B9D] text-lg md:text-xl mt-4 animate-fadeInUp delay-200 opacity-0">Trusted by thousands of satisfied clients</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-3xl p-8 shadow-xl animate-fadeInUp opacity-0 delay-300">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah Johnson" class="w-16 h-16 rounded-full mr-4 object-cover shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-[#1D3557] text-lg">Sarah Johnson</h4>
+                            <div class="text-[#E63946] text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[#457B9D] italic leading-relaxed">"Elite Realty helped us find our dream home in just two weeks! Their professionalism and attention to detail is absolutely unmatched."</p>
+                </div>
+                
+                <div class="testimonial-card rounded-3xl p-8 shadow-xl animate-fadeInUp opacity-0 delay-500">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Michael Chen" class="w-16 h-16 rounded-full mr-4 object-cover shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-[#1D3557] text-lg">Michael Chen</h4>
+                            <div class="text-[#E63946] text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[#457B9D] italic leading-relaxed">"Outstanding service from start to finish. They made the entire process smooth and stress-free. I highly recommend Elite Realty!"</p>
+                </div>
+                
+                <div class="testimonial-card rounded-3xl p-8 shadow-xl animate-fadeInUp opacity-0 delay-700">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Emily Rodriguez" class="w-16 h-16 rounded-full mr-4 object-cover shadow-lg">
+                        <div>
+                            <h4 class="font-bold text-[#1D3557] text-lg">Emily Rodriguez</h4>
+                            <div class="text-[#E63946] text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[#457B9D] italic leading-relaxed">"The best real estate experience we've ever had. Their market knowledge and negotiation skills saved us thousands of dollars!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-[#1D3557]">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-slideInLeft opacity-0">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Let's Find Your Perfect Home</h2>
+                    <p class="text-[#A8DADC] text-lg md:text-xl mb-10 leading-relaxed">Get in touch with our team of experts today and start your journey to finding the perfect property.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center text-white">
+                            <div class="w-14 h-14 bg-[#E63946] rounded-2xl flex items-center justify-center mr-5 shadow-xl">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-[#A8DADC] text-sm mb-1">Call Us</p>
+                                <p class="font-semibold text-lg">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center text-white">
+                            <div class="w-14 h-14 bg-[#457B9D] rounded-2xl flex items-center justify-center mr-5 shadow-xl">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-[#A8DADC] text-sm mb-1">Email Us</p>
+                                <p class="font-semibold text-lg">info@eliterealty.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center text-white">
+                            <div class="w-14 h-14 bg-[#A8DADC] rounded-2xl flex items-center justify-center mr-5 shadow-xl">
+                                <i class="fas fa-map-marker-alt text-[#1D3557] text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-[#A8DADC] text-sm mb-1">Visit Us</p>
+                                <p class="font-semibold text-lg">123 Luxury Ave, Suite 100</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-2xl animate-slideInRight opacity-0">
+                    <h3 class="text-3xl font-bold text-[#1D3557] mb-8">Send Us a Message</h3>
+                    <form class="space-y-5">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="contact-input w-full px-5 py-4 rounded-xl">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="contact-input w-full px-5 py-4 rounded-xl">
+                        </div>
+                        <div>
+                            <input type="tel" placeholder="Phone Number" class="contact-input w-full px-5 py-4 rounded-xl">
+                        </div>
+                        <div>
+                            <textarea rows="4" placeholder="Your Message" class="contact-input w-full px-5 py-4 rounded-xl resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full text-white py-4 rounded-xl font-semibold text-lg shadow-2xl">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1D3557] py-10 border-t-2 border-[#457B9D]">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-[#A8DADC] mb-6 md:mb-0 text-center md:text-left">&copy; 2025 Elite Realty. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-[#A8DADC] hover:text-white transition-colors duration-300 transform hover:scale-110">
+                        <i class="fab fa-facebook text-3xl"></i>
+                    </a>
+                    <a href="#" class="text-[#A8DADC] hover:text-white transition-colors duration-300 transform hover:scale-110">
+                        <i class="fab fa-instagram text-3xl"></i>
+                    </a>
+                    <a href="#" class="text-[#A8DADC] hover:text-white transition-colors duration-300 transform hover:scale-110">
+                        <i class="fab fa-twitter text-3xl"></i>
+                    </a>
+                    <a href="#" class="text-[#A8DADC] hover:text-white transition-colors duration-300 transform hover:scale-110">
+                        <i class="fab fa-linkedin text-3xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const parallaxBgs = document.querySelectorAll('.parallax-bg');
+            parallaxBgs.forEach(bg => {
+                const container = bg.closest('.parallax-container');
+                const rect = container.getBoundingClientRect();
+                const scrolled = window.pageYOffset;
+                const containerTop = rect.top + scrolled;
+                const rate = (scrolled - containerTop) * 0.4;
+                bg.style.transform = `translateY(${rate}px)`;
+            });
+        });
+
+        // Animated counter
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            let hasAnimated = false;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        hasAnimated = true;
+                        const timer = setInterval(() => {
+                            current += step;
+                            if (current >= target) {
+                                element.textContent = target + '+';
+                                clearInterval(timer);
+                            } else {
+                                element.textContent = Math.floor(current);
+                            }
+                        }, 16);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(element);
+        }
+
+        // Initialize counters
+        document.querySelectorAll('.stat-number').forEach(el => {
+            animateCounter(el);
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-fadeInUp, .animate-fadeIn, .animate-slideInLeft, .animate-slideInRight, .animate-scaleIn').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add hover effect to property cards
+        document.querySelectorAll('.property-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -83,6 +83,20 @@
       "features": ["impactFul Framework", "6 Service Cards", "3-Step Process", "Testimonials", "Contact Form", "24/7 Emergency CTA"],
       "file_size": "8 KB",
       "last_updated": "2025-11-23"
+    },
+    {
+      "id": "realty",
+      "name": "Elite Realty - Luxury Real Estate",
+      "framework": "Tailwind CSS",
+      "category": "Real Estate",
+      "description": "Free luxury real estate website template with stunning parallax effects and animated counters. Features property listings, service showcase, testimonials, and contact form. Built with Tailwind CSS and Font Awesome using elegant navy, cream, and coral color palette. Perfect for real estate agencies, luxury property brokers, and realtors seeking a premium web presence.",
+      "preview_url": "/templates-free/tailwind/realty/index.html",
+      "download_url": "/templates-free/tailwind/realty/realty.zip",
+      "preview_image": "/templates-free/tailwind/realty/preview.png",
+      "tech_stack": ["Tailwind CSS", "Font Awesome", "Google Fonts", "Responsive", "Mobile-First"],
+      "features": ["Parallax Effects", "Property Cards", "Animated Counters", "Service Section", "Testimonials", "Contact Form"],
+      "file_size": "37 KB",
+      "last_updated": "2025-12-04"
     }
   ]
 }
