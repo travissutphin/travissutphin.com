@@ -48,6 +48,12 @@ if (empty($current_page)) $current_page = 'home';
                     </a>
                 </li>
                 <li>
+                    <a href="<?php echo BASE_PATH; ?>/projects#free-stock-photos"
+                       class="block px-4 py-2 text-theme-secondary hover:text-theme-primary hover:bg-theme-secondary/10 transition-colors">
+                        Free Stock Photos
+                    </a>
+                </li>
+                <li>
                     <a href="<?php echo BASE_PATH; ?>/case-studies"
                        class="block px-4 py-2 text-theme-secondary hover:text-theme-primary hover:bg-theme-secondary/10 transition-colors <?php echo strpos($current_page, 'case-studies') === 0 ? 'text-theme-primary font-semibold' : ''; ?>">
                         Case Studies

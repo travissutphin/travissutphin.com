@@ -1,0 +1,201 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Photos",
+      "description": "Browse all free stock photos"
+    },
+    {
+      "id": "lifestyle",
+      "name": "Lifestyle",
+      "description": "People, activities, and everyday moments"
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "description": "Professional settings and workplace scenes"
+    }
+  ],
+  "photos": [
+    {
+      "id": "friends-jumping-park",
+      "title": "Friends Jumping in Park",
+      "description": "Diverse group of four friends jumping joyfully in a sunny park",
+      "alt": "Four diverse friends jumping and laughing together in a green park on a sunny day",
+      "category": "lifestyle",
+      "tags": [
+        "people",
+        "friends",
+        "outdoor",
+        "happy",
+        "diversity",
+        "summer",
+        "park"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "file_size": "2.5 MB",
+      "format": "PNG",
+      "thumbnail": "/assets/images/stock-photos/lifestyle/friends-jumping-park.webp",
+      "download": "/assets/images/stock-photos/lifestyle/friends-jumping-park.png",
+      "date_added": "2025-12-06"
+    },
+    {
+      "id": "man-sailboat-ocean",
+      "title": "Man on Sailboat",
+      "description": "Smiling man relaxing on a sailboat with ocean in background",
+      "alt": "Happy man in blue shirt sitting on a wooden sailboat on the ocean on a clear day",
+      "category": "lifestyle",
+      "tags": [
+        "ocean",
+        "sailing",
+        "man",
+        "relaxation",
+        "summer",
+        "boat",
+        "vacation"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "file_size": "1.6 MB",
+      "format": "PNG",
+      "thumbnail": "/assets/images/stock-photos/lifestyle/man-sailboat-ocean.webp",
+      "download": "/assets/images/stock-photos/lifestyle/man-sailboat-ocean.png",
+      "date_added": "2025-12-06"
+    },
+    {
+      "id": "medical-exam-room",
+      "title": "Medical Examination Room",
+      "description": "Clean, modern medical examination room with equipment",
+      "alt": "Bright medical examination room with exam table, computer desk, and anatomy poster",
+      "category": "business",
+      "tags": [
+        "medical",
+        "healthcare",
+        "doctor",
+        "clinic",
+        "interior",
+        "professional",
+        "hospital"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "file_size": "2.2 MB",
+      "format": "PNG",
+      "thumbnail": "/assets/images/stock-photos/business/medical-exam-room.webp",
+      "download": "/assets/images/stock-photos/business/medical-exam-room.png",
+      "date_added": "2025-12-06"
+    },
+    {
+      "id": "remote-work-video-call",
+      "title": "Remote Work Video Call",
+      "description": "Professional working from home on a video conference call",
+      "alt": "Man working from home office on laptop with video call showing four colleagues on monitor",
+      "category": "business",
+      "tags": [
+        "remote work",
+        "video call",
+        "home office",
+        "laptop",
+        "professional",
+        "meeting",
+        "zoom"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "file_size": "2.6 MB",
+      "format": "PNG",
+      "thumbnail": "/assets/images/stock-photos/business/remote-work-video-call.webp",
+      "download": "/assets/images/stock-photos/business/remote-work-video-call.png",
+      "date_added": "2025-12-06"
+    },
+    {
+      "id": "friends-jogging-cycling-park",
+      "title": "Friends Jogging and Cycling in Park",
+      "description": "Diverse group of friends exercising together outdoors - running and cycling",
+      "alt": "Four diverse friends jogging and cycling together in a sunny green park on a summer day",
+      "category": "lifestyle",
+      "tags": [
+        "fitness",
+        "exercise",
+        "friends",
+        "outdoor",
+        "cycling",
+        "jogging",
+        "healthy",
+        "summer",
+        "park"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "file_size": "2.4 MB",
+      "format": "PNG",
+      "thumbnail": "/assets/images/stock-photos/lifestyle/friends-jogging-cycling-park.webp",
+      "download": "/assets/images/stock-photos/lifestyle/friends-jogging-cycling-park.png",
+      "date_added": "2025-12-06"
+    },
+    {
+      "id": "team-meeting-conference-room",
+      "title": "Team Meeting in Conference Room",
+      "description": "Diverse professional team having a collaborative meeting around conference table",
+      "alt": "Six diverse business professionals having a friendly meeting around a conference table with laptops and charts",
+      "category": "business",
+      "tags": [
+        "meeting",
+        "teamwork",
+        "conference room",
+        "collaboration",
+        "professional",
+        "diversity",
+        "office",
+        "business"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "file_size": "2.1 MB",
+      "format": "PNG",
+      "thumbnail": "/assets/images/stock-photos/business/team-meeting-conference-room.webp",
+      "download": "/assets/images/stock-photos/business/team-meeting-conference-room.png",
+      "date_added": "2025-12-06"
+    },
+    {
+      "id": "business-presentation-applause",
+      "title": "Business Presentation with Applause",
+      "description": "Speaker presenting data to team with colleagues applauding success",
+      "alt": "Business professional presenting charts on screen while diverse team members applaud in modern conference room",
+      "category": "business",
+      "tags": [
+        "presentation",
+        "success",
+        "applause",
+        "leadership",
+        "data",
+        "charts",
+        "team",
+        "professional",
+        "meeting"
+      ],
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "file_size": "2.2 MB",
+      "format": "PNG",
+      "thumbnail": "/assets/images/stock-photos/business/business-presentation-applause.webp",
+      "download": "/assets/images/stock-photos/business/business-presentation-applause.png",
+      "date_added": "2025-12-06"
+    }
+  ]
+}

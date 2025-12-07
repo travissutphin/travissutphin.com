@@ -151,6 +151,19 @@ if (empty($current_page)) $current_page = 'home';
                     <div class="text-xs text-theme-secondary">Download templates</div>
                 </div>
             </a>
+            <!-- Free Stock Photos -->
+            <a href="<?php echo BASE_PATH; ?>/projects#free-stock-photos"
+               class="flex items-center p-4 rounded-lg hover:bg-theme-tertiary transition-colors">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-green to-primary-blue rounded-full flex items-center justify-center mr-4">
+                    <i data-lucide="image" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-theme-primary">Free Stock Photos</div>
+                    <div class="text-xs text-theme-secondary">Download photos</div>
+                </div>
+            </a>
+
+            
 
             <!-- Resume -->
             <a href="<?php echo BASE_PATH; ?>/resume"

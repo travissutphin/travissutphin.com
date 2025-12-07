@@ -3,10 +3,10 @@
     <div class="max-w-7xl mx-auto">
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                Free HTML Templates & Portfolio Projects
+                Free Resources & Portfolio Projects
             </h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                Production-ready Bootstrap & Tailwind templates (free forever) + real client work that shipped and scaled.
+                Production-ready templates, free stock photos, and real client work that shipped and scaled.
             </p>
         </div>
     </div>
@@ -154,6 +154,240 @@
 }
 </script>
 <?php endif; ?>
+
+<!-- Free Stock Photos Section -->
+<section id="free-stock-photos" class="free-stock-photos-section py-16 px-4">
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-theme-primary">Free Stock Photos</h2>
+            <p class="text-xl max-w-3xl mx-auto text-theme-secondary mb-4">
+                High-quality images for commercial and personal use. No attribution required.
+            </p>
+            <p class="text-sm max-w-2xl mx-auto text-theme-tertiary">
+                AI-generated stock photos. Download full resolution PNGs for free. Use them anywhere.
+            </p>
+        </div>
+
+        <?php
+        // Load free stock photos from JSON
+        $photos_json = file_get_contents(__DIR__ . '/../../content/data/free-stock-photos.json');
+        $photos_data = json_decode($photos_json, true);
+        $categories = $photos_data['categories'] ?? [];
+        $photos = $photos_data['photos'] ?? [];
+        ?>
+
+        <!-- Category Filter -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+            <?php foreach ($categories as $category): ?>
+                <button type="button"
+                        class="photo-filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all <?php echo $category['id'] === 'all' ? 'bg-primary-green text-black' : 'bg-theme-tertiary text-theme-primary hover:bg-primary-blue hover:text-white'; ?>"
+                        data-category="<?php echo e($category['id']); ?>">
+                    <?php echo e($category['name']); ?>
+                </button>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Photo Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="photo-grid">
+            <?php foreach ($photos as $photo): ?>
+                <div class="photo-card bg-theme-card border border-theme-primary rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300"
+                     data-category="<?php echo e($photo['category']); ?>">
+                    <!-- Photo Thumbnail -->
+                    <div class="aspect-square bg-theme-tertiary overflow-hidden relative">
+                        <img src="<?php echo BASE_PATH . e($photo['thumbnail']); ?>"
+                             alt="<?php echo e($photo['alt']); ?>"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                             loading="lazy">
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-3">
+                                <button type="button"
+                                        class="photo-preview-btn bg-white text-gray-800 hover:bg-gray-100 p-3 rounded-full shadow-lg"
+                                        data-photo-id="<?php echo e($photo['id']); ?>"
+                                        data-photo-src="<?php echo BASE_PATH . e($photo['download']); ?>"
+                                        data-photo-title="<?php echo e($photo['title']); ?>"
+                                        data-photo-desc="<?php echo e($photo['description']); ?>"
+                                        title="Preview">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                                <a href="<?php echo BASE_PATH; ?>/download-photo.php?id=<?php echo e($photo['id']); ?>"
+                                   class="bg-primary-green text-black hover:bg-opacity-90 p-3 rounded-full shadow-lg"
+                                   title="Download">
+                                    <i data-lucide="download" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Info -->
+                    <div class="p-4">
+                        <h3 class="font-semibold text-theme-primary text-sm mb-1">
+                            <?php echo e($photo['title']); ?>
+                        </h3>
+                        <div class="flex items-center justify-between text-xs text-theme-tertiary">
+                            <span class="capitalize"><?php echo e($photo['category']); ?></span>
+                            <span><?php echo e($photo['file_size']); ?></span>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <?php if (empty($photos)): ?>
+        <div class="text-center py-12">
+            <p class="text-theme-secondary">New photos coming soon! Check back regularly for updates.</p>
+        </div>
+        <?php endif; ?>
+    </div>
+</section>
+
+<!-- Photo Lightbox Modal -->
+<div id="photo-lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-90">
+    <button type="button" id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors">
+        <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+    <div class="max-w-5xl mx-auto p-4">
+        <img id="lightbox-image" src="" alt="" class="max-h-[80vh] mx-auto rounded-lg shadow-2xl">
+        <div class="text-center mt-4">
+            <h3 id="lightbox-title" class="text-white text-xl font-semibold mb-2"></h3>
+            <p id="lightbox-desc" class="text-gray-300 mb-4"></p>
+            <a id="lightbox-download" href="" class="inline-flex items-center gap-2 bg-primary-green text-black hover:bg-opacity-90 px-6 py-3 rounded-lg font-semibold transition-all">
+                <i data-lucide="download" class="w-5 h-5"></i>
+                Download Full Resolution
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Stock Photos JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Category Filter
+    const filterBtns = document.querySelectorAll('.photo-filter-btn');
+    const photoCards = document.querySelectorAll('.photo-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const category = this.dataset.category;
+
+            // Update active button styles
+            filterBtns.forEach(b => {
+                b.classList.remove('bg-primary-green', 'text-black');
+                b.classList.add('bg-theme-tertiary', 'text-theme-primary');
+            });
+            this.classList.remove('bg-theme-tertiary', 'text-theme-primary');
+            this.classList.add('bg-primary-green', 'text-black');
+
+            // Filter photos
+            photoCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('photo-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+    const lightboxDownload = document.getElementById('lightbox-download');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const previewBtns = document.querySelectorAll('.photo-preview-btn');
+
+    previewBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const photoId = this.dataset.photoId;
+            const photoSrc = this.dataset.photoSrc;
+            const photoTitle = this.dataset.photoTitle;
+            const photoDesc = this.dataset.photoDesc;
+
+            lightboxImage.src = photoSrc;
+            lightboxImage.alt = photoTitle;
+            lightboxTitle.textContent = photoTitle;
+            lightboxDesc.textContent = photoDesc;
+            lightboxDownload.href = '<?php echo BASE_PATH; ?>/download-photo.php?id=' + photoId;
+
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+
+            // Re-initialize Lucide icons in lightbox
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = '';
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightboxClose.click();
+        }
+    });
+
+    // ESC key to close
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+            lightboxClose.click();
+        }
+    });
+});
+</script>
+
+<!-- Schema.org Structured Data for Stock Photos -->
+<?php if (!empty($photos)): ?>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Free Stock Photos by Travis Sutphin",
+    "description": "High-quality, free stock photos for commercial and personal use. No attribution required.",
+    "url": "<?php echo SITE_URL; ?>/projects#free-stock-photos",
+    "author": {
+        "@type": "Person",
+        "name": "Travis Sutphin",
+        "url": "<?php echo SITE_URL; ?>"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "image": [
+        <?php
+        $photo_schemas = [];
+        foreach ($photos as $photo) {
+            $photo_schemas[] = json_encode([
+                "@type" => "ImageObject",
+                "name" => $photo['title'],
+                "description" => $photo['description'],
+                "contentUrl" => SITE_URL . $photo['download'],
+                "thumbnailUrl" => SITE_URL . $photo['thumbnail'],
+                "width" => $photo['dimensions']['width'],
+                "height" => $photo['dimensions']['height'],
+                "encodingFormat" => "image/png",
+                "license" => "https://creativecommons.org/publicdomain/zero/1.0/",
+                "acquireLicensePage" => SITE_URL . "/projects#free-stock-photos",
+                "creditText" => "Travis Sutphin",
+                "creator" => [
+                    "@type" => "Person",
+                    "name" => "Travis Sutphin"
+                ],
+                "datePublished" => $photo['date_added']
+            ], JSON_UNESCAPED_SLASHES);
+        }
+        echo implode(",\n        ", $photo_schemas);
+        ?>
+    ]
+}
+</script>
+<?php endif; ?>
+
 
 <!-- Featured Projects -->
 <section class="featured-projects-section py-16 px-4">
