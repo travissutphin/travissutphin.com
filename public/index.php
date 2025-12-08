@@ -3,6 +3,23 @@
 require_once '../config.php';
 require_once '../lib/functions.php';
 
+// ============================================
+// MAINTENANCE MODE - Set to true to enable
+// ============================================
+$maintenance_mode = true;
+
+if ($maintenance_mode) {
+    $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+    // Allow direct access to maintenance page and static assets
+    if (strpos($request_uri, 'maintenance.html') === false) {
+        header('HTTP/1.1 503 Service Temporarily Unavailable');
+        header('Retry-After: 3600');
+        readfile(__DIR__ . '/maintenance.html');
+        exit;
+    }
+}
+// ============================================
+
 // Enforce HTTPS in production
 enforce_https();
 

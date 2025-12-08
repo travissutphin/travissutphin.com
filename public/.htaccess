@@ -1,14 +1,14 @@
 RewriteEngine On
 
 # ============================================
-# MAINTENANCE MODE - Currently ENABLED
+# MAINTENANCE MODE (Apache) - DISABLED
 # ============================================
-# To disable: comment out the 3 RewriteCond/RewriteRule lines below
-# To enable: uncomment them
+# Note: For Railway/non-Apache hosting, use $maintenance_mode in index.php instead
+# These rules only work on Apache servers
 # ============================================
-RewriteCond %{REQUEST_URI} !maintenance\.html$ [NC]
-RewriteCond %{REQUEST_URI} !\.(css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2)$ [NC]
-RewriteRule ^(.*)$ maintenance.html [R=302,L]
+# RewriteCond %{REQUEST_URI} !maintenance\.html$ [NC]
+# RewriteCond %{REQUEST_URI} !\.(css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2)$ [NC]
+# RewriteRule ^(.*)$ maintenance.html [R=302,L]
 # ============================================
 
 # Redirect www to non-www only (let Cloudways handle HTTPS)
